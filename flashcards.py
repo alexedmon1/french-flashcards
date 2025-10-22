@@ -31,8 +31,8 @@ CSV_PATH = Path(argv[1])                    # Your vocab file
 MISSED_PATH = Path("missed.csv")            # Where to store missed cards
 if argv[2] == 'french':
     LANG_DIRECTION = 'french' #french or english. choice is what you want to guess.
-    SHOW_ANSWER_PROMPT = "Press <Enter> to reveal the French translation…"
-    REPEAT_PROMPT = "\nDid you recall it correctly? (y/N): "
+    SHOW_ANSWER_PROMPT = "Appuyez sur 'enter' pour révéler la traduction française..."
+    REPEAT_PROMPT = "\nL'avez-vous bien rappelé ? (y/N): "
 else:
     LANG_DIRECTION = 'english'
     SHOW_ANSWER_PROMPT = "Press <Enter> to reveal the English translation…"
@@ -77,11 +77,11 @@ def french_study(cards: list[tuple[str, str]]) -> list[tuple[str, str]]:
     random.shuffle(cards)               # Random order each run
     missed = []
 
-    print("\n=== French Flashcard Trainer ===\n")
+    print("\n=== Entraîneur de cartes mémoire en français ===\n")
     for idx, (fr, en) in enumerate(cards, start=1):
-        print(f"{idx}/{len(cards)} – English: {en}")
+        print(f"{idx}/{len(cards)} – L'anglais: {en}")
         input(SHOW_ANSWER_PROMPT)       # Wait for user to press Enter
-        print(f"   → French: {fr}")
+        print(f"   → Le français: {fr}")
 
         correct = input(REPEAT_PROMPT).strip().lower()
         if correct != "y":
