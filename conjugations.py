@@ -20,6 +20,14 @@ PRESENT = {
     "faire":  ["fais", "fais", "fait", "faisons", "faites", "font"],
     "parler": ["parle", "parles", "parle", "parlons", "parlez", "parlent"],
     "finir":  ["finis", "finis", "finit", "finissons", "finissez", "finissent"],
+    "savoir": ["sais", "sais", "sait", "savons", "savez", "savent"],
+    "connaître": ["connais", "connais", "connait", "connaissons", "connaissez",
+                  "connaissent"],
+    "venir": ["viens", "viens", "vient", "venons", "venez", "viennent"],
+    "vouloir": ["veux", "veux", "veut", "voulons", "voulez", "veulent"],
+    "pouvoir": ["peux", "peux", "peut", "pouvons", "pouvez", "peuvent"],
+    "devoir": ["dois", "dois", "doit", "devons", "devez", "doivent"]
+    
 }
 
 FUTURE = {
