@@ -5,16 +5,21 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Project Overview
 
 A French language learning application with multiple components:
-1. **Flashcard trainer** (`flashcards.py`) - Basic vocabulary practice with CSV-based word lists
-2. **Enhanced flashcard trainer** (`flashcards_v2.py`) - Advanced version with SRS, typing modes, progress tracking, and category filtering
+
+### Flashcard Trainers
+1. **Simple trainer** (`simple/flashcards.py`) - Basic vocabulary practice with CSV-based word lists
+2. **Current trainer** (`flashcards.py`) - Advanced version with SRS, typing modes, progress tracking, and interactive prompts
+
+### Additional Components
 3. **Conjugation trainer** (`conjugations.py`) - Verb conjugation practice for present, future, and passé composé tenses
 4. **Master vocabulary** (`master_vocabulary.csv`) - Combined file with all vocabulary from individual CSVs with category tags
+5. **CSV combiner** (`combine_csvs.py`) - Tool to regenerate master vocabulary file
 
 ## Running the Application
 
-### Flashcard Trainer
+### Simple Flashcard Trainer
 ```bash
-python flashcards.py <csv_file> <direction>
+python simple/flashcards.py <csv_file> <direction>
 ```
 - `<csv_file>`: Path to a CSV file (e.g., `flashcards.csv`, `verbs.csv`, `weather.csv`)
 - `<direction>`: Either `french` or `english` (determines which language you're guessing)
@@ -23,29 +28,48 @@ python flashcards.py <csv_file> <direction>
 
 Examples:
 ```bash
-python flashcards.py flashcards.csv english    # French → English
-python flashcards.py verbs.csv french          # English → French
-python flashcards.py weather.csv english       # Weather vocabulary
+python simple/flashcards.py flashcards.csv english    # French → English
+python simple/flashcards.py verbs.csv french          # English → French
+python simple/flashcards.py weather.csv english       # Weather vocabulary
 ```
 
-### Enhanced Flashcard Trainer (Recommended)
+### Current Flashcard Trainer (Recommended)
 ```bash
-python3 flashcards_v2.py <csv_file> <direction> [options]
+python3 flashcards.py [csv_file] [options]
 ```
-Advanced version with multiple features:
+Advanced version with multiple features and **interactive prompts**:
+- Automatically prompts for language direction (French→English or English→French)
+- Interactively shows and lets you select categories
+- Defaults to `master_vocabulary.csv` if no file specified
+
+**Command-line options:**
+- `--help`: Show detailed help message
 - `--srs`: Spaced Repetition System (only shows cards due for review)
 - `--mode=<mode>`: easy (multiple choice), medium (typing with fuzzy match), hard (exact typing), expert (timed)
 - `--gender`: Practice masculine/feminine noun genders
-- `--category=<cat>`: Filter by category (when using master_vocabulary.csv)
-- `--list-categories`: Show available categories
-- `--stats`: Show progress statistics
+- `--category=<cat>`: Pre-select category (skips interactive prompt)
+- `--list-categories`: Show available categories and exit
+- `--stats`: Show progress statistics and exit
 
 Examples:
 ```bash
-python3 flashcards_v2.py master_vocabulary.csv english --srs --mode=medium
-python3 flashcards_v2.py master_vocabulary.csv english --category=verbs --srs
-python3 flashcards_v2.py weather.csv french --mode=hard
-python3 flashcards_v2.py master_vocabulary.csv english --list-categories
+# Show help
+python3 flashcards.py --help
+
+# Interactive mode (simplest - just run it!)
+python3 flashcards.py
+
+# Interactive with SRS enabled
+python3 flashcards.py --srs --mode=medium
+
+# Specify file and options
+python3 flashcards.py weather.csv --mode=hard
+
+# Non-interactive with command-line category
+python3 flashcards.py --category=verbs --srs
+
+# View available categories
+python3 flashcards.py --list-categories
 ```
 
 ### Conjugation Trainer
@@ -108,7 +132,7 @@ aimer,to like,verbs
 
 ## Code Architecture
 
-### flashcards.py
+### simple/flashcards.py
 - **Entry point**: `main()` function
 - **Flow**: load_cards() → shuffle → [english_study() OR french_study()] → save_missed()
 - **Key behavior**:
@@ -116,16 +140,19 @@ aimer,to like,verbs
   - If perfect score, clears `missed.csv`
   - Language direction controls UI prompts and card presentation order
   - Uses command-line arguments (position-based, not flags)
+- **Purpose**: Simple, lightweight version for basic flashcard practice
 
-### flashcards_v2.py
-- **Enhanced features**: SRS algorithm, typing modes, progress tracking, category filtering
+### flashcards.py
+- **Enhanced features**: SRS algorithm, typing modes, progress tracking, category filtering, interactive prompts
+- **Interactive UI**: Prompts for language direction and category selection on startup
 - **Data persistence**: Uses `.flashcard_data/` directory for storing:
   - `card_stats.json`: Per-card SRS data (review intervals, ease factors, due dates)
   - `progress.json`: Session history, streaks, overall statistics
 - **Card class**: Supports french, english, category, and gender fields
 - **Multiple study modes**: Multiple choice, typing (fuzzy/exact), timed challenges
 - **Spaced Repetition**: Simplified SM-2 algorithm with quality ratings (0-3)
-- **Category filtering**: When using master_vocabulary.csv, can filter by category
+- **Category filtering**: Interactive selection or command-line specification
+- **Help system**: Built-in `--help` flag for detailed usage information
 - **Backward compatible**: Works with all existing CSV formats (2, 3, or 4 columns)
 
 ### conjugations.py
@@ -156,7 +183,7 @@ aimer,to like,verbs
 ### Adding New Vocabulary
 1. Add words to existing CSV file OR create new CSV file
 2. Regenerate master file: `python3 combine_csvs.py`
-3. Practice new words: `python3 flashcards_v2.py master_vocabulary.csv english --srs`
+3. Practice new words: `python3 flashcards.py master_vocabulary.csv english --srs`
 
 ### Adding Verbs to Conjugation Trainer
 1. Add entries to PRESENT, FUTURE, and PAST_COMPOSE dictionaries in `conjugations.py`
@@ -166,13 +193,13 @@ aimer,to like,verbs
 ### Recommended Daily Practice
 ```bash
 # Check what's due today
-python3 flashcards_v2.py master_vocabulary.csv english --stats
+python3 flashcards.py --stats
 
-# Practice cards due for review
-python3 flashcards_v2.py master_vocabulary.csv english --srs --mode=medium
+# Interactive practice with SRS (simplest!)
+python3 flashcards.py --srs
 
-# Or focus on specific category
-python3 flashcards_v2.py master_vocabulary.csv english --category=verbs --srs
+# Or pre-select category without prompts
+python3 flashcards.py --category=verbs --srs
 ```
 
 ### Resetting Progress
