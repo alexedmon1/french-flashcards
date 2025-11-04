@@ -118,17 +118,17 @@ il pleut,it's raining,weather
 aimer,to like,verbs
 ```
 
-### Available Vocabulary Files
-- `flashcards.csv` - General vocabulary
-- `verbs.csv` - Infinitive verbs
-- `weather.csv` - Weather-related terms
-- `clothing.csv` - Clothing vocabulary
-- `locations.csv` - Places and locations
-- `prepositions.csv` - Prepositions
-- `questions.csv` - Question words/phrases
-- `routine.csv` - Daily routine vocabulary
-- `freq_words.csv` - Frequently used words
-- `missed.csv` - Auto-generated file tracking incorrectly recalled flashcards
+### Available Vocabulary Files (in vocabulary/ folder)
+- `vocabulary/flashcards.csv` - General vocabulary (5 words)
+- `vocabulary/verbs.csv` - Infinitive verbs (48 words)
+- `vocabulary/weather.csv` - Weather-related terms (27 words)
+- `vocabulary/clothing.csv` - Clothing vocabulary (26 words)
+- `vocabulary/locations.csv` - Places and locations (27 words)
+- `vocabulary/prepositions.csv` - Prepositions (27 words)
+- `vocabulary/questions.csv` - Question words/phrases (35 words)
+- `vocabulary/routine.csv` - Daily routine vocabulary (43 words)
+- `vocabulary/freq_words.csv` - Frequently used words (498 words)
+- `missed.csv` - Auto-generated file tracking incorrectly recalled flashcards (root folder)
 
 ## Code Architecture
 
@@ -181,7 +181,7 @@ aimer,to like,verbs
 ## Common Workflows
 
 ### Adding New Vocabulary
-1. Add words to existing CSV file OR create new CSV file
+1. Add words to existing CSV file in vocabulary/ folder OR create new CSV file there
 2. Regenerate master file: `python3 combine_csvs.py`
 3. Practice new words: `python3 flashcards.py master_vocabulary.csv english --srs`
 

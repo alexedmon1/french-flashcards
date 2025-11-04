@@ -26,12 +26,17 @@ def has_gender_column(rows: list) -> bool:
 
 def combine_csv_files():
     """Combine all vocabulary CSV files into one master file"""
-    # Find all CSV files
-    csv_files = sorted(Path('.').glob('*.csv'))
+    # Find all CSV files in vocabulary folder
+    vocab_dir = Path('vocabulary')
+    if not vocab_dir.exists():
+        print("❌ vocabulary/ folder not found")
+        return
+
+    csv_files = sorted(vocab_dir.glob('*.csv'))
     csv_files = [f for f in csv_files if f.name not in EXCLUDE_FILES]
 
     if not csv_files:
-        print("❌ No CSV files found to combine")
+        print("❌ No CSV files found in vocabulary/ folder")
         return
 
     print(f"Found {len(csv_files)} vocabulary files to combine:")
@@ -120,8 +125,8 @@ def combine_csv_files():
             print(f"  {entry['french']},{entry['english']},{entry['category']}")
 
     print(f"\n💡 Usage:")
-    print(f"  python flashcards.py {OUTPUT_FILE} english")
-    print(f"  python flashcards_v2.py {OUTPUT_FILE} english --srs")
+    print(f"  python3 flashcards.py")
+    print(f"  python3 flashcards.py --srs")
 
 if __name__ == "__main__":
     try:
