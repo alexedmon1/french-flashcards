@@ -1,0 +1,661 @@
+#!/usr/bin/env python3
+"""
+Enhanced French-English Flashcard Trainer with SRS, Progress Tracking, and Multiple Modes
+
+Features:
+- Spaced Repetition System (SRS) for optimal retention
+- Multiple difficulty modes (multiple choice, typing, exact match, timed)
+- Progress tracking and statistics
+- Gender learning support
+- Session streaks and improvement metrics
+"""
+
+import csv
+import json
+import random
+import sys
+import time
+from datetime import datetime, date
+from difflib import SequenceMatcher
+from pathlib import Path
+from typing import Optional
+
+# ----------------------------------------------------------------------
+# Configuration
+# ----------------------------------------------------------------------
+DATA_DIR = Path(".flashcard_data")
+STATS_FILE = DATA_DIR / "card_stats.json"
+PROGRESS_FILE = DATA_DIR / "progress.json"
+MISSED_PATH = Path("missed.csv")
+
+# SRS intervals (in days) - simplified SM-2 algorithm
+INTERVALS = {
+    0: 0,      # Wrong - review same session
+    1: 1,      # Hard - 1 day
+    2: 3,      # Good - 3 days
+    3: 7,      # Easy - 1 week
+}
+
+# ----------------------------------------------------------------------
+# Data Models
+# ----------------------------------------------------------------------
+class Card:
+    def __init__(self, french: str, english: str, category: Optional[str] = None, gender: Optional[str] = None):
+        self.french = french.strip()
+        self.english = english.strip()
+        self.category = category.strip() if category else None
+        self.gender = gender.strip().lower() if gender else None
+        self.key = f"{self.french}|{self.english}"
+
+    def __repr__(self):
+        return f"Card({self.french}, {self.english}, {self.category}, {self.gender})"
+
+
+class CardStats:
+    def __init__(self, key: str):
+        self.key = key
+        self.times_seen = 0
+        self.times_correct = 0
+        self.last_reviewed = None
+        self.interval = 0  # days until next review
+        self.ease_factor = 2.5
+        self.due_date = date.today().isoformat()
+
+    def to_dict(self):
+        return {
+            "times_seen": self.times_seen,
+            "times_correct": self.times_correct,
+            "last_reviewed": self.last_reviewed,
+            "interval": self.interval,
+            "ease_factor": self.ease_factor,
+            "due_date": self.due_date
+        }
+
+    @classmethod
+    def from_dict(cls, key: str, data: dict):
+        stats = cls(key)
+        stats.times_seen = data.get("times_seen", 0)
+        stats.times_correct = data.get("times_correct", 0)
+        stats.last_reviewed = data.get("last_reviewed")
+        stats.interval = data.get("interval", 0)
+        stats.ease_factor = data.get("ease_factor", 2.5)
+        stats.due_date = data.get("due_date", date.today().isoformat())
+        return stats
+
+    def update(self, quality: int):
+        """Update stats based on performance (0=wrong, 1=hard, 2=good, 3=easy)"""
+        self.times_seen += 1
+        if quality > 0:
+            self.times_correct += 1
+
+        self.last_reviewed = date.today().isoformat()
+
+        # Update ease factor (simplified SM-2)
+        self.ease_factor = max(1.3, self.ease_factor + (0.1 - (3 - quality) * (0.08 + (3 - quality) * 0.02)))
+
+        # Calculate next interval
+        if quality == 0:
+            self.interval = 0
+        else:
+            if self.times_correct == 1:
+                self.interval = INTERVALS[quality]
+            else:
+                self.interval = int(self.interval * self.ease_factor)
+
+        # Calculate due date
+        from datetime import timedelta
+        next_date = date.today() + timedelta(days=self.interval)
+        self.due_date = next_date.isoformat()
+
+
+# ----------------------------------------------------------------------
+# Storage Functions
+# ----------------------------------------------------------------------
+def ensure_data_dir():
+    DATA_DIR.mkdir(exist_ok=True)
+
+
+def load_stats() -> dict[str, CardStats]:
+    """Load card statistics from JSON file"""
+    if not STATS_FILE.exists():
+        return {}
+
+    with STATS_FILE.open() as f:
+        data = json.load(f)
+
+    return {key: CardStats.from_dict(key, val) for key, val in data.items()}
+
+
+def save_stats(stats: dict[str, CardStats]):
+    """Save card statistics to JSON file"""
+    ensure_data_dir()
+    data = {key: val.to_dict() for key, val in stats.items()}
+    with STATS_FILE.open("w") as f:
+        json.dump(data, f, indent=2)
+
+
+def load_progress() -> dict:
+    """Load progress history"""
+    if not PROGRESS_FILE.exists():
+        return {"sessions": [], "streak": 0, "last_session": None}
+
+    with PROGRESS_FILE.open() as f:
+        return json.load(f)
+
+
+def save_progress(progress: dict):
+    """Save progress history"""
+    ensure_data_dir()
+    with PROGRESS_FILE.open("w") as f:
+        json.dump(progress, f, indent=2)
+
+
+# ----------------------------------------------------------------------
+# Card Loading
+# ----------------------------------------------------------------------
+def load_cards(csv_path: Path, category_filter: Optional[str] = None) -> list[Card]:
+    """
+    Read the CSV and return a list of Card objects
+
+    Supports multiple formats:
+    - 2 columns: french,english
+    - 3 columns: french,english,gender OR french,english,category
+    - 4 columns: french,english,category,gender
+    """
+    if not csv_path.is_file():
+        sys.exit(f"❌  Vocabulary file not found: {csv_path}")
+
+    with csv_path.open(newline="", encoding="utf-8") as f:
+        reader = csv.reader(f)
+        cards = []
+        for row in reader:
+            if len(row) >= 2:
+                french = row[0]
+                english = row[1]
+                category = None
+                gender = None
+
+                if len(row) == 3:
+                    # Could be either category or gender
+                    # If it's m/f/masculine/feminine, it's gender, otherwise category
+                    third_col = row[2].strip().lower()
+                    if third_col in ['m', 'f', 'masculine', 'feminine']:
+                        gender = third_col
+                    else:
+                        category = row[2]
+                elif len(row) >= 4:
+                    # Both category and gender
+                    category = row[2]
+                    gender = row[3]
+
+                # Filter by category if specified
+                if category_filter and category and category.lower() != category_filter.lower():
+                    continue
+
+                cards.append(Card(french, english, category, gender))
+
+    if not cards:
+        if category_filter:
+            sys.exit(f"⚠️  No cards found for category '{category_filter}'")
+        else:
+            sys.exit("⚠️  No valid rows found in the CSV file.")
+    return cards
+
+
+# ----------------------------------------------------------------------
+# Answer Checking
+# ----------------------------------------------------------------------
+def similarity_ratio(s1: str, s2: str) -> float:
+    """Calculate similarity between two strings (0.0 to 1.0)"""
+    return SequenceMatcher(None, s1.lower(), s2.lower()).ratio()
+
+
+def check_answer(user_input: str, correct: str, mode: str) -> tuple[bool, float]:
+    """
+    Check if answer is correct based on mode
+    Returns (is_correct, similarity_score)
+    """
+    user = user_input.strip().lower()
+    answer = correct.strip().lower()
+
+    if mode == "exact":
+        return (user == answer, 1.0 if user == answer else 0.0)
+    elif mode == "typing":
+        # Allow 85% similarity for typos
+        sim = similarity_ratio(user, answer)
+        return (sim >= 0.85, sim)
+    else:
+        # Multiple choice - exact match required
+        return (user == answer, 1.0 if user == answer else 0.0)
+
+
+# ----------------------------------------------------------------------
+# Study Modes
+# ----------------------------------------------------------------------
+def multiple_choice_question(card: Card, all_cards: list[Card], lang_direction: str) -> bool:
+    """Present a multiple choice question. Returns True if correct."""
+    # Generate wrong answers
+    if lang_direction == "english":
+        question = card.french
+        correct_answer = card.english
+        wrong_pool = [c.english for c in all_cards if c.english != correct_answer]
+    else:
+        question = card.english
+        correct_answer = card.french
+        wrong_pool = [c.french for c in all_cards if c.french != correct_answer]
+
+    # Pick 3 random wrong answers
+    wrong_answers = random.sample(wrong_pool, min(3, len(wrong_pool)))
+    options = [correct_answer] + wrong_answers
+    random.shuffle(options)
+
+    # Display question
+    print(f"Question: {question}")
+    for i, opt in enumerate(options, 1):
+        print(f"  {i}. {opt}")
+
+    # Get answer
+    while True:
+        try:
+            choice = input("\nYour answer (1-4): ").strip()
+            if choice in "1234":
+                idx = int(choice) - 1
+                selected = options[idx]
+                is_correct = selected == correct_answer
+
+                if is_correct:
+                    print("✅ Correct!")
+                else:
+                    print(f"❌ Wrong. Correct answer: {correct_answer}")
+
+                return is_correct
+        except (ValueError, IndexError):
+            print("Please enter 1, 2, 3, or 4")
+
+
+def typing_question(card: Card, lang_direction: str, mode: str, time_limit: Optional[int] = None) -> tuple[bool, float]:
+    """
+    Present a typing question. Returns (is_correct, quality_score)
+    quality_score: 0=wrong, 1=hard, 2=good, 3=easy
+    """
+    if lang_direction == "english":
+        question = card.french
+        correct_answer = card.english
+    else:
+        question = card.english
+        correct_answer = card.french
+
+    print(f"Translate: {question}")
+
+    # Timed mode
+    start_time = time.time()
+    if time_limit:
+        print(f"⏱️  You have {time_limit} seconds!")
+
+    user_input = input("Your answer: ").strip()
+    elapsed = time.time() - start_time
+
+    if time_limit and elapsed > time_limit:
+        print(f"⏰ Time's up! ({elapsed:.1f}s)")
+        print(f"Correct answer: {correct_answer}")
+        return False, 0
+
+    # Check answer
+    is_correct, similarity = check_answer(user_input, correct_answer, mode)
+
+    if is_correct:
+        if similarity >= 0.95 and (not time_limit or elapsed < time_limit * 0.5):
+            print("✅ Perfect! (Easy)")
+            return True, 3
+        elif similarity >= 0.95:
+            print("✅ Correct! (Good)")
+            return True, 2
+        else:
+            print(f"✅ Close enough! ({similarity*100:.0f}% match) (Hard)")
+            return True, 1
+    else:
+        print(f"❌ Wrong. Correct answer: {correct_answer}")
+        if similarity > 0.5:
+            print(f"   (You were {similarity*100:.0f}% close)")
+        return False, 0
+
+
+def gender_question(card: Card) -> bool:
+    """Quiz on the gender of a noun. Returns True if correct."""
+    if not card.gender:
+        return True  # Skip if no gender info
+
+    print(f"\nBonus: What's the gender of '{card.french}'?")
+    answer = input("(m/f): ").strip().lower()
+
+    if answer in ['m', 'f']:
+        is_correct = (answer == card.gender[0])  # First letter of gender
+        if is_correct:
+            print("✅ Correct gender!")
+        else:
+            expected = "masculine" if card.gender[0] == 'm' else "feminine"
+            print(f"❌ Wrong. '{card.french}' is {expected}")
+        return is_correct
+    else:
+        print("⏭️  Skipped")
+        return True
+
+
+# ----------------------------------------------------------------------
+# Study Session
+# ----------------------------------------------------------------------
+def run_study_session(
+    cards: list[Card],
+    lang_direction: str,
+    mode: str,
+    use_srs: bool,
+    practice_gender: bool
+) -> dict:
+    """
+    Run a study session and return results
+    mode: 'easy', 'medium', 'hard', 'expert'
+    """
+    stats = load_stats() if use_srs else {}
+
+    # Filter cards due for review (SRS mode)
+    if use_srs:
+        today = date.today().isoformat()
+        due_cards = [c for c in cards if stats.get(c.key, CardStats(c.key)).due_date <= today]
+
+        if not due_cards:
+            print("✅ No cards due for review today! Great job!")
+            print(f"   Total cards in deck: {len(cards)}")
+            return {"total": 0, "correct": 0, "missed": []}
+
+        study_cards = due_cards
+        print(f"📚 {len(study_cards)} cards due for review today (out of {len(cards)} total)")
+    else:
+        study_cards = cards
+        random.shuffle(study_cards)
+
+    correct_count = 0
+    missed_cards = []
+    results = []
+
+    print(f"\n=== Study Session ({mode.upper()} mode) ===\n")
+
+    for idx, card in enumerate(study_cards, 1):
+        print(f"\n[{idx}/{len(study_cards)}]")
+        print("-" * 50)
+
+        # Ask question based on mode
+        if mode == "easy":
+            is_correct = multiple_choice_question(card, cards, lang_direction)
+            quality = 2 if is_correct else 0
+        elif mode == "expert":
+            is_correct, quality = typing_question(card, lang_direction, "exact", time_limit=10)
+        elif mode == "hard":
+            is_correct, quality = typing_question(card, lang_direction, "exact")
+        else:  # medium (default)
+            is_correct, quality = typing_question(card, lang_direction, "typing")
+
+        # Gender quiz (optional)
+        if practice_gender and card.gender and is_correct:
+            gender_question(card)  # Doesn't affect main score
+
+        # Update stats
+        if is_correct:
+            correct_count += 1
+        else:
+            missed_cards.append(card)
+
+        # Update SRS
+        if use_srs:
+            if card.key not in stats:
+                stats[card.key] = CardStats(card.key)
+            stats[card.key].update(quality)
+
+            # Show next review date for correct answers
+            if quality > 0:
+                next_review = stats[card.key].due_date
+                days = stats[card.key].interval
+                if days == 0:
+                    print(f"📅 Review again this session")
+                elif days == 1:
+                    print(f"📅 Review again tomorrow")
+                else:
+                    print(f"📅 Next review in {days} days ({next_review})")
+
+        print("-" * 50)
+
+    # Save stats
+    if use_srs:
+        save_stats(stats)
+
+    return {
+        "total": len(study_cards),
+        "correct": correct_count,
+        "missed": [(c.french, c.english) for c in missed_cards]
+    }
+
+
+# ----------------------------------------------------------------------
+# Progress Tracking
+# ----------------------------------------------------------------------
+def update_progress(session_result: dict):
+    """Update progress tracking with session results"""
+    progress = load_progress()
+
+    today = date.today().isoformat()
+    accuracy = (session_result["correct"] / session_result["total"] * 100) if session_result["total"] > 0 else 0
+
+    # Update streak
+    if progress["last_session"]:
+        from datetime import datetime, timedelta
+        last = datetime.fromisoformat(progress["last_session"]).date()
+        current = date.today()
+
+        if (current - last).days == 1:
+            progress["streak"] += 1
+        elif (current - last).days > 1:
+            progress["streak"] = 1
+    else:
+        progress["streak"] = 1
+
+    progress["last_session"] = today
+
+    # Add session
+    progress["sessions"].append({
+        "date": today,
+        "cards": session_result["total"],
+        "correct": session_result["correct"],
+        "accuracy": round(accuracy, 1)
+    })
+
+    save_progress(progress)
+    return progress
+
+
+def show_progress_stats():
+    """Display progress statistics"""
+    progress = load_progress()
+
+    if not progress["sessions"]:
+        print("No previous sessions recorded.")
+        return
+
+    print("\n=== Your Progress ===")
+    print(f"🔥 Current streak: {progress['streak']} day(s)")
+    print(f"📊 Total sessions: {len(progress['sessions'])}")
+
+    # Recent sessions
+    recent = progress["sessions"][-5:]
+    print("\n Recent sessions:")
+    for session in recent:
+        print(f"   {session['date']}: {session['correct']}/{session['cards']} ({session['accuracy']}%)")
+
+    # Overall stats
+    total_cards = sum(s["cards"] for s in progress["sessions"])
+    total_correct = sum(s["correct"] for s in progress["sessions"])
+    overall_accuracy = (total_correct / total_cards * 100) if total_cards > 0 else 0
+
+    print(f"\n Overall accuracy: {overall_accuracy:.1f}%")
+    print()
+
+
+def list_available_categories(csv_path: Path):
+    """List all available categories in the CSV file"""
+    if not csv_path.is_file():
+        sys.exit(f"❌  Vocabulary file not found: {csv_path}")
+
+    categories = set()
+    total_cards = 0
+
+    with csv_path.open(newline="", encoding="utf-8") as f:
+        reader = csv.reader(f)
+        for row in reader:
+            if len(row) >= 3:
+                # Has category column
+                category = row[2].strip()
+                # Check if it's not a gender marker
+                if category.lower() not in ['m', 'f', 'masculine', 'feminine']:
+                    categories.add(category)
+                    total_cards += 1
+
+    if not categories:
+        print("⚠️  No categories found in this file.")
+        print("   This file may not have a category column.")
+        return
+
+    print(f"\n📚 Available categories in {csv_path.name}:")
+    print(f"   Total cards: {total_cards}\n")
+
+    # Count cards per category
+    category_counts = {}
+    with csv_path.open(newline="", encoding="utf-8") as f:
+        reader = csv.reader(f)
+        for row in reader:
+            if len(row) >= 3:
+                category = row[2].strip()
+                if category.lower() not in ['m', 'f', 'masculine', 'feminine']:
+                    category_counts[category] = category_counts.get(category, 0) + 1
+
+    # Display sorted by name
+    for category in sorted(categories):
+        count = category_counts.get(category, 0)
+        print(f"   • {category:<20} ({count} cards)")
+
+    print(f"\n💡 Use --category=<name> to practice just one category")
+    print(f"   Example: --category=verbs")
+
+
+# ----------------------------------------------------------------------
+# Main
+# ----------------------------------------------------------------------
+def main():
+    # Parse arguments
+    if len(sys.argv) < 3:
+        print("Usage: python flashcards_v2.py <csv_file> <direction> [options]")
+        print()
+        print("Arguments:")
+        print("  csv_file   : Path to vocabulary CSV file")
+        print("  direction  : 'french' or 'english' (what you want to guess)")
+        print()
+        print("Options:")
+        print("  --mode=<mode>      : easy, medium, hard, expert (default: medium)")
+        print("  --srs              : Use Spaced Repetition System")
+        print("  --gender           : Practice noun genders")
+        print("  --category=<cat>   : Filter by category (e.g., verbs, weather)")
+        print("  --list-categories  : Show available categories and exit")
+        print("  --stats            : Show progress statistics and exit")
+        print()
+        print("Modes:")
+        print("  easy   : Multiple choice")
+        print("  medium : Type answer (fuzzy matching)")
+        print("  hard   : Type answer (exact match)")
+        print("  expert : Type answer (exact, 10s time limit)")
+        sys.exit(1)
+
+    csv_path = Path(sys.argv[1])
+    lang_direction = sys.argv[2]
+
+    # Parse options
+    mode = "medium"
+    use_srs = False
+    practice_gender = False
+    show_stats_only = False
+    category_filter = None
+    list_categories = False
+
+    for arg in sys.argv[3:]:
+        if arg.startswith("--mode="):
+            mode = arg.split("=")[1]
+        elif arg == "--srs":
+            use_srs = True
+        elif arg == "--gender":
+            practice_gender = True
+        elif arg == "--stats":
+            show_stats_only = True
+        elif arg.startswith("--category="):
+            category_filter = arg.split("=")[1]
+        elif arg == "--list-categories":
+            list_categories = True
+
+    # List categories and exit
+    if list_categories:
+        list_available_categories(csv_path)
+        return
+
+    # Show stats and exit
+    if show_stats_only:
+        show_progress_stats()
+        return
+
+    # Validate mode
+    if mode not in ["easy", "medium", "hard", "expert"]:
+        print(f"❌ Invalid mode: {mode}")
+        print("   Choose: easy, medium, hard, or expert")
+        sys.exit(1)
+
+    # Show progress stats
+    show_progress_stats()
+
+    # Load cards
+    cards = load_cards(csv_path, category_filter)
+    if category_filter:
+        print(f"📚 Loaded {len(cards)} cards from {csv_path} (category: {category_filter})")
+    else:
+        print(f"📚 Loaded {len(cards)} cards from {csv_path}")
+
+    # Run session
+    result = run_study_session(cards, lang_direction, mode, use_srs, practice_gender)
+
+    # Summary
+    print("\n" + "=" * 50)
+    print("=== Session Summary ===")
+    print(f"Total cards reviewed : {result['total']}")
+    print(f"Correctly answered   : {result['correct']}")
+    print(f"Missed / need review : {len(result['missed'])}")
+
+    if result['total'] > 0:
+        accuracy = (result['correct'] / result['total']) * 100
+        print(f"Accuracy             : {accuracy:.1f}%")
+
+    # Update progress
+    if result['total'] > 0:
+        progress = update_progress(result)
+        print(f"\n🔥 Current streak    : {progress['streak']} day(s)")
+
+    # Save missed cards
+    if result['missed']:
+        with MISSED_PATH.open("w", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            writer.writerows(result['missed'])
+        print(f"\n🗂️  Missed cards saved to: {MISSED_PATH}")
+    elif MISSED_PATH.exists():
+        MISSED_PATH.unlink()
+        print("\n✅ Perfect score! Missed list cleared.")
+
+    print("=" * 50)
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\n\n👋 Bye! Session interrupted.")

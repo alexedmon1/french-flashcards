@@ -1,0 +1,736 @@
+un anorak,raincoat,clothing
+un pantalon,pants,clothing
+un tee-shirt,T-shirt,clothing
+des chaussettes,socks,clothing
+une chemise,shirt,clothing
+une veste,jacket,clothing
+des baskets,sneakers,clothing
+une robe,dress,clothing
+des chaussures,shoes,clothing
+des lunettes de soleil,sunglasses,clothing
+une crème solaire,suncreen,clothing
+une trousse de toilette,toiletry bag,clothing
+un slip,panties,clothing
+un soutien-gorge,bra,clothing
+une écharpe,scarf,clothing
+un pull,pullover,clothing
+des sandales,sandals,clothing
+un maillot de bain,swimsuit,clothing
+un bonnet,hat,clothing
+une casquette,cap,clothing
+un sweet,sweatshirt,clothing
+un short,shorts,clothing
+une jupe,skirt,clothing
+une tuque,hat,clothing
+une culotte,women`s panties,clothing
+un boxer,men`s underwear,clothing
+bonjour,hello,flashcards
+oui,yes,flashcards
+non,no,flashcards
+le chat,cat,flashcards
+le chien,dog,flashcards
+﻿comme,"as, like",freq_words
+je,I,freq_words
+son,"his, her, sound",freq_words
+que,"that, what, than",freq_words
+il,"he, it",freq_words
+était,was,freq_words
+pour,for,freq_words
+sont,are,freq_words
+avec,with,freq_words
+ils,they,freq_words
+être,be,freq_words
+à,"at, to",freq_words
+un,"one, a, an",freq_words
+avoir,have,freq_words
+ce,this,freq_words
+partir,leave,freq_words
+par,"by, through",freq_words
+chaud,"hot, warm",freq_words
+mot,word,freq_words
+mais,but,freq_words
+certains,some,freq_words
+est,"is, east",freq_words
+vous,you,freq_words
+ou,or,freq_words
+eu,"had, got",freq_words
+la,the,freq_words
+de,"of, off",freq_words
+et,and,freq_words
+dans,in,freq_words
+nous,"we, us",freq_words
+boîte,"can, box",freq_words
+dehors,out,freq_words
+autre,other,freq_words
+étaient,were,freq_words
+qui,"which, who",freq_words
+faire,"do, make",freq_words
+leur,their,freq_words
+temps,time,freq_words
+si,"if, so",freq_words
+volonté,will,freq_words
+comment,how,freq_words
+chaque,each,freq_words
+dire,"tell, say",freq_words
+ne,does,freq_words
+ensemble,"set, together, whole",freq_words
+trois,three,freq_words
+vouloir,want,freq_words
+air,air,freq_words
+bien,well,freq_words
+aussi,also,freq_words
+jouer,play,freq_words
+petit,small,freq_words
+fin,"end, fine",freq_words
+mettre,put,freq_words
+maison,"house, home",freq_words
+lire,read,freq_words
+main,hand,freq_words
+port,port,freq_words
+grand,"large, big, great",freq_words
+épeler,spell,freq_words
+ajouter,add,freq_words
+même,"even, same",freq_words
+terre,"land, earth",freq_words
+ici,here,freq_words
+tel,such,freq_words
+suivre,follow,freq_words
+faut,must,freq_words
+acte,act,freq_words
+pourquoi,why,freq_words
+interroger,ask,freq_words
+hommes,men,freq_words
+changement,change,freq_words
+allé,go,freq_words
+lumière,light,freq_words
+gentil,kind,freq_words
+besoin,need,freq_words
+image,picture,freq_words
+essayer,try,freq_words
+encore,"again, still, yet",freq_words
+animal,animal,freq_words
+point,point,freq_words
+mère,mother,freq_words
+monde,world,freq_words
+près,near,freq_words
+construire,build,freq_words
+soi,self,freq_words
+père,father,freq_words
+tout,any,freq_words
+nouveau,new,freq_words
+travail,work,freq_words
+partie,part,freq_words
+prendre,take,freq_words
+obtenir,get,freq_words
+lieu,place,freq_words
+fabriqué,made,freq_words
+vivre,live,freq_words
+où,where,freq_words
+après,after,freq_words
+arrière,back,freq_words
+peu,"little, few",freq_words
+seulement,only,freq_words
+tour,"round, turn, ride",freq_words
+homme,man,freq_words
+année,year,freq_words
+montrer,show,freq_words
+tous,"every, all",freq_words
+bon,good,freq_words
+moi,me,freq_words
+donner,give,freq_words
+notre,our,freq_words
+sous,under,freq_words
+nom,"name, noun",freq_words
+très,very,freq_words
+juste,just,freq_words
+forme,"form, shape",freq_words
+phrase,sentence,freq_words
+penser,think,freq_words
+aider,help,freq_words
+faible,low,freq_words
+ligne,line,freq_words
+différer,differ,freq_words
+cause,cause,freq_words
+beaucoup,"much, many",freq_words
+signifier,mean,freq_words
+avant,"before, front",freq_words
+déménagement,(house) move,freq_words
+droit,right,freq_words
+garçon,boy,freq_words
+vieux,old,freq_words
+trop,too,freq_words
+elle,she,freq_words
+là,there,freq_words
+quand,when,freq_words
+utiliser,use,freq_words
+votre,your,freq_words
+manière,way,freq_words
+sur,"on, about, over",freq_words
+puis,then,freq_words
+les,them,freq_words
+écrire,write,freq_words
+voudrais,would,freq_words
+ces,these,freq_words
+long,long,freq_words
+chose,thing,freq_words
+voir,see,freq_words
+lui,him,freq_words
+deux,two,freq_words
+a,has,freq_words
+regarder,"look, watch",freq_words
+jour,day,freq_words
+pourrait,could,freq_words
+aller,go,freq_words
+venir,come,freq_words
+fait,"did, fact",freq_words
+nombre,number,freq_words
+aucun,no,freq_words
+plus,"more, most",freq_words
+personnes,people,freq_words
+ma,my,freq_words
+savoir,know,freq_words
+eau,water,freq_words
+appel,call,freq_words
+première,first,freq_words
+peut,may,freq_words
+vers,"toward, towards",freq_words
+côté,side,freq_words
+été,"been, summer",freq_words
+maintenant,now,freq_words
+trouver,find,freq_words
+tête,head,freq_words
+supporter,stand,freq_words
+propre,own,freq_words
+page,page,freq_words
+devrait,should,freq_words
+pays,country,freq_words
+trouvé,found,freq_words
+réponse,answer,freq_words
+école,school,freq_words
+croître,grow,freq_words
+étude,study,freq_words
+apprendre,learn,freq_words
+usine,factory,freq_words
+couvercle,cover,freq_words
+nourriture,food,freq_words
+soleil,sun,freq_words
+quatre,four,freq_words
+entre,"between, among",freq_words
+état,state,freq_words
+garder,keep,freq_words
+œil,eye,freq_words
+jamais,"never, ever",freq_words
+dernier,last,freq_words
+laisser,"let, leave",freq_words
+pensée,thought,freq_words
+ville,"city, town",freq_words
+arbre,tree,freq_words
+traverser,cross,freq_words
+ferme,farm,freq_words
+dur,hard,freq_words
+début,start,freq_words
+puissance,"might, power",freq_words
+histoire,story,freq_words
+scie,saw,freq_words
+loin,far,freq_words
+mer,sea,freq_words
+tirer,"draw, pull",freq_words
+gauche,left,freq_words
+tard,late,freq_words
+courir,run,freq_words
+presse,press,freq_words
+proche,close,freq_words
+nuit,night,freq_words
+réel,real,freq_words
+vie,life,freq_words
+nord,north,freq_words
+livre,"book, pound",freq_words
+porter,carry,freq_words
+a pris,took,freq_words
+science,science,freq_words
+manger,eat,freq_words
+chambre,room,freq_words
+ami,friend,freq_words
+a commencé,began,freq_words
+idée,idea,freq_words
+poisson,fish,freq_words
+montagne,mountain,freq_words
+arrêtez,stop,freq_words
+base,base,freq_words
+entendre,hear,freq_words
+cheval,horse,freq_words
+couper,cut,freq_words
+sûr,sure,freq_words
+couleur,color,freq_words
+face,face,freq_words
+bois,wood,freq_words
+principal,main,freq_words
+ouvert,open,freq_words
+paraître,seem,freq_words
+suivant,next,freq_words
+blanc,white,freq_words
+enfants,children,freq_words
+commencer,begin,freq_words
+marcher,walk,freq_words
+exemple,example,freq_words
+facilité,ease,freq_words
+papier,paper,freq_words
+groupe,group,freq_words
+toujours,always,freq_words
+musique,music,freq_words
+ceux,those,freq_words
+marque,mark,freq_words
+souvent,often,freq_words
+lettre,letter,freq_words
+mile,mile,freq_words
+rivière,river,freq_words
+voiture,car,freq_words
+pieds,feet,freq_words
+soins,care,freq_words
+deuxième,second,freq_words
+assez,enough,freq_words
+plaine,plain,freq_words
+fille,girl,freq_words
+habituel,usual,freq_words
+jeune,young,freq_words
+prêt,ready,freq_words
+au-dessus,above,freq_words
+rouge,red,freq_words
+liste,list,freq_words
+sentir,feel,freq_words
+parler,"talk, speak",freq_words
+oiseau,bird,freq_words
+bientôt,soon,freq_words
+corps,body,freq_words
+chien,dog,freq_words
+famille,family,freq_words
+direct,direct,freq_words
+pose,pose,freq_words
+chanson,song,freq_words
+mesurer,measure,freq_words
+porte,door,freq_words
+produit,product,freq_words
+noir,black,freq_words
+court,short,freq_words
+chiffre,numeral,freq_words
+classe,class,freq_words
+vent,wind,freq_words
+question,"question, matter",freq_words
+arriver,happen,freq_words
+complète,complete,freq_words
+navire,ship,freq_words
+zone,area,freq_words
+moitié,half,freq_words
+rock,rock,freq_words
+ordre,order,freq_words
+feu,fire,freq_words
+sud,south,freq_words
+problème,problem,freq_words
+pièce,piece,freq_words
+dit,"told, said",freq_words
+savait,knew,freq_words
+passer,pass,freq_words
+depuis,since,freq_words
+haut,"top, high",freq_words
+roi,king,freq_words
+rue,street,freq_words
+pouce,inch,freq_words
+multiplier,multiply,freq_words
+rien,nothing,freq_words
+cours,course,freq_words
+rester,stay,freq_words
+roue,wheel,freq_words
+plein,full,freq_words
+force,force,freq_words
+bleu,blue,freq_words
+objet,object,freq_words
+décider,decide,freq_words
+surface,surface,freq_words
+profond,deep,freq_words
+lune,moon,freq_words
+île,island,freq_words
+pied,foot,freq_words
+système,system,freq_words
+occupé,busy,freq_words
+test,test,freq_words
+record,record,freq_words
+bateau,boat,freq_words
+commun,common,freq_words
+or,gold,freq_words
+possible,possible,freq_words
+plan,plan,freq_words
+place,"space, room",freq_words
+sec,dry,freq_words
+se demander,wonder,freq_words
+rire,laugh,freq_words
+mille,thousand,freq_words
+vérifier,check,freq_words
+jeu,game,freq_words
+assimiler,assimilate,freq_words
+manquer,miss,freq_words
+apporté,brought,freq_words
+chaleur,heat,freq_words
+neige,snow,freq_words
+pneu,tire,freq_words
+apporter,bring,freq_words
+lointain,distant,freq_words
+remplir,fill,freq_words
+peindre,paint,freq_words
+langue,"language, tongue",freq_words
+unité,unit,freq_words
+certain,certain,freq_words
+voler,fly,freq_words
+tomber,fall,freq_words
+conduire,lead,freq_words
+cri,cry,freq_words
+sombre,dark,freq_words
+machine,machine,freq_words
+note,note,freq_words
+patienter,wait,freq_words
+figure,figure,freq_words
+étoile,star,freq_words
+domaine,field,freq_words
+se reposer,rest,freq_words
+correct,correct,freq_words
+capable,able,freq_words
+terminé,done,freq_words
+beauté,beauty,freq_words
+entraînement,training,freq_words
+résisté,stood up,freq_words
+contenir,contain,freq_words
+enseigner,teach,freq_words
+semaine,week,freq_words
+finale,final,freq_words
+donné,gave,freq_words
+vert,green,freq_words
+oh,oh,freq_words
+rapide,"quick, fast",freq_words
+développer,develop,freq_words
+océan,ocean,freq_words
+gratuit,free,freq_words
+minute,minute,freq_words
+fort,strong,freq_words
+spécial,special,freq_words
+esprit,mind,freq_words
+derrière,behind,freq_words
+clair,clear,freq_words
+queue,tail,freq_words
+produire,produce,freq_words
+espace,space,freq_words
+entendu,heard,freq_words
+meilleur,best,freq_words
+heure,hour,freq_words
+mieux,better,freq_words
+vrai,TRUE,freq_words
+pendant,during,freq_words
+cent,hundred,freq_words
+cinq,five,freq_words
+rappeler,remember,freq_words
+étape,step,freq_words
+tôt,early,freq_words
+tenir,hold,freq_words
+ouest,west,freq_words
+sol,ground,freq_words
+intérêt,interest,freq_words
+atteindre,reach,freq_words
+verbe,verb,freq_words
+chanter,sing,freq_words
+écouter,listen,freq_words
+six,six,freq_words
+table,table,freq_words
+voyage,travel,freq_words
+moins,less,freq_words
+matin,morning,freq_words
+dix,ten,freq_words
+simple,simple,freq_words
+plusieurs,several,freq_words
+voyelle,vowel,freq_words
+guerre,war,freq_words
+poser,lay,freq_words
+contre,against,freq_words
+modèle,pattern,freq_words
+lent,slow,freq_words
+centre,center,freq_words
+amour,love,freq_words
+personne,person,freq_words
+argent,money,freq_words
+servir,serve,freq_words
+apparaître,appear,freq_words
+route,road,freq_words
+carte,map,freq_words
+pluie,rain,freq_words
+règle,rule,freq_words
+gouverner,govern,freq_words
+froid,cold,freq_words
+avis,notice,freq_words
+voix,voice,freq_words
+énergie,energy,freq_words
+chasse,hunt,freq_words
+probable,probable,freq_words
+lit,bed,freq_words
+frère,brother,freq_words
+œuf,egg,freq_words
+cellule,cell,freq_words
+croire,believe,freq_words
+peut-être,perhaps,freq_words
+choisir,pick,freq_words
+soudain,sudden,freq_words
+compter,count,freq_words
+carré,square,freq_words
+raison,reason,freq_words
+longueur,length,freq_words
+représenter,represent,freq_words
+art,art,freq_words
+sujet,subject,freq_words
+région,region,freq_words
+taille,size,freq_words
+varier,vary,freq_words
+régler,settle,freq_words
+poids,weight,freq_words
+général,general,freq_words
+glace,ice,freq_words
+cercle,circle,freq_words
+paire,pair,freq_words
+inclure,include,freq_words
+fracture,divide,freq_words
+syllabe,syllable,freq_words
+feutre,felt,freq_words
+grandiose,grand,freq_words
+balle,ball,freq_words
+vague,wave,freq_words
+tomber,drop,freq_words
+cœur,heart,freq_words
+présent,present,freq_words
+lourd,heavy,freq_words
+danse,dance,freq_words
+moteur,engine,freq_words
+position,position,freq_words
+bras,arm,freq_words
+large,wide,freq_words
+voile,sail,freq_words
+matériel,material,freq_words
+fraction,fraction,freq_words
+forêt,forest,freq_words
+s’asseoir,sit,freq_words
+course,race,freq_words
+fenêtre,window,freq_words
+magasin,store,freq_words
+train,train,freq_words
+sommeil,sleep,freq_words
+prouver,prove,freq_words
+seul,lone,freq_words
+jambe,leg,freq_words
+exercice,exercise,freq_words
+mur,wall,freq_words
+capture,catch,freq_words
+monture,mount,freq_words
+souhaiter,wish,freq_words
+ciel,sky,freq_words
+conseil,board,freq_words
+la banque,bank,locations
+le bar,bar,locations
+la bibliothèque,library,locations
+la bijouterie,jeweller`s shop,locations
+la boucherie,butcher`s shop,locations
+la boulangerie,baker`s shop,locations
+la cinéma,movie theater,locations
+la clinique,private hospital,locations
+le poste de police,police station,locations
+l`école primaire,primary school,locations
+le supermarché,supermarket,locations
+le fleuriste,florist`s shop,locations
+la gare,train station,locations
+l`hôpital,hospital,locations
+l`hôtel,hotel,locations
+le parc,park,locations
+la librairie,bookstore,locations
+le lycée,high school,locations
+la mairie,city hall,locations
+le musée,museum,locations
+l`office de tourisme,tourist office,locations
+la pharmacie,drugstore,locations
+la poissonnerie,fish shop,locations
+la poste,post office,locations
+le restaurant,restaurant,locations
+le salon de coiffure,hairdressing salon,locations
+l’université,university,locations
+à,"to, at, in",prepositions
+à côte de,"next to, beside",prepositions
+au sujet de,"about, on the subject of",prepositions
+avant,before,prepositions
+chez,"at the home of, office of, among",prepositions
+d’après,according to,prepositions
+de,"from, of, about",prepositions
+depuis,"since, for",prepositions
+devant,in front of,prepositions
+durant,"during, while",prepositions
+en,"in, on, to",prepositions
+en dehors de,outside,prepositions
+en face de,"facing, across from",prepositions
+entre,between,prepositions
+environ,approximately,prepositions
+hors de,outside,prepositions
+jusque,"until, up to, even",prepositions
+loin de,far from,prepositions
+nalgré,despite,prepositions
+promi,among,prepositions
+près de,near,prepositions
+quant à,"as for, regarding",prepositions
+sans,without,prepositions
+selon,according to,prepositions
+suivant,according to,prepositions
+sur,on,prepositions
+vers,toward,prepositions
+﻿Comment vous appelez-vous?,What's your name?,questions
+Comment allez-vous?,How are you?,questions
+Comment ça va?,How are you?,questions
+Comment ça s'écrit?,How do you spell that?,questions
+D'où venez-vous?,Where do you come from?,questions
+D'où viens-tu?,Where do you come from?,questions
+Quel âge avez-vous?,How old are you?,questions
+Qu'est-ce que vous étudiez?,What do you study?,questions
+Qu'est-ce que tu vas faire ce week-end?,What are you going to do this weekend?,questions
+Tu veux sortir avec nous ce soir?,Do you want to go out with us tonight?,questions
+À quelle heure commence le concert?,When does the concert start?,questions
+À quelle heure se termine le concert?,When does the concert end?,questions
+Qu'est-ce qui s'est passé?,What happened?,questions
+Quel est votre passe-temps préféré?,What is your hobby?,questions
+Quel est ton passe-temps préféré?,What is your hobby?,questions
+Parlez-vous anglais?,Do you speak English?,questions
+Quelle heure est-il?,What time is it?,questions
+À quelle heure part le train pour Marseille?,What time does the train depart for Marseille?,questions
+Quel temps fait-il aujourd'hui?,What's the weather like today?,questions
+Quel jour somme-nous?,What day is it?,questions
+Où se trouve…?,Where is…(specific thing) found?,questions
+Où est …?,Where is…?,questions
+Comment va-t-on à…?,How do I get to…?,questions
+Combien ça coûte?,How much does this cost?,questions
+Vous faites quoi comme métier?,What's your occupation?,questions
+Pouvez-vous traduire pour moi?,Can you translate for me?,questions
+Peux-tu m'expliquer en français?,Can you explain in French to me?,questions
+Peux-tu m'expliquer en anglais?,Can you explain in English to me?,questions
+Est-ce que tu me comprends?,Do you understand?,questions
+"Pourriez-vous répéter, s'il vous plaît?","Can you repeat that, please?",questions
+Pouvez vous parles plus lentement?,Can you speak slower?,questions
+Qu'est-ce qui se passe?,What's happening?,questions
+Qu'est-ce que tu entends par …?,What do you mean by … ?,questions
+Il fait combien de degrés?,What temperature is it?,questions
+Il fait quel temps?,What is the weather?,questions
+se réveiller,to wake up,routine
+le matin,morning,routine
+se lever,to get up,routine
+s’habiller,to dress up,routine
+se brosser les dents,to brush the teeth,routine
+se laver le visage,to wash the face,routine
+prendre une douche,to take a shower,routine
+prendre le petit-déjeuner,to take the breakfast,routine
+L’après-midi,afternoon,routine
+aller au travail,to go to work,routine
+travailler,to work,routine
+déjeuner,to have lunch,routine
+dîner,to have lunch,routine
+prendre une pause,to take a break,routine
+faire une sieste,to do a nap,routine
+le soir,evening,routine
+faire du sport,to exercise,routine
+préparer le repas,to prepare the meal,routine
+manger,to eat,routine
+faire une promenade,to go for a walk,routine
+se promener,to walk,routine
+lire des livres,to read books,routine
+écouter de la musique,to listen to music,routine
+regardes des films ou des séries,to watch some movies or tv shows,routine
+voir des amis,to see some friends,routine
+aller au cinéma,to go to the cinema,routine
+jouer aux jeux vidéo,to play video games,routine
+lundi,monday,routine
+mardi,tuesday,routine
+mercredi,wednesday,routine
+jeudi,thursday,routine
+vendredi,friday,routine
+samedi,saturday,routine
+dimanche,sunday,routine
+aujourd’hui,today,routine
+hier,yesterday,routine
+demain,tomorrow,routine
+d’habitude,usually,routine
+parfois,sometimes,routine
+de temps en temps,sometimes,routine
+quelquefois,sometimes,routine
+rarement,rarely,routine
+jamais,never,routine
+﻿aimer,to like,verbs
+regarder,to look at,verbs
+parler,"to talk, to speak",verbs
+écouter,to listen to,verbs
+chanter,to sing,verbs
+danser,to dance,verbs
+rire,to laugh,verbs
+bouger,to move,verbs
+entrer,to enter,verbs
+sortir,"to exit, to go out",verbs
+rester,to stay,verbs
+acheter,to buy,verbs
+étudier,to study,verbs
+prendre,to take,verbs
+conduire,to drive,verbs
+arrêter,to stop,verbs
+commencer,to begin,verbs
+finir,to finish,verbs
+laver,to wash,verbs
+lever,"to lift, to raise",verbs
+penser,to think,verbs
+courir,to run,verbs
+marcher,to walk,verbs
+faire,"to do, to make",verbs
+aller,to go,verbs
+venir,to come,verbs
+emprunter,to borrow,verbs
+prêter,to lend,verbs
+aider,to help,verbs
+prier,to pray to,verbs
+choisir,to choose,verbs
+dormir,to sleep,verbs
+boire,to drink,verbs
+mettre,to put,verbs
+écrire,to write,verbs
+lire,to read,verbs
+pousser,"to push, to grow",verbs
+réchauffer,to reheat,verbs
+recommencer,"to resume, to start again",verbs
+arriver,to arrive,verbs
+profiter,to take advantage of,verbs
+nager,to swim,verbs
+déménager,"to move (house), to remove",verbs
+montrer,to show,verbs
+rendrer,"to give back, to return",verbs
+partager,to share,verbs
+sembler,to seem,verbs
+visiter,to visit,verbs
+il ya du vent,it’s windy,weather
+il fait chaud,it’s hot,weather
+il neige,snows,weather
+il y a des nuages,cloudy,weather
+il y a de l’òrage,storms,weather
+il ya a du soleil,sunny,weather
+il pleut,rain,weather
+il fait beau,sunny,weather
+l’été,summer,weather
+l’hiver,winter,weather
+l’automne,autumn,weather
+le printemps,spring,weather
+Janvier,January,weather
+Février,February,weather
+Mars,March,weather
+Avril,April,weather
+Mai,May,weather
+Juin,June,weather
+Juillet,July,weather
+Août,August,weather
+Septembre,September,weather
+Octobre,October,weather
+Novembre,November,weather
+Décembre,December,weather
+les saisons,seasons,weather
+les pays,countries,weather
+la météo,weather,weather
