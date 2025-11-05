@@ -41,8 +41,14 @@ INTERVALS = {
 # ----------------------------------------------------------------------
 class Card:
     def __init__(self, french: str, english: str, category: Optional[str] = None, gender: Optional[str] = None):
-        self.french = french.strip()
-        self.english = english.strip()
+        # Support multiple translations separated by '|'
+        self.french_variants = [f.strip() for f in french.split('|')]
+        self.english_variants = [e.strip() for e in english.split('|')]
+
+        # Keep primary versions for display and key generation
+        self.french = self.french_variants[0]
+        self.english = self.english_variants[0]
+
         self.category = category.strip() if category else None
         self.gender = gender.strip().lower() if gender else None
         self.key = f"{self.french}|{self.english}"
@@ -210,23 +216,38 @@ def similarity_ratio(s1: str, s2: str) -> float:
     return SequenceMatcher(None, s1.lower(), s2.lower()).ratio()
 
 
-def check_answer(user_input: str, correct: str, mode: str) -> tuple[bool, float]:
+def check_answer(user_input: str, correct_variants: list[str], mode: str) -> tuple[bool, float]:
     """
     Check if answer is correct based on mode
+    Supports multiple valid answers (checks against all variants)
     Returns (is_correct, similarity_score)
     """
     user = user_input.strip().lower()
-    answer = correct.strip().lower()
 
-    if mode == "exact":
-        return (user == answer, 1.0 if user == answer else 0.0)
-    elif mode == "typing":
-        # Allow 85% similarity for typos
-        sim = similarity_ratio(user, answer)
-        return (sim >= 0.85, sim)
-    else:
-        # Multiple choice - exact match required
-        return (user == answer, 1.0 if user == answer else 0.0)
+    # Check against all valid variants
+    best_similarity = 0.0
+    is_correct = False
+
+    for correct in correct_variants:
+        answer = correct.strip().lower()
+
+        if mode == "exact":
+            if user == answer:
+                return (True, 1.0)
+            best_similarity = max(best_similarity, 1.0 if user == answer else 0.0)
+        elif mode == "typing":
+            # Allow 85% similarity for typos
+            sim = similarity_ratio(user, answer)
+            best_similarity = max(best_similarity, sim)
+            if sim >= 0.85:
+                is_correct = True
+        else:
+            # Multiple choice - exact match required
+            if user == answer:
+                return (True, 1.0)
+            best_similarity = max(best_similarity, 1.0 if user == answer else 0.0)
+
+    return (is_correct, best_similarity)
 
 
 # ----------------------------------------------------------------------
@@ -238,11 +259,15 @@ def multiple_choice_question(card: Card, all_cards: list[Card], lang_direction: 
     if lang_direction == "english":
         question = card.french
         correct_answer = card.english
-        wrong_pool = [c.english for c in all_cards if c.english != correct_answer]
+        correct_variants = card.english_variants
+        # Exclude all variants of the current card from wrong pool
+        wrong_pool = [c.english for c in all_cards if c.french != card.french]
     else:
         question = card.english
         correct_answer = card.french
-        wrong_pool = [c.french for c in all_cards if c.french != correct_answer]
+        correct_variants = card.french_variants
+        # Exclude all variants of the current card from wrong pool
+        wrong_pool = [c.french for c in all_cards if c.english != card.english]
 
     # Pick 3 random wrong answers
     wrong_answers = random.sample(wrong_pool, min(3, len(wrong_pool)))
@@ -261,12 +286,18 @@ def multiple_choice_question(card: Card, all_cards: list[Card], lang_direction: 
             if choice in "1234":
                 idx = int(choice) - 1
                 selected = options[idx]
-                is_correct = selected == correct_answer
+                # Check against all valid variants
+                is_correct = selected.lower() in [v.lower() for v in correct_variants]
 
                 if is_correct:
                     print("✅ Correct!")
                 else:
-                    print(f"❌ Wrong. Correct answer: {correct_answer}")
+                    # Show all valid answers if multiple exist
+                    if len(correct_variants) > 1:
+                        all_answers = " / ".join(correct_variants)
+                        print(f"❌ Wrong. Correct answers: {all_answers}")
+                    else:
+                        print(f"❌ Wrong. Correct answer: {correct_answer}")
 
                 return is_correct
         except (ValueError, IndexError):
@@ -281,9 +312,11 @@ def typing_question(card: Card, lang_direction: str, mode: str, time_limit: Opti
     if lang_direction == "english":
         question = card.french
         correct_answer = card.english
+        correct_variants = card.english_variants
     else:
         question = card.english
         correct_answer = card.french
+        correct_variants = card.french_variants
 
     print(f"Translate: {question}")
 
@@ -297,11 +330,16 @@ def typing_question(card: Card, lang_direction: str, mode: str, time_limit: Opti
 
     if time_limit and elapsed > time_limit:
         print(f"⏰ Time's up! ({elapsed:.1f}s)")
-        print(f"Correct answer: {correct_answer}")
+        # Show all valid answers if multiple exist
+        if len(correct_variants) > 1:
+            all_answers = " / ".join(correct_variants)
+            print(f"Correct answers: {all_answers}")
+        else:
+            print(f"Correct answer: {correct_answer}")
         return False, 0
 
-    # Check answer
-    is_correct, similarity = check_answer(user_input, correct_answer, mode)
+    # Check answer against all variants
+    is_correct, similarity = check_answer(user_input, correct_variants, mode)
 
     if is_correct:
         if similarity >= 0.95 and (not time_limit or elapsed < time_limit * 0.5):
@@ -314,7 +352,12 @@ def typing_question(card: Card, lang_direction: str, mode: str, time_limit: Opti
             print(f"✅ Close enough! ({similarity*100:.0f}% match) (Hard)")
             return True, 1
     else:
-        print(f"❌ Wrong. Correct answer: {correct_answer}")
+        # Show all valid answers if multiple exist
+        if len(correct_variants) > 1:
+            all_answers = " / ".join(correct_variants)
+            print(f"❌ Wrong. Correct answers: {all_answers}")
+        else:
+            print(f"❌ Wrong. Correct answer: {correct_answer}")
         if similarity > 0.5:
             print(f"   (You were {similarity*100:.0f}% close)")
         return False, 0
