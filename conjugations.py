@@ -45,6 +45,16 @@ PRESENT = {
     "tomber":    ["tombe", "tombes", "tombe", "tombons", "tombez", "tombent"],
     "connaître": ["connais", "connais", "connait", "connaissons", "connaissez", "connaissent"],
     "finir":     ["finis", "finis", "finit", "finissons", "finissez", "finissent"],
+    "choisir":   ["choisis", "choisis", "choisit", "choisissons", "choisissez", "choisissent"],
+    "réussir":   ["réussis", "réussis", "réussit", "réussissons", "réussissez", "réussissent"],
+    "remplir":   ["remplis", "remplis", "remplit", "remplissons", "remplissez", "remplissent"],
+    "réfléchir": ["réfléchis", "réfléchis", "réfléchit", "réfléchissons", "réfléchissez", "réfléchissent"],
+    "obéir":     ["obéis", "obéis", "obéit", "obéissons", "obéissez", "obéissent"],
+    "grandir":   ["grandis", "grandis", "grandit", "grandissons", "grandissez", "grandissent"],
+    "applaudir": ["applaudis", "applaudis", "applaudit", "applaudissons", "applaudissez", "applaudissent"],
+    "établir":   ["établis", "établis", "établit", "établissons", "établissez", "établissent"],
+    "bâtir":     ["bâtis", "bâtis", "bâtit", "bâtissons", "bâtissez", "bâtissent"],
+    "agir":      ["agis", "agis", "agit", "agissons", "agissez", "agissent"],
 }
 
 FUTURE = {
@@ -79,6 +89,16 @@ FUTURE = {
     "tomber":    ["tomberai", "tomberas", "tombera", "tomberons", "tomberez", "tomberont"],
     "connaître": ["connaîtrai", "connaîtras", "connaîtra", "connaîtrons", "connaîtrez", "connaîtront"],
     "finir":     ["finirai", "finiras", "finira", "finirons", "finirez", "finiront"],
+    "choisir":   ["choisirai", "choisiras", "choisira", "choisirons", "choisirez", "choisiront"],
+    "réussir":   ["réussirai", "réussiras", "réussira", "réussirons", "réussirez", "réussiront"],
+    "remplir":   ["remplirai", "rempliras", "remplira", "remplirons", "remplirez", "rempliront"],
+    "réfléchir": ["réfléchirai", "réfléchiras", "réfléchira", "réfléchirons", "réfléchirez", "réfléchiront"],
+    "obéir":     ["obéirai", "obéiras", "obéira", "obéirons", "obéirez", "obéiront"],
+    "grandir":   ["grandirai", "grandiras", "grandira", "grandirons", "grandirez", "grandiront"],
+    "applaudir": ["applaudirai", "applaudiras", "applaudira", "applaudirons", "applaudirez", "applaudiront"],
+    "établir":   ["établirai", "établiras", "établira", "établirons", "établirez", "établiront"],
+    "bâtir":     ["bâtirai", "bâtiras", "bâtira", "bâtirons", "bâtirez", "bâtiront"],
+    "agir":      ["agirai", "agiras", "agira", "agirons", "agirez", "agiront"],
 }
 
 PAST_COMPOSE = {
@@ -113,6 +133,16 @@ PAST_COMPOSE = {
     "tomber":    ("être",   ["tombé",   "tombé",   "tombé",   "tombés",  "tombés",  "tombés"]),
     "connaître": ("avoir",  ["connu",   "connu",   "connu",   "connus",  "connus",  "connus"]),
     "finir":     ("avoir",  ["fini",    "fini",    "fini",    "finis",   "finis",   "finis"]),
+    "choisir":   ("avoir",  ["choisi",  "choisi",  "choisi",  "choisis", "choisis", "choisis"]),
+    "réussir":   ("avoir",  ["réussi",  "réussi",  "réussi",  "réussis", "réussis", "réussis"]),
+    "remplir":   ("avoir",  ["rempli",  "rempli",  "rempli",  "remplis", "remplis", "remplis"]),
+    "réfléchir": ("avoir",  ["réfléchi","réfléchi","réfléchi","réfléchis","réfléchis","réfléchis"]),
+    "obéir":     ("avoir",  ["obéi",    "obéi",    "obéi",    "obéis",   "obéis",   "obéis"]),
+    "grandir":   ("avoir",  ["grandi",  "grandi",  "grandi",  "grandis", "grandis", "grandis"]),
+    "applaudir": ("avoir",  ["applaudi","applaudi","applaudi","applaudis","applaudis","applaudis"]),
+    "établir":   ("avoir",  ["établi",  "établi",  "établi",  "établis", "établis", "établis"]),
+    "bâtir":     ("avoir",  ["bâti",    "bâti",    "bâti",    "bâtis",   "bâtis",   "bâtis"]),
+    "agir":      ("avoir",  ["agi",     "agi",     "agi",     "agis",    "agis",    "agis"]),
 }
 
 PRONOUNS = ["je", "tu", "il/elle/on", "nous", "vous", "ils/elles"]
@@ -149,6 +179,26 @@ VERB_TRANSLATIONS = {
     "tomber":    "to fall",
     "connaître": "to know (people/places)",
     "finir":     "to finish",
+    "choisir":   "to choose",
+    "réussir":   "to succeed",
+    "remplir":   "to fill",
+    "réfléchir": "to reflect / to think",
+    "obéir":     "to obey",
+    "grandir":   "to grow",
+    "applaudir": "to applaud / to clap",
+    "établir":   "to establish",
+    "bâtir":     "to build",
+    "agir":      "to act",
+}
+
+VERB_TYPES = {
+    "regular_er": ["donner", "trouver", "penser", "parler", "aimer",
+                   "passer", "demander", "laisser", "porter", "rester", "tomber"],
+    "regular_ir": ["finir", "choisir", "réussir", "remplir", "réfléchir",
+                   "obéir", "grandir", "applaudir", "établir", "bâtir", "agir"],
+    "irregular": ["être", "avoir", "faire", "dire", "aller", "voir", "savoir",
+                  "pouvoir", "vouloir", "venir", "devoir", "prendre", "mettre",
+                  "croire", "tenir", "appeler", "sortir", "vivre", "connaître"],
 }
 
 # ----------------------------------------------------------------------
@@ -179,6 +229,28 @@ def choose_tense() -> str:
         if c in {"1", "2", "3"}:
             return {"1": "present", "2": "future", "3": "past"}[c]
         print("Choisissez 1, 2 ou 3.")
+
+
+def choose_verb_type() -> list:
+    """Choose which type of verbs to practice. Returns a list of verbs."""
+    print("\nQuel type de verbes voulez-vous réviser ?")
+    print("  1 – Regular -ER verbs (11 verbs)")
+    print("  2 – Regular -IR verbs (11 verbs)")
+    print("  3 – Irregular verbs (18 verbs)")
+    print("  4 – All verbs (40 verbs)")
+    while True:
+        c = input("Entrez le numéro (ou q pour quitter) : ").strip().lower()
+        if c == "q":
+            sys.exit(0)
+        if c == "1":
+            return VERB_TYPES["regular_er"]
+        elif c == "2":
+            return VERB_TYPES["regular_ir"]
+        elif c == "3":
+            return VERB_TYPES["irregular"]
+        elif c == "4":
+            return list(PRESENT.keys())
+        print("Choisissez 1, 2, 3 ou 4.")
 
 
 def ask_one_verb(infinitive: str, tense: str):
@@ -212,9 +284,12 @@ def main():
     print("=== Test de conjugaison française (présent, futur, passé) ===")
     print("Tapez 'q' à tout moment pour quitter.\n")
 
+    # Choose verb type once at the start
+    verb_list = choose_verb_type()
+
     while True:
         tense = choose_tense()
-        infinitive = random.choice(list(PRESENT.keys()))   # same keys across tables
+        infinitive = random.choice(verb_list)
 
         try:
             ok, qty = ask_one_verb(infinitive, tense)
