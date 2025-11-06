@@ -132,7 +132,12 @@ Practice verb conjugations:
 python3 conjugations.py
 ```
 
-Supports 12 common French verbs across 3 tenses (present, future, passé composé).
+Supports 48 French verbs across 3 tenses:
+- **Present tense**: All 48 verbs
+- **Future simple**: All 48 verbs
+- **Passé composé**: All 48 verbs
+
+Includes essential verbs (être, avoir, aller, faire), common regular verbs (-er, -ir), and important irregular verbs (voir, dire, prendre, mettre, etc.).
 
 ## Project Structure
 
@@ -179,7 +184,7 @@ french-flashcards/
 
 ### Conjugation Trainer (`conjugations.py`)
 - Practice verb conjugations (present, future, pass� compos�)
-- 12 common verbs included
+- 48 verbs included (essential, regular -er/-ir, and irregular)
 - Interactive tense selection
 
 ## Vocabulary
