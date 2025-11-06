@@ -10,3 +10,6 @@ wheels/
 .venv
 .flashcard_data/progress.json
 missed.csv
+
+# Claude Code local settings
+.claude/*.local.json
