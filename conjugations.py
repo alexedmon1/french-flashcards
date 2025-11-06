@@ -55,6 +55,13 @@ PRESENT = {
     "établir":   ["établis", "établis", "établit", "établissons", "établissez", "établissent"],
     "bâtir":     ["bâtis", "bâtis", "bâtit", "bâtissons", "bâtissez", "bâtissent"],
     "agir":      ["agis", "agis", "agit", "agissons", "agissez", "agissent"],
+    "boire":     ["bois", "bois", "boit", "buvons", "buvez", "boivent"],
+    "écrire":    ["écris", "écris", "écrit", "écrivons", "écrivez", "écrivent"],
+    "lire":      ["lis", "lis", "lit", "lisons", "lisez", "lisent"],
+    "partir":    ["pars", "pars", "part", "partons", "partez", "partent"],
+    "dormir":    ["dors", "dors", "dort", "dormons", "dormez", "dorment"],
+    "ouvrir":    ["ouvre", "ouvres", "ouvre", "ouvrons", "ouvrez", "ouvrent"],
+    "recevoir":  ["reçois", "reçois", "reçoit", "recevons", "recevez", "reçoivent"],
 }
 
 FUTURE = {
@@ -99,6 +106,13 @@ FUTURE = {
     "établir":   ["établirai", "établiras", "établira", "établirons", "établirez", "établiront"],
     "bâtir":     ["bâtirai", "bâtiras", "bâtira", "bâtirons", "bâtirez", "bâtiront"],
     "agir":      ["agirai", "agiras", "agira", "agirons", "agirez", "agiront"],
+    "boire":     ["boirai", "boiras", "boira", "boirons", "boirez", "boiront"],
+    "écrire":    ["écrirai", "écriras", "écrira", "écrirons", "écrirez", "écriront"],
+    "lire":      ["lirai", "liras", "lira", "lirons", "lirez", "liront"],
+    "partir":    ["partirai", "partiras", "partira", "partirons", "partirez", "partiront"],
+    "dormir":    ["dormirai", "dormiras", "dormira", "dormirons", "dormirez", "dormiront"],
+    "ouvrir":    ["ouvrirai", "ouvriras", "ouvrira", "ouvrirons", "ouvrirez", "ouvriront"],
+    "recevoir":  ["recevrai", "recevras", "recevra", "recevrons", "recevrez", "recevront"],
 }
 
 PAST_COMPOSE = {
@@ -143,6 +157,13 @@ PAST_COMPOSE = {
     "établir":   ("avoir",  ["établi",  "établi",  "établi",  "établis", "établis", "établis"]),
     "bâtir":     ("avoir",  ["bâti",    "bâti",    "bâti",    "bâtis",   "bâtis",   "bâtis"]),
     "agir":      ("avoir",  ["agi",     "agi",     "agi",     "agis",    "agis",    "agis"]),
+    "boire":     ("avoir",  ["bu",      "bu",      "bu",      "bus",     "bus",     "bus"]),
+    "écrire":    ("avoir",  ["écrit",   "écrit",   "écrit",   "écrits",  "écrits",  "écrits"]),
+    "lire":      ("avoir",  ["lu",      "lu",      "lu",      "lus",     "lus",     "lus"]),
+    "partir":    ("être",   ["parti",   "parti",   "parti",   "partis",  "partis",  "partis"]),
+    "dormir":    ("avoir",  ["dormi",   "dormi",   "dormi",   "dormis",  "dormis",  "dormis"]),
+    "ouvrir":    ("avoir",  ["ouvert",  "ouvert",  "ouvert",  "ouverts", "ouverts", "ouverts"]),
+    "recevoir":  ("avoir",  ["reçu",    "reçu",    "reçu",    "reçus",   "reçus",   "reçus"]),
 }
 
 PRONOUNS = ["je", "tu", "il/elle/on", "nous", "vous", "ils/elles"]
@@ -189,6 +210,13 @@ VERB_TRANSLATIONS = {
     "établir":   "to establish",
     "bâtir":     "to build",
     "agir":      "to act",
+    "boire":     "to drink",
+    "écrire":    "to write",
+    "lire":      "to read",
+    "partir":    "to leave / to depart",
+    "dormir":    "to sleep",
+    "ouvrir":    "to open",
+    "recevoir":  "to receive",
 }
 
 VERB_TYPES = {
@@ -198,7 +226,8 @@ VERB_TYPES = {
                    "obéir", "grandir", "applaudir", "établir", "bâtir", "agir"],
     "irregular": ["être", "avoir", "faire", "dire", "aller", "voir", "savoir",
                   "pouvoir", "vouloir", "venir", "devoir", "prendre", "mettre",
-                  "croire", "tenir", "appeler", "sortir", "vivre", "connaître"],
+                  "croire", "tenir", "appeler", "sortir", "vivre", "connaître",
+                  "boire", "écrire", "lire", "partir", "dormir", "ouvrir", "recevoir"],
 }
 
 # ----------------------------------------------------------------------
@@ -236,8 +265,8 @@ def choose_verb_type() -> list:
     print("\nQuel type de verbes voulez-vous réviser ?")
     print("  1 – Regular -ER verbs (11 verbs)")
     print("  2 – Regular -IR verbs (11 verbs)")
-    print("  3 – Irregular verbs (18 verbs)")
-    print("  4 – All verbs (40 verbs)")
+    print("  3 – Irregular verbs (25 verbs)")
+    print("  4 – All verbs (47 verbs)")
     while True:
         c = input("Entrez le numéro (ou q pour quitter) : ").strip().lower()
         if c == "q":
