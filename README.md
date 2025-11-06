@@ -270,6 +270,18 @@ maison,house,f
 table,table,f
 ```
 
+**With multiple translations** (using `|` separator):
+```csv
+bonjour,hello|hi|good morning
+merci,thank you|thanks
+au revoir,goodbye|bye|see you later
+```
+
+The program will accept any of the alternatives as correct! This is especially useful for:
+- Words with multiple valid translations
+- Formal vs. informal expressions
+- Regional variations
+
 **Master vocabulary format** (with categories):
 ```csv
 bonjour,hello,flashcards

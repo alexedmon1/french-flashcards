@@ -40,7 +40,10 @@ else:
 
 # ----------------------------------------------------------------------
 def load_cards(csv_path: Path) -> list[tuple[str, str]]:
-    """Read the CSV and return a list of (french, english) tuples."""
+    """
+    Read the CSV and return a list of (french, english) tuples.
+    Supports multiple translations separated by '|' character.
+    """
     if not csv_path.is_file():
         sys.exit(f"❌  Vocabulary file not found: {csv_path}")
 
@@ -60,9 +63,17 @@ def english_study(cards: list[tuple[str, str]]) -> list[tuple[str, str]]:
 
     print("\n=== French Flashcard Trainer ===\n")
     for idx, (fr, en) in enumerate(cards, start=1):
-        print(f"{idx}/{len(cards)} – French: {fr}")
+        # Support multiple French variants separated by '|'
+        french_variants = [f.strip() for f in fr.split('|')]
+        display_french = " / ".join(french_variants) if len(french_variants) > 1 else fr
+
+        # Support multiple English variants separated by '|'
+        english_variants = [e.strip() for e in en.split('|')]
+        display_english = " / ".join(english_variants) if len(english_variants) > 1 else en
+
+        print(f"{idx}/{len(cards)} – French: {display_french}")
         input(SHOW_ANSWER_PROMPT)       # Wait for user to press Enter
-        print(f"   → English: {en}")
+        print(f"   → English: {display_english}")
 
         correct = input(REPEAT_PROMPT).strip().lower()
         if correct != "y":
@@ -79,9 +90,17 @@ def french_study(cards: list[tuple[str, str]]) -> list[tuple[str, str]]:
 
     print("\n=== Entraîneur de cartes mémoire en français ===\n")
     for idx, (fr, en) in enumerate(cards, start=1):
-        print(f"{idx}/{len(cards)} – L'anglais: {en}")
+        # Support multiple English variants separated by '|'
+        english_variants = [e.strip() for e in en.split('|')]
+        display_english = " / ".join(english_variants) if len(english_variants) > 1 else en
+
+        # Support multiple French variants separated by '|'
+        french_variants = [f.strip() for f in fr.split('|')]
+        display_french = " / ".join(french_variants) if len(french_variants) > 1 else fr
+
+        print(f"{idx}/{len(cards)} – L'anglais: {display_english}")
         input(SHOW_ANSWER_PROMPT)       # Wait for user to press Enter
-        print(f"   → Le français: {fr}")
+        print(f"   → Le français: {display_french}")
 
         correct = input(REPEAT_PROMPT).strip().lower()
         if correct != "y":
