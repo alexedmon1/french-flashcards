@@ -41,509 +41,504 @@ une chausette,a sock,clothing
 une chaussure,a shoe,clothing
 une botte,boot,clothing
 une sandale,a sandal,clothing
-bonjour,hello,flashcards
-oui,yes,flashcards
-non,no,flashcards
-le chat,cat,flashcards
-le chien,dog,flashcards
-﻿comme,"as, like",freq_words
-je,I,freq_words
-son,"his, her, sound",freq_words
-que,"that, what, than",freq_words
-il,"he, it",freq_words
-était,was,freq_words
-pour,for,freq_words
-sont,are,freq_words
-avec,with,freq_words
-ils,they,freq_words
-être,be,freq_words
-à,"at, to",freq_words
-un,"one, a, an",freq_words
-avoir,have,freq_words
-ce,this,freq_words
-partir,leave,freq_words
-par,"by, through",freq_words
-chaud,"hot, warm",freq_words
-mot,word,freq_words
-mais,but,freq_words
-certains,some,freq_words
-est,"is, east",freq_words
-vous,you,freq_words
-ou,or,freq_words
-eu,"had, got",freq_words
-la,the,freq_words
-de,"of, off",freq_words
-et,and,freq_words
-dans,in,freq_words
-nous,"we, us",freq_words
-boîte,"can, box",freq_words
-dehors,out,freq_words
-autre,other,freq_words
-étaient,were,freq_words
-qui,"which, who",freq_words
-faire,"do, make",freq_words
-leur,their,freq_words
-temps,time,freq_words
-si,"if, so",freq_words
-volonté,will,freq_words
-comment,how,freq_words
-chaque,each,freq_words
-dire,"tell, say",freq_words
-ne,does,freq_words
-ensemble,"set, together, whole",freq_words
-trois,three,freq_words
-vouloir,want,freq_words
-air,air,freq_words
-bien,well,freq_words
-aussi,also,freq_words
-jouer,play,freq_words
-petit,small,freq_words
-fin,"end, fine",freq_words
-mettre,put,freq_words
-maison,"house, home",freq_words
-lire,read,freq_words
-main,hand,freq_words
-port,port,freq_words
-grand,"large, big, great",freq_words
-épeler,spell,freq_words
-ajouter,add,freq_words
-même,"even, same",freq_words
-terre,"land, earth",freq_words
-ici,here,freq_words
-tel,such,freq_words
-suivre,follow,freq_words
-faut,must,freq_words
-acte,act,freq_words
-pourquoi,why,freq_words
-interroger,ask,freq_words
-hommes,men,freq_words
-changement,change,freq_words
-allé,go,freq_words
-lumière,light,freq_words
-gentil,kind,freq_words
-besoin,need,freq_words
-image,picture,freq_words
-essayer,try,freq_words
-encore,"again, still, yet",freq_words
-animal,animal,freq_words
-point,point,freq_words
-mère,mother,freq_words
-monde,world,freq_words
-près,near,freq_words
-construire,build,freq_words
-soi,self,freq_words
-père,father,freq_words
-tout,any,freq_words
-nouveau,new,freq_words
-travail,work,freq_words
-partie,part,freq_words
-prendre,take,freq_words
-obtenir,get,freq_words
-lieu,place,freq_words
-fabriqué,made,freq_words
-vivre,live,freq_words
-où,where,freq_words
-après,after,freq_words
-arrière,back,freq_words
-peu,"little, few",freq_words
-seulement,only,freq_words
-tour,"round, turn, ride",freq_words
-homme,man,freq_words
-année,year,freq_words
-montrer,show,freq_words
-tous,"every, all",freq_words
-bon,good,freq_words
-moi,me,freq_words
-donner,give,freq_words
-notre,our,freq_words
-sous,under,freq_words
-nom,"name, noun",freq_words
-très,very,freq_words
-juste,just,freq_words
-forme,"form, shape",freq_words
-phrase,sentence,freq_words
-penser,think,freq_words
-aider,help,freq_words
-faible,low,freq_words
-ligne,line,freq_words
-différer,differ,freq_words
-cause,cause,freq_words
-beaucoup,"much, many",freq_words
-signifier,mean,freq_words
-avant,"before, front",freq_words
-déménagement,(house) move,freq_words
-droit,right,freq_words
-garçon,boy,freq_words
-vieux,old,freq_words
-trop,too,freq_words
-elle,she,freq_words
-là,there,freq_words
-quand,when,freq_words
-utiliser,use,freq_words
-votre,your,freq_words
-manière,way,freq_words
-sur,"on, about, over",freq_words
-puis,then,freq_words
-les,them,freq_words
-écrire,write,freq_words
-voudrais,would,freq_words
-ces,these,freq_words
-long,long,freq_words
-chose,thing,freq_words
-voir,see,freq_words
-lui,him,freq_words
-deux,two,freq_words
-a,has,freq_words
-regarder,"look, watch",freq_words
-jour,day,freq_words
-pourrait,could,freq_words
-aller,go,freq_words
-venir,come,freq_words
-fait,"did, fact",freq_words
-nombre,number,freq_words
-aucun,no,freq_words
-plus,"more, most",freq_words
-personnes,people,freq_words
-ma,my,freq_words
-savoir,know,freq_words
-eau,water,freq_words
-appel,call,freq_words
-première,first,freq_words
-peut,may,freq_words
-vers,"toward, towards",freq_words
-côté,side,freq_words
-été,"been, summer",freq_words
-maintenant,now,freq_words
-trouver,find,freq_words
-tête,head,freq_words
-supporter,stand,freq_words
-propre,own,freq_words
-page,page,freq_words
-devrait,should,freq_words
-pays,country,freq_words
-trouvé,found,freq_words
-réponse,answer,freq_words
-école,school,freq_words
-croître,grow,freq_words
-étude,study,freq_words
-apprendre,learn,freq_words
-usine,factory,freq_words
-couvercle,cover,freq_words
-nourriture,food,freq_words
-soleil,sun,freq_words
-quatre,four,freq_words
-entre,"between, among",freq_words
-état,state,freq_words
-garder,keep,freq_words
-œil,eye,freq_words
-jamais,"never, ever",freq_words
-dernier,last,freq_words
-laisser,"let, leave",freq_words
-pensée,thought,freq_words
-ville,"city, town",freq_words
-arbre,tree,freq_words
-traverser,cross,freq_words
-ferme,farm,freq_words
-dur,hard,freq_words
-début,start,freq_words
-puissance,"might, power",freq_words
-histoire,story,freq_words
-scie,saw,freq_words
-loin,far,freq_words
-mer,sea,freq_words
-tirer,"draw, pull",freq_words
-gauche,left,freq_words
-tard,late,freq_words
-courir,run,freq_words
-presse,press,freq_words
-proche,close,freq_words
-nuit,night,freq_words
-réel,real,freq_words
-vie,life,freq_words
-nord,north,freq_words
-livre,"book, pound",freq_words
-porter,carry,freq_words
-a pris,took,freq_words
-science,science,freq_words
-manger,eat,freq_words
-chambre,room,freq_words
-ami,friend,freq_words
-a commencé,began,freq_words
-idée,idea,freq_words
-poisson,fish,freq_words
-montagne,mountain,freq_words
-arrêtez,stop,freq_words
-base,base,freq_words
-entendre,hear,freq_words
-cheval,horse,freq_words
-couper,cut,freq_words
-sûr,sure,freq_words
-couleur,color,freq_words
-face,face,freq_words
-bois,wood,freq_words
-principal,main,freq_words
-ouvert,open,freq_words
-paraître,seem,freq_words
-suivant,next,freq_words
-blanc,white,freq_words
-enfants,children,freq_words
-commencer,begin,freq_words
-marcher,walk,freq_words
-exemple,example,freq_words
-facilité,ease,freq_words
-papier,paper,freq_words
-groupe,group,freq_words
-toujours,always,freq_words
-musique,music,freq_words
-ceux,those,freq_words
-marque,mark,freq_words
-souvent,often,freq_words
-lettre,letter,freq_words
-mile,mile,freq_words
-rivière,river,freq_words
-voiture,car,freq_words
-pieds,feet,freq_words
-soins,care,freq_words
-deuxième,second,freq_words
-assez,enough,freq_words
-plaine,plain,freq_words
-fille,girl,freq_words
-habituel,usual,freq_words
-jeune,young,freq_words
-prêt,ready,freq_words
-au-dessus,above,freq_words
-rouge,red,freq_words
-liste,list,freq_words
-sentir,feel,freq_words
-parler,"talk, speak",freq_words
-oiseau,bird,freq_words
-bientôt,soon,freq_words
-corps,body,freq_words
-chien,dog,freq_words
-famille,family,freq_words
-direct,direct,freq_words
-pose,pose,freq_words
-chanson,song,freq_words
-mesurer,measure,freq_words
-porte,door,freq_words
-produit,product,freq_words
-noir,black,freq_words
-court,short,freq_words
-chiffre,numeral,freq_words
-classe,class,freq_words
-vent,wind,freq_words
-question,"question, matter",freq_words
-arriver,happen,freq_words
-complète,complete,freq_words
-navire,ship,freq_words
-zone,area,freq_words
-moitié,half,freq_words
-rock,rock,freq_words
-ordre,order,freq_words
-feu,fire,freq_words
-sud,south,freq_words
-problème,problem,freq_words
-pièce,piece,freq_words
-dit,"told, said",freq_words
-savait,knew,freq_words
-passer,pass,freq_words
-depuis,since,freq_words
-haut,"top, high",freq_words
-roi,king,freq_words
-rue,street,freq_words
-pouce,inch,freq_words
-multiplier,multiply,freq_words
-rien,nothing,freq_words
-cours,course,freq_words
-rester,stay,freq_words
-roue,wheel,freq_words
-plein,full,freq_words
-force,force,freq_words
-bleu,blue,freq_words
-objet,object,freq_words
-décider,decide,freq_words
-surface,surface,freq_words
-profond,deep,freq_words
-lune,moon,freq_words
-île,island,freq_words
-pied,foot,freq_words
-système,system,freq_words
-occupé,busy,freq_words
-test,test,freq_words
-record,record,freq_words
-bateau,boat,freq_words
-commun,common,freq_words
-or,gold,freq_words
-possible,possible,freq_words
-plan,plan,freq_words
-place,"space, room",freq_words
-sec,dry,freq_words
-se demander,wonder,freq_words
-rire,laugh,freq_words
-mille,thousand,freq_words
-vérifier,check,freq_words
-jeu,game,freq_words
-assimiler,assimilate,freq_words
-manquer,miss,freq_words
-apporté,brought,freq_words
-chaleur,heat,freq_words
-neige,snow,freq_words
-pneu,tire,freq_words
-apporter,bring,freq_words
-lointain,distant,freq_words
-remplir,fill,freq_words
-peindre,paint,freq_words
-langue,"language, tongue",freq_words
-unité,unit,freq_words
-certain,certain,freq_words
-voler,fly,freq_words
-tomber,fall,freq_words
-conduire,lead,freq_words
-cri,cry,freq_words
-sombre,dark,freq_words
-machine,machine,freq_words
-note,note,freq_words
-patienter,wait,freq_words
-figure,figure,freq_words
-étoile,star,freq_words
-domaine,field,freq_words
-se reposer,rest,freq_words
-correct,correct,freq_words
-capable,able,freq_words
-terminé,done,freq_words
-beauté,beauty,freq_words
-entraînement,training,freq_words
-résisté,stood up,freq_words
-contenir,contain,freq_words
-enseigner,teach,freq_words
-semaine,week,freq_words
-finale,final,freq_words
-donné,gave,freq_words
-vert,green,freq_words
-oh,oh,freq_words
-rapide,"quick, fast",freq_words
-développer,develop,freq_words
-océan,ocean,freq_words
-gratuit,free,freq_words
-minute,minute,freq_words
-fort,strong,freq_words
-spécial,special,freq_words
-esprit,mind,freq_words
-derrière,behind,freq_words
-clair,clear,freq_words
-queue,tail,freq_words
-produire,produce,freq_words
-espace,space,freq_words
-entendu,heard,freq_words
-meilleur,best,freq_words
-heure,hour,freq_words
-mieux,better,freq_words
-vrai,TRUE,freq_words
-pendant,during,freq_words
-cent,hundred,freq_words
-cinq,five,freq_words
-rappeler,remember,freq_words
-étape,step,freq_words
-tôt,early,freq_words
-tenir,hold,freq_words
-ouest,west,freq_words
-sol,ground,freq_words
-intérêt,interest,freq_words
-atteindre,reach,freq_words
-verbe,verb,freq_words
-chanter,sing,freq_words
-écouter,listen,freq_words
-six,six,freq_words
-table,table,freq_words
-voyage,travel,freq_words
-moins,less,freq_words
-matin,morning,freq_words
-dix,ten,freq_words
-simple,simple,freq_words
-plusieurs,several,freq_words
-voyelle,vowel,freq_words
-guerre,war,freq_words
-poser,lay,freq_words
-contre,against,freq_words
-modèle,pattern,freq_words
-lent,slow,freq_words
-centre,center,freq_words
-amour,love,freq_words
-personne,person,freq_words
-argent,money,freq_words
-servir,serve,freq_words
-apparaître,appear,freq_words
-route,road,freq_words
-carte,map,freq_words
-pluie,rain,freq_words
-règle,rule,freq_words
-gouverner,govern,freq_words
-froid,cold,freq_words
-avis,notice,freq_words
-voix,voice,freq_words
-énergie,energy,freq_words
-chasse,hunt,freq_words
-probable,probable,freq_words
-lit,bed,freq_words
-frère,brother,freq_words
-œuf,egg,freq_words
-cellule,cell,freq_words
-croire,believe,freq_words
-peut-être,perhaps,freq_words
-choisir,pick,freq_words
-soudain,sudden,freq_words
-compter,count,freq_words
-carré,square,freq_words
-raison,reason,freq_words
-longueur,length,freq_words
-représenter,represent,freq_words
-art,art,freq_words
-sujet,subject,freq_words
-région,region,freq_words
-taille,size,freq_words
-varier,vary,freq_words
-régler,settle,freq_words
-poids,weight,freq_words
-général,general,freq_words
-glace,ice,freq_words
-cercle,circle,freq_words
-paire,pair,freq_words
-inclure,include,freq_words
-fracture,divide,freq_words
-syllabe,syllable,freq_words
-feutre,felt,freq_words
-grandiose,grand,freq_words
-balle,ball,freq_words
-vague,wave,freq_words
-tomber,drop,freq_words
-cœur,heart,freq_words
-présent,present,freq_words
-lourd,heavy,freq_words
-danse,dance,freq_words
-moteur,engine,freq_words
-position,position,freq_words
-bras,arm,freq_words
-large,wide,freq_words
-voile,sail,freq_words
-matériel,material,freq_words
-fraction,fraction,freq_words
-forêt,forest,freq_words
-s’asseoir,sit,freq_words
-course,race,freq_words
-fenêtre,window,freq_words
-magasin,store,freq_words
-train,train,freq_words
-sommeil,sleep,freq_words
-prouver,prove,freq_words
-seul,lone,freq_words
-jambe,leg,freq_words
-exercice,exercise,freq_words
-mur,wall,freq_words
-capture,catch,freq_words
-monture,mount,freq_words
-souhaiter,wish,freq_words
-ciel,sky,freq_words
-conseil,board,freq_words
+﻿comme,"as, like",common
+je,I,common
+son,"his, her, sound",common
+que,"that, what, than",common
+il,"he, it",common
+était,was,common
+pour,for,common
+sont,are,common
+avec,with,common
+ils,they,common
+être,be,common
+à,"at, to",common
+un,"one, a, an",common
+avoir,have,common
+ce,this,common
+partir,leave,common
+par,"by, through",common
+chaud,"hot, warm",common
+mot,word,common
+mais,but,common
+certains,some,common
+est,"is, east",common
+vous,you,common
+ou,or,common
+eu,"had, got",common
+la,the,common
+de,"of, off",common
+et,and,common
+dans,in,common
+nous,"we, us",common
+boîte,"can, box",common
+dehors,out,common
+autre,other,common
+étaient,were,common
+qui,"which, who",common
+faire,"do, make",common
+leur,their,common
+temps,time,common
+si,"if, so",common
+volonté,will,common
+comment,how,common
+chaque,each,common
+dire,"tell, say",common
+ne,does,common
+ensemble,"set, together, whole",common
+trois,three,common
+vouloir,want,common
+air,air,common
+bien,well,common
+aussi,also,common
+jouer,play,common
+petit,small,common
+fin,"end, fine",common
+mettre,put,common
+maison,"house, home",common
+lire,read,common
+main,hand,common
+port,port,common
+grand,"large, big, great",common
+épeler,spell,common
+ajouter,add,common
+même,"even, same",common
+terre,"land, earth",common
+ici,here,common
+tel,such,common
+suivre,follow,common
+faut,must,common
+acte,act,common
+pourquoi,why,common
+interroger,ask,common
+hommes,men,common
+changement,change,common
+allé,go,common
+lumière,light,common
+gentil,kind,common
+besoin,need,common
+image,picture,common
+essayer,try,common
+encore,"again, still, yet",common
+animal,animal,common
+point,point,common
+mère,mother,common
+monde,world,common
+près,near,common
+construire,build,common
+soi,self,common
+père,father,common
+tout,any,common
+nouveau,new,common
+travail,work,common
+partie,part,common
+prendre,take,common
+obtenir,get,common
+lieu,place,common
+fabriqué,made,common
+vivre,live,common
+où,where,common
+après,after,common
+arrière,back,common
+peu,"little, few",common
+seulement,only,common
+tour,"round, turn, ride",common
+homme,man,common
+année,year,common
+montrer,show,common
+tous,"every, all",common
+bon,good,common
+moi,me,common
+donner,give,common
+notre,our,common
+sous,under,common
+nom,"name, noun",common
+très,very,common
+juste,just,common
+forme,"form, shape",common
+phrase,sentence,common
+penser,think,common
+aider,help,common
+faible,low,common
+ligne,line,common
+différer,differ,common
+cause,cause,common
+beaucoup,"much, many",common
+signifier,mean,common
+avant,"before, front",common
+déménagement,(house) move,common
+droit,right,common
+garçon,boy,common
+vieux,old,common
+trop,too,common
+elle,she,common
+là,there,common
+quand,when,common
+utiliser,use,common
+votre,your,common
+manière,way,common
+sur,"on, about, over",common
+puis,then,common
+les,them,common
+écrire,write,common
+voudrais,would,common
+ces,these,common
+long,long,common
+chose,thing,common
+voir,see,common
+lui,him,common
+deux,two,common
+a,has,common
+regarder,"look, watch",common
+jour,day,common
+pourrait,could,common
+aller,go,common
+venir,come,common
+fait,"did, fact",common
+nombre,number,common
+aucun,no,common
+plus,"more, most",common
+personnes,people,common
+ma,my,common
+savoir,know,common
+eau,water,common
+appel,call,common
+première,first,common
+peut,may,common
+vers,"toward, towards",common
+côté,side,common
+été,"been, summer",common
+maintenant,now,common
+trouver,find,common
+tête,head,common
+supporter,stand,common
+propre,own,common
+page,page,common
+devrait,should,common
+pays,country,common
+trouvé,found,common
+réponse,answer,common
+école,school,common
+croître,grow,common
+étude,study,common
+apprendre,learn,common
+usine,factory,common
+couvercle,cover,common
+nourriture,food,common
+soleil,sun,common
+quatre,four,common
+entre,"between, among",common
+état,state,common
+garder,keep,common
+œil,eye,common
+jamais,"never, ever",common
+dernier,last,common
+laisser,"let, leave",common
+pensée,thought,common
+ville,"city, town",common
+arbre,tree,common
+traverser,cross,common
+ferme,farm,common
+dur,hard,common
+début,start,common
+puissance,"might, power",common
+histoire,story,common
+scie,saw,common
+loin,far,common
+mer,sea,common
+tirer,"draw, pull",common
+gauche,left,common
+tard,late,common
+courir,run,common
+presse,press,common
+proche,close,common
+nuit,night,common
+réel,real,common
+vie,life,common
+nord,north,common
+livre,"book, pound",common
+porter,carry,common
+a pris,took,common
+science,science,common
+manger,eat,common
+chambre,room,common
+ami,friend,common
+a commencé,began,common
+idée,idea,common
+poisson,fish,common
+montagne,mountain,common
+arrêtez,stop,common
+base,base,common
+entendre,hear,common
+cheval,horse,common
+couper,cut,common
+sûr,sure,common
+couleur,color,common
+face,face,common
+bois,wood,common
+principal,main,common
+ouvert,open,common
+paraître,seem,common
+suivant,next,common
+blanc,white,common
+enfants,children,common
+commencer,begin,common
+marcher,walk,common
+exemple,example,common
+facilité,ease,common
+papier,paper,common
+groupe,group,common
+toujours,always,common
+musique,music,common
+ceux,those,common
+marque,mark,common
+souvent,often,common
+lettre,letter,common
+mile,mile,common
+rivière,river,common
+voiture,car,common
+pieds,feet,common
+soins,care,common
+deuxième,second,common
+assez,enough,common
+plaine,plain,common
+fille,girl,common
+habituel,usual,common
+jeune,young,common
+prêt,ready,common
+au-dessus,above,common
+rouge,red,common
+liste,list,common
+sentir,feel,common
+parler,"talk, speak",common
+oiseau,bird,common
+bientôt,soon,common
+corps,body,common
+chien,dog,common
+famille,family,common
+direct,direct,common
+pose,pose,common
+chanson,song,common
+mesurer,measure,common
+porte,door,common
+produit,product,common
+noir,black,common
+court,short,common
+chiffre,numeral,common
+classe,class,common
+vent,wind,common
+question,"question, matter",common
+arriver,happen,common
+complète,complete,common
+navire,ship,common
+zone,area,common
+moitié,half,common
+rock,rock,common
+ordre,order,common
+feu,fire,common
+sud,south,common
+problème,problem,common
+pièce,piece,common
+dit,"told, said",common
+savait,knew,common
+passer,pass,common
+depuis,since,common
+haut,"top, high",common
+roi,king,common
+rue,street,common
+pouce,inch,common
+multiplier,multiply,common
+rien,nothing,common
+cours,course,common
+rester,stay,common
+roue,wheel,common
+plein,full,common
+force,force,common
+bleu,blue,common
+objet,object,common
+décider,decide,common
+surface,surface,common
+profond,deep,common
+lune,moon,common
+île,island,common
+pied,foot,common
+système,system,common
+occupé,busy,common
+test,test,common
+record,record,common
+bateau,boat,common
+commun,common,common
+or,gold,common
+possible,possible,common
+plan,plan,common
+place,"space, room",common
+sec,dry,common
+se demander,wonder,common
+rire,laugh,common
+mille,thousand,common
+vérifier,check,common
+jeu,game,common
+assimiler,assimilate,common
+manquer,miss,common
+apporté,brought,common
+chaleur,heat,common
+neige,snow,common
+pneu,tire,common
+apporter,bring,common
+lointain,distant,common
+remplir,fill,common
+peindre,paint,common
+langue,"language, tongue",common
+unité,unit,common
+certain,certain,common
+voler,fly,common
+tomber,fall,common
+conduire,lead,common
+cri,cry,common
+sombre,dark,common
+machine,machine,common
+note,note,common
+patienter,wait,common
+figure,figure,common
+étoile,star,common
+domaine,field,common
+se reposer,rest,common
+correct,correct,common
+capable,able,common
+terminé,done,common
+beauté,beauty,common
+entraînement,training,common
+résisté,stood up,common
+contenir,contain,common
+enseigner,teach,common
+semaine,week,common
+finale,final,common
+donné,gave,common
+vert,green,common
+oh,oh,common
+rapide,"quick, fast",common
+développer,develop,common
+océan,ocean,common
+gratuit,free,common
+minute,minute,common
+fort,strong,common
+spécial,special,common
+esprit,mind,common
+derrière,behind,common
+clair,clear,common
+queue,tail,common
+produire,produce,common
+espace,space,common
+entendu,heard,common
+meilleur,best,common
+heure,hour,common
+mieux,better,common
+vrai,TRUE,common
+pendant,during,common
+cent,hundred,common
+cinq,five,common
+rappeler,remember,common
+étape,step,common
+tôt,early,common
+tenir,hold,common
+ouest,west,common
+sol,ground,common
+intérêt,interest,common
+atteindre,reach,common
+verbe,verb,common
+chanter,sing,common
+écouter,listen,common
+six,six,common
+table,table,common
+voyage,travel,common
+moins,less,common
+matin,morning,common
+dix,ten,common
+simple,simple,common
+plusieurs,several,common
+voyelle,vowel,common
+guerre,war,common
+poser,lay,common
+contre,against,common
+modèle,pattern,common
+lent,slow,common
+centre,center,common
+amour,love,common
+personne,person,common
+argent,money,common
+servir,serve,common
+apparaître,appear,common
+route,road,common
+carte,map,common
+pluie,rain,common
+règle,rule,common
+gouverner,govern,common
+froid,cold,common
+avis,notice,common
+voix,voice,common
+énergie,energy,common
+chasse,hunt,common
+probable,probable,common
+lit,bed,common
+frère,brother,common
+œuf,egg,common
+cellule,cell,common
+croire,believe,common
+peut-être,perhaps,common
+choisir,pick,common
+soudain,sudden,common
+compter,count,common
+carré,square,common
+raison,reason,common
+longueur,length,common
+représenter,represent,common
+art,art,common
+sujet,subject,common
+région,region,common
+taille,size,common
+varier,vary,common
+régler,settle,common
+poids,weight,common
+général,general,common
+glace,ice,common
+cercle,circle,common
+paire,pair,common
+inclure,include,common
+fracture,divide,common
+syllabe,syllable,common
+feutre,felt,common
+grandiose,grand,common
+balle,ball,common
+vague,wave,common
+tomber,drop,common
+cœur,heart,common
+présent,present,common
+lourd,heavy,common
+danse,dance,common
+moteur,engine,common
+position,position,common
+bras,arm,common
+large,wide,common
+voile,sail,common
+matériel,material,common
+fraction,fraction,common
+forêt,forest,common
+s’asseoir,sit,common
+course,race,common
+fenêtre,window,common
+magasin,store,common
+train,train,common
+sommeil,sleep,common
+prouver,prove,common
+seul,lone,common
+jambe,leg,common
+exercice,exercise,common
+mur,wall,common
+capture,catch,common
+monture,mount,common
+souhaiter,wish,common
+ciel,sky,common
+conseil,board,common
 la banque,bank,locations
 le bar,bar,locations
 la bibliothèque,library,locations
@@ -660,22 +655,22 @@ regardes des films ou des séries,to watch some movies or tv shows,routine
 voir des amis,to see some friends,routine
 aller au cinéma,to go to the cinema,routine
 jouer aux jeux vidéo,to play video games,routine
-lundi,monday,routine
-mardi,tuesday,routine
-mercredi,wednesday,routine
-jeudi,thursday,routine
-vendredi,friday,routine
-samedi,saturday,routine
-dimanche,sunday,routine
-aujourd’hui,today,routine
-hier,yesterday,routine
-demain,tomorrow,routine
-d’habitude,usually,routine
-parfois,sometimes,routine
-de temps en temps,sometimes,routine
-quelquefois,sometimes,routine
-rarement,rarely,routine
-jamais,never,routine
+lundi,monday,days
+mardi,tuesday,days
+mercredi,wednesday,days
+jeudi,thursday,days
+vendredi,friday,days
+samedi,saturday,days
+dimanche,sunday,days
+aujourd’hui,today,days
+hier,yesterday,days
+demain,tomorrow,days
+d’habitude,usually,prepositions
+parfois,sometimes,prepositions
+de temps en temps,sometimes,prepositions
+quelquefois,sometimes,prepositions
+rarement,rarely,prepositions
+jamais,never,prepositions
 ﻿aimer,to like,verbs
 regarder,to look at,verbs
 parler,"to talk, to speak",verbs
@@ -736,18 +731,18 @@ l’été,summer,weather
 l’hiver,winter,weather
 l’automne,autumn,weather
 le printemps,spring,weather
-Janvier,January,weather
-Février,February,weather
-Mars,March,weather
-Avril,April,weather
-Mai,May,weather
-Juin,June,weather
-Juillet,July,weather
-Août,August,weather
-Septembre,September,weather
-Octobre,October,weather
-Novembre,November,weather
-Décembre,December,weather
+Janvier,January,months
+Février,February,months
+Mars,March,months
+Avril,April,months
+Mai,May,months
+Juin,June,months
+Juillet,July,months
+Août,August,months
+Septembre,September,months
+Octobre,October,months
+Novembre,November,months
+Décembre,December,months
 les saisons,seasons,weather
 les pays,countries,weather
 la météo,weather,weather
