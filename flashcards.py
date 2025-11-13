@@ -40,7 +40,7 @@ INTERVALS = {
 # Data Models
 # ----------------------------------------------------------------------
 class Card:
-    def __init__(self, french: str, english: str, category: Optional[str] = None, gender: Optional[str] = None):
+    def __init__(self, french: str, english: str, category: Optional[str] = None, gender: Optional[str] = None, synonyms: Optional[list[str]] = None):
         # Support multiple translations separated by '|'
         self.french_variants = [f.strip() for f in french.split('|')]
         self.english_variants = [e.strip() for e in english.split('|')]
@@ -52,6 +52,10 @@ class Card:
         self.category = category.strip() if category else None
         self.gender = gender.strip().lower() if gender else None
         self.key = f"{self.french}|{self.english}"
+
+        # Store French synonyms (different French words with same English meaning)
+        # e.g., ["un slip", "une colette"] both mean "panties"
+        self.french_synonyms = synonyms if synonyms else []
 
     def __repr__(self):
         return f"Card({self.french}, {self.english}, {self.category}, {self.gender})"
@@ -167,6 +171,9 @@ def load_cards(csv_path: Path, category_filter: Optional[str] = None) -> list[Ca
     - 2 columns: french,english
     - 3 columns: french,english,gender OR french,english,category
     - 4 columns: french,english,category,gender
+
+    Automatically detects French synonyms (different French words with same English translation)
+    and stores them so any variant is accepted as correct.
     """
     if not csv_path.is_file():
         sys.exit(f"❌  Vocabulary file not found: {csv_path}")
@@ -205,6 +212,35 @@ def load_cards(csv_path: Path, category_filter: Optional[str] = None) -> list[Ca
             sys.exit(f"⚠️  No cards found for category '{category_filter}'")
         else:
             sys.exit("⚠️  No valid rows found in the CSV file.")
+
+    # Detect and group French synonyms (different French words with same English translation)
+    # Build a mapping: normalized_english -> list of French words
+    english_to_french = {}
+    for card in cards:
+        # Use all English variants to find matches
+        for eng_variant in card.english_variants:
+            normalized_eng = eng_variant.lower().strip()
+            if normalized_eng not in english_to_french:
+                english_to_french[normalized_eng] = []
+            # Add all French variants
+            for french_variant in card.french_variants:
+                if french_variant not in english_to_french[normalized_eng]:
+                    english_to_french[normalized_eng].append(french_variant)
+
+    # Now assign synonyms to each card
+    for card in cards:
+        synonyms = set()
+        for eng_variant in card.english_variants:
+            normalized_eng = eng_variant.lower().strip()
+            # Get all French words that match this English translation
+            french_words = english_to_french.get(normalized_eng, [])
+            # Add them all as synonyms (excluding the card's own French variants)
+            for french_word in french_words:
+                if french_word not in card.french_variants:
+                    synonyms.add(french_word)
+
+        card.french_synonyms = list(synonyms)
+
     return cards
 
 
@@ -265,9 +301,11 @@ def multiple_choice_question(card: Card, all_cards: list[Card], lang_direction: 
     else:
         question = card.english
         correct_answer = card.french
-        correct_variants = card.french_variants
-        # Exclude all variants of the current card from wrong pool
-        wrong_pool = [c.french for c in all_cards if c.english != card.english]
+        # Include French synonyms as valid answers
+        correct_variants = card.french_variants + card.french_synonyms
+        # Exclude all variants of the current card AND its synonyms from wrong pool
+        all_valid_french = set(card.french_variants + card.french_synonyms)
+        wrong_pool = [c.french for c in all_cards if c.french not in all_valid_french]
 
     # Pick 3 random wrong answers
     wrong_answers = random.sample(wrong_pool, min(3, len(wrong_pool)))
@@ -316,7 +354,8 @@ def typing_question(card: Card, lang_direction: str, mode: str, time_limit: Opti
     else:
         question = card.english
         correct_answer = card.french
-        correct_variants = card.french_variants
+        # Include French synonyms as valid answers
+        correct_variants = card.french_variants + card.french_synonyms
 
     print(f"Translate: {question}")
 
