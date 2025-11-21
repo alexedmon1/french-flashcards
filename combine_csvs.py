@@ -5,6 +5,11 @@ Combine all vocabulary CSV files into one master file with category column.
 This creates a master vocabulary file: master_vocabulary.csv
 Format: french,english,category[,gender]
 
+Multiple acceptable answers can be specified using comma separation in the source
+CSV files (e.g., "as, like"). These will be automatically converted to the pipe
+delimiter (e.g., "as|like") in the master file, which the flashcard app recognizes
+as multiple valid answers.
+
 Usage:
     python combine_csvs.py
 """
@@ -64,6 +69,11 @@ def combine_csv_files():
                     french = row[0].strip()
                     english = row[1].strip()
                     gender = row[2].strip() if len(row) >= 3 else ""
+
+                    # Convert comma-separated alternatives to pipe delimiter
+                    # This allows multiple acceptable answers (e.g., "as, like" -> "as|like")
+                    french = french.replace(', ', '|')
+                    english = english.replace(', ', '|')
 
                     all_entries.append({
                         'french': french,

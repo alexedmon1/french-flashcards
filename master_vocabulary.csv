@@ -496,55 +496,49 @@ monture,mount,Common 7
 souhaiter,wish,Common 7
 ciel,sky,Common 7
 conseil,board,Common 7
-un anorak,raincoat,clothing
-un pantalon,pants,clothing
-un tee-shirt,T-shirt,clothing
-des chaussettes,socks,clothing
-une chemise,shirt,clothing
-une veste,jacket,clothing
-des baskets,sneakers,clothing
-une robe,dress,clothing
-des chaussures,shoes,clothing
-des lunettes de soleil,sunglasses,clothing
-une crème solaire,suncreen,clothing
-une trousse de toilette,toiletry bag,clothing
-un slip,panties,clothing
-une colette,panties,clothing
-un soutien-gorge,bra,clothing
-une écharpe,scarf,clothing
-un pull,pullover,clothing
-des sandales,sandals,clothing
-un maillot de bain,swimsuit,clothing
-un bonnet,hat,clothing
-une casquette,cap,clothing
-un sweet,sweatshirt,clothing
-un short,shorts,clothing
-une jupe,skirt,clothing
-une tuque,hat,clothing
-une culotte,women`s panties,clothing
-un boxer,men`s underwear,clothing
-un blouson,jacket,clothing
-un manteau,coat,clothing
-un haut,top,clothing
-un costume,suit,clothing
-une cravate,tie,clothing
-un noeud papillon,bow tie,clothing
-un tailleur,lady’s suit,clothing
-un uniforme,uniform,clothing
-un gilet,waistcoat|vest,clothing
-un cardigan,cardigan,clothing
-un maillot,vest|undershirt,clothing
-un caleçon,boxer shorts|shorts,clothing
-un gant,gloves,clothing
-une chausette,a sock,clothing
-une chaussure,a shoe,clothing
-une botte,boot,clothing
-une sandale,a sandal,clothing
-bonjour,hello,flashcards
-oui,yes,flashcards
-non,no,flashcards
-le chat,cat,flashcards
-le chien,dog,flashcards
+un anorak,raincoat,les vêtements
+un pantalon,pants,les vêtements
+un tee-shirt,T-shirt,les vêtements
+des chaussettes,socks,les vêtements
+une chemise,shirt,les vêtements
+une veste,jacket,les vêtements
+des baskets,sneakers,les vêtements
+une robe,dress,les vêtements
+des chaussures,shoes,les vêtements
+des lunettes de soleil,sunglasses,les vêtements
+une crème solaire,suncreen,les vêtements
+une trousse de toilette,toiletry bag,les vêtements
+un slip,panties,les vêtements
+une colette,panties,les vêtements
+un soutien-gorge,bra,les vêtements
+une écharpe,scarf,les vêtements
+un pull,pullover,les vêtements
+des sandales,sandals,les vêtements
+un maillot de bain,swimsuit,les vêtements
+un bonnet,hat,les vêtements
+une casquette,cap,les vêtements
+un sweet,sweatshirt,les vêtements
+un short,shorts,les vêtements
+une jupe,skirt,les vêtements
+une tuque,hat,les vêtements
+un boxer,boxers,les vêtements
+un blouson,jacket,les vêtements
+un manteau,coat,les vêtements
+un haut,top,les vêtements
+un costume,suit,les vêtements
+une cravate,tie,les vêtements
+un noeud papillon,bow tie,les vêtements
+un tailleur,lady’s suit,les vêtements
+un uniforme,uniform,les vêtements
+un gilet,waistcoat|vest,les vêtements
+un cardigan,cardigan,les vêtements
+un maillot,vest|undershirt,les vêtements
+un caleçon,boxers|shorts,les vêtements
+un gant,a glove,les vêtements
+une chausette,a sock,les vêtements
+une chaussure,a shoe,les vêtements
+une botte,a boot,les vêtements
+une sandale,a sandal,les vêtements
 il est jeune,he is young,la description physique
 elle est jeune,she is young,la description physique
 il est âgé,he is old,la description physique
@@ -632,56 +626,51 @@ la poste,post office,les lieux publics
 le restaurant,restaurant,les lieux publics
 le salon de coiffure,hairdressing salon,les lieux publics
 l’université,university,les lieux publics
-une culotte,panties,les vêtements
-un boxer,underwear,les vêtements
-un gilet,waistcoat,les vêtements
-un maillot,undershirt,les vêtements
-un caleçon,boxer shorts,les vêtements
-Janvier,January,months
-Février,February,months
-Mars,March,months
-Avril,April,months
-Mai,May,months
-Juin,June,months
-Juillet,July,months
-Août,August,months
-Septembre,September,months
-Octobre,October,months
-Novembre,November,months
-Décembre,December,months
-à,to|at|in,prepositions
-à côte de,next to|beside,prepositions
-au sujet de,about|on the subject of,prepositions
-avant,before,prepositions
-chez,at the home of|office of|among,prepositions
-d’après,according to,prepositions
-de,from|of|about,prepositions
-depuis,since|for,prepositions
-devant,in front of,prepositions
-durant,during|while,prepositions
-en,in|on|to,prepositions
-en dehors de,outside,prepositions
-en face de,facing|across from,prepositions
-entre,between,prepositions
-environ,approximately,prepositions
-hors de,outside,prepositions
-jusque,until|up to|even,prepositions
-loin de,far from,prepositions
-nalgré,despite,prepositions
-promi,among,prepositions
-près de,near,prepositions
-quant à,as for|regarding,prepositions
-sans,without,prepositions
-selon,according to,prepositions
-suivant,according to,prepositions
-sur,on,prepositions
-vers,toward,prepositions
-d’habitude,usually,prepositions
-parfois,sometimes,prepositions
-de temps en temps,sometimes,prepositions
-quelquefois,sometimes,prepositions
-rarement,rarely,prepositions
-jamais,never,prepositions
+Janvier,January,les mois
+Février,February,les mois
+Mars,March,les mois
+Avril,April,les mois
+Mai,May,les mois
+Juin,June,les mois
+Juillet,July,les mois
+Août,August,les mois
+Septembre,September,les mois
+Octobre,October,les mois
+Novembre,November,les mois
+Décembre,December,les mois
+à,to|at|in,prépositions
+à côte de,next to|beside,prépositions
+au sujet de,about|on the subject of,prépositions
+avant,before,prépositions
+chez,at the home of|office of|among,prépositions
+d’après,according to,prépositions
+de,from|of|about,prépositions
+depuis,since|for,prépositions
+devant,in front of,prépositions
+durant,during|while,prépositions
+en,in|on|to,prépositions
+en dehors de,outside,prépositions
+en face de,facing|across from,prépositions
+entre,between,prépositions
+environ,approximately,prépositions
+hors de,outside,prépositions
+jusque,until|up to|even,prépositions
+loin de,far from,prépositions
+nalgré,despite,prépositions
+promi,among,prépositions
+près de,near,prépositions
+quant à,as for|regarding,prépositions
+sans,without,prépositions
+selon,according to,prépositions
+suivant,according to,prépositions
+sur,on,prépositions
+vers,toward,prépositions
+d’habitude,usually,prépositions
+parfois,sometimes,prépositions
+de temps en temps,sometimes,prépositions
+quelquefois,sometimes,prépositions
+rarement,rarely,prépositions
+jamais,never,prépositions
 ﻿Comment vous appelez-vous?,What's your name?,questions
 Comment allez-vous?,How are you?,questions
 Comment ça va?,How are you?,questions
@@ -792,18 +781,123 @@ rendrer,to give back|to return,verbs
 partager,to share,verbs
 sembler,to seem,verbs
 visiter,to visit,verbs
-il ya du vent,it’s windy,weather
-il fait chaud,it’s hot,weather
-il neige,snows,weather
-il y a des nuages,cloudy,weather
-il y a de l’òrage,storms,weather
-il ya a du soleil,sunny,weather
-il pleut,rain,weather
-il fait beau,sunny,weather
-l’été,summer,weather
-l’hiver,winter,weather
-l’automne,autumn,weather
-le printemps,spring,weather
-les saisons,seasons,weather
-les pays,countries,weather
-la météo,weather,weather
+il ya du vent,windy,la météo
+il fait chaud,hot,la météo
+il neige,snows,la météo
+il y a des nuages,cloudy,la météo
+il y a de l’òrage,stoym,la météo
+il ya a du soleil,sunny,la météo
+il pleut,rainy,la météo
+il fait beau,sunny,la météo
+l’été,summer,la météo
+l’hiver,winter,la météo
+l’automne,autumn,la météo
+le printemps,spring,la météo
+les saisons,seasons,la météo
+les pays,countries,la météo
+la météo,weather,la météo
+un ananas,a pineapple,la nourriture
+une banane,a banana,la nourriture
+un citron,a lemon,la nourriture
+une fraise,a strawberry,la nourriture
+une orange,an orange,la nourriture
+une pêche,a peach,la nourriture
+une poire,a pear,la nourriture
+une pomme,an apple,la nourriture
+du raisin,grapes,la nourriture
+une tomate,a tomato,la nourriture
+du melon d’eau,watermelon,la nourriture
+une carotte,a carrot,la nourriture
+un oignon,an onion,la nourriture
+un poireau,a leek,la nourriture
+un chou-fleur,a cauliflower,la nourriture
+une patate,a potato,la nourriture
+de la salade,a salad,la nourriture
+une aubergine,an eggplant,la nourriture
+un poivron,a pepper,la nourriture
+un brocoli,a broccoli,la nourriture
+des haricots verts,green beans,la nourriture
+de l’eau,water,la nourriture
+du vin,wine,la nourriture
+un jus de fruits,fruit juice,la nourriture
+une bière ,a beer,la nourriture
+un cocktail,a cocktail,la nourriture
+un soda,a soda,la nourriture
+un café,a coffee,la nourriture
+un thé,a tea,la nourriture
+un chocolat chaud,a hot chocolate,la nourriture
+le sel,the salt,la nourriture
+le poivre,the pepper,la nourriture
+le sucre,the sugar,la nourriture
+la moutarde,the mustard,la nourriture
+le ketchup,the ketchup,la nourriture
+la mayonnaise,the mayonnaise,la nourriture
+le vinaigre,the vinegar,la nourriture
+les herbes,the herbs,la nourriture
+les épices,the spices,la nourriture
+l’huile,the oil,la nourriture
+le lait,the milk,la nourriture
+le fromage,the cheese,la nourriture
+un yaourt,a yogurt,la nourriture
+le beurre,the butter,la nourriture
+le boeuf,the beef,la nourriture
+le poulet,the chicken,la nourriture
+la dinde,the turkey,la nourriture
+l’oeuf,the egg,la nourriture
+le porc,the pork,la nourriture
+la saucisse,the sausage,la nourriture
+la charcuterie,the delicatessen,la nourriture
+le poisson,the fish,la nourriture
+un gâteau,a cake,la nourriture
+une glace,an ice cream,la nourriture
+une tarte,a pie,la nourriture
+un bonbon,a candy,la nourriture
+un chocolat,a chocolate,la nourriture
+un biscuit,a cookie,la nourriture
+une pizza,a pizza,la nourriture
+une ratatouille,a ratatouille,la nourriture
+un hamburger,a hamburger,la nourriture
+une soupe,a soup,la nourriture
+les pâtes,the pastas,la nourriture
+les frites,the french fries,la nourriture
+le riz,the rice,la nourriture
+la purée de patates,the mashed potatoes,la nourriture
+le salon,the living room,la maison
+une lampe,a light,la maison
+une table,a table,la maison
+un fauteuil bleu,a blue armchair,la maison
+un canapé jaune,a yellow couch,la maison
+une bibliothèque marron,a brown bookshelf,la maison
+L’entrée,entrance,la maison
+un tapis,a carpet,la maison
+un miroir,a mirror,la maison
+deux commodes,two dressers,la maison
+un porte-manteau,a coat rack,la maison
+la cuisine,the kitchen,la maison
+une grant table marron,a big brown table,la maison
+deux tasses avec du café,2 cups with coffee,la maison
+un frigo,a fridge,la maison
+un micro-ondes,a microwave,la maison
+un four,an oven,la maison
+a robinet,sink,la maison
+une assiette,a plate,la maison
+une cuisinière,a cooker ,la maison
+la salle à manger,the dining room,la maison
+une table,a table,la maison
+une chaises,a chair,la maison
+des rideaux,curtains,la maison
+la chambre ,the room,la maison
+la chambe à coucher,the bedroom,la maison
+un lit,a bed,la maison
+une armoire,a closet,la maison
+la salle de bain,bathroom,la maison
+la douche,a shower,la maison
+le bain,a bath tub,la maison
+la toilette,a toilet,la maison
+des serviettes,towels,la maison
+le garage,the garage,la maison
+la voiture,the car,la maison
+le jardin,the garden,la maison
+des fleurs,flowers,la maison
+un grand arbre,a big tree,la maison
+la cour,the yard,la maison
