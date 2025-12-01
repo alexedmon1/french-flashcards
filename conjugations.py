@@ -118,55 +118,79 @@ FUTURE = {
 PAST_COMPOSE = {
     "être":      ("être",   ["été",     "été",     "été",     "été",     "été",     "été"]),
     "avoir":     ("avoir",  ["eu",      "eu",      "eu",      "eu",      "eu",      "eu"]),
-    "faire":     ("avoir",  ["fait",    "fait",    "fait",    "faits",   "faits",   "faits"]),
-    "dire":      ("avoir",  ["dit",     "dit",     "dit",     "dits",    "dits",    "dits"]),
+    "faire":     ("avoir",  ["fait",    "fait",    "fait",    "fait",    "fait",    "fait"]),
+    "dire":      ("avoir",  ["dit",     "dit",     "dit",     "dit",     "dit",     "dit"]),
     "aller":     ("être",   ["allé",    "allé",    "allé",    "allés",   "allés",   "allés"]),
-    "voir":      ("avoir",  ["vu",      "vu",      "vu",      "vus",     "vus",     "vus"]),
-    "savoir":    ("avoir",  ["su",      "su",      "su",      "sus",     "sus",     "sus"]),
-    "pouvoir":   ("avoir",  ["pu",      "pu",      "pu",      "pus",     "pus",     "pus"]),
-    "vouloir":   ("avoir",  ["voulu",   "voulu",   "voulu",   "voulus",  "voulus",  "voulus"]),
+    "voir":      ("avoir",  ["vu",      "vu",      "vu",      "vu",      "vu",      "vu"]),
+    "savoir":    ("avoir",  ["su",      "su",      "su",      "su",      "su",      "su"]),
+    "pouvoir":   ("avoir",  ["pu",      "pu",      "pu",      "pu",      "pu",      "pu"]),
+    "vouloir":   ("avoir",  ["voulu",   "voulu",   "voulu",   "voulu",   "voulu",   "voulu"]),
     "venir":     ("être",   ["venu",    "venu",    "venu",    "venus",   "venus",   "venus"]),
-    "devoir":    ("avoir",  ["dû",      "dû",      "dû",      "dûs",     "dûs",     "dûs"]),
+    "devoir":    ("avoir",  ["dû",      "dû",      "dû",      "dû",      "dû",      "dû"]),
     "prendre":   ("avoir",  ["pris",    "pris",    "pris",    "pris",    "pris",    "pris"]),
-    "donner":    ("avoir",  ["donné",   "donné",   "donné",   "donnés",  "donnés",  "donnés"]),
-    "trouver":   ("avoir",  ["trouvé",  "trouvé",  "trouvé",  "trouvés", "trouvés", "trouvés"]),
-    "penser":    ("avoir",  ["pensé",   "pensé",   "pensé",   "pensés",  "pensés",  "pensés"]),
-    "parler":    ("avoir",  ["parlé",   "parlé",   "parlé",   "parlés",  "parlés",  "parlés"]),
+    "donner":    ("avoir",  ["donné",   "donné",   "donné",   "donné",   "donné",   "donné"]),
+    "trouver":   ("avoir",  ["trouvé",  "trouvé",  "trouvé",  "trouvé",  "trouvé",  "trouvé"]),
+    "penser":    ("avoir",  ["pensé",   "pensé",   "pensé",   "pensé",   "pensé",   "pensé"]),
+    "parler":    ("avoir",  ["parlé",   "parlé",   "parlé",   "parlé",   "parlé",   "parlé"]),
     "mettre":    ("avoir",  ["mis",     "mis",     "mis",     "mis",     "mis",     "mis"]),
-    "aimer":     ("avoir",  ["aimé",    "aimé",    "aimé",    "aimés",   "aimés",   "aimés"]),
-    "passer":    ("avoir",  ["passé",   "passé",   "passé",   "passés",  "passés",  "passés"]),
-    "demander":  ("avoir",  ["demandé", "demandé", "demandé", "demandés","demandés","demandés"]),
-    "croire":    ("avoir",  ["cru",     "cru",     "cru",     "crus",    "crus",    "crus"]),
-    "laisser":   ("avoir",  ["laissé",  "laissé",  "laissé",  "laissés", "laissés", "laissés"]),
-    "porter":    ("avoir",  ["porté",   "porté",   "porté",   "portés",  "portés",  "portés"]),
-    "tenir":     ("avoir",  ["tenu",    "tenu",    "tenu",    "tenus",   "tenus",   "tenus"]),
-    "appeler":   ("avoir",  ["appelé",  "appelé",  "appelé",  "appelés", "appelés", "appelés"]),
+    "aimer":     ("avoir",  ["aimé",    "aimé",    "aimé",    "aimé",    "aimé",    "aimé"]),
+    "passer":    ("avoir",  ["passé",   "passé",   "passé",   "passé",   "passé",   "passé"]),
+    "demander":  ("avoir",  ["demandé", "demandé", "demandé", "demandé", "demandé", "demandé"]),
+    "croire":    ("avoir",  ["cru",     "cru",     "cru",     "cru",     "cru",     "cru"]),
+    "laisser":   ("avoir",  ["laissé",  "laissé",  "laissé",  "laissé",  "laissé",  "laissé"]),
+    "porter":    ("avoir",  ["porté",   "porté",   "porté",   "porté",   "porté",   "porté"]),
+    "tenir":     ("avoir",  ["tenu",    "tenu",    "tenu",    "tenu",    "tenu",    "tenu"]),
+    "appeler":   ("avoir",  ["appelé",  "appelé",  "appelé",  "appelé",  "appelé",  "appelé"]),
     "rester":    ("être",   ["resté",   "resté",   "resté",   "restés",  "restés",  "restés"]),
     "sortir":    ("être",   ["sorti",   "sorti",   "sorti",   "sortis",  "sortis",  "sortis"]),
-    "vivre":     ("avoir",  ["vécu",    "vécu",    "vécu",    "vécus",   "vécus",   "vécus"]),
+    "vivre":     ("avoir",  ["vécu",    "vécu",    "vécu",    "vécu",    "vécu",    "vécu"]),
     "tomber":    ("être",   ["tombé",   "tombé",   "tombé",   "tombés",  "tombés",  "tombés"]),
-    "connaître": ("avoir",  ["connu",   "connu",   "connu",   "connus",  "connus",  "connus"]),
-    "finir":     ("avoir",  ["fini",    "fini",    "fini",    "finis",   "finis",   "finis"]),
-    "choisir":   ("avoir",  ["choisi",  "choisi",  "choisi",  "choisis", "choisis", "choisis"]),
-    "réussir":   ("avoir",  ["réussi",  "réussi",  "réussi",  "réussis", "réussis", "réussis"]),
-    "remplir":   ("avoir",  ["rempli",  "rempli",  "rempli",  "remplis", "remplis", "remplis"]),
-    "réfléchir": ("avoir",  ["réfléchi","réfléchi","réfléchi","réfléchis","réfléchis","réfléchis"]),
-    "obéir":     ("avoir",  ["obéi",    "obéi",    "obéi",    "obéis",   "obéis",   "obéis"]),
-    "grandir":   ("avoir",  ["grandi",  "grandi",  "grandi",  "grandis", "grandis", "grandis"]),
-    "applaudir": ("avoir",  ["applaudi","applaudi","applaudi","applaudis","applaudis","applaudis"]),
-    "établir":   ("avoir",  ["établi",  "établi",  "établi",  "établis", "établis", "établis"]),
-    "bâtir":     ("avoir",  ["bâti",    "bâti",    "bâti",    "bâtis",   "bâtis",   "bâtis"]),
-    "agir":      ("avoir",  ["agi",     "agi",     "agi",     "agis",    "agis",    "agis"]),
-    "boire":     ("avoir",  ["bu",      "bu",      "bu",      "bus",     "bus",     "bus"]),
-    "écrire":    ("avoir",  ["écrit",   "écrit",   "écrit",   "écrits",  "écrits",  "écrits"]),
-    "lire":      ("avoir",  ["lu",      "lu",      "lu",      "lus",     "lus",     "lus"]),
+    "connaître": ("avoir",  ["connu",   "connu",   "connu",   "connu",   "connu",   "connu"]),
+    "finir":     ("avoir",  ["fini",    "fini",    "fini",    "fini",    "fini",    "fini"]),
+    "choisir":   ("avoir",  ["choisi",  "choisi",  "choisi",  "choisi",  "choisi",  "choisi"]),
+    "réussir":   ("avoir",  ["réussi",  "réussi",  "réussi",  "réussi",  "réussi",  "réussi"]),
+    "remplir":   ("avoir",  ["rempli",  "rempli",  "rempli",  "rempli",  "rempli",  "rempli"]),
+    "réfléchir": ("avoir",  ["réfléchi","réfléchi","réfléchi","réfléchi","réfléchi","réfléchi"]),
+    "obéir":     ("avoir",  ["obéi",    "obéi",    "obéi",    "obéi",    "obéi",    "obéi"]),
+    "grandir":   ("avoir",  ["grandi",  "grandi",  "grandi",  "grandi",  "grandi",  "grandi"]),
+    "applaudir": ("avoir",  ["applaudi","applaudi","applaudi","applaudi","applaudi","applaudi"]),
+    "établir":   ("avoir",  ["établi",  "établi",  "établi",  "établi",  "établi",  "établi"]),
+    "bâtir":     ("avoir",  ["bâti",    "bâti",    "bâti",    "bâti",    "bâti",    "bâti"]),
+    "agir":      ("avoir",  ["agi",     "agi",     "agi",     "agi",     "agi",     "agi"]),
+    "boire":     ("avoir",  ["bu",      "bu",      "bu",      "bu",      "bu",      "bu"]),
+    "écrire":    ("avoir",  ["écrit",   "écrit",   "écrit",   "écrit",   "écrit",   "écrit"]),
+    "lire":      ("avoir",  ["lu",      "lu",      "lu",      "lu",      "lu",      "lu"]),
     "partir":    ("être",   ["parti",   "parti",   "parti",   "partis",  "partis",  "partis"]),
-    "dormir":    ("avoir",  ["dormi",   "dormi",   "dormi",   "dormis",  "dormis",  "dormis"]),
-    "ouvrir":    ("avoir",  ["ouvert",  "ouvert",  "ouvert",  "ouverts", "ouverts", "ouverts"]),
-    "recevoir":  ("avoir",  ["reçu",    "reçu",    "reçu",    "reçus",   "reçus",   "reçus"]),
+    "dormir":    ("avoir",  ["dormi",   "dormi",   "dormi",   "dormi",   "dormi",   "dormi"]),
+    "ouvrir":    ("avoir",  ["ouvert",  "ouvert",  "ouvert",  "ouvert",  "ouvert",  "ouvert"]),
+    "recevoir":  ("avoir",  ["reçu",    "reçu",    "reçu",    "reçu",    "reçu",    "reçu"]),
 }
 
 PRONOUNS = ["je", "tu", "il/elle/on", "nous", "vous", "ils/elles"]
+
+# Pronoun variations with gender - each can be randomly selected
+PRONOUN_VARIATIONS = [
+    ["je"],                           # je (no gender variation for 1st person singular)
+    ["tu"],                           # tu (no gender variation for 2nd person singular)
+    ["il", "elle", "on"],             # 3rd singular: masculine, feminine, or neutral
+    ["nous"],                         # nous (no variation for 1st person plural)
+    ["vous"],                         # vous (no variation for 2nd person plural)
+    ["ils", "elles"],                 # 3rd plural: masculine or feminine
+]
+
+# Agreement endings for être verbs based on pronoun choice
+# Format: {pronoun: (ending_singular, ending_plural_nous_vous, ending_plural_ils)}
+ETRE_AGREEMENTS = {
+    "je":    ("é",   "és",  "és"),   # default masculine
+    "tu":    ("é",   "és",  "és"),   # default masculine
+    "il":    ("é",   "és",  "és"),   # masculine
+    "elle":  ("ée",  "ées", "ées"),  # feminine
+    "on":    ("é",   "és",  "és"),   # default masculine (on = nous)
+    "nous":  ("és",  "és",  "és"),   # masculine plural
+    "vous":  ("és",  "és",  "és"),   # masculine plural
+    "ils":   ("és",  "és",  "és"),   # masculine plural
+    "elles": ("ées", "ées", "ées"),  # feminine plural
+}
 
 VERB_TRANSLATIONS = {
     "être":      "to be",
@@ -233,17 +257,72 @@ VERB_TYPES = {
 # ----------------------------------------------------------------------
 # 2️⃣  Helpers
 # ----------------------------------------------------------------------
+def get_participle_with_agreement(base_participle: str, pronoun: str) -> str:
+    """Apply agreement to past participle based on pronoun (for être verbs only)."""
+    # Get the root of the participle (remove existing ending)
+    # Check longer endings first
+    if base_participle.endswith("és"):
+        root = base_participle[:-2]
+        base_ending = "é"
+    elif base_participle.endswith("is"):
+        root = base_participle[:-2]
+        base_ending = "i"
+    elif base_participle.endswith("é"):
+        root = base_participle[:-1]
+        base_ending = "é"
+    elif base_participle.endswith("i"):
+        root = base_participle[:-1]
+        base_ending = "i"
+    else:
+        return base_participle  # Irregular, keep as is
+
+    # Apply correct ending based on pronoun
+    if base_ending == "é":
+        # Participles ending in -é (allé, resté, tombé, etc.)
+        if pronoun == "elle":
+            return root + "ée"
+        elif pronoun == "elles":
+            return root + "ées"
+        elif pronoun in ["nous", "vous", "ils"]:
+            return root + "és"
+        else:  # je, tu, il, on (masculine singular)
+            return root + "é"
+    else:  # base_ending == "i"
+        # Participles ending in -i (sorti, parti)
+        if pronoun == "elle":
+            return root + "ie"
+        elif pronoun == "elles":
+            return root + "ies"
+        elif pronoun in ["nous", "vous", "ils"]:
+            return root + "is"
+        else:  # je, tu, il, on (masculine singular)
+            return root + "i"
+
+
 def get_table(infinitive: str, tense: str):
+    # Randomly select pronoun variations for this round
+    selected_pronouns = [random.choice(variations) for variations in PRONOUN_VARIATIONS]
+
     if tense == "present":
-        return PRONOUNS, PRESENT[infinitive]
+        return selected_pronouns, PRESENT[infinitive]
     if tense == "future":
-        return PRONOUNS, FUTURE[infinitive]
+        return selected_pronouns, FUTURE[infinitive]
 
     # passé composé
-    aux, part = PAST_COMPOSE[infinitive]
-    aux_forms = PRESENT[aux]                     # auxiliary conjugated in présent
-    full = [f"{aux_forms[i]} {part[i]}" for i in range(6)]
-    return PRONOUNS, full
+    aux, part_list = PAST_COMPOSE[infinitive]
+    aux_forms = PRESENT[aux]  # auxiliary conjugated in présent
+
+    # If using avoir, no agreement needed
+    if aux == "avoir":
+        full = [f"{aux_forms[i]} {part_list[i]}" for i in range(6)]
+    else:  # être - apply gender agreement
+        full = []
+        for i, pronoun in enumerate(selected_pronouns):
+            # Get base participle and apply agreement
+            participle = get_participle_with_agreement(part_list[i], pronoun)
+            full.append(f"{aux_forms[i]} {participle}")
+
+    return selected_pronouns, full
 
 
 def choose_tense() -> str:
@@ -282,6 +361,13 @@ def choose_verb_type() -> list:
         print("Choisissez 1, 2, 3 ou 4.")
 
 
+def normalize_input(text: str) -> str:
+    """Clean up input text by removing surrogate characters and normalizing."""
+    # Remove surrogate characters that can appear from backspacing
+    cleaned = text.encode('utf-8', errors='ignore').decode('utf-8', errors='ignore')
+    return cleaned.strip()
+
+
 def ask_one_verb(infinitive: str, tense: str):
     pronouns, correct = get_table(infinitive, tense)
     translation = VERB_TRANSLATIONS.get(infinitive, "")
@@ -289,6 +375,7 @@ def ask_one_verb(infinitive: str, tense: str):
     answers = []
     for p in pronouns:
         ans = input(f"{p} ... ").strip()
+        ans = normalize_input(ans)
         answers.append(ans)
 
     score = 0

@@ -4254,5 +4254,309 @@
     "interval": 1,
     "ease_factor": 2.36,
     "due_date": "2025-11-21"
+  },
+  "le salon|the living room": {
+    "times_seen": 1,
+    "times_correct": 0,
+    "last_reviewed": "2025-11-24",
+    "interval": 0,
+    "ease_factor": 2.1799999999999997,
+    "due_date": "2025-11-24"
+  },
+  "une lampe|a light": {
+    "times_seen": 1,
+    "times_correct": 0,
+    "last_reviewed": "2025-11-24",
+    "interval": 0,
+    "ease_factor": 2.1799999999999997,
+    "due_date": "2025-11-24"
+  },
+  "une table|a table": {
+    "times_seen": 2,
+    "times_correct": 2,
+    "last_reviewed": "2025-11-24",
+    "interval": 18,
+    "ease_factor": 2.7,
+    "due_date": "2025-12-12"
+  },
+  "un fauteuil bleu|a blue armchair": {
+    "times_seen": 1,
+    "times_correct": 0,
+    "last_reviewed": "2025-11-24",
+    "interval": 0,
+    "ease_factor": 2.1799999999999997,
+    "due_date": "2025-11-24"
+  },
+  "un canap\u00e9 jaune|a yellow couch": {
+    "times_seen": 1,
+    "times_correct": 0,
+    "last_reviewed": "2025-11-24",
+    "interval": 0,
+    "ease_factor": 2.1799999999999997,
+    "due_date": "2025-11-24"
+  },
+  "une biblioth\u00e8que marron|a brown bookshelf": {
+    "times_seen": 1,
+    "times_correct": 1,
+    "last_reviewed": "2025-11-24",
+    "interval": 7,
+    "ease_factor": 2.6,
+    "due_date": "2025-12-01"
+  },
+  "L\u2019entr\u00e9e|entrance": {
+    "times_seen": 1,
+    "times_correct": 0,
+    "last_reviewed": "2025-11-24",
+    "interval": 0,
+    "ease_factor": 2.1799999999999997,
+    "due_date": "2025-11-24"
+  },
+  "un tapis|a carpet": {
+    "times_seen": 1,
+    "times_correct": 0,
+    "last_reviewed": "2025-11-24",
+    "interval": 0,
+    "ease_factor": 2.1799999999999997,
+    "due_date": "2025-11-24"
+  },
+  "un miroir|a mirror": {
+    "times_seen": 1,
+    "times_correct": 1,
+    "last_reviewed": "2025-11-24",
+    "interval": 7,
+    "ease_factor": 2.6,
+    "due_date": "2025-12-01"
+  },
+  "deux commodes|two dressers": {
+    "times_seen": 1,
+    "times_correct": 0,
+    "last_reviewed": "2025-11-24",
+    "interval": 0,
+    "ease_factor": 2.1799999999999997,
+    "due_date": "2025-11-24"
+  },
+  "un porte-manteau|a coat rack": {
+    "times_seen": 1,
+    "times_correct": 0,
+    "last_reviewed": "2025-11-24",
+    "interval": 0,
+    "ease_factor": 2.1799999999999997,
+    "due_date": "2025-11-24"
+  },
+  "la cuisine|the kitchen": {
+    "times_seen": 1,
+    "times_correct": 0,
+    "last_reviewed": "2025-11-24",
+    "interval": 0,
+    "ease_factor": 2.1799999999999997,
+    "due_date": "2025-11-24"
+  },
+  "une grant table marron|a big brown table": {
+    "times_seen": 1,
+    "times_correct": 1,
+    "last_reviewed": "2025-11-24",
+    "interval": 7,
+    "ease_factor": 2.6,
+    "due_date": "2025-12-01"
+  },
+  "deux tasses avec du caf\u00e9|2 cups with coffee": {
+    "times_seen": 1,
+    "times_correct": 1,
+    "last_reviewed": "2025-11-24",
+    "interval": 1,
+    "ease_factor": 2.36,
+    "due_date": "2025-11-25"
+  },
+  "un frigo|a fridge": {
+    "times_seen": 1,
+    "times_correct": 1,
+    "last_reviewed": "2025-11-24",
+    "interval": 7,
+    "ease_factor": 2.6,
+    "due_date": "2025-12-01"
+  },
+  "un micro-ondes|a microwave": {
+    "times_seen": 1,
+    "times_correct": 1,
+    "last_reviewed": "2025-11-24",
+    "interval": 7,
+    "ease_factor": 2.6,
+    "due_date": "2025-12-01"
+  },
+  "un four|an oven": {
+    "times_seen": 1,
+    "times_correct": 1,
+    "last_reviewed": "2025-11-24",
+    "interval": 7,
+    "ease_factor": 2.6,
+    "due_date": "2025-12-01"
+  },
+  "a robinet|sink": {
+    "times_seen": 1,
+    "times_correct": 0,
+    "last_reviewed": "2025-11-24",
+    "interval": 0,
+    "ease_factor": 2.1799999999999997,
+    "due_date": "2025-11-24"
+  },
+  "une assiette|a plate": {
+    "times_seen": 1,
+    "times_correct": 0,
+    "last_reviewed": "2025-11-24",
+    "interval": 0,
+    "ease_factor": 2.1799999999999997,
+    "due_date": "2025-11-24"
+  },
+  "une cuisini\u00e8re|a cooker": {
+    "times_seen": 1,
+    "times_correct": 0,
+    "last_reviewed": "2025-11-24",
+    "interval": 0,
+    "ease_factor": 2.1799999999999997,
+    "due_date": "2025-11-24"
+  },
+  "la salle \u00e0 manger|the dining room": {
+    "times_seen": 1,
+    "times_correct": 1,
+    "last_reviewed": "2025-11-24",
+    "interval": 7,
+    "ease_factor": 2.6,
+    "due_date": "2025-12-01"
+  },
+  "une chaises|a chair": {
+    "times_seen": 1,
+    "times_correct": 1,
+    "last_reviewed": "2025-11-24",
+    "interval": 7,
+    "ease_factor": 2.6,
+    "due_date": "2025-12-01"
+  },
+  "des rideaux|curtains": {
+    "times_seen": 1,
+    "times_correct": 0,
+    "last_reviewed": "2025-11-24",
+    "interval": 0,
+    "ease_factor": 2.1799999999999997,
+    "due_date": "2025-11-24"
+  },
+  "la chambre|the room": {
+    "times_seen": 1,
+    "times_correct": 1,
+    "last_reviewed": "2025-11-24",
+    "interval": 7,
+    "ease_factor": 2.6,
+    "due_date": "2025-12-01"
+  },
+  "la chambe \u00e0 coucher|the bedroom": {
+    "times_seen": 1,
+    "times_correct": 1,
+    "last_reviewed": "2025-11-24",
+    "interval": 7,
+    "ease_factor": 2.6,
+    "due_date": "2025-12-01"
+  },
+  "un lit|a bed": {
+    "times_seen": 1,
+    "times_correct": 1,
+    "last_reviewed": "2025-11-24",
+    "interval": 7,
+    "ease_factor": 2.6,
+    "due_date": "2025-12-01"
+  },
+  "une armoire|a closet": {
+    "times_seen": 1,
+    "times_correct": 1,
+    "last_reviewed": "2025-11-24",
+    "interval": 7,
+    "ease_factor": 2.6,
+    "due_date": "2025-12-01"
+  },
+  "la salle de bain|bathroom": {
+    "times_seen": 1,
+    "times_correct": 0,
+    "last_reviewed": "2025-11-24",
+    "interval": 0,
+    "ease_factor": 2.1799999999999997,
+    "due_date": "2025-11-24"
+  },
+  "la douche|a shower": {
+    "times_seen": 1,
+    "times_correct": 0,
+    "last_reviewed": "2025-11-24",
+    "interval": 0,
+    "ease_factor": 2.1799999999999997,
+    "due_date": "2025-11-24"
+  },
+  "le bain|a bath tub": {
+    "times_seen": 1,
+    "times_correct": 0,
+    "last_reviewed": "2025-11-24",
+    "interval": 0,
+    "ease_factor": 2.1799999999999997,
+    "due_date": "2025-11-24"
+  },
+  "la toilette|a toilet": {
+    "times_seen": 1,
+    "times_correct": 0,
+    "last_reviewed": "2025-11-24",
+    "interval": 0,
+    "ease_factor": 2.1799999999999997,
+    "due_date": "2025-11-24"
+  },
+  "des serviettes|towels": {
+    "times_seen": 1,
+    "times_correct": 0,
+    "last_reviewed": "2025-11-24",
+    "interval": 0,
+    "ease_factor": 2.1799999999999997,
+    "due_date": "2025-11-24"
+  },
+  "le garage|the garage": {
+    "times_seen": 1,
+    "times_correct": 1,
+    "last_reviewed": "2025-11-24",
+    "interval": 7,
+    "ease_factor": 2.6,
+    "due_date": "2025-12-01"
+  },
+  "la voiture|the car": {
+    "times_seen": 1,
+    "times_correct": 1,
+    "last_reviewed": "2025-11-24",
+    "interval": 7,
+    "ease_factor": 2.6,
+    "due_date": "2025-12-01"
+  },
+  "le jardin|the garden": {
+    "times_seen": 1,
+    "times_correct": 1,
+    "last_reviewed": "2025-11-24",
+    "interval": 7,
+    "ease_factor": 2.6,
+    "due_date": "2025-12-01"
+  },
+  "des fleurs|flowers": {
+    "times_seen": 1,
+    "times_correct": 0,
+    "last_reviewed": "2025-11-24",
+    "interval": 0,
+    "ease_factor": 2.1799999999999997,
+    "due_date": "2025-11-24"
+  },
+  "un grand arbre|a big tree": {
+    "times_seen": 1,
+    "times_correct": 1,
+    "last_reviewed": "2025-11-24",
+    "interval": 7,
+    "ease_factor": 2.6,
+    "due_date": "2025-12-01"
+  },
+  "la cour|the yard": {
+    "times_seen": 1,
+    "times_correct": 0,
+    "last_reviewed": "2025-11-24",
+    "interval": 0,
+    "ease_factor": 2.1799999999999997,
+    "due_date": "2025-11-24"
   }
 }
