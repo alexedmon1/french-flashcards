@@ -62,6 +62,26 @@ PRESENT = {
     "dormir":    ["dors", "dors", "dort", "dormons", "dormez", "dorment"],
     "ouvrir":    ["ouvre", "ouvres", "ouvre", "ouvrons", "ouvrez", "ouvrent"],
     "recevoir":  ["reçois", "reçois", "reçoit", "recevons", "recevez", "reçoivent"],
+    "montrer":   ["montre", "montres", "montre", "montrons", "montrez", "montrent"],
+    "écouter":   ["écoute", "écoutes", "écoute", "écoutons", "écoutez", "écoutent"],
+    "entendre":  ["entends", "entends", "entend", "entendons", "entendez", "entendent"],
+    "attendre":  ["attends", "attends", "attend", "attendons", "attendez", "attendent"],
+    "dépenser":  ["dépense", "dépenses", "dépense", "dépensons", "dépensez", "dépensent"],
+    "s'asseoir": ["m'assieds", "t'assieds", "s'assied", "nous asseyons", "vous asseyez", "s'asseyent"],
+    "monter":    ["monte", "montes", "monte", "montons", "montez", "montrent"],
+    "dessiner":  ["dessine", "dessines", "dessine", "dessinons", "dessinez", "dessinent"],
+    "voler":     ["vole", "voles", "vole", "volons", "volez", "volent"],
+    "raconter":  ["raconte", "racontes", "raconte", "racontons", "racontez", "racontent"],
+    "quitter":   ["quitte", "quittes", "quitte", "quittons", "quittez", "quittent"],
+    "se sentir": ["me sens", "te sens", "se sent", "nous sentons", "vous sentez", "se sentent"],
+    "garder":    ["garde", "gardes", "garde", "gardons", "gardez", "gardent"],
+    "rencontrer":["rencontre", "rencontres", "rencontre", "rencontrons", "rencontrez", "rencontrent"],
+    "obtenir":   ["obtiens", "obtiens", "obtient", "obtenons", "obtenez", "obtiennent"],
+    "sembler":   ["semble", "sembles", "semble", "semblons", "semblez", "semblent"],
+    "utiliser":  ["utilise", "utilises", "utilise", "utilisons", "utilisez", "utilisent"],
+    "travailler":["travaille", "travailles", "travaille", "travaillons", "travaillez", "travaillent"],
+    "couper":    ["coupe", "coupes", "coupe", "coupons", "coupez", "coupent"],
+    "cuisiner":  ["cuisine", "cuisines", "cuisine", "cuisinons", "cuisinez", "cuisinent"],
 }
 
 FUTURE = {
@@ -113,6 +133,26 @@ FUTURE = {
     "dormir":    ["dormirai", "dormiras", "dormira", "dormirons", "dormirez", "dormiront"],
     "ouvrir":    ["ouvrirai", "ouvriras", "ouvrira", "ouvrirons", "ouvrirez", "ouvriront"],
     "recevoir":  ["recevrai", "recevras", "recevra", "recevrons", "recevrez", "recevront"],
+    "montrer":   ["montrerai", "montreras", "montrera", "montrerons", "montrerez", "montreront"],
+    "écouter":   ["écouterai", "écouteras", "écoutera", "écouterons", "écouterez", "écouteront"],
+    "entendre":  ["entendrai", "entendras", "entendra", "entendrons", "entendrez", "entendront"],
+    "attendre":  ["attendrai", "attendras", "attendra", "attendrons", "attendrez", "attendront"],
+    "dépenser":  ["dépenserai", "dépenseras", "dépensera", "dépenserons", "dépenserez", "dépenseront"],
+    "s'asseoir": ["m'assiérai", "t'assiéras", "s'assiéra", "nous assiérons", "vous assiérez", "s'assiéront"],
+    "monter":    ["monterai", "monteras", "montera", "monterons", "monterez", "monteront"],
+    "dessiner":  ["dessinerai", "dessineras", "dessinera", "dessinerons", "dessinerez", "dessineront"],
+    "voler":     ["volerai", "voleras", "volera", "volerons", "volerez", "voleront"],
+    "raconter":  ["raconterai", "raconteras", "racontera", "raconterons", "raconterez", "raconteront"],
+    "quitter":   ["quitterai", "quitteras", "quittera", "quitterons", "quitterez", "quitteront"],
+    "se sentir": ["me sentirai", "te sentiras", "se sentira", "nous sentirons", "vous sentirez", "se sentiront"],
+    "garder":    ["garderai", "garderas", "gardera", "garderons", "garderez", "garderont"],
+    "rencontrer":["rencontrerai", "rencontreras", "rencontrera", "rencontrerons", "rencontrerez", "rencontreront"],
+    "obtenir":   ["obtiendrai", "obtiendras", "obtiendra", "obtiendrons", "obtiendrez", "obtiendront"],
+    "sembler":   ["semblerai", "sembleras", "semblera", "semblerons", "semblerez", "sembleront"],
+    "utiliser":  ["utiliserai", "utiliseras", "utilisera", "utiliserons", "utiliserez", "utiliseront"],
+    "travailler":["travaillerai", "travailleras", "travaillera", "travaillerons", "travaillerez", "travailleront"],
+    "couper":    ["couperai", "couperas", "coupera", "couperons", "couperez", "couperont"],
+    "cuisiner":  ["cuisinerai", "cuisineras", "cuisinera", "cuisinerons", "cuisinerez", "cuisineront"],
 }
 
 PAST_COMPOSE = {
@@ -164,6 +204,26 @@ PAST_COMPOSE = {
     "dormir":    ("avoir",  ["dormi",   "dormi",   "dormi",   "dormi",   "dormi",   "dormi"]),
     "ouvrir":    ("avoir",  ["ouvert",  "ouvert",  "ouvert",  "ouvert",  "ouvert",  "ouvert"]),
     "recevoir":  ("avoir",  ["reçu",    "reçu",    "reçu",    "reçu",    "reçu",    "reçu"]),
+    "montrer":   ("avoir",  ["montré",  "montré",  "montré",  "montré",  "montré",  "montré"]),
+    "écouter":   ("avoir",  ["écouté",  "écouté",  "écouté",  "écouté",  "écouté",  "écouté"]),
+    "entendre":  ("avoir",  ["entendu", "entendu", "entendu", "entendu", "entendu", "entendu"]),
+    "attendre":  ("avoir",  ["attendu", "attendu", "attendu", "attendu", "attendu", "attendu"]),
+    "dépenser":  ("avoir",  ["dépensé", "dépensé", "dépensé", "dépensé", "dépensé", "dépensé"]),
+    "s'asseoir": ("être",   ["assis",   "assis",   "assis",   "assis",   "assis",   "assis"]),
+    "monter":    ("être",   ["monté",   "monté",   "monté",   "montés",  "montés",  "montés"]),
+    "dessiner":  ("avoir",  ["dessiné", "dessiné", "dessiné", "dessiné", "dessiné", "dessiné"]),
+    "voler":     ("avoir",  ["volé",    "volé",    "volé",    "volé",    "volé",    "volé"]),
+    "raconter":  ("avoir",  ["raconté", "raconté", "raconté", "raconté", "raconté", "raconté"]),
+    "quitter":   ("avoir",  ["quitté",  "quitté",  "quitté",  "quitté",  "quitté",  "quitté"]),
+    "se sentir": ("être",   ["senti",   "senti",   "senti",   "sentis",  "sentis",  "sentis"]),
+    "garder":    ("avoir",  ["gardé",   "gardé",   "gardé",   "gardé",   "gardé",   "gardé"]),
+    "rencontrer":("avoir",  ["rencontré","rencontré","rencontré","rencontré","rencontré","rencontré"]),
+    "obtenir":   ("avoir",  ["obtenu",  "obtenu",  "obtenu",  "obtenu",  "obtenu",  "obtenu"]),
+    "sembler":   ("avoir",  ["semblé",  "semblé",  "semblé",  "semblé",  "semblé",  "semblé"]),
+    "utiliser":  ("avoir",  ["utilisé", "utilisé", "utilisé", "utilisé", "utilisé", "utilisé"]),
+    "travailler":("avoir",  ["travaillé","travaillé","travaillé","travaillé","travaillé","travaillé"]),
+    "couper":    ("avoir",  ["coupé",   "coupé",   "coupé",   "coupé",   "coupé",   "coupé"]),
+    "cuisiner":  ("avoir",  ["cuisiné", "cuisiné", "cuisiné", "cuisiné", "cuisiné", "cuisiné"]),
 }
 
 PRONOUNS = ["je", "tu", "il/elle/on", "nous", "vous", "ils/elles"]
@@ -241,17 +301,41 @@ VERB_TRANSLATIONS = {
     "dormir":    "to sleep",
     "ouvrir":    "to open",
     "recevoir":  "to receive",
+    "montrer":   "to show",
+    "écouter":   "to listen (to)",
+    "entendre":  "to hear",
+    "attendre":  "to wait (for)",
+    "dépenser":  "to spend (money)",
+    "s'asseoir": "to sit (down)",
+    "monter":    "to go up / to climb",
+    "dessiner":  "to draw",
+    "voler":     "to fly / to steal",
+    "raconter":  "to tell (a story)",
+    "quitter":   "to leave / to quit",
+    "se sentir": "to feel",
+    "garder":    "to keep / to guard",
+    "rencontrer":"to meet",
+    "obtenir":   "to obtain / to get",
+    "sembler":   "to seem",
+    "utiliser":  "to use",
+    "travailler":"to work",
+    "couper":    "to cut",
+    "cuisiner":  "to cook",
 }
 
 VERB_TYPES = {
     "regular_er": ["donner", "trouver", "penser", "parler", "aimer",
-                   "passer", "demander", "laisser", "porter", "rester", "tomber"],
+                   "passer", "demander", "laisser", "porter", "rester", "tomber",
+                   "montrer", "écouter", "dépenser", "monter", "dessiner", "voler",
+                   "raconter", "quitter", "garder", "rencontrer", "sembler", "utiliser",
+                   "travailler", "couper", "cuisiner"],
     "regular_ir": ["finir", "choisir", "réussir", "remplir", "réfléchir",
                    "obéir", "grandir", "applaudir", "établir", "bâtir", "agir"],
     "irregular": ["être", "avoir", "faire", "dire", "aller", "voir", "savoir",
                   "pouvoir", "vouloir", "venir", "devoir", "prendre", "mettre",
                   "croire", "tenir", "appeler", "sortir", "vivre", "connaître",
-                  "boire", "écrire", "lire", "partir", "dormir", "ouvrir", "recevoir"],
+                  "boire", "écrire", "lire", "partir", "dormir", "ouvrir", "recevoir",
+                  "entendre", "attendre", "s'asseoir", "se sentir", "obtenir"],
 }
 
 # ----------------------------------------------------------------------
@@ -342,10 +426,10 @@ def choose_tense() -> str:
 def choose_verb_type() -> list:
     """Choose which type of verbs to practice. Returns a list of verbs."""
     print("\nQuel type de verbes voulez-vous réviser ?")
-    print("  1 – Regular -ER verbs (11 verbs)")
+    print("  1 – Regular -ER verbs (26 verbs)")
     print("  2 – Regular -IR verbs (11 verbs)")
-    print("  3 – Irregular verbs (25 verbs)")
-    print("  4 – All verbs (47 verbs)")
+    print("  3 – Irregular verbs (30 verbs)")
+    print("  4 – All verbs (67 verbs)")
     while True:
         c = input("Entrez le numéro (ou q pour quitter) : ").strip().lower()
         if c == "q":
