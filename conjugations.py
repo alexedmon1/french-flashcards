@@ -74,6 +74,7 @@ PRESENT = {
     "raconter":  ["raconte", "racontes", "raconte", "racontons", "racontez", "racontent"],
     "quitter":   ["quitte", "quittes", "quitte", "quittons", "quittez", "quittent"],
     "se sentir": ["me sens", "te sens", "se sent", "nous sentons", "vous sentez", "se sentent"],
+    "se quitter": ["me quitte", "te quittes", "se quitte", "nous quittons", "vous quittez", "se quittent"],
     "garder":    ["garde", "gardes", "garde", "gardons", "gardez", "gardent"],
     "rencontrer":["rencontre", "rencontres", "rencontre", "rencontrons", "rencontrez", "rencontrent"],
     "obtenir":   ["obtiens", "obtiens", "obtient", "obtenons", "obtenez", "obtiennent"],
@@ -145,6 +146,7 @@ FUTURE = {
     "raconter":  ["raconterai", "raconteras", "racontera", "raconterons", "raconterez", "raconteront"],
     "quitter":   ["quitterai", "quitteras", "quittera", "quitterons", "quitterez", "quitteront"],
     "se sentir": ["me sentirai", "te sentiras", "se sentira", "nous sentirons", "vous sentirez", "se sentiront"],
+    "se quitter": ["me quitterai", "te quitteras", "se quittera", "nous quitterons", "vous quitterez", "se quitteront"],
     "garder":    ["garderai", "garderas", "gardera", "garderons", "garderez", "garderont"],
     "rencontrer":["rencontrerai", "rencontreras", "rencontrera", "rencontrerons", "rencontrerez", "rencontreront"],
     "obtenir":   ["obtiendrai", "obtiendras", "obtiendra", "obtiendrons", "obtiendrez", "obtiendront"],
@@ -216,6 +218,7 @@ PAST_COMPOSE = {
     "raconter":  ("avoir",  ["raconté", "raconté", "raconté", "raconté", "raconté", "raconté"]),
     "quitter":   ("avoir",  ["quitté",  "quitté",  "quitté",  "quitté",  "quitté",  "quitté"]),
     "se sentir": ("être",   ["senti",   "senti",   "senti",   "sentis",  "sentis",  "sentis"]),
+    "se quitter": ("être",   ["quitté",   "quitté",   "quitté",   "quittés",  "quittés",  "quittés"]),
     "garder":    ("avoir",  ["gardé",   "gardé",   "gardé",   "gardé",   "gardé",   "gardé"]),
     "rencontrer":("avoir",  ["rencontré","rencontré","rencontré","rencontré","rencontré","rencontré"]),
     "obtenir":   ("avoir",  ["obtenu",  "obtenu",  "obtenu",  "obtenu",  "obtenu",  "obtenu"]),
@@ -312,6 +315,7 @@ VERB_TRANSLATIONS = {
     "voler":     "to fly / to steal",
     "raconter":  "to tell (a story)",
     "quitter":   "to leave / to quit",
+    "se quitter": "to leave each other / to part ways",
     "se sentir": "to feel",
     "garder":    "to keep / to guard",
     "rencontrer":"to meet",
@@ -335,7 +339,7 @@ VERB_TYPES = {
                   "pouvoir", "vouloir", "venir", "devoir", "prendre", "mettre",
                   "croire", "tenir", "appeler", "sortir", "vivre", "connaître",
                   "boire", "écrire", "lire", "partir", "dormir", "ouvrir", "recevoir",
-                  "entendre", "attendre", "s'asseoir", "se sentir", "obtenir"],
+                  "entendre", "attendre", "s'asseoir", "se sentir", "se quitter", "obtenir"],
 }
 
 # ----------------------------------------------------------------------
