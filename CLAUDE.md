@@ -74,9 +74,36 @@ python3 flashcards.py --list-categories
 
 ### Conjugation Trainer
 ```bash
-python3 conjugations.py
+python3 conjugations.py [options]
 ```
-Interactive menu allows selecting tense (present/future/passé composé) and tests random verb conjugations.
+Practice French verb conjugations across three tenses (present, future, passé composé) with **91 verbs** and optional **SRS support**.
+
+**Command-line options:**
+- `--help`: Show detailed help message
+- `--srs`: Spaced Repetition System (only reviews verb-tense combinations due today)
+- `--stats`: Show progress statistics and exit
+
+**Features:**
+- Interactive verb type selection (regular -ER, regular -IR, irregular, or all)
+- 91 total verbs (26 regular -ER, 20 regular -IR, 45 irregular)
+- Randomized pronoun variations (il/elle/on, ils/elles) for natural practice
+- Gender agreement for passé composé with être verbs
+- SRS quality ratings (Wrong/Hard/Good/Easy) to optimize review schedule
+
+**Examples:**
+```bash
+# Show help
+python3 conjugations.py --help
+
+# Normal practice mode (interactive)
+python3 conjugations.py
+
+# SRS mode - only practice due verbs
+python3 conjugations.py --srs
+
+# View your statistics
+python3 conjugations.py --stats
+```
 
 ### Master Vocabulary Management
 
@@ -198,11 +225,20 @@ son,his|her|sound,Common 1
 
 ### conjugations.py
 - **Data-driven design**: Three dictionaries (PRESENT, FUTURE, PAST_COMPOSE) contain conjugation tables
-- **Verb coverage**: être, avoir, aller, faire, parler, finir, savoir, connaître, venir, vouloir, pouvoir, devoir
+- **Verb coverage**: 91 verbs total
+  - **Regular -ER verbs (26)**: donner, trouver, penser, parler, aimer, passer, demander, laisser, porter, rester, tomber, montrer, écouter, dépenser, monter, dessiner, voler, raconter, quitter, garder, rencontrer, sembler, utiliser, travailler, couper, cuisiner
+  - **Regular -IR verbs (20)**: finir, choisir, réussir, remplir, réfléchir, obéir, grandir, applaudir, établir, bâtir, agir, vieillir, grossir, maigrir, rougir, ralentir, avertir, guérir, saisir, nourrir
+  - **Irregular verbs (45)**: être, avoir, faire, dire, aller, voir, savoir, pouvoir, vouloir, venir, devoir, prendre, mettre, croire, tenir, appeler, sortir, vivre, connaître, boire, écrire, lire, partir, dormir, ouvrir, recevoir, entendre, attendre, s'asseoir, se sentir, se quitter, obtenir, perdre, descendre, offrir, souffrir, découvrir, conduire, construire, produire, traduire, rire, suivre, naître, mourir, comprendre, apprendre
 - **Passé composé structure**: Stored as tuples `(auxiliary_verb, [participle_forms])`
   - Auxiliary is either "être" or "avoir"
   - get_table() dynamically builds full conjugations from auxiliary + participle
-- **Interactive loop**: User selects tense, random verb chosen, all 6 pronouns tested
+- **Interactive loop**: User selects verb type and tense, random verb chosen, all 6 pronouns tested
+- **SRS support**: ConjugationStats class tracks verb-tense combinations with SM-2 algorithm
+  - Data persistence in `.conjugation_data/` directory
+  - `conjugation_stats.json`: Per-combination SRS data (intervals, ease factors, due dates)
+  - `conjugation_progress.json`: Session history and statistics
+  - Quality ratings (0-3) determine next review interval
+  - Filtering by due date when `--srs` flag is used
 
 ### combine_csvs.py
 - **Purpose**: Combines all individual CSV files into master_vocabulary.csv
@@ -247,18 +283,28 @@ son,his|her|sound,Common 1
 1. Add entries to PRESENT, FUTURE, and PAST_COMPOSE dictionaries in `conjugations.py`
 2. For passé composé, specify correct auxiliary verb ("être" or "avoir")
 3. Ensure all 6 pronoun forms are included in correct order: je, tu, il/elle/on, nous, vous, ils/elles
+4. Add English translation to VERB_TRANSLATIONS dictionary
+5. Add verb to appropriate category in VERB_TYPES ("regular_er", "regular_ir", or "irregular")
+6. Update verb counts in choose_verb_type() function if needed
 
 ### Recommended Daily Practice
 ```bash
-# Check what's due today
+# Check vocabulary due today
 python3 flashcards.py --stats
 
-# Interactive practice with SRS (simplest!)
+# Check conjugations due today
+python3 conjugations.py --stats
+
+# Practice flashcards with SRS
 python3 flashcards.py --srs
 
-# Or pre-select category without prompts
+# Practice conjugations with SRS
+python3 conjugations.py --srs
+
+# Or pre-select category without prompts (flashcards)
 python3 flashcards.py --category=verbs --srs
 ```
 
 ### Resetting Progress
-Delete `.flashcard_data/` directory to reset all SRS data and statistics
+- Delete `.flashcard_data/` directory to reset flashcard SRS data and statistics
+- Delete `.conjugation_data/` directory to reset conjugation SRS data and statistics

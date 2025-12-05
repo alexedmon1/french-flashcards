@@ -7,8 +7,129 @@ Created on Wed Oct 29 19:17:20 2025
 """
 
 #!/usr/bin/env python3
+import argparse
+import json
 import random
 import sys
+from datetime import date, timedelta
+from pathlib import Path
+
+# ----------------------------------------------------------------------
+# SRS Configuration
+# ----------------------------------------------------------------------
+DATA_DIR = Path(".conjugation_data")
+STATS_FILE = DATA_DIR / "conjugation_stats.json"
+PROGRESS_FILE = DATA_DIR / "conjugation_progress.json"
+
+# SRS intervals (in days) - simplified SM-2 algorithm
+INTERVALS = {
+    0: 0,      # Wrong - review same session
+    1: 1,      # Hard - 1 day
+    2: 3,      # Good - 3 days
+    3: 7,      # Easy - 1 week
+}
+
+# ----------------------------------------------------------------------
+# SRS Data Classes
+# ----------------------------------------------------------------------
+class ConjugationStats:
+    """Track SRS data for a specific verb-tense combination"""
+    def __init__(self, key: str):
+        self.key = key  # Format: "verb|tense" (e.g., "être|present")
+        self.times_seen = 0
+        self.times_correct = 0
+        self.last_reviewed = None
+        self.interval = 0  # days until next review
+        self.ease_factor = 2.5
+        self.due_date = date.today().isoformat()
+
+    def to_dict(self):
+        return {
+            "times_seen": self.times_seen,
+            "times_correct": self.times_correct,
+            "last_reviewed": self.last_reviewed,
+            "interval": self.interval,
+            "ease_factor": self.ease_factor,
+            "due_date": self.due_date
+        }
+
+    @classmethod
+    def from_dict(cls, key: str, data: dict):
+        stats = cls(key)
+        stats.times_seen = data.get("times_seen", 0)
+        stats.times_correct = data.get("times_correct", 0)
+        stats.last_reviewed = data.get("last_reviewed")
+        stats.interval = data.get("interval", 0)
+        stats.ease_factor = data.get("ease_factor", 2.5)
+        stats.due_date = data.get("due_date", date.today().isoformat())
+        return stats
+
+    def update(self, quality: int):
+        """Update stats based on performance (0=wrong, 1=hard, 2=good, 3=easy)"""
+        self.times_seen += 1
+        if quality > 0:
+            self.times_correct += 1
+
+        self.last_reviewed = date.today().isoformat()
+
+        # Update ease factor (simplified SM-2)
+        self.ease_factor = max(1.3, self.ease_factor + (0.1 - (3 - quality) * (0.08 + (3 - quality) * 0.02)))
+
+        # Calculate next interval
+        if quality == 0:
+            self.interval = 0
+        else:
+            if self.times_correct == 1:
+                self.interval = INTERVALS[quality]
+            else:
+                self.interval = int(self.interval * self.ease_factor)
+
+        # Calculate due date
+        next_date = date.today() + timedelta(days=self.interval)
+        self.due_date = next_date.isoformat()
+
+
+# ----------------------------------------------------------------------
+# SRS Storage Functions
+# ----------------------------------------------------------------------
+def ensure_data_dir():
+    DATA_DIR.mkdir(exist_ok=True)
+
+
+def load_stats() -> dict[str, ConjugationStats]:
+    """Load conjugation statistics from JSON file"""
+    if not STATS_FILE.exists():
+        return {}
+
+    with STATS_FILE.open() as f:
+        data = json.load(f)
+
+    return {key: ConjugationStats.from_dict(key, val) for key, val in data.items()}
+
+
+def save_stats(stats: dict[str, ConjugationStats]):
+    """Save conjugation statistics to JSON file"""
+    ensure_data_dir()
+    data = {key: val.to_dict() for key, val in stats.items()}
+    with STATS_FILE.open("w") as f:
+        json.dump(data, f, indent=2)
+
+
+def load_progress() -> dict:
+    """Load progress history"""
+    if not PROGRESS_FILE.exists():
+        return {"sessions": [], "streak": 0, "last_session": None}
+
+    with PROGRESS_FILE.open() as f:
+        return json.load(f)
+
+
+def save_progress(progress: dict):
+    """Save progress history"""
+    ensure_data_dir()
+    with PROGRESS_FILE.open("w") as f:
+        json.dump(progress, f, indent=2)
+
 
 # ----------------------------------------------------------------------
 # 1️⃣  Data tables
@@ -55,6 +176,15 @@ PRESENT = {
     "établir":   ["établis", "établis", "établit", "établissons", "établissez", "établissent"],
     "bâtir":     ["bâtis", "bâtis", "bâtit", "bâtissons", "bâtissez", "bâtissent"],
     "agir":      ["agis", "agis", "agit", "agissons", "agissez", "agissent"],
+    "vieillir":  ["vieillis", "vieillis", "vieillit", "vieillissons", "vieillissez", "vieillissent"],
+    "grossir":   ["grossis", "grossis", "grossit", "grossissons", "grossissez", "grossissent"],
+    "maigrir":   ["maigris", "maigris", "maigrit", "maigrissons", "maigrissez", "maigrissent"],
+    "rougir":    ["rougis", "rougis", "rougit", "rougissons", "rougissez", "rougissent"],
+    "ralentir":  ["ralentis", "ralentis", "ralentit", "ralentissons", "ralentissez", "ralentissent"],
+    "avertir":   ["avertis", "avertis", "avertit", "avertissons", "avertissez", "avertissent"],
+    "guérir":    ["guéris", "guéris", "guérit", "guérissons", "guérissez", "guérissent"],
+    "saisir":    ["saisis", "saisis", "saisit", "saisissons", "saisissez", "saisissent"],
+    "nourrir":   ["nourris", "nourris", "nourrit", "nourrissons", "nourrissez", "nourrissent"],
     "boire":     ["bois", "bois", "boit", "buvons", "buvez", "boivent"],
     "écrire":    ["écris", "écris", "écrit", "écrivons", "écrivez", "écrivent"],
     "lire":      ["lis", "lis", "lit", "lisons", "lisez", "lisent"],
@@ -83,6 +213,21 @@ PRESENT = {
     "travailler":["travaille", "travailles", "travaille", "travaillons", "travaillez", "travaillent"],
     "couper":    ["coupe", "coupes", "coupe", "coupons", "coupez", "coupent"],
     "cuisiner":  ["cuisine", "cuisines", "cuisine", "cuisinons", "cuisinez", "cuisinent"],
+    "perdre":    ["perds", "perds", "perd", "perdons", "perdez", "perdent"],
+    "descendre": ["descends", "descends", "descend", "descendons", "descendez", "descendent"],
+    "offrir":    ["offre", "offres", "offre", "offrons", "offrez", "offrent"],
+    "souffrir":  ["souffre", "souffres", "souffre", "souffrons", "souffrez", "souffrent"],
+    "découvrir": ["découvre", "découvres", "découvre", "découvrons", "découvrez", "découvrent"],
+    "conduire":  ["conduis", "conduis", "conduit", "conduisons", "conduisez", "conduisent"],
+    "construire":["construis", "construis", "construit", "construisons", "construisez", "construisent"],
+    "produire":  ["produis", "produis", "produit", "produisons", "produisez", "produisent"],
+    "traduire":  ["traduis", "traduis", "traduit", "traduisons", "traduisez", "traduisent"],
+    "rire":      ["ris", "ris", "rit", "rions", "riez", "rient"],
+    "suivre":    ["suis", "suis", "suit", "suivons", "suivez", "suivent"],
+    "naître":    ["nais", "nais", "naît", "naissons", "naissez", "naissent"],
+    "mourir":    ["meurs", "meurs", "meurt", "mourons", "mourez", "meurent"],
+    "comprendre":["comprends", "comprends", "comprend", "comprenons", "comprenez", "comprennent"],
+    "apprendre": ["apprends", "apprends", "apprend", "apprenons", "apprenez", "apprennent"],
 }
 
 FUTURE = {
@@ -127,6 +272,15 @@ FUTURE = {
     "établir":   ["établirai", "établiras", "établira", "établirons", "établirez", "établiront"],
     "bâtir":     ["bâtirai", "bâtiras", "bâtira", "bâtirons", "bâtirez", "bâtiront"],
     "agir":      ["agirai", "agiras", "agira", "agirons", "agirez", "agiront"],
+    "vieillir":  ["vieillirai", "vieilliras", "vieillira", "vieillirons", "vieillirez", "vieilliront"],
+    "grossir":   ["grossirai", "grossiras", "grossira", "grossirons", "grossirez", "grossiront"],
+    "maigrir":   ["maigrirai", "maigriras", "maigrira", "maigrirons", "maigrirez", "maigriront"],
+    "rougir":    ["rougirai", "rougiras", "rougira", "rougirons", "rougirez", "rougiront"],
+    "ralentir":  ["ralentirai", "ralentiras", "ralentira", "ralentirons", "ralentirez", "ralentiront"],
+    "avertir":   ["avertirai", "avertiras", "avertira", "avertirons", "avertirez", "avertiront"],
+    "guérir":    ["guérirai", "guériras", "guérira", "guérirons", "guérirez", "guériront"],
+    "saisir":    ["saisirai", "saisiras", "saisira", "saisirons", "saisirez", "saisiront"],
+    "nourrir":   ["nourrirai", "nourriras", "nourrira", "nourrirons", "nourrirez", "nourriront"],
     "boire":     ["boirai", "boiras", "boira", "boirons", "boirez", "boiront"],
     "écrire":    ["écrirai", "écriras", "écrira", "écrirons", "écrirez", "écriront"],
     "lire":      ["lirai", "liras", "lira", "lirons", "lirez", "liront"],
@@ -155,6 +309,21 @@ FUTURE = {
     "travailler":["travaillerai", "travailleras", "travaillera", "travaillerons", "travaillerez", "travailleront"],
     "couper":    ["couperai", "couperas", "coupera", "couperons", "couperez", "couperont"],
     "cuisiner":  ["cuisinerai", "cuisineras", "cuisinera", "cuisinerons", "cuisinerez", "cuisineront"],
+    "perdre":    ["perdrai", "perdras", "perdra", "perdrons", "perdrez", "perdront"],
+    "descendre": ["descendrai", "descendras", "descendra", "descendrons", "descendrez", "descendront"],
+    "offrir":    ["offrirai", "offriras", "offrira", "offrirons", "offrirez", "offriront"],
+    "souffrir":  ["souffrirai", "souffriras", "souffrira", "souffrirons", "souffrirez", "souffriront"],
+    "découvrir": ["découvrirai", "découvriras", "découvrira", "découvrirons", "découvrirez", "découvriront"],
+    "conduire":  ["conduirai", "conduiras", "conduira", "conduirons", "conduirez", "conduiront"],
+    "construire":["construirai", "construiras", "construira", "construirons", "construirez", "construiront"],
+    "produire":  ["produirai", "produiras", "produira", "produirons", "produirez", "produiront"],
+    "traduire":  ["traduirai", "traduiras", "traduira", "traduirons", "traduirez", "traduiront"],
+    "rire":      ["rirai", "riras", "rira", "rirons", "rirez", "riront"],
+    "suivre":    ["suivrai", "suivras", "suivra", "suivrons", "suivrez", "suivront"],
+    "naître":    ["naîtrai", "naîtras", "naîtra", "naîtrons", "naîtrez", "naîtront"],
+    "mourir":    ["mourrai", "mourras", "mourra", "mourrons", "mourrez", "mourront"],
+    "comprendre":["comprendrai", "comprendras", "comprendra", "comprendrons", "comprendrez", "comprendront"],
+    "apprendre": ["apprendrai", "apprendras", "apprendra", "apprendrons", "apprendrez", "apprendront"],
 }
 
 PAST_COMPOSE = {
@@ -199,6 +368,15 @@ PAST_COMPOSE = {
     "établir":   ("avoir",  ["établi",  "établi",  "établi",  "établi",  "établi",  "établi"]),
     "bâtir":     ("avoir",  ["bâti",    "bâti",    "bâti",    "bâti",    "bâti",    "bâti"]),
     "agir":      ("avoir",  ["agi",     "agi",     "agi",     "agi",     "agi",     "agi"]),
+    "vieillir":  ("avoir",  ["vieilli", "vieilli", "vieilli", "vieilli", "vieilli", "vieilli"]),
+    "grossir":   ("avoir",  ["grossi",  "grossi",  "grossi",  "grossi",  "grossi",  "grossi"]),
+    "maigrir":   ("avoir",  ["maigri",  "maigri",  "maigri",  "maigri",  "maigri",  "maigri"]),
+    "rougir":    ("avoir",  ["rougi",   "rougi",   "rougi",   "rougi",   "rougi",   "rougi"]),
+    "ralentir":  ("avoir",  ["ralenti", "ralenti", "ralenti", "ralenti", "ralenti", "ralenti"]),
+    "avertir":   ("avoir",  ["averti",  "averti",  "averti",  "averti",  "averti",  "averti"]),
+    "guérir":    ("avoir",  ["guéri",   "guéri",   "guéri",   "guéri",   "guéri",   "guéri"]),
+    "saisir":    ("avoir",  ["saisi",   "saisi",   "saisi",   "saisi",   "saisi",   "saisi"]),
+    "nourrir":   ("avoir",  ["nourri",  "nourri",  "nourri",  "nourri",  "nourri",  "nourri"]),
     "boire":     ("avoir",  ["bu",      "bu",      "bu",      "bu",      "bu",      "bu"]),
     "écrire":    ("avoir",  ["écrit",   "écrit",   "écrit",   "écrit",   "écrit",   "écrit"]),
     "lire":      ("avoir",  ["lu",      "lu",      "lu",      "lu",      "lu",      "lu"]),
@@ -227,6 +405,21 @@ PAST_COMPOSE = {
     "travailler":("avoir",  ["travaillé","travaillé","travaillé","travaillé","travaillé","travaillé"]),
     "couper":    ("avoir",  ["coupé",   "coupé",   "coupé",   "coupé",   "coupé",   "coupé"]),
     "cuisiner":  ("avoir",  ["cuisiné", "cuisiné", "cuisiné", "cuisiné", "cuisiné", "cuisiné"]),
+    "perdre":    ("avoir",  ["perdu",   "perdu",   "perdu",   "perdu",   "perdu",   "perdu"]),
+    "descendre": ("être",   ["descendu","descendu","descendu","descendus","descendus","descendus"]),
+    "offrir":    ("avoir",  ["offert",  "offert",  "offert",  "offert",  "offert",  "offert"]),
+    "souffrir":  ("avoir",  ["souffert","souffert","souffert","souffert","souffert","souffert"]),
+    "découvrir": ("avoir",  ["découvert","découvert","découvert","découvert","découvert","découvert"]),
+    "conduire":  ("avoir",  ["conduit", "conduit", "conduit", "conduit", "conduit", "conduit"]),
+    "construire":("avoir",  ["construit","construit","construit","construit","construit","construit"]),
+    "produire":  ("avoir",  ["produit", "produit", "produit", "produit", "produit", "produit"]),
+    "traduire":  ("avoir",  ["traduit", "traduit", "traduit", "traduit", "traduit", "traduit"]),
+    "rire":      ("avoir",  ["ri",      "ri",      "ri",      "ri",      "ri",      "ri"]),
+    "suivre":    ("avoir",  ["suivi",   "suivi",   "suivi",   "suivi",   "suivi",   "suivi"]),
+    "naître":    ("être",   ["né",      "né",      "né",      "nés",     "nés",     "nés"]),
+    "mourir":    ("être",   ["mort",    "mort",    "mort",    "morts",   "morts",   "morts"]),
+    "comprendre":("avoir",  ["compris", "compris", "compris", "compris", "compris", "compris"]),
+    "apprendre": ("avoir",  ["appris",  "appris",  "appris",  "appris",  "appris",  "appris"]),
 }
 
 PRONOUNS = ["je", "tu", "il/elle/on", "nous", "vous", "ils/elles"]
@@ -297,6 +490,15 @@ VERB_TRANSLATIONS = {
     "établir":   "to establish",
     "bâtir":     "to build",
     "agir":      "to act",
+    "vieillir":  "to age / to grow old",
+    "grossir":   "to gain weight / to get bigger",
+    "maigrir":   "to lose weight / to get thinner",
+    "rougir":    "to blush / to turn red",
+    "ralentir":  "to slow down",
+    "avertir":   "to warn",
+    "guérir":    "to heal / to cure",
+    "saisir":    "to seize / to grab",
+    "nourrir":   "to feed / to nourish",
     "boire":     "to drink",
     "écrire":    "to write",
     "lire":      "to read",
@@ -325,6 +527,21 @@ VERB_TRANSLATIONS = {
     "travailler":"to work",
     "couper":    "to cut",
     "cuisiner":  "to cook",
+    "perdre":    "to lose",
+    "descendre": "to go down / to descend",
+    "offrir":    "to offer",
+    "souffrir":  "to suffer",
+    "découvrir": "to discover",
+    "conduire":  "to drive",
+    "construire":"to build / to construct",
+    "produire":  "to produce",
+    "traduire":  "to translate",
+    "rire":      "to laugh",
+    "suivre":    "to follow",
+    "naître":    "to be born",
+    "mourir":    "to die",
+    "comprendre":"to understand",
+    "apprendre": "to learn",
 }
 
 VERB_TYPES = {
@@ -334,13 +551,125 @@ VERB_TYPES = {
                    "raconter", "quitter", "garder", "rencontrer", "sembler", "utiliser",
                    "travailler", "couper", "cuisiner"],
     "regular_ir": ["finir", "choisir", "réussir", "remplir", "réfléchir",
-                   "obéir", "grandir", "applaudir", "établir", "bâtir", "agir"],
+                   "obéir", "grandir", "applaudir", "établir", "bâtir", "agir",
+                   "vieillir", "grossir", "maigrir", "rougir", "ralentir",
+                   "avertir", "guérir", "saisir", "nourrir"],
     "irregular": ["être", "avoir", "faire", "dire", "aller", "voir", "savoir",
                   "pouvoir", "vouloir", "venir", "devoir", "prendre", "mettre",
                   "croire", "tenir", "appeler", "sortir", "vivre", "connaître",
                   "boire", "écrire", "lire", "partir", "dormir", "ouvrir", "recevoir",
-                  "entendre", "attendre", "s'asseoir", "se sentir", "se quitter", "obtenir"],
+                  "entendre", "attendre", "s'asseoir", "se sentir", "se quitter", "obtenir",
+                  "perdre", "descendre", "offrir", "souffrir", "découvrir", "conduire",
+                  "construire", "produire", "traduire", "rire", "suivre", "naître",
+                  "mourir", "comprendre", "apprendre"],
 }
+
+# ----------------------------------------------------------------------
+# SRS Helper Functions
+# ----------------------------------------------------------------------
+def get_due_combinations(verb_list: list[str], stats: dict[str, ConjugationStats]) -> list[tuple[str, str]]:
+    """
+    Get list of (verb, tense) combinations that are due for review today.
+    If no stats exist for a combination, it's considered due.
+    """
+    today = date.today().isoformat()
+    due_combinations = []
+
+    for verb in verb_list:
+        for tense in ["present", "future", "past"]:
+            key = f"{verb}|{tense}"
+
+            # If no stats, it's new and should be reviewed
+            if key not in stats:
+                due_combinations.append((verb, tense))
+            else:
+                stat = stats[key]
+                # Check if due date is today or earlier
+                if stat.due_date <= today:
+                    due_combinations.append((verb, tense))
+
+    return due_combinations
+
+
+def calculate_quality_from_score(score: int, total: int) -> int:
+    """
+    Convert a score out of 6 to a quality rating (0-3) for SRS.
+    6/6: Easy (3)
+    5/6: Good (2)
+    3-4/6: Hard (1)
+    0-2/6: Wrong (0)
+    """
+    if score == total:
+        return 3  # Easy
+    elif score >= total - 1:
+        return 2  # Good
+    elif score >= total // 2:
+        return 1  # Hard
+    else:
+        return 0  # Wrong
+
+
+def ask_quality_rating(score: int, total: int) -> int:
+    """
+    Ask user for quality rating or auto-calculate from score.
+    Returns quality (0=wrong, 1=hard, 2=good, 3=easy)
+    """
+    suggested = calculate_quality_from_score(score, total)
+    quality_names = {0: "Wrong", 1: "Hard", 2: "Good", 3: "Easy"}
+
+    print(f"\nSRS Quality Rating (suggested: {quality_names[suggested]})")
+    print("  0 - Wrong (review soon)")
+    print("  1 - Hard (review in 1 day)")
+    print("  2 - Good (review in 3 days)")
+    print("  3 - Easy (review in 1 week)")
+
+    while True:
+        choice = input(f"Rate this verb [0-3] or press Enter for {suggested}: ").strip()
+
+        if choice == "":
+            return suggested
+        elif choice in "0123":
+            return int(choice)
+        else:
+            print("Please enter 0, 1, 2, 3, or press Enter")
+
+
+def show_stats_summary(stats: dict[str, ConjugationStats]):
+    """Display statistics summary"""
+    if not stats:
+        print("\nNo statistics yet. Start practicing to build your SRS data!")
+        return
+
+    total_combinations = len(stats)
+    today = date.today().isoformat()
+
+    # Count due items
+    due_count = sum(1 for s in stats.values() if s.due_date <= today)
+
+    # Calculate overall accuracy
+    total_seen = sum(s.times_seen for s in stats.values())
+    total_correct = sum(s.times_correct for s in stats.values())
+    accuracy = (total_correct / total_seen * 100) if total_seen > 0 else 0
+
+    print("\n=== Conjugation Practice Statistics ===")
+    print(f"Total verb-tense combinations practiced: {total_combinations}")
+    print(f"Due for review today: {due_count}")
+    print(f"Total reviews: {total_seen}")
+    print(f"Overall accuracy: {accuracy:.1f}%")
+
+    # Show most difficult verbs
+    difficult = sorted(stats.values(),
+                      key=lambda s: s.times_correct / s.times_seen if s.times_seen > 0 else 0)[:5]
+
+    if difficult and difficult[0].times_seen > 0:
+        print("\nMost challenging verb-tense combinations:")
+        for s in difficult:
+            if s.times_seen == 0:
+                continue
+            verb_tense = s.key.split('|')
+            acc = s.times_correct / s.times_seen * 100
+            print(f"  {verb_tense[0]} ({verb_tense[1]}): {acc:.0f}% ({s.times_correct}/{s.times_seen})")
+
 
 # ----------------------------------------------------------------------
 # 2️⃣  Helpers
@@ -431,9 +760,9 @@ def choose_verb_type() -> list:
     """Choose which type of verbs to practice. Returns a list of verbs."""
     print("\nQuel type de verbes voulez-vous réviser ?")
     print("  1 – Regular -ER verbs (26 verbs)")
-    print("  2 – Regular -IR verbs (11 verbs)")
-    print("  3 – Irregular verbs (30 verbs)")
-    print("  4 – All verbs (67 verbs)")
+    print("  2 – Regular -IR verbs (20 verbs)")
+    print("  3 – Irregular verbs (45 verbs)")
+    print("  4 – All verbs (91 verbs)")
     while True:
         c = input("Entrez le numéro (ou q pour quitter) : ").strip().lower()
         if c == "q":
@@ -482,18 +811,68 @@ def ask_one_verb(infinitive: str, tense: str):
 # 3️⃣  Main loop
 # ----------------------------------------------------------------------
 def main():
+    # Parse command-line arguments
+    parser = argparse.ArgumentParser(
+        description="French Conjugation Trainer with SRS support",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  python3 conjugations.py              # Normal practice mode
+  python3 conjugations.py --srs        # SRS mode (only review due verbs)
+  python3 conjugations.py --stats      # Show statistics and exit
+        """
+    )
+    parser.add_argument("--srs", action="store_true",
+                       help="Enable Spaced Repetition System (only practice due verbs)")
+    parser.add_argument("--stats", action="store_true",
+                       help="Show statistics summary and exit")
+
+    args = parser.parse_args()
+
+    # Load SRS data
+    stats = load_stats() if args.srs or args.stats else {}
+
+    # Handle --stats flag
+    if args.stats:
+        show_stats_summary(stats)
+        return
+
     total_ok = 0
     total_q  = 0
 
     print("=== Test de conjugaison française (présent, futur, passé) ===")
+    if args.srs:
+        print("📚 SRS Mode: Practicing verbs due for review today")
     print("Tapez 'q' à tout moment pour quitter.\n")
 
     # Choose verb type once at the start
     verb_list = choose_verb_type()
 
+    # If SRS mode, get due combinations
+    if args.srs:
+        due_combinations = get_due_combinations(verb_list, stats)
+        if not due_combinations:
+            print("\n✅ No verbs due for review today! Great work!")
+            print("Come back tomorrow for more practice, or run without --srs to practice any verb.")
+            return
+
+        print(f"\n📝 {len(due_combinations)} verb-tense combinations due for review today")
+        print("Press Enter to continue...")
+        input()
+
     while True:
-        tense = choose_tense()
-        infinitive = random.choice(verb_list)
+        # Select verb and tense
+        if args.srs:
+            if not due_combinations:
+                print("\n✅ All due verbs completed for today!")
+                break
+
+            # Pick a random due combination
+            infinitive, tense = random.choice(due_combinations)
+        else:
+            # Normal mode: pick random verb and ask for tense
+            tense = choose_tense()
+            infinitive = random.choice(verb_list)
 
         try:
             ok, qty = ask_one_verb(infinitive, tense)
@@ -503,6 +882,26 @@ def main():
 
         total_ok += ok
         total_q  += qty
+
+        # SRS: Ask for quality rating and update stats
+        if args.srs:
+            quality = ask_quality_rating(ok, qty)
+
+            # Update or create stats for this verb-tense combination
+            key = f"{infinitive}|{tense}"
+            if key not in stats:
+                stats[key] = ConjugationStats(key)
+
+            stats[key].update(quality)
+            save_stats(stats)
+
+            # Remove from due list if quality > 0 (will be reviewed later)
+            if quality > 0:
+                due_combinations.remove((infinitive, tense))
+
+            # Show remaining count
+            if due_combinations:
+                print(f"\n📊 {len(due_combinations)} verb-tense combinations remaining today")
 
         nxt = input("\nUn autre verbe ? (Entrée=oui, q=quitter) ").strip().lower()
         if nxt == "q":
