@@ -567,16 +567,24 @@ VERB_TYPES = {
 # ----------------------------------------------------------------------
 # SRS Helper Functions
 # ----------------------------------------------------------------------
-def get_due_combinations(verb_list: list[str], stats: dict[str, ConjugationStats]) -> list[tuple[str, str]]:
+def get_due_combinations(verb_list: list[str], stats: dict[str, ConjugationStats], filter_tense: str = None) -> list[tuple[str, str]]:
     """
     Get list of (verb, tense) combinations that are due for review today.
     If no stats exist for a combination, it's considered due.
+
+    Args:
+        verb_list: List of verbs to check
+        stats: Dictionary of conjugation statistics
+        filter_tense: Optional tense filter ("present", "future", or "past")
     """
     today = date.today().isoformat()
     due_combinations = []
 
+    # Determine which tenses to check
+    tenses_to_check = [filter_tense] if filter_tense else ["present", "future", "past"]
+
     for verb in verb_list:
-        for tense in ["present", "future", "past"]:
+        for tense in tenses_to_check:
             key = f"{verb}|{tense}"
 
             # If no stats, it's new and should be reviewed
@@ -817,17 +825,27 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  python3 conjugations.py              # Normal practice mode
-  python3 conjugations.py --srs        # SRS mode (only review due verbs)
-  python3 conjugations.py --stats      # Show statistics and exit
+  python3 conjugations.py                         # Normal practice mode
+  python3 conjugations.py --srs                   # SRS mode (only review due verbs)
+  python3 conjugations.py --srs --tense=present   # SRS mode for present tense only
+  python3 conjugations.py --srs --tense=future    # SRS mode for future tense only
+  python3 conjugations.py --srs --tense=past      # SRS mode for passé composé only
+  python3 conjugations.py --stats                 # Show statistics and exit
         """
     )
     parser.add_argument("--srs", action="store_true",
                        help="Enable Spaced Repetition System (only practice due verbs)")
+    parser.add_argument("--tense", type=str, choices=["present", "future", "past"],
+                       help="Filter by specific tense (only works with --srs)")
     parser.add_argument("--stats", action="store_true",
                        help="Show statistics summary and exit")
 
     args = parser.parse_args()
+
+    # Validate arguments
+    if args.tense and not args.srs:
+        print("Warning: --tense option only works with --srs mode. It will be ignored.")
+        print("Use: python3 conjugations.py --srs --tense=present\n")
 
     # Load SRS data
     stats = load_stats() if args.srs or args.stats else {}
@@ -842,7 +860,11 @@ Examples:
 
     print("=== Test de conjugaison française (présent, futur, passé) ===")
     if args.srs:
-        print("📚 SRS Mode: Practicing verbs due for review today")
+        tense_name = {"present": "présent", "future": "futur simple", "past": "passé composé"}.get(args.tense, "all tenses")
+        if args.tense:
+            print(f"📚 SRS Mode: Practicing {tense_name} verbs due for review today")
+        else:
+            print("📚 SRS Mode: Practicing verbs due for review today")
     print("Tapez 'q' à tout moment pour quitter.\n")
 
     # Choose verb type once at the start
@@ -850,7 +872,7 @@ Examples:
 
     # If SRS mode, get due combinations
     if args.srs:
-        due_combinations = get_due_combinations(verb_list, stats)
+        due_combinations = get_due_combinations(verb_list, stats, args.tense)
         if not due_combinations:
             print("\n✅ No verbs due for review today! Great work!")
             print("Come back tomorrow for more practice, or run without --srs to practice any verb.")

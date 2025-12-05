@@ -135,6 +135,11 @@ python3 conjugations.py
 # Practice with SRS (only verbs due today)
 python3 conjugations.py --srs
 
+# Practice specific tense only with SRS
+python3 conjugations.py --srs --tense=present
+python3 conjugations.py --srs --tense=future
+python3 conjugations.py --srs --tense=past
+
 # View your conjugation statistics
 python3 conjugations.py --stats
 
@@ -201,10 +206,11 @@ french-flashcards/
 - **Spaced Repetition System** - Practice verbs due for review
 - **91 verbs** included (26 regular -ER, 20 regular -IR, 45 irregular)
 - **3 tenses** - Present, Future simple, Passé composé
+- **Tense filtering** - Focus SRS practice on specific tense with `--tense`
 - **Quality ratings** - Wrong/Hard/Good/Easy determine review schedule
 - **Progress tracking** - View statistics and challenging verbs
 - **Interactive selection** - Choose verb type and tense
-- **Command-line options** - `--srs`, `--stats`, `--help`
+- **Command-line options** - `--srs`, `--tense`, `--stats`, `--help`
 
 ## Vocabulary
 
@@ -237,6 +243,9 @@ python3 flashcards.py --srs
 
 # 3. Practice verb conjugations due today (5-10 minutes)
 python3 conjugations.py --srs
+
+# 4. Or focus on a specific tense
+python3 conjugations.py --srs --tense=present
 ```
 
 **Pro tip**: Consistent daily practice with SRS is more effective than long irregular sessions!
@@ -352,6 +361,9 @@ python3 flashcards.py --srs --mode=medium
 
 # Conjugation practice (5-10 min)
 python3 conjugations.py --srs
+
+# Or focus on one tense at a time
+python3 conjugations.py --srs --tense=present
 ```
 
 ### 📈 Progression Path

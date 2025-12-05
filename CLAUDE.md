@@ -81,6 +81,7 @@ Practice French verb conjugations across three tenses (present, future, passé c
 **Command-line options:**
 - `--help`: Show detailed help message
 - `--srs`: Spaced Repetition System (only reviews verb-tense combinations due today)
+- `--tense=<tense>`: Filter by specific tense (present, future, or past) - only works with --srs
 - `--stats`: Show progress statistics and exit
 
 **Features:**
@@ -100,6 +101,15 @@ python3 conjugations.py
 
 # SRS mode - only practice due verbs
 python3 conjugations.py --srs
+
+# SRS mode - only practice present tense
+python3 conjugations.py --srs --tense=present
+
+# SRS mode - only practice future tense
+python3 conjugations.py --srs --tense=future
+
+# SRS mode - only practice passé composé
+python3 conjugations.py --srs --tense=past
 
 # View your statistics
 python3 conjugations.py --stats
@@ -300,6 +310,9 @@ python3 flashcards.py --srs
 
 # Practice conjugations with SRS
 python3 conjugations.py --srs
+
+# Practice specific tense only (conjugations)
+python3 conjugations.py --srs --tense=present
 
 # Or pre-select category without prompts (flashcards)
 python3 flashcards.py --category=verbs --srs
