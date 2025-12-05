@@ -126,18 +126,30 @@ python3 simple/flashcards.py verbs.csv french
 
 ### Conjugation Trainer
 
-Practice verb conjugations:
+Practice verb conjugations with intelligent spaced repetition:
 
 ```bash
+# Interactive practice (choose verb type and tense)
 python3 conjugations.py
+
+# Practice with SRS (only verbs due today)
+python3 conjugations.py --srs
+
+# View your conjugation statistics
+python3 conjugations.py --stats
+
+# Get help
+python3 conjugations.py --help
 ```
 
-Supports 48 French verbs across 3 tenses:
-- **Present tense**: All 48 verbs
-- **Future simple**: All 48 verbs
-- **Passé composé**: All 48 verbs
+**Features:**
+- **91 French verbs** across 3 tenses (present, future, passé composé)
+- **Spaced Repetition System** - Tracks each verb-tense combination separately
+- **Quality ratings** - Rate difficulty (Wrong/Hard/Good/Easy) to optimize review schedule
+- **Progress tracking** - View statistics and identify challenging verbs
+- **Interactive selection** - Choose verb types: regular -ER (26), regular -IR (20), or irregular (45)
 
-Includes essential verbs (être, avoir, aller, faire), common regular verbs (-er, -ir), and important irregular verbs (voir, dire, prendre, mettre, etc.).
+Includes all essential verbs (être, avoir, aller, faire), common regular verbs, and important irregular verbs (voir, dire, prendre, mettre, conduire, comprendre, etc.).
 
 ## Project Structure
 
@@ -157,13 +169,16 @@ french-flashcards/
 │   ├── questions.csv    # Question words (35 words)
 │   ├── routine.csv      # Daily routine (43 words)
 │   └── freq_words.csv   # Common words (498 words)
-├── master_vocabulary.csv # Combined vocabulary (753 words, auto-generated)
+├── master_vocabulary.csv # Combined vocabulary (auto-generated)
 ├── combine_csvs.py      # Tool to regenerate master vocabulary
-├── conjugations.py      # Verb conjugation practice
+├── conjugations.py      # Verb conjugation practice with SRS
 ├── missed.csv           # Auto-generated: cards you got wrong
-└── .flashcard_data/     # Auto-generated: progress tracking
-    ├── card_stats.json  # SRS scheduling per card
-    └── progress.json    # Session history and streaks
+├── .flashcard_data/     # Auto-generated: flashcard progress
+│   ├── card_stats.json  # SRS scheduling per card
+│   └── progress.json    # Session history and streaks
+└── .conjugation_data/   # Auto-generated: conjugation progress
+    ├── conjugation_stats.json  # SRS scheduling per verb-tense
+    └── conjugation_progress.json  # Conjugation practice history
 ```
 
 ## Features
@@ -183,13 +198,17 @@ french-flashcards/
 - Good for quick reviews
 
 ### Conjugation Trainer (`conjugations.py`)
-- Practice verb conjugations (present, future, pass� compos�)
-- 48 verbs included (essential, regular -er/-ir, and irregular)
-- Interactive tense selection
+- **Spaced Repetition System** - Practice verbs due for review
+- **91 verbs** included (26 regular -ER, 20 regular -IR, 45 irregular)
+- **3 tenses** - Present, Future simple, Passé composé
+- **Quality ratings** - Wrong/Hard/Good/Easy determine review schedule
+- **Progress tracking** - View statistics and challenging verbs
+- **Interactive selection** - Choose verb type and tense
+- **Command-line options** - `--srs`, `--stats`, `--help`
 
 ## Vocabulary
 
-**Master vocabulary**: 736 unique words across 9 categories:
+**Master vocabulary**: 808 unique words across 9 categories:
 - clothing (26 cards)
 - flashcards (5 cards)
 - freq_words (498 cards)
@@ -197,7 +216,7 @@ french-flashcards/
 - prepositions (27 cards)
 - questions (35 cards)
 - routine (43 cards)
-- verbs (48 cards)
+- verbs (120 cards)
 - weather (27 cards)
 
 ## Documentation
@@ -211,13 +230,16 @@ french-flashcards/
 ```bash
 # 1. Check your progress
 python3 flashcards.py --stats
+python3 conjugations.py --stats
 
-# 2. Practice cards due today (5-10 minutes)
+# 2. Practice flashcards due today (5-10 minutes)
 python3 flashcards.py --srs
 
-# 3. (Optional) Practice verb conjugations
-python3 conjugations.py
+# 3. Practice verb conjugations due today (5-10 minutes)
+python3 conjugations.py --srs
 ```
+
+**Pro tip**: Consistent daily practice with SRS is more effective than long irregular sessions!
 
 ## Understanding the Tools
 
@@ -323,12 +345,13 @@ aimer,to like,verbs
 ```bash
 # Morning: Check what's due
 python3 flashcards.py --stats
+python3 conjugations.py --stats
 
-# Practice session (5-10 min)
+# Flashcard practice (5-10 min)
 python3 flashcards.py --srs --mode=medium
 
-# Optional: Verb conjugations (5 min)
-python3 conjugations.py
+# Conjugation practice (5-10 min)
+python3 conjugations.py --srs
 ```
 
 ### 📈 Progression Path
@@ -379,7 +402,14 @@ The SRS algorithm adjusts based on your performance:
 ### Reset All Progress
 
 ```bash
+# Reset flashcard progress
 rm -rf .flashcard_data/
+
+# Reset conjugation progress
+rm -rf .conjugation_data/
+
+# Reset both
+rm -rf .flashcard_data/ .conjugation_data/
 ```
 
 This deletes all SRS scheduling and statistics. Fresh start!
@@ -408,12 +438,12 @@ brew install python@3.13
 
 ## Vocabulary Included
 
-**736 unique words** across 9 categories:
+**808 unique words** across 9 categories:
 
 | Category | Count | Description |
 |----------|-------|-------------|
 | freq_words | 498 | Most common French words - excellent starting point |
-| verbs | 48 | Essential verb infinitives |
+| verbs | 120 | Essential verb infinitives |
 | routine | 43 | Daily routine and activities |
 | questions | 35 | Question words and interrogative phrases |
 | locations | 27 | Places, buildings, locations |
@@ -451,13 +481,13 @@ Want to add vocabulary?
 A: No! Everything works offline.
 
 **Q: Where is my progress saved?**
-A: In `.flashcard_data/` folder (auto-created).
+A: In `.flashcard_data/` (flashcards) and `.conjugation_data/` (conjugations) folders (auto-created).
 
 **Q: Can I practice on multiple devices?**
-A: Yes! Copy the `.flashcard_data/` folder between devices.
+A: Yes! Copy the `.flashcard_data/` and `.conjugation_data/` folders between devices.
 
 **Q: How long until I'm fluent?**
-A: With 736 words + daily practice, you'll have a solid foundation in 2-3 months. Fluency requires ongoing practice and immersion!
+A: With 808 words + 91 verbs (273 verb-tense combinations) + daily practice, you'll have a solid foundation in 2-3 months. Fluency requires ongoing practice and immersion!
 
 **Q: Can I add my own vocabulary?**
 A: Absolutely! Just edit the CSV files or create new ones.
