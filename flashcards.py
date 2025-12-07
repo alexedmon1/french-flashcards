@@ -15,6 +15,7 @@ import json
 import random
 import sys
 import time
+import unicodedata
 from datetime import datetime, date
 from difflib import SequenceMatcher
 from pathlib import Path
@@ -247,6 +248,32 @@ def load_cards(csv_path: Path, category_filter: Optional[str] = None) -> list[Ca
 # ----------------------------------------------------------------------
 # Answer Checking
 # ----------------------------------------------------------------------
+def normalize_input(text: str) -> str:
+    """
+    Clean up input text by removing surrogate characters and normalizing Unicode.
+
+    This handles issues that can occur when typing accented characters and using
+    backspace, which can leave behind invisible combining characters or malformed
+    Unicode sequences.
+    """
+    # First, normalize to NFC (Canonical Decomposition, followed by Canonical Composition)
+    # This ensures accented characters are in their composed form (é instead of e + ́)
+    normalized = unicodedata.normalize('NFC', text)
+
+    # Remove any surrogate characters or invalid UTF-8 sequences
+    cleaned = normalized.encode('utf-8', errors='ignore').decode('utf-8', errors='ignore')
+
+    # Remove zero-width characters and other invisible Unicode artifacts
+    # that can be left behind when using backspace with accented characters
+    cleaned = ''.join(
+        char for char in cleaned
+        if unicodedata.category(char) not in ('Cc', 'Cf', 'Mn')
+        or char in ('\n', '\r', '\t')  # Keep common whitespace
+    )
+
+    return cleaned.strip()
+
+
 def similarity_ratio(s1: str, s2: str) -> float:
     """Calculate similarity between two strings (0.0 to 1.0)"""
     return SequenceMatcher(None, s1.lower(), s2.lower()).ratio()
@@ -364,7 +391,7 @@ def typing_question(card: Card, lang_direction: str, mode: str, time_limit: Opti
     if time_limit:
         print(f"⏱️  You have {time_limit} seconds!")
 
-    user_input = input("Your answer: ").strip()
+    user_input = normalize_input(input("Your answer: "))
     elapsed = time.time() - start_time
 
     if time_limit and elapsed > time_limit:

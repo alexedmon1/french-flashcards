@@ -11,6 +11,7 @@ import argparse
 import json
 import random
 import sys
+import unicodedata
 from datetime import date, timedelta
 from pathlib import Path
 
@@ -787,9 +788,28 @@ def choose_verb_type() -> list:
 
 
 def normalize_input(text: str) -> str:
-    """Clean up input text by removing surrogate characters and normalizing."""
-    # Remove surrogate characters that can appear from backspacing
-    cleaned = text.encode('utf-8', errors='ignore').decode('utf-8', errors='ignore')
+    """
+    Clean up input text by removing surrogate characters and normalizing Unicode.
+
+    This handles issues that can occur when typing accented characters and using
+    backspace, which can leave behind invisible combining characters or malformed
+    Unicode sequences.
+    """
+    # First, normalize to NFC (Canonical Decomposition, followed by Canonical Composition)
+    # This ensures accented characters are in their composed form (é instead of e + ́)
+    normalized = unicodedata.normalize('NFC', text)
+
+    # Remove any surrogate characters or invalid UTF-8 sequences
+    cleaned = normalized.encode('utf-8', errors='ignore').decode('utf-8', errors='ignore')
+
+    # Remove zero-width characters and other invisible Unicode artifacts
+    # that can be left behind when using backspace with accented characters
+    cleaned = ''.join(
+        char for char in cleaned
+        if unicodedata.category(char) not in ('Cc', 'Cf', 'Mn')
+        or char in ('\n', '\r', '\t')  # Keep common whitespace
+    )
+
     return cleaned.strip()
 
 
