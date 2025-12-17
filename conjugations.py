@@ -327,6 +327,102 @@ FUTURE = {
     "apprendre": ["apprendrai", "apprendras", "apprendra", "apprendrons", "apprendrez", "apprendront"],
 }
 
+IMPARFAIT = {
+    "être":      ["étais", "étais", "était", "étions", "étiez", "étaient"],
+    "avoir":     ["avais", "avais", "avait", "avions", "aviez", "avaient"],
+    "faire":     ["faisais", "faisais", "faisait", "faisions", "faisiez", "faisaient"],
+    "dire":      ["disais", "disais", "disait", "disions", "disiez", "disaient"],
+    "aller":     ["allais", "allais", "allait", "allions", "alliez", "allaient"],
+    "voir":      ["voyais", "voyais", "voyait", "voyions", "voyiez", "voyaient"],
+    "savoir":    ["savais", "savais", "savait", "savions", "saviez", "savaient"],
+    "pouvoir":   ["pouvais", "pouvais", "pouvait", "pouvions", "pouviez", "pouvaient"],
+    "vouloir":   ["voulais", "voulais", "voulait", "voulions", "vouliez", "voulaient"],
+    "venir":     ["venais", "venais", "venait", "venions", "veniez", "venaient"],
+    "devoir":    ["devais", "devais", "devait", "devions", "deviez", "devaient"],
+    "prendre":   ["prenais", "prenais", "prenait", "prenions", "preniez", "prenaient"],
+    "donner":    ["donnais", "donnais", "donnait", "donnions", "donniez", "donnaient"],
+    "trouver":   ["trouvais", "trouvais", "trouvait", "trouvions", "trouviez", "trouvaient"],
+    "penser":    ["pensais", "pensais", "pensait", "pensions", "pensiez", "pensaient"],
+    "parler":    ["parlais", "parlais", "parlait", "parlions", "parliez", "parlaient"],
+    "mettre":    ["mettais", "mettais", "mettait", "mettions", "mettiez", "mettaient"],
+    "aimer":     ["aimais", "aimais", "aimait", "aimions", "aimiez", "aimaient"],
+    "passer":    ["passais", "passais", "passait", "passions", "passiez", "passaient"],
+    "demander":  ["demandais", "demandais", "demandait", "demandions", "demandiez", "demandaient"],
+    "croire":    ["croyais", "croyais", "croyait", "croyions", "croyiez", "croyaient"],
+    "laisser":   ["laissais", "laissais", "laissait", "laissions", "laissiez", "laissaient"],
+    "porter":    ["portais", "portais", "portait", "portions", "portiez", "portaient"],
+    "tenir":     ["tenais", "tenais", "tenait", "tenions", "teniez", "tenaient"],
+    "appeler":   ["appelais", "appelais", "appelait", "appelions", "appeliez", "appelaient"],
+    "rester":    ["restais", "restais", "restait", "restions", "restiez", "restaient"],
+    "sortir":    ["sortais", "sortais", "sortait", "sortions", "sortiez", "sortaient"],
+    "vivre":     ["vivais", "vivais", "vivait", "vivions", "viviez", "vivaient"],
+    "tomber":    ["tombais", "tombais", "tombait", "tombions", "tombiez", "tombaient"],
+    "connaître": ["connaissais", "connaissais", "connaissait", "connaissions", "connaissiez", "connaissaient"],
+    "finir":     ["finissais", "finissais", "finissait", "finissions", "finissiez", "finissaient"],
+    "choisir":   ["choisissais", "choisissais", "choisissait", "choisissions", "choisissiez", "choisissaient"],
+    "réussir":   ["réussissais", "réussissais", "réussissait", "réussissions", "réussissiez", "réussissaient"],
+    "remplir":   ["remplissais", "remplissais", "remplissait", "remplissions", "remplissiez", "remplissaient"],
+    "réfléchir": ["réfléchissais", "réfléchissais", "réfléchissait", "réfléchissions", "réfléchissiez", "réfléchissaient"],
+    "obéir":     ["obéissais", "obéissais", "obéissait", "obéissions", "obéissiez", "obéissaient"],
+    "grandir":   ["grandissais", "grandissais", "grandissait", "grandissions", "grandissiez", "grandissaient"],
+    "applaudir": ["applaudissais", "applaudissais", "applaudissait", "applaudissions", "applaudissiez", "applaudissaient"],
+    "établir":   ["établissais", "établissais", "établissait", "établissions", "établissiez", "établissaient"],
+    "bâtir":     ["bâtissais", "bâtissais", "bâtissait", "bâtissions", "bâtissiez", "bâtissaient"],
+    "agir":      ["agissais", "agissais", "agissait", "agissions", "agissiez", "agissaient"],
+    "vieillir":  ["vieillissais", "vieillissais", "vieillissait", "vieillissions", "vieillissiez", "vieillissaient"],
+    "grossir":   ["grossissais", "grossissais", "grossissait", "grossissions", "grossissiez", "grossissaient"],
+    "maigrir":   ["maigrissais", "maigrissais", "maigrissait", "maigrissions", "maigrissiez", "maigrissaient"],
+    "rougir":    ["rougissais", "rougissais", "rougissait", "rougissions", "rougissiez", "rougissaient"],
+    "ralentir":  ["ralentissais", "ralentissais", "ralentissait", "ralentissions", "ralentissiez", "ralentissaient"],
+    "avertir":   ["avertissais", "avertissais", "avertissait", "avertissions", "avertissiez", "avertissaient"],
+    "guérir":    ["guérissais", "guérissais", "guérissait", "guérissions", "guérissiez", "guérissaient"],
+    "saisir":    ["saisissais", "saisissais", "saisissait", "saisissions", "saisissiez", "saisissaient"],
+    "nourrir":   ["nourrissais", "nourrissais", "nourrissait", "nourrissions", "nourrissiez", "nourrissaient"],
+    "boire":     ["buvais", "buvais", "buvait", "buvions", "buviez", "buvaient"],
+    "écrire":    ["écrivais", "écrivais", "écrivait", "écrivions", "écriviez", "écrivaient"],
+    "lire":      ["lisais", "lisais", "lisait", "lisions", "lisiez", "lisaient"],
+    "partir":    ["partais", "partais", "partait", "partions", "partiez", "partaient"],
+    "dormir":    ["dormais", "dormais", "dormait", "dormions", "dormiez", "dormaient"],
+    "ouvrir":    ["ouvrais", "ouvrais", "ouvrait", "ouvrions", "ouvriez", "ouvraient"],
+    "recevoir":  ["recevais", "recevais", "recevait", "recevions", "receviez", "recevaient"],
+    "montrer":   ["montrais", "montrais", "montrait", "montrions", "montriez", "montraient"],
+    "écouter":   ["écoutais", "écoutais", "écoutait", "écoutions", "écoutiez", "écoutaient"],
+    "entendre":  ["entendais", "entendais", "entendait", "entendions", "entendiez", "entendaient"],
+    "attendre":  ["attendais", "attendais", "attendait", "attendions", "attendiez", "attendaient"],
+    "dépenser":  ["dépensais", "dépensais", "dépensait", "dépensions", "dépensiez", "dépensaient"],
+    "s'asseoir": ["m'asseyais", "t'asseyais", "s'asseyait", "nous asseyions", "vous asseyiez", "s'asseyaient"],
+    "monter":    ["montais", "montais", "montait", "montions", "montiez", "montaient"],
+    "dessiner":  ["dessinais", "dessinais", "dessinait", "dessinions", "dessiniez", "dessinaient"],
+    "voler":     ["volais", "volais", "volait", "volions", "voliez", "volaient"],
+    "raconter":  ["racontais", "racontais", "racontait", "racontions", "racontiez", "racontaient"],
+    "quitter":   ["quittais", "quittais", "quittait", "quittions", "quittiez", "quittaient"],
+    "se sentir": ["me sentais", "te sentais", "se sentait", "nous sentions", "vous sentiez", "se sentaient"],
+    "se quitter": ["me quittais", "te quittais", "se quittait", "nous quittions", "vous quittiez", "se quittaient"],
+    "garder":    ["gardais", "gardais", "gardait", "gardions", "gardiez", "gardaient"],
+    "rencontrer":["rencontrais", "rencontrais", "rencontrait", "rencontrions", "rencontriez", "rencontraient"],
+    "obtenir":   ["obtenais", "obtenais", "obtenait", "obtenions", "obteniez", "obtenaient"],
+    "sembler":   ["semblais", "semblais", "semblait", "semblions", "sembliez", "semblaient"],
+    "utiliser":  ["utilisais", "utilisais", "utilisait", "utilisions", "utilisiez", "utilisaient"],
+    "travailler":["travaillais", "travaillais", "travaillait", "travaillions", "travailliez", "travaillaient"],
+    "couper":    ["coupais", "coupais", "coupait", "coupions", "coupiez", "coupaient"],
+    "cuisiner":  ["cuisinais", "cuisinais", "cuisinait", "cuisinions", "cuisiniez", "cuisinaient"],
+    "perdre":    ["perdais", "perdais", "perdait", "perdions", "perdiez", "perdaient"],
+    "descendre": ["descendais", "descendais", "descendait", "descendions", "descendiez", "descendaient"],
+    "offrir":    ["offrais", "offrais", "offrait", "offrions", "offriez", "offraient"],
+    "souffrir":  ["souffrais", "souffrais", "souffrait", "souffrions", "souffriez", "souffraient"],
+    "découvrir": ["découvrais", "découvrais", "découvrait", "découvrions", "découvriez", "découvraient"],
+    "conduire":  ["conduisais", "conduisais", "conduisait", "conduisions", "conduisiez", "conduisaient"],
+    "construire":["construisais", "construisais", "construisait", "construisions", "construisiez", "construisaient"],
+    "produire":  ["produisais", "produisais", "produisait", "produisions", "produisiez", "produisaient"],
+    "traduire":  ["traduisais", "traduisais", "traduisait", "traduisions", "traduisiez", "traduisaient"],
+    "rire":      ["riais", "riais", "riait", "riions", "riiez", "riaient"],
+    "suivre":    ["suivais", "suivais", "suivait", "suivions", "suiviez", "suivaient"],
+    "naître":    ["naissais", "naissais", "naissait", "naissions", "naissiez", "naissaient"],
+    "mourir":    ["mourais", "mourais", "mourait", "mourions", "mouriez", "mouraient"],
+    "comprendre":["comprenais", "comprenais", "comprenait", "comprenions", "compreniez", "comprenaient"],
+    "apprendre": ["apprenais", "apprenais", "apprenait", "apprenions", "appreniez", "apprenaient"],
+}
+
 PAST_COMPOSE = {
     "être":      ("être",   ["été",     "été",     "été",     "été",     "été",     "été"]),
     "avoir":     ("avoir",  ["eu",      "eu",      "eu",      "eu",      "eu",      "eu"]),
@@ -576,13 +672,13 @@ def get_due_combinations(verb_list: list[str], stats: dict[str, ConjugationStats
     Args:
         verb_list: List of verbs to check
         stats: Dictionary of conjugation statistics
-        filter_tense: Optional tense filter ("present", "future", or "past")
+        filter_tense: Optional tense filter ("present", "future", "past", or "imparfait")
     """
     today = date.today().isoformat()
     due_combinations = []
 
     # Determine which tenses to check
-    tenses_to_check = [filter_tense] if filter_tense else ["present", "future", "past"]
+    tenses_to_check = [filter_tense] if filter_tense else ["present", "future", "past", "imparfait"]
 
     for verb in verb_list:
         for tense in tenses_to_check:
@@ -733,6 +829,8 @@ def get_table(infinitive: str, tense: str):
         return selected_pronouns, PRESENT[infinitive]
     if tense == "future":
         return selected_pronouns, FUTURE[infinitive]
+    if tense == "imparfait":
+        return selected_pronouns, IMPARFAIT[infinitive]
 
     # passé composé
     aux, part_list = PAST_COMPOSE[infinitive]
@@ -754,15 +852,16 @@ def get_table(infinitive: str, tense: str):
 def choose_tense() -> str:
     print("\nQuel temps voulez‑vous réviser ?")
     print("  1 – Présent")
-    print("  2 – Futur simple")
-    print("  3 – Passé composé")
+    print("  2 – Passé composé")
+    print("  3 – Futur simple")
+    print("  4 – Imparfait")
     while True:
         c = input("Entrez le numéro (ou q pour quitter) : ").strip().lower()
         if c == "q":
             sys.exit(0)
-        if c in {"1", "2", "3"}:
-            return {"1": "present", "2": "future", "3": "past"}[c]
-        print("Choisissez 1, 2 ou 3.")
+        if c in {"1", "2", "3", "4"}:
+            return {"1": "present", "2": "past", "3": "future", "4": "imparfait"}[c]
+        print("Choisissez 1, 2, 3 ou 4.")
 
 
 def choose_verb_type() -> list:
@@ -845,17 +944,18 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  python3 conjugations.py                         # Normal practice mode
-  python3 conjugations.py --srs                   # SRS mode (only review due verbs)
-  python3 conjugations.py --srs --tense=present   # SRS mode for present tense only
-  python3 conjugations.py --srs --tense=future    # SRS mode for future tense only
-  python3 conjugations.py --srs --tense=past      # SRS mode for passé composé only
-  python3 conjugations.py --stats                 # Show statistics and exit
+  python3 conjugations.py                           # Normal practice mode
+  python3 conjugations.py --srs                     # SRS mode (only review due verbs)
+  python3 conjugations.py --srs --tense=present     # SRS mode for present tense only
+  python3 conjugations.py --srs --tense=future      # SRS mode for future tense only
+  python3 conjugations.py --srs --tense=past        # SRS mode for passé composé only
+  python3 conjugations.py --srs --tense=imparfait   # SRS mode for imparfait only
+  python3 conjugations.py --stats                   # Show statistics and exit
         """
     )
     parser.add_argument("--srs", action="store_true",
                        help="Enable Spaced Repetition System (only practice due verbs)")
-    parser.add_argument("--tense", type=str, choices=["present", "future", "past"],
+    parser.add_argument("--tense", type=str, choices=["present", "future", "past", "imparfait"],
                        help="Filter by specific tense (only works with --srs)")
     parser.add_argument("--stats", action="store_true",
                        help="Show statistics summary and exit")
@@ -878,9 +978,9 @@ Examples:
     total_ok = 0
     total_q  = 0
 
-    print("=== Test de conjugaison française (présent, futur, passé) ===")
+    print("=== Test de conjugaison française (présent, futur, passé, imparfait) ===")
     if args.srs:
-        tense_name = {"present": "présent", "future": "futur simple", "past": "passé composé"}.get(args.tense, "all tenses")
+        tense_name = {"present": "présent", "future": "futur simple", "past": "passé composé", "imparfait": "imparfait"}.get(args.tense, "all tenses")
         if args.tense:
             print(f"📚 SRS Mode: Practicing {tense_name} verbs due for review today")
         else:
