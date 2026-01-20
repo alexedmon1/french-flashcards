@@ -11,9 +11,11 @@ A French language learning application with multiple components:
 2. **Current trainer** (`flashcards.py`) - Advanced version with SRS, typing modes, progress tracking, and interactive prompts
 
 ### Additional Components
-3. **Conjugation trainer** (`conjugations.py`) - Verb conjugation practice for present, future, and passé composé tenses
-4. **Master vocabulary** (`master_vocabulary.csv`) - Combined file with all vocabulary from individual CSVs with category tags
-5. **CSV combiner** (`combine_csvs.py`) - Tool to regenerate master vocabulary file
+3. **Conjugation trainer** (`conjugations.py`) - Verb conjugation practice for 7 tenses with tier system
+4. **Conjugation engine** (`conjugation_engine.py`) - Core conjugation logic module
+5. **Verb data** (`conjugation_data/verbs.json`) - External JSON database of verbs
+6. **Master vocabulary** (`master_vocabulary.csv`) - Combined file with all vocabulary from individual CSVs with category tags
+7. **CSV combiner** (`combine_csvs.py`) - Tool to regenerate master vocabulary file
 
 ## Running the Application
 
@@ -76,20 +78,35 @@ python3 flashcards.py --list-categories
 ```bash
 python3 conjugations.py [options]
 ```
-Practice French verb conjugations across three tenses (present, future, passé composé) with **91 verbs** and optional **SRS support**.
+Practice French verb conjugations across **7 tenses** with **93 verbs** organized by tier, and optional **SRS support**.
+
+**Tenses available:**
+- Présent (present)
+- Futur simple (future)
+- Imparfait (imparfait)
+- Passé composé (past)
+- Futur proche (near_future)
+- Conditionnel présent (conditional)
+- Conditionnel passé (conditional_past)
 
 **Command-line options:**
 - `--help`: Show detailed help message
 - `--srs`: Spaced Repetition System (only reviews verb-tense combinations due today)
-- `--tense=<tense>`: Filter by specific tense (present, future, or past) - only works with --srs
+- `--tense=<tense>`: Filter by specific tense - only works with --srs
+- `--tier=<tier>`: Filter by verb tier (core, intermediate, advanced)
 - `--stats`: Show progress statistics and exit
 
 **Features:**
 - Interactive verb type selection (regular -ER, regular -IR, irregular, or all)
-- 91 total verbs (26 regular -ER, 20 regular -IR, 45 irregular)
+- Interactive tier selection (core, intermediate, advanced, or all)
+- 93 total verbs organized by tier:
+  - **Core** (~20 verbs): Most essential verbs for beginners
+  - **Intermediate** (~35 verbs): Common verbs for intermediate learners
+  - **Advanced** (~40 verbs): Less common verbs for advanced learners
 - Randomized pronoun variations (il/elle/on, ils/elles) for natural practice
-- Gender agreement for passé composé with être verbs
+- Gender agreement for passé composé/conditionnel passé with être verbs
 - SRS quality ratings (Wrong/Hard/Good/Easy) to optimize review schedule
+- External verb data in JSON format for easy additions
 
 **Examples:**
 ```bash
@@ -99,17 +116,20 @@ python3 conjugations.py --help
 # Normal practice mode (interactive)
 python3 conjugations.py
 
+# Practice only core verbs
+python3 conjugations.py --tier=core
+
 # SRS mode - only practice due verbs
 python3 conjugations.py --srs
 
 # SRS mode - only practice present tense
 python3 conjugations.py --srs --tense=present
 
-# SRS mode - only practice future tense
-python3 conjugations.py --srs --tense=future
+# SRS mode - only practice conditional
+python3 conjugations.py --srs --tense=conditional
 
-# SRS mode - only practice passé composé
-python3 conjugations.py --srs --tense=past
+# SRS mode for core verbs only
+python3 conjugations.py --tier=core --srs
 
 # View your statistics
 python3 conjugations.py --stats
@@ -234,21 +254,60 @@ son,his|her|sound,Common 1
 - **Backward compatible**: Works with all existing CSV formats (2, 3, or 4 columns)
 
 ### conjugations.py
-- **Data-driven design**: Three dictionaries (PRESENT, FUTURE, PAST_COMPOSE) contain conjugation tables
-- **Verb coverage**: 91 verbs total
-  - **Regular -ER verbs (26)**: donner, trouver, penser, parler, aimer, passer, demander, laisser, porter, rester, tomber, montrer, écouter, dépenser, monter, dessiner, voler, raconter, quitter, garder, rencontrer, sembler, utiliser, travailler, couper, cuisiner
-  - **Regular -IR verbs (20)**: finir, choisir, réussir, remplir, réfléchir, obéir, grandir, applaudir, établir, bâtir, agir, vieillir, grossir, maigrir, rougir, ralentir, avertir, guérir, saisir, nourrir
-  - **Irregular verbs (45)**: être, avoir, faire, dire, aller, voir, savoir, pouvoir, vouloir, venir, devoir, prendre, mettre, croire, tenir, appeler, sortir, vivre, connaître, boire, écrire, lire, partir, dormir, ouvrir, recevoir, entendre, attendre, s'asseoir, se sentir, se quitter, obtenir, perdre, descendre, offrir, souffrir, découvrir, conduire, construire, produire, traduire, rire, suivre, naître, mourir, comprendre, apprendre
-- **Passé composé structure**: Stored as tuples `(auxiliary_verb, [participle_forms])`
-  - Auxiliary is either "être" or "avoir"
-  - get_table() dynamically builds full conjugations from auxiliary + participle
-- **Interactive loop**: User selects verb type and tense, random verb chosen, all 6 pronouns tested
+- **Refactored design**: Uses `conjugation_engine.py` for all conjugation logic
+- **7 tenses**: présent, futur simple, imparfait, passé composé, futur proche, conditionnel présent, conditionnel passé
+- **Tier system**: verbs organized into core (~20), intermediate (~35), advanced (~40)
+- **Interactive loop**: User selects tier, verb type, and tense; random verb chosen, all 6 pronouns tested
 - **SRS support**: ConjugationStats class tracks verb-tense combinations with SM-2 algorithm
   - Data persistence in `.conjugation_data/` directory
   - `conjugation_stats.json`: Per-combination SRS data (intervals, ease factors, due dates)
   - `conjugation_progress.json`: Session history and statistics
   - Quality ratings (0-3) determine next review interval
   - Filtering by due date when `--srs` flag is used
+  - Existing SRS data remains compatible with new tenses
+
+### conjugation_engine.py
+- **Core module**: Loads verb data and generates conjugations algorithmically
+- **Regular verb patterns**: Generates -ER and -IR conjugations using pattern rules
+- **Irregular verbs**: Uses stored stems and forms from JSON data
+- **Key functions**:
+  - `conjugate(verb, tense, pronouns)`: Returns (pronouns, conjugated_forms)
+  - `get_all_verbs()`, `get_verbs_by_type()`, `get_verbs_by_tier()`: Verb filtering
+  - `get_translation()`: English translation lookup
+- **Tense generation**:
+  - Present: stem + endings (regular) or explicit forms (irregular)
+  - Future: future stem + future endings
+  - Imparfait: imparfait stem + imparfait endings
+  - Passé composé: avoir/être present + past participle with agreement
+  - Futur proche: aller present + infinitive
+  - Conditional: future stem + conditional endings
+  - Conditional past: avoir/être conditional + past participle with agreement
+
+### conjugation_data/verbs.json
+- **External verb database**: All verb definitions in JSON format
+- **Verb entry structure**:
+  ```json
+  {
+    "parler": {
+      "type": "regular_er",
+      "tier": "core",
+      "translation": "to speak / to talk",
+      "auxiliary": "avoir"
+    },
+    "être": {
+      "type": "irregular",
+      "tier": "core",
+      "translation": "to be",
+      "auxiliary": "être",
+      "past_participle": "été",
+      "stems": { "future": "ser", "imparfait": "ét" },
+      "forms": { "present": ["suis", "es", "est", "sommes", "êtes", "sont"] }
+    }
+  }
+  ```
+- **Regular verbs**: Only need type, tier, translation, auxiliary
+- **Irregular verbs**: Add past_participle, stems, and/or explicit forms as needed
+- **Tiers**: core (most essential), intermediate (common), advanced (less common)
 
 ### combine_csvs.py
 - **Purpose**: Combines all individual CSV files into master_vocabulary.csv
@@ -290,12 +349,37 @@ son,his|her|sound,Common 1
 **Note:** Both methods are equivalent. Method 1 is better for organized vocabulary collection. Method 2 is faster for quick edits.
 
 ### Adding Verbs to Conjugation Trainer
-1. Add entries to PRESENT, FUTURE, and PAST_COMPOSE dictionaries in `conjugations.py`
-2. For passé composé, specify correct auxiliary verb ("être" or "avoir")
-3. Ensure all 6 pronoun forms are included in correct order: je, tu, il/elle/on, nous, vous, ils/elles
-4. Add English translation to VERB_TRANSLATIONS dictionary
-5. Add verb to appropriate category in VERB_TYPES ("regular_er", "regular_ir", or "irregular")
-6. Update verb counts in choose_verb_type() function if needed
+1. Edit `conjugation_data/verbs.json`
+2. Add a new verb entry with required fields:
+   - `type`: "regular_er", "regular_ir", or "irregular"
+   - `tier`: "core", "intermediate", or "advanced"
+   - `translation`: English translation
+   - `auxiliary`: "avoir" or "être" (for passé composé)
+3. For irregular verbs, add as needed:
+   - `past_participle`: if different from regular pattern
+   - `stems`: object with irregular stems for future/imparfait/conditional
+   - `forms`: object with explicit conjugation arrays for irregular tenses
+4. Example regular verb:
+   ```json
+   "danser": {
+     "type": "regular_er",
+     "tier": "intermediate",
+     "translation": "to dance",
+     "auxiliary": "avoir"
+   }
+   ```
+5. Example irregular verb:
+   ```json
+   "courir": {
+     "type": "irregular",
+     "tier": "intermediate",
+     "translation": "to run",
+     "auxiliary": "avoir",
+     "past_participle": "couru",
+     "stems": { "future": "courr" },
+     "forms": { "present": ["cours", "cours", "court", "courons", "courez", "courent"] }
+   }
+   ```
 
 ### Recommended Daily Practice
 ```bash
@@ -311,8 +395,14 @@ python3 flashcards.py --srs
 # Practice conjugations with SRS
 python3 conjugations.py --srs
 
+# Practice only core verbs (easiest to start with)
+python3 conjugations.py --tier=core --srs
+
 # Practice specific tense only (conjugations)
 python3 conjugations.py --srs --tense=present
+
+# Practice conditional tense
+python3 conjugations.py --srs --tense=conditional
 
 # Or pre-select category without prompts (flashcards)
 python3 flashcards.py --category=verbs --srs

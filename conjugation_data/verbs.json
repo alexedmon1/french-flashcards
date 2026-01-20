@@ -1,0 +1,922 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "description": "French verb conjugation data for the conjugation trainer",
+    "total_verbs": 91,
+    "tiers": {
+      "core": "Most essential verbs for beginners (~20 verbs)",
+      "intermediate": "Common verbs for intermediate learners (~35 verbs)",
+      "advanced": "Less common verbs for advanced learners (~36 verbs)"
+    }
+  },
+  "verbs": {
+    "être": {
+      "type": "irregular",
+      "tier": "core",
+      "translation": "to be",
+      "auxiliary": "être",
+      "past_participle": "été",
+      "stems": {
+        "future": "ser",
+        "imparfait": "ét"
+      },
+      "forms": {
+        "present": ["suis", "es", "est", "sommes", "êtes", "sont"]
+      }
+    },
+    "avoir": {
+      "type": "irregular",
+      "tier": "core",
+      "translation": "to have",
+      "auxiliary": "avoir",
+      "past_participle": "eu",
+      "stems": {
+        "future": "aur"
+      },
+      "forms": {
+        "present": ["ai", "as", "a", "avons", "avez", "ont"]
+      }
+    },
+    "faire": {
+      "type": "irregular",
+      "tier": "core",
+      "translation": "to do / to make",
+      "auxiliary": "avoir",
+      "past_participle": "fait",
+      "stems": {
+        "future": "fer",
+        "imparfait": "fais"
+      },
+      "forms": {
+        "present": ["fais", "fais", "fait", "faisons", "faites", "font"]
+      }
+    },
+    "dire": {
+      "type": "irregular",
+      "tier": "core",
+      "translation": "to say / to tell",
+      "auxiliary": "avoir",
+      "past_participle": "dit",
+      "stems": {
+        "imparfait": "dis"
+      },
+      "forms": {
+        "present": ["dis", "dis", "dit", "disons", "dites", "disent"]
+      }
+    },
+    "aller": {
+      "type": "irregular",
+      "tier": "core",
+      "translation": "to go",
+      "auxiliary": "être",
+      "past_participle": "allé",
+      "stems": {
+        "future": "ir"
+      },
+      "forms": {
+        "present": ["vais", "vas", "va", "allons", "allez", "vont"]
+      }
+    },
+    "voir": {
+      "type": "irregular",
+      "tier": "core",
+      "translation": "to see",
+      "auxiliary": "avoir",
+      "past_participle": "vu",
+      "stems": {
+        "future": "verr",
+        "imparfait": "voy"
+      },
+      "forms": {
+        "present": ["vois", "vois", "voit", "voyons", "voyez", "voient"]
+      }
+    },
+    "savoir": {
+      "type": "irregular",
+      "tier": "core",
+      "translation": "to know (facts)",
+      "auxiliary": "avoir",
+      "past_participle": "su",
+      "stems": {
+        "future": "saur",
+        "imparfait": "sav"
+      },
+      "forms": {
+        "present": ["sais", "sais", "sait", "savons", "savez", "savent"]
+      }
+    },
+    "pouvoir": {
+      "type": "irregular",
+      "tier": "core",
+      "translation": "to be able to / can",
+      "auxiliary": "avoir",
+      "past_participle": "pu",
+      "stems": {
+        "future": "pourr",
+        "imparfait": "pouv"
+      },
+      "forms": {
+        "present": ["peux", "peux", "peut", "pouvons", "pouvez", "peuvent"]
+      }
+    },
+    "vouloir": {
+      "type": "irregular",
+      "tier": "core",
+      "translation": "to want",
+      "auxiliary": "avoir",
+      "past_participle": "voulu",
+      "stems": {
+        "future": "voudr",
+        "imparfait": "voul"
+      },
+      "forms": {
+        "present": ["veux", "veux", "veut", "voulons", "voulez", "veulent"]
+      }
+    },
+    "venir": {
+      "type": "irregular",
+      "tier": "core",
+      "translation": "to come",
+      "auxiliary": "être",
+      "past_participle": "venu",
+      "stems": {
+        "future": "viendr",
+        "imparfait": "ven"
+      },
+      "forms": {
+        "present": ["viens", "viens", "vient", "venons", "venez", "viennent"]
+      }
+    },
+    "devoir": {
+      "type": "irregular",
+      "tier": "core",
+      "translation": "to have to / must",
+      "auxiliary": "avoir",
+      "past_participle": "dû",
+      "stems": {
+        "future": "devr",
+        "imparfait": "dev"
+      },
+      "forms": {
+        "present": ["dois", "dois", "doit", "devons", "devez", "doivent"]
+      }
+    },
+    "prendre": {
+      "type": "irregular",
+      "tier": "core",
+      "translation": "to take",
+      "auxiliary": "avoir",
+      "past_participle": "pris",
+      "stems": {
+        "future": "prendr",
+        "imparfait": "pren"
+      },
+      "forms": {
+        "present": ["prends", "prends", "prend", "prenons", "prenez", "prennent"]
+      }
+    },
+    "mettre": {
+      "type": "irregular",
+      "tier": "core",
+      "translation": "to put / to place",
+      "auxiliary": "avoir",
+      "past_participle": "mis",
+      "stems": {
+        "future": "mettr",
+        "imparfait": "mett"
+      },
+      "forms": {
+        "present": ["mets", "mets", "met", "mettons", "mettez", "mettent"]
+      }
+    },
+    "partir": {
+      "type": "irregular",
+      "tier": "core",
+      "translation": "to leave / to depart",
+      "auxiliary": "être",
+      "past_participle": "parti",
+      "stems": {
+        "imparfait": "part"
+      },
+      "forms": {
+        "present": ["pars", "pars", "part", "partons", "partez", "partent"]
+      }
+    },
+    "finir": {
+      "type": "regular_ir",
+      "tier": "core",
+      "translation": "to finish",
+      "auxiliary": "avoir"
+    },
+    "parler": {
+      "type": "regular_er",
+      "tier": "core",
+      "translation": "to speak / to talk",
+      "auxiliary": "avoir"
+    },
+    "donner": {
+      "type": "regular_er",
+      "tier": "core",
+      "translation": "to give",
+      "auxiliary": "avoir"
+    },
+    "aimer": {
+      "type": "regular_er",
+      "tier": "core",
+      "translation": "to like / to love",
+      "auxiliary": "avoir"
+    },
+    "croire": {
+      "type": "irregular",
+      "tier": "core",
+      "translation": "to believe",
+      "auxiliary": "avoir",
+      "past_participle": "cru",
+      "stems": {
+        "imparfait": "croy"
+      },
+      "forms": {
+        "present": ["crois", "crois", "croit", "croyons", "croyez", "croient"]
+      }
+    },
+    "vivre": {
+      "type": "irregular",
+      "tier": "core",
+      "translation": "to live",
+      "auxiliary": "avoir",
+      "past_participle": "vécu",
+      "stems": {
+        "imparfait": "viv"
+      },
+      "forms": {
+        "present": ["vis", "vis", "vit", "vivons", "vivez", "vivent"]
+      }
+    },
+    "trouver": {
+      "type": "regular_er",
+      "tier": "intermediate",
+      "translation": "to find",
+      "auxiliary": "avoir"
+    },
+    "penser": {
+      "type": "regular_er",
+      "tier": "intermediate",
+      "translation": "to think",
+      "auxiliary": "avoir"
+    },
+    "passer": {
+      "type": "regular_er",
+      "tier": "intermediate",
+      "translation": "to pass / to spend (time)",
+      "auxiliary": "avoir"
+    },
+    "demander": {
+      "type": "regular_er",
+      "tier": "intermediate",
+      "translation": "to ask",
+      "auxiliary": "avoir"
+    },
+    "laisser": {
+      "type": "regular_er",
+      "tier": "intermediate",
+      "translation": "to leave / to let",
+      "auxiliary": "avoir"
+    },
+    "porter": {
+      "type": "regular_er",
+      "tier": "intermediate",
+      "translation": "to wear / to carry",
+      "auxiliary": "avoir"
+    },
+    "rester": {
+      "type": "regular_er",
+      "tier": "intermediate",
+      "translation": "to stay / to remain",
+      "auxiliary": "être"
+    },
+    "tomber": {
+      "type": "regular_er",
+      "tier": "intermediate",
+      "translation": "to fall",
+      "auxiliary": "être"
+    },
+    "montrer": {
+      "type": "regular_er",
+      "tier": "intermediate",
+      "translation": "to show",
+      "auxiliary": "avoir"
+    },
+    "écouter": {
+      "type": "regular_er",
+      "tier": "intermediate",
+      "translation": "to listen (to)",
+      "auxiliary": "avoir"
+    },
+    "monter": {
+      "type": "regular_er",
+      "tier": "intermediate",
+      "translation": "to go up / to climb",
+      "auxiliary": "être"
+    },
+    "travailler": {
+      "type": "regular_er",
+      "tier": "intermediate",
+      "translation": "to work",
+      "auxiliary": "avoir"
+    },
+    "utiliser": {
+      "type": "regular_er",
+      "tier": "intermediate",
+      "translation": "to use",
+      "auxiliary": "avoir"
+    },
+    "choisir": {
+      "type": "regular_ir",
+      "tier": "intermediate",
+      "translation": "to choose",
+      "auxiliary": "avoir"
+    },
+    "réussir": {
+      "type": "regular_ir",
+      "tier": "intermediate",
+      "translation": "to succeed",
+      "auxiliary": "avoir"
+    },
+    "remplir": {
+      "type": "regular_ir",
+      "tier": "intermediate",
+      "translation": "to fill",
+      "auxiliary": "avoir"
+    },
+    "réfléchir": {
+      "type": "regular_ir",
+      "tier": "intermediate",
+      "translation": "to reflect / to think",
+      "auxiliary": "avoir"
+    },
+    "obéir": {
+      "type": "regular_ir",
+      "tier": "intermediate",
+      "translation": "to obey",
+      "auxiliary": "avoir"
+    },
+    "grandir": {
+      "type": "regular_ir",
+      "tier": "intermediate",
+      "translation": "to grow",
+      "auxiliary": "avoir"
+    },
+    "tenir": {
+      "type": "irregular",
+      "tier": "intermediate",
+      "translation": "to hold",
+      "auxiliary": "avoir",
+      "past_participle": "tenu",
+      "stems": {
+        "future": "tiendr",
+        "imparfait": "ten"
+      },
+      "forms": {
+        "present": ["tiens", "tiens", "tient", "tenons", "tenez", "tiennent"]
+      }
+    },
+    "appeler": {
+      "type": "irregular",
+      "tier": "intermediate",
+      "translation": "to call",
+      "auxiliary": "avoir",
+      "past_participle": "appelé",
+      "stems": {
+        "future": "appeller"
+      },
+      "forms": {
+        "present": ["appelle", "appelles", "appelle", "appelons", "appelez", "appellent"]
+      }
+    },
+    "sortir": {
+      "type": "irregular",
+      "tier": "intermediate",
+      "translation": "to go out / to leave",
+      "auxiliary": "être",
+      "past_participle": "sorti",
+      "stems": {
+        "imparfait": "sort"
+      },
+      "forms": {
+        "present": ["sors", "sors", "sort", "sortons", "sortez", "sortent"]
+      }
+    },
+    "connaître": {
+      "type": "irregular",
+      "tier": "intermediate",
+      "translation": "to know (people/places)",
+      "auxiliary": "avoir",
+      "past_participle": "connu",
+      "stems": {
+        "future": "connaîtr",
+        "imparfait": "connaiss"
+      },
+      "forms": {
+        "present": ["connais", "connais", "connait", "connaissons", "connaissez", "connaissent"]
+      }
+    },
+    "boire": {
+      "type": "irregular",
+      "tier": "intermediate",
+      "translation": "to drink",
+      "auxiliary": "avoir",
+      "past_participle": "bu",
+      "stems": {
+        "imparfait": "buv"
+      },
+      "forms": {
+        "present": ["bois", "bois", "boit", "buvons", "buvez", "boivent"]
+      }
+    },
+    "écrire": {
+      "type": "irregular",
+      "tier": "intermediate",
+      "translation": "to write",
+      "auxiliary": "avoir",
+      "past_participle": "écrit",
+      "stems": {
+        "imparfait": "écriv"
+      },
+      "forms": {
+        "present": ["écris", "écris", "écrit", "écrivons", "écrivez", "écrivent"]
+      }
+    },
+    "lire": {
+      "type": "irregular",
+      "tier": "intermediate",
+      "translation": "to read",
+      "auxiliary": "avoir",
+      "past_participle": "lu",
+      "stems": {
+        "imparfait": "lis"
+      },
+      "forms": {
+        "present": ["lis", "lis", "lit", "lisons", "lisez", "lisent"]
+      }
+    },
+    "dormir": {
+      "type": "irregular",
+      "tier": "intermediate",
+      "translation": "to sleep",
+      "auxiliary": "avoir",
+      "past_participle": "dormi",
+      "stems": {
+        "imparfait": "dorm"
+      },
+      "forms": {
+        "present": ["dors", "dors", "dort", "dormons", "dormez", "dorment"]
+      }
+    },
+    "ouvrir": {
+      "type": "irregular",
+      "tier": "intermediate",
+      "translation": "to open",
+      "auxiliary": "avoir",
+      "past_participle": "ouvert",
+      "stems": {
+        "imparfait": "ouvr"
+      },
+      "forms": {
+        "present": ["ouvre", "ouvres", "ouvre", "ouvrons", "ouvrez", "ouvrent"]
+      }
+    },
+    "recevoir": {
+      "type": "irregular",
+      "tier": "intermediate",
+      "translation": "to receive",
+      "auxiliary": "avoir",
+      "past_participle": "reçu",
+      "stems": {
+        "future": "recevr",
+        "imparfait": "recev"
+      },
+      "forms": {
+        "present": ["reçois", "reçois", "reçoit", "recevons", "recevez", "reçoivent"]
+      }
+    },
+    "entendre": {
+      "type": "irregular",
+      "tier": "intermediate",
+      "translation": "to hear",
+      "auxiliary": "avoir",
+      "past_participle": "entendu",
+      "stems": {
+        "future": "entendr",
+        "imparfait": "entend"
+      },
+      "forms": {
+        "present": ["entends", "entends", "entend", "entendons", "entendez", "entendent"]
+      }
+    },
+    "attendre": {
+      "type": "irregular",
+      "tier": "intermediate",
+      "translation": "to wait (for)",
+      "auxiliary": "avoir",
+      "past_participle": "attendu",
+      "stems": {
+        "future": "attendr",
+        "imparfait": "attend"
+      },
+      "forms": {
+        "present": ["attends", "attends", "attend", "attendons", "attendez", "attendent"]
+      }
+    },
+    "perdre": {
+      "type": "irregular",
+      "tier": "intermediate",
+      "translation": "to lose",
+      "auxiliary": "avoir",
+      "past_participle": "perdu",
+      "stems": {
+        "future": "perdr",
+        "imparfait": "perd"
+      },
+      "forms": {
+        "present": ["perds", "perds", "perd", "perdons", "perdez", "perdent"]
+      }
+    },
+    "dépenser": {
+      "type": "regular_er",
+      "tier": "advanced",
+      "translation": "to spend (money)",
+      "auxiliary": "avoir"
+    },
+    "dessiner": {
+      "type": "regular_er",
+      "tier": "advanced",
+      "translation": "to draw",
+      "auxiliary": "avoir"
+    },
+    "voler": {
+      "type": "regular_er",
+      "tier": "advanced",
+      "translation": "to fly / to steal",
+      "auxiliary": "avoir"
+    },
+    "raconter": {
+      "type": "regular_er",
+      "tier": "advanced",
+      "translation": "to tell (a story)",
+      "auxiliary": "avoir"
+    },
+    "quitter": {
+      "type": "regular_er",
+      "tier": "advanced",
+      "translation": "to leave / to quit",
+      "auxiliary": "avoir"
+    },
+    "garder": {
+      "type": "regular_er",
+      "tier": "advanced",
+      "translation": "to keep / to guard",
+      "auxiliary": "avoir"
+    },
+    "rencontrer": {
+      "type": "regular_er",
+      "tier": "advanced",
+      "translation": "to meet",
+      "auxiliary": "avoir"
+    },
+    "sembler": {
+      "type": "regular_er",
+      "tier": "advanced",
+      "translation": "to seem",
+      "auxiliary": "avoir"
+    },
+    "couper": {
+      "type": "regular_er",
+      "tier": "advanced",
+      "translation": "to cut",
+      "auxiliary": "avoir"
+    },
+    "cuisiner": {
+      "type": "regular_er",
+      "tier": "advanced",
+      "translation": "to cook",
+      "auxiliary": "avoir"
+    },
+    "applaudir": {
+      "type": "regular_ir",
+      "tier": "advanced",
+      "translation": "to applaud / to clap",
+      "auxiliary": "avoir"
+    },
+    "établir": {
+      "type": "regular_ir",
+      "tier": "advanced",
+      "translation": "to establish",
+      "auxiliary": "avoir"
+    },
+    "bâtir": {
+      "type": "regular_ir",
+      "tier": "advanced",
+      "translation": "to build",
+      "auxiliary": "avoir"
+    },
+    "agir": {
+      "type": "regular_ir",
+      "tier": "advanced",
+      "translation": "to act",
+      "auxiliary": "avoir"
+    },
+    "vieillir": {
+      "type": "regular_ir",
+      "tier": "advanced",
+      "translation": "to age / to grow old",
+      "auxiliary": "avoir"
+    },
+    "grossir": {
+      "type": "regular_ir",
+      "tier": "advanced",
+      "translation": "to gain weight / to get bigger",
+      "auxiliary": "avoir"
+    },
+    "maigrir": {
+      "type": "regular_ir",
+      "tier": "advanced",
+      "translation": "to lose weight / to get thinner",
+      "auxiliary": "avoir"
+    },
+    "rougir": {
+      "type": "regular_ir",
+      "tier": "advanced",
+      "translation": "to blush / to turn red",
+      "auxiliary": "avoir"
+    },
+    "ralentir": {
+      "type": "regular_ir",
+      "tier": "advanced",
+      "translation": "to slow down",
+      "auxiliary": "avoir"
+    },
+    "avertir": {
+      "type": "regular_ir",
+      "tier": "advanced",
+      "translation": "to warn",
+      "auxiliary": "avoir"
+    },
+    "guérir": {
+      "type": "regular_ir",
+      "tier": "advanced",
+      "translation": "to heal / to cure",
+      "auxiliary": "avoir"
+    },
+    "saisir": {
+      "type": "regular_ir",
+      "tier": "advanced",
+      "translation": "to seize / to grab",
+      "auxiliary": "avoir"
+    },
+    "nourrir": {
+      "type": "regular_ir",
+      "tier": "advanced",
+      "translation": "to feed / to nourish",
+      "auxiliary": "avoir"
+    },
+    "s'asseoir": {
+      "type": "irregular",
+      "tier": "advanced",
+      "translation": "to sit (down)",
+      "auxiliary": "être",
+      "past_participle": "assis",
+      "reflexive": true,
+      "forms": {
+        "present": ["m'assieds", "t'assieds", "s'assied", "nous asseyons", "vous asseyez", "s'asseyent"],
+        "future": ["m'assiérai", "t'assiéras", "s'assiéra", "nous assiérons", "vous assiérez", "s'assiéront"],
+        "imparfait": ["m'asseyais", "t'asseyais", "s'asseyait", "nous asseyions", "vous asseyiez", "s'asseyaient"]
+      }
+    },
+    "se sentir": {
+      "type": "irregular",
+      "tier": "advanced",
+      "translation": "to feel",
+      "auxiliary": "être",
+      "past_participle": "senti",
+      "reflexive": true,
+      "stems": {
+        "imparfait": "sent"
+      },
+      "forms": {
+        "present": ["me sens", "te sens", "se sent", "nous sentons", "vous sentez", "se sentent"]
+      }
+    },
+    "se quitter": {
+      "type": "irregular",
+      "tier": "advanced",
+      "translation": "to leave each other / to part ways",
+      "auxiliary": "être",
+      "past_participle": "quitté",
+      "reflexive": true,
+      "forms": {
+        "present": ["me quitte", "te quittes", "se quitte", "nous quittons", "vous quittez", "se quittent"]
+      }
+    },
+    "obtenir": {
+      "type": "irregular",
+      "tier": "advanced",
+      "translation": "to obtain / to get",
+      "auxiliary": "avoir",
+      "past_participle": "obtenu",
+      "stems": {
+        "future": "obtiendr",
+        "imparfait": "obten"
+      },
+      "forms": {
+        "present": ["obtiens", "obtiens", "obtient", "obtenons", "obtenez", "obtiennent"]
+      }
+    },
+    "descendre": {
+      "type": "irregular",
+      "tier": "advanced",
+      "translation": "to go down / to descend",
+      "auxiliary": "être",
+      "past_participle": "descendu",
+      "stems": {
+        "future": "descendr",
+        "imparfait": "descend"
+      },
+      "forms": {
+        "present": ["descends", "descends", "descend", "descendons", "descendez", "descendent"]
+      }
+    },
+    "offrir": {
+      "type": "irregular",
+      "tier": "advanced",
+      "translation": "to offer",
+      "auxiliary": "avoir",
+      "past_participle": "offert",
+      "stems": {
+        "imparfait": "offr"
+      },
+      "forms": {
+        "present": ["offre", "offres", "offre", "offrons", "offrez", "offrent"]
+      }
+    },
+    "souffrir": {
+      "type": "irregular",
+      "tier": "advanced",
+      "translation": "to suffer",
+      "auxiliary": "avoir",
+      "past_participle": "souffert",
+      "stems": {
+        "imparfait": "souffr"
+      },
+      "forms": {
+        "present": ["souffre", "souffres", "souffre", "souffrons", "souffrez", "souffrent"]
+      }
+    },
+    "découvrir": {
+      "type": "irregular",
+      "tier": "advanced",
+      "translation": "to discover",
+      "auxiliary": "avoir",
+      "past_participle": "découvert",
+      "stems": {
+        "imparfait": "découvr"
+      },
+      "forms": {
+        "present": ["découvre", "découvres", "découvre", "découvrons", "découvrez", "découvrent"]
+      }
+    },
+    "conduire": {
+      "type": "irregular",
+      "tier": "advanced",
+      "translation": "to drive",
+      "auxiliary": "avoir",
+      "past_participle": "conduit",
+      "stems": {
+        "imparfait": "conduis"
+      },
+      "forms": {
+        "present": ["conduis", "conduis", "conduit", "conduisons", "conduisez", "conduisent"]
+      }
+    },
+    "construire": {
+      "type": "irregular",
+      "tier": "advanced",
+      "translation": "to build / to construct",
+      "auxiliary": "avoir",
+      "past_participle": "construit",
+      "stems": {
+        "imparfait": "construis"
+      },
+      "forms": {
+        "present": ["construis", "construis", "construit", "construisons", "construisez", "construisent"]
+      }
+    },
+    "produire": {
+      "type": "irregular",
+      "tier": "advanced",
+      "translation": "to produce",
+      "auxiliary": "avoir",
+      "past_participle": "produit",
+      "stems": {
+        "imparfait": "produis"
+      },
+      "forms": {
+        "present": ["produis", "produis", "produit", "produisons", "produisez", "produisent"]
+      }
+    },
+    "traduire": {
+      "type": "irregular",
+      "tier": "advanced",
+      "translation": "to translate",
+      "auxiliary": "avoir",
+      "past_participle": "traduit",
+      "stems": {
+        "imparfait": "traduis"
+      },
+      "forms": {
+        "present": ["traduis", "traduis", "traduit", "traduisons", "traduisez", "traduisent"]
+      }
+    },
+    "rire": {
+      "type": "irregular",
+      "tier": "advanced",
+      "translation": "to laugh",
+      "auxiliary": "avoir",
+      "past_participle": "ri",
+      "stems": {
+        "imparfait": "ri"
+      },
+      "forms": {
+        "present": ["ris", "ris", "rit", "rions", "riez", "rient"]
+      }
+    },
+    "suivre": {
+      "type": "irregular",
+      "tier": "advanced",
+      "translation": "to follow",
+      "auxiliary": "avoir",
+      "past_participle": "suivi",
+      "stems": {
+        "imparfait": "suiv"
+      },
+      "forms": {
+        "present": ["suis", "suis", "suit", "suivons", "suivez", "suivent"]
+      }
+    },
+    "naître": {
+      "type": "irregular",
+      "tier": "advanced",
+      "translation": "to be born",
+      "auxiliary": "être",
+      "past_participle": "né",
+      "stems": {
+        "future": "naîtr",
+        "imparfait": "naiss"
+      },
+      "forms": {
+        "present": ["nais", "nais", "naît", "naissons", "naissez", "naissent"]
+      }
+    },
+    "mourir": {
+      "type": "irregular",
+      "tier": "advanced",
+      "translation": "to die",
+      "auxiliary": "être",
+      "past_participle": "mort",
+      "stems": {
+        "future": "mourr",
+        "imparfait": "mour"
+      },
+      "forms": {
+        "present": ["meurs", "meurs", "meurt", "mourons", "mourez", "meurent"]
+      }
+    },
+    "comprendre": {
+      "type": "irregular",
+      "tier": "intermediate",
+      "translation": "to understand",
+      "auxiliary": "avoir",
+      "past_participle": "compris",
+      "stems": {
+        "future": "comprendr",
+        "imparfait": "compren"
+      },
+      "forms": {
+        "present": ["comprends", "comprends", "comprend", "comprenons", "comprenez", "comprennent"]
+      }
+    },
+    "apprendre": {
+      "type": "irregular",
+      "tier": "intermediate",
+      "translation": "to learn",
+      "auxiliary": "avoir",
+      "past_participle": "appris",
+      "stems": {
+        "future": "apprendr",
+        "imparfait": "appren"
+      },
+      "forms": {
+        "present": ["apprends", "apprends", "apprend", "apprenons", "apprenez", "apprennent"]
+      }
+    }
+  }
+}

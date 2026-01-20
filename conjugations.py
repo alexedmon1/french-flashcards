@@ -1,12 +1,21 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Wed Oct 29 19:17:20 2025
+French Conjugation Trainer with SRS support
 
-@author: alexdevyn
+Practice French verb conjugations across 7 tenses:
+- Présent (present)
+- Futur simple (future)
+- Imparfait (imparfait)
+- Passé composé (past)
+- Futur proche (near_future)
+- Conditionnel présent (conditional)
+- Conditionnel passé (conditional_past)
+
+Supports 93 verbs organized by tier (core, intermediate, advanced)
+and type (regular -ER, regular -IR, irregular).
 """
 
-#!/usr/bin/env python3
 import argparse
 import json
 import random
@@ -14,6 +23,18 @@ import sys
 import unicodedata
 from datetime import date, timedelta
 from pathlib import Path
+
+# Import from the conjugation engine
+from conjugation_engine import (
+    conjugate,
+    get_all_verbs,
+    get_verbs_by_type,
+    get_verbs_by_tier,
+    get_translation,
+    get_tense_display_name,
+    get_all_tenses,
+    get_random_pronouns,
+)
 
 # ----------------------------------------------------------------------
 # SRS Configuration
@@ -29,6 +50,22 @@ INTERVALS = {
     2: 3,      # Good - 3 days
     3: 7,      # Easy - 1 week
 }
+
+# Tense code to display name mapping
+TENSE_NAMES = {
+    "present": "présent",
+    "future": "futur simple",
+    "imparfait": "imparfait",
+    "past": "passé composé",
+    "near_future": "futur proche",
+    "conditional": "conditionnel présent",
+    "conditional_past": "conditionnel passé",
+}
+
+# Valid tenses for --tense flag (short codes)
+VALID_TENSE_FLAGS = ["present", "future", "past", "imparfait",
+                     "near_future", "conditional", "conditional_past"]
+
 
 # ----------------------------------------------------------------------
 # SRS Data Classes
@@ -133,538 +170,11 @@ def save_progress(progress: dict):
 
 
 # ----------------------------------------------------------------------
-# 1️⃣  Data tables
-# ----------------------------------------------------------------------
-PRESENT = {
-    "être":      ["suis", "es", "est", "sommes", "êtes", "sont"],
-    "avoir":     ["ai", "as", "a", "avons", "avez", "ont"],
-    "faire":     ["fais", "fais", "fait", "faisons", "faites", "font"],
-    "dire":      ["dis", "dis", "dit", "disons", "dites", "disent"],
-    "aller":     ["vais", "vas", "va", "allons", "allez", "vont"],
-    "voir":      ["vois", "vois", "voit", "voyons", "voyez", "voient"],
-    "savoir":    ["sais", "sais", "sait", "savons", "savez", "savent"],
-    "pouvoir":   ["peux", "peux", "peut", "pouvons", "pouvez", "peuvent"],
-    "vouloir":   ["veux", "veux", "veut", "voulons", "voulez", "veulent"],
-    "venir":     ["viens", "viens", "vient", "venons", "venez", "viennent"],
-    "devoir":    ["dois", "dois", "doit", "devons", "devez", "doivent"],
-    "prendre":   ["prends", "prends", "prend", "prenons", "prenez", "prennent"],
-    "donner":    ["donne", "donnes", "donne", "donnons", "donnez", "donnent"],
-    "trouver":   ["trouve", "trouves", "trouve", "trouvons", "trouvez", "trouvent"],
-    "penser":    ["pense", "penses", "pense", "pensons", "pensez", "pensent"],
-    "parler":    ["parle", "parles", "parle", "parlons", "parlez", "parlent"],
-    "mettre":    ["mets", "mets", "met", "mettons", "mettez", "mettent"],
-    "aimer":     ["aime", "aimes", "aime", "aimons", "aimez", "aiment"],
-    "passer":    ["passe", "passes", "passe", "passons", "passez", "passent"],
-    "demander":  ["demande", "demandes", "demande", "demandons", "demandez", "demandent"],
-    "croire":    ["crois", "crois", "croit", "croyons", "croyez", "croient"],
-    "laisser":   ["laisse", "laisses", "laisse", "laissons", "laissez", "laissent"],
-    "porter":    ["porte", "portes", "porte", "portons", "portez", "portent"],
-    "tenir":     ["tiens", "tiens", "tient", "tenons", "tenez", "tiennent"],
-    "appeler":   ["appelle", "appelles", "appelle", "appelons", "appelez", "appellent"],
-    "rester":    ["reste", "restes", "reste", "restons", "restez", "restent"],
-    "sortir":    ["sors", "sors", "sort", "sortons", "sortez", "sortent"],
-    "vivre":     ["vis", "vis", "vit", "vivons", "vivez", "vivent"],
-    "tomber":    ["tombe", "tombes", "tombe", "tombons", "tombez", "tombent"],
-    "connaître": ["connais", "connais", "connait", "connaissons", "connaissez", "connaissent"],
-    "finir":     ["finis", "finis", "finit", "finissons", "finissez", "finissent"],
-    "choisir":   ["choisis", "choisis", "choisit", "choisissons", "choisissez", "choisissent"],
-    "réussir":   ["réussis", "réussis", "réussit", "réussissons", "réussissez", "réussissent"],
-    "remplir":   ["remplis", "remplis", "remplit", "remplissons", "remplissez", "remplissent"],
-    "réfléchir": ["réfléchis", "réfléchis", "réfléchit", "réfléchissons", "réfléchissez", "réfléchissent"],
-    "obéir":     ["obéis", "obéis", "obéit", "obéissons", "obéissez", "obéissent"],
-    "grandir":   ["grandis", "grandis", "grandit", "grandissons", "grandissez", "grandissent"],
-    "applaudir": ["applaudis", "applaudis", "applaudit", "applaudissons", "applaudissez", "applaudissent"],
-    "établir":   ["établis", "établis", "établit", "établissons", "établissez", "établissent"],
-    "bâtir":     ["bâtis", "bâtis", "bâtit", "bâtissons", "bâtissez", "bâtissent"],
-    "agir":      ["agis", "agis", "agit", "agissons", "agissez", "agissent"],
-    "vieillir":  ["vieillis", "vieillis", "vieillit", "vieillissons", "vieillissez", "vieillissent"],
-    "grossir":   ["grossis", "grossis", "grossit", "grossissons", "grossissez", "grossissent"],
-    "maigrir":   ["maigris", "maigris", "maigrit", "maigrissons", "maigrissez", "maigrissent"],
-    "rougir":    ["rougis", "rougis", "rougit", "rougissons", "rougissez", "rougissent"],
-    "ralentir":  ["ralentis", "ralentis", "ralentit", "ralentissons", "ralentissez", "ralentissent"],
-    "avertir":   ["avertis", "avertis", "avertit", "avertissons", "avertissez", "avertissent"],
-    "guérir":    ["guéris", "guéris", "guérit", "guérissons", "guérissez", "guérissent"],
-    "saisir":    ["saisis", "saisis", "saisit", "saisissons", "saisissez", "saisissent"],
-    "nourrir":   ["nourris", "nourris", "nourrit", "nourrissons", "nourrissez", "nourrissent"],
-    "boire":     ["bois", "bois", "boit", "buvons", "buvez", "boivent"],
-    "écrire":    ["écris", "écris", "écrit", "écrivons", "écrivez", "écrivent"],
-    "lire":      ["lis", "lis", "lit", "lisons", "lisez", "lisent"],
-    "partir":    ["pars", "pars", "part", "partons", "partez", "partent"],
-    "dormir":    ["dors", "dors", "dort", "dormons", "dormez", "dorment"],
-    "ouvrir":    ["ouvre", "ouvres", "ouvre", "ouvrons", "ouvrez", "ouvrent"],
-    "recevoir":  ["reçois", "reçois", "reçoit", "recevons", "recevez", "reçoivent"],
-    "montrer":   ["montre", "montres", "montre", "montrons", "montrez", "montrent"],
-    "écouter":   ["écoute", "écoutes", "écoute", "écoutons", "écoutez", "écoutent"],
-    "entendre":  ["entends", "entends", "entend", "entendons", "entendez", "entendent"],
-    "attendre":  ["attends", "attends", "attend", "attendons", "attendez", "attendent"],
-    "dépenser":  ["dépense", "dépenses", "dépense", "dépensons", "dépensez", "dépensent"],
-    "s'asseoir": ["m'assieds", "t'assieds", "s'assied", "nous asseyons", "vous asseyez", "s'asseyent"],
-    "monter":    ["monte", "montes", "monte", "montons", "montez", "montrent"],
-    "dessiner":  ["dessine", "dessines", "dessine", "dessinons", "dessinez", "dessinent"],
-    "voler":     ["vole", "voles", "vole", "volons", "volez", "volent"],
-    "raconter":  ["raconte", "racontes", "raconte", "racontons", "racontez", "racontent"],
-    "quitter":   ["quitte", "quittes", "quitte", "quittons", "quittez", "quittent"],
-    "se sentir": ["me sens", "te sens", "se sent", "nous sentons", "vous sentez", "se sentent"],
-    "se quitter": ["me quitte", "te quittes", "se quitte", "nous quittons", "vous quittez", "se quittent"],
-    "garder":    ["garde", "gardes", "garde", "gardons", "gardez", "gardent"],
-    "rencontrer":["rencontre", "rencontres", "rencontre", "rencontrons", "rencontrez", "rencontrent"],
-    "obtenir":   ["obtiens", "obtiens", "obtient", "obtenons", "obtenez", "obtiennent"],
-    "sembler":   ["semble", "sembles", "semble", "semblons", "semblez", "semblent"],
-    "utiliser":  ["utilise", "utilises", "utilise", "utilisons", "utilisez", "utilisent"],
-    "travailler":["travaille", "travailles", "travaille", "travaillons", "travaillez", "travaillent"],
-    "couper":    ["coupe", "coupes", "coupe", "coupons", "coupez", "coupent"],
-    "cuisiner":  ["cuisine", "cuisines", "cuisine", "cuisinons", "cuisinez", "cuisinent"],
-    "perdre":    ["perds", "perds", "perd", "perdons", "perdez", "perdent"],
-    "descendre": ["descends", "descends", "descend", "descendons", "descendez", "descendent"],
-    "offrir":    ["offre", "offres", "offre", "offrons", "offrez", "offrent"],
-    "souffrir":  ["souffre", "souffres", "souffre", "souffrons", "souffrez", "souffrent"],
-    "découvrir": ["découvre", "découvres", "découvre", "découvrons", "découvrez", "découvrent"],
-    "conduire":  ["conduis", "conduis", "conduit", "conduisons", "conduisez", "conduisent"],
-    "construire":["construis", "construis", "construit", "construisons", "construisez", "construisent"],
-    "produire":  ["produis", "produis", "produit", "produisons", "produisez", "produisent"],
-    "traduire":  ["traduis", "traduis", "traduit", "traduisons", "traduisez", "traduisent"],
-    "rire":      ["ris", "ris", "rit", "rions", "riez", "rient"],
-    "suivre":    ["suis", "suis", "suit", "suivons", "suivez", "suivent"],
-    "naître":    ["nais", "nais", "naît", "naissons", "naissez", "naissent"],
-    "mourir":    ["meurs", "meurs", "meurt", "mourons", "mourez", "meurent"],
-    "comprendre":["comprends", "comprends", "comprend", "comprenons", "comprenez", "comprennent"],
-    "apprendre": ["apprends", "apprends", "apprend", "apprenons", "apprenez", "apprennent"],
-}
-
-FUTURE = {
-    "être":      ["serai", "seras", "sera", "serons", "serez", "seront"],
-    "avoir":     ["aurai", "auras", "aura", "aurons", "aurez", "auront"],
-    "faire":     ["ferai", "feras", "fera", "ferons", "ferez", "feront"],
-    "dire":      ["dirai", "diras", "dira", "dirons", "direz", "diront"],
-    "aller":     ["irai", "iras", "ira", "irons", "irez", "iront"],
-    "voir":      ["verrai", "verras", "verra", "verrons", "verrez", "verront"],
-    "savoir":    ["saurai", "sauras", "saura", "saurons", "saurez", "sauront"],
-    "pouvoir":   ["pourrai", "pourras", "pourra", "pourrons", "pourrez", "pourront"],
-    "vouloir":   ["voudrai", "voudras", "voudra", "voudrons", "voudrez", "voudront"],
-    "venir":     ["viendrai", "viendras", "viendra", "viendrons", "viendrez", "viendront"],
-    "devoir":    ["devrai", "devras", "devra", "devrons", "devrez", "devront"],
-    "prendre":   ["prendrai", "prendras", "prendra", "prendrons", "prendrez", "prendront"],
-    "donner":    ["donnerai", "donneras", "donnera", "donnerons", "donnerez", "donneront"],
-    "trouver":   ["trouverai", "trouveras", "trouvera", "trouverons", "trouverez", "trouveront"],
-    "penser":    ["penserai", "penseras", "pensera", "penserons", "penserez", "penseront"],
-    "parler":    ["parlerai", "parleras", "parlera", "parlerons", "parlerez", "parleront"],
-    "mettre":    ["mettrai", "mettras", "mettra", "mettrons", "mettrez", "mettront"],
-    "aimer":     ["aimerai", "aimeras", "aimera", "aimerons", "aimerez", "aimeront"],
-    "passer":    ["passerai", "passeras", "passera", "passerons", "passerez", "passeront"],
-    "demander":  ["demanderai", "demanderas", "demandera", "demanderons", "demanderez", "demanderont"],
-    "croire":    ["croirai", "croiras", "croira", "croirons", "croirez", "croiront"],
-    "laisser":   ["laisserai", "laisseras", "laissera", "laisserons", "laisserez", "laisseront"],
-    "porter":    ["porterai", "porteras", "portera", "porterons", "porterez", "porteront"],
-    "tenir":     ["tiendrai", "tiendras", "tiendra", "tiendrons", "tiendrez", "tiendront"],
-    "appeler":   ["appellerai", "appelleras", "appellera", "appellerons", "appellerez", "appelleront"],
-    "rester":    ["resterai", "resteras", "restera", "resterons", "resterez", "resteront"],
-    "sortir":    ["sortirai", "sortiras", "sortira", "sortirons", "sortirez", "sortiront"],
-    "vivre":     ["vivrai", "vivras", "vivra", "vivrons", "vivrez", "vivront"],
-    "tomber":    ["tomberai", "tomberas", "tombera", "tomberons", "tomberez", "tomberont"],
-    "connaître": ["connaîtrai", "connaîtras", "connaîtra", "connaîtrons", "connaîtrez", "connaîtront"],
-    "finir":     ["finirai", "finiras", "finira", "finirons", "finirez", "finiront"],
-    "choisir":   ["choisirai", "choisiras", "choisira", "choisirons", "choisirez", "choisiront"],
-    "réussir":   ["réussirai", "réussiras", "réussira", "réussirons", "réussirez", "réussiront"],
-    "remplir":   ["remplirai", "rempliras", "remplira", "remplirons", "remplirez", "rempliront"],
-    "réfléchir": ["réfléchirai", "réfléchiras", "réfléchira", "réfléchirons", "réfléchirez", "réfléchiront"],
-    "obéir":     ["obéirai", "obéiras", "obéira", "obéirons", "obéirez", "obéiront"],
-    "grandir":   ["grandirai", "grandiras", "grandira", "grandirons", "grandirez", "grandiront"],
-    "applaudir": ["applaudirai", "applaudiras", "applaudira", "applaudirons", "applaudirez", "applaudiront"],
-    "établir":   ["établirai", "établiras", "établira", "établirons", "établirez", "établiront"],
-    "bâtir":     ["bâtirai", "bâtiras", "bâtira", "bâtirons", "bâtirez", "bâtiront"],
-    "agir":      ["agirai", "agiras", "agira", "agirons", "agirez", "agiront"],
-    "vieillir":  ["vieillirai", "vieilliras", "vieillira", "vieillirons", "vieillirez", "vieilliront"],
-    "grossir":   ["grossirai", "grossiras", "grossira", "grossirons", "grossirez", "grossiront"],
-    "maigrir":   ["maigrirai", "maigriras", "maigrira", "maigrirons", "maigrirez", "maigriront"],
-    "rougir":    ["rougirai", "rougiras", "rougira", "rougirons", "rougirez", "rougiront"],
-    "ralentir":  ["ralentirai", "ralentiras", "ralentira", "ralentirons", "ralentirez", "ralentiront"],
-    "avertir":   ["avertirai", "avertiras", "avertira", "avertirons", "avertirez", "avertiront"],
-    "guérir":    ["guérirai", "guériras", "guérira", "guérirons", "guérirez", "guériront"],
-    "saisir":    ["saisirai", "saisiras", "saisira", "saisirons", "saisirez", "saisiront"],
-    "nourrir":   ["nourrirai", "nourriras", "nourrira", "nourrirons", "nourrirez", "nourriront"],
-    "boire":     ["boirai", "boiras", "boira", "boirons", "boirez", "boiront"],
-    "écrire":    ["écrirai", "écriras", "écrira", "écrirons", "écrirez", "écriront"],
-    "lire":      ["lirai", "liras", "lira", "lirons", "lirez", "liront"],
-    "partir":    ["partirai", "partiras", "partira", "partirons", "partirez", "partiront"],
-    "dormir":    ["dormirai", "dormiras", "dormira", "dormirons", "dormirez", "dormiront"],
-    "ouvrir":    ["ouvrirai", "ouvriras", "ouvrira", "ouvrirons", "ouvrirez", "ouvriront"],
-    "recevoir":  ["recevrai", "recevras", "recevra", "recevrons", "recevrez", "recevront"],
-    "montrer":   ["montrerai", "montreras", "montrera", "montrerons", "montrerez", "montreront"],
-    "écouter":   ["écouterai", "écouteras", "écoutera", "écouterons", "écouterez", "écouteront"],
-    "entendre":  ["entendrai", "entendras", "entendra", "entendrons", "entendrez", "entendront"],
-    "attendre":  ["attendrai", "attendras", "attendra", "attendrons", "attendrez", "attendront"],
-    "dépenser":  ["dépenserai", "dépenseras", "dépensera", "dépenserons", "dépenserez", "dépenseront"],
-    "s'asseoir": ["m'assiérai", "t'assiéras", "s'assiéra", "nous assiérons", "vous assiérez", "s'assiéront"],
-    "monter":    ["monterai", "monteras", "montera", "monterons", "monterez", "monteront"],
-    "dessiner":  ["dessinerai", "dessineras", "dessinera", "dessinerons", "dessinerez", "dessineront"],
-    "voler":     ["volerai", "voleras", "volera", "volerons", "volerez", "voleront"],
-    "raconter":  ["raconterai", "raconteras", "racontera", "raconterons", "raconterez", "raconteront"],
-    "quitter":   ["quitterai", "quitteras", "quittera", "quitterons", "quitterez", "quitteront"],
-    "se sentir": ["me sentirai", "te sentiras", "se sentira", "nous sentirons", "vous sentirez", "se sentiront"],
-    "se quitter": ["me quitterai", "te quitteras", "se quittera", "nous quitterons", "vous quitterez", "se quitteront"],
-    "garder":    ["garderai", "garderas", "gardera", "garderons", "garderez", "garderont"],
-    "rencontrer":["rencontrerai", "rencontreras", "rencontrera", "rencontrerons", "rencontrerez", "rencontreront"],
-    "obtenir":   ["obtiendrai", "obtiendras", "obtiendra", "obtiendrons", "obtiendrez", "obtiendront"],
-    "sembler":   ["semblerai", "sembleras", "semblera", "semblerons", "semblerez", "sembleront"],
-    "utiliser":  ["utiliserai", "utiliseras", "utilisera", "utiliserons", "utiliserez", "utiliseront"],
-    "travailler":["travaillerai", "travailleras", "travaillera", "travaillerons", "travaillerez", "travailleront"],
-    "couper":    ["couperai", "couperas", "coupera", "couperons", "couperez", "couperont"],
-    "cuisiner":  ["cuisinerai", "cuisineras", "cuisinera", "cuisinerons", "cuisinerez", "cuisineront"],
-    "perdre":    ["perdrai", "perdras", "perdra", "perdrons", "perdrez", "perdront"],
-    "descendre": ["descendrai", "descendras", "descendra", "descendrons", "descendrez", "descendront"],
-    "offrir":    ["offrirai", "offriras", "offrira", "offrirons", "offrirez", "offriront"],
-    "souffrir":  ["souffrirai", "souffriras", "souffrira", "souffrirons", "souffrirez", "souffriront"],
-    "découvrir": ["découvrirai", "découvriras", "découvrira", "découvrirons", "découvrirez", "découvriront"],
-    "conduire":  ["conduirai", "conduiras", "conduira", "conduirons", "conduirez", "conduiront"],
-    "construire":["construirai", "construiras", "construira", "construirons", "construirez", "construiront"],
-    "produire":  ["produirai", "produiras", "produira", "produirons", "produirez", "produiront"],
-    "traduire":  ["traduirai", "traduiras", "traduira", "traduirons", "traduirez", "traduiront"],
-    "rire":      ["rirai", "riras", "rira", "rirons", "rirez", "riront"],
-    "suivre":    ["suivrai", "suivras", "suivra", "suivrons", "suivrez", "suivront"],
-    "naître":    ["naîtrai", "naîtras", "naîtra", "naîtrons", "naîtrez", "naîtront"],
-    "mourir":    ["mourrai", "mourras", "mourra", "mourrons", "mourrez", "mourront"],
-    "comprendre":["comprendrai", "comprendras", "comprendra", "comprendrons", "comprendrez", "comprendront"],
-    "apprendre": ["apprendrai", "apprendras", "apprendra", "apprendrons", "apprendrez", "apprendront"],
-}
-
-IMPARFAIT = {
-    "être":      ["étais", "étais", "était", "étions", "étiez", "étaient"],
-    "avoir":     ["avais", "avais", "avait", "avions", "aviez", "avaient"],
-    "faire":     ["faisais", "faisais", "faisait", "faisions", "faisiez", "faisaient"],
-    "dire":      ["disais", "disais", "disait", "disions", "disiez", "disaient"],
-    "aller":     ["allais", "allais", "allait", "allions", "alliez", "allaient"],
-    "voir":      ["voyais", "voyais", "voyait", "voyions", "voyiez", "voyaient"],
-    "savoir":    ["savais", "savais", "savait", "savions", "saviez", "savaient"],
-    "pouvoir":   ["pouvais", "pouvais", "pouvait", "pouvions", "pouviez", "pouvaient"],
-    "vouloir":   ["voulais", "voulais", "voulait", "voulions", "vouliez", "voulaient"],
-    "venir":     ["venais", "venais", "venait", "venions", "veniez", "venaient"],
-    "devoir":    ["devais", "devais", "devait", "devions", "deviez", "devaient"],
-    "prendre":   ["prenais", "prenais", "prenait", "prenions", "preniez", "prenaient"],
-    "donner":    ["donnais", "donnais", "donnait", "donnions", "donniez", "donnaient"],
-    "trouver":   ["trouvais", "trouvais", "trouvait", "trouvions", "trouviez", "trouvaient"],
-    "penser":    ["pensais", "pensais", "pensait", "pensions", "pensiez", "pensaient"],
-    "parler":    ["parlais", "parlais", "parlait", "parlions", "parliez", "parlaient"],
-    "mettre":    ["mettais", "mettais", "mettait", "mettions", "mettiez", "mettaient"],
-    "aimer":     ["aimais", "aimais", "aimait", "aimions", "aimiez", "aimaient"],
-    "passer":    ["passais", "passais", "passait", "passions", "passiez", "passaient"],
-    "demander":  ["demandais", "demandais", "demandait", "demandions", "demandiez", "demandaient"],
-    "croire":    ["croyais", "croyais", "croyait", "croyions", "croyiez", "croyaient"],
-    "laisser":   ["laissais", "laissais", "laissait", "laissions", "laissiez", "laissaient"],
-    "porter":    ["portais", "portais", "portait", "portions", "portiez", "portaient"],
-    "tenir":     ["tenais", "tenais", "tenait", "tenions", "teniez", "tenaient"],
-    "appeler":   ["appelais", "appelais", "appelait", "appelions", "appeliez", "appelaient"],
-    "rester":    ["restais", "restais", "restait", "restions", "restiez", "restaient"],
-    "sortir":    ["sortais", "sortais", "sortait", "sortions", "sortiez", "sortaient"],
-    "vivre":     ["vivais", "vivais", "vivait", "vivions", "viviez", "vivaient"],
-    "tomber":    ["tombais", "tombais", "tombait", "tombions", "tombiez", "tombaient"],
-    "connaître": ["connaissais", "connaissais", "connaissait", "connaissions", "connaissiez", "connaissaient"],
-    "finir":     ["finissais", "finissais", "finissait", "finissions", "finissiez", "finissaient"],
-    "choisir":   ["choisissais", "choisissais", "choisissait", "choisissions", "choisissiez", "choisissaient"],
-    "réussir":   ["réussissais", "réussissais", "réussissait", "réussissions", "réussissiez", "réussissaient"],
-    "remplir":   ["remplissais", "remplissais", "remplissait", "remplissions", "remplissiez", "remplissaient"],
-    "réfléchir": ["réfléchissais", "réfléchissais", "réfléchissait", "réfléchissions", "réfléchissiez", "réfléchissaient"],
-    "obéir":     ["obéissais", "obéissais", "obéissait", "obéissions", "obéissiez", "obéissaient"],
-    "grandir":   ["grandissais", "grandissais", "grandissait", "grandissions", "grandissiez", "grandissaient"],
-    "applaudir": ["applaudissais", "applaudissais", "applaudissait", "applaudissions", "applaudissiez", "applaudissaient"],
-    "établir":   ["établissais", "établissais", "établissait", "établissions", "établissiez", "établissaient"],
-    "bâtir":     ["bâtissais", "bâtissais", "bâtissait", "bâtissions", "bâtissiez", "bâtissaient"],
-    "agir":      ["agissais", "agissais", "agissait", "agissions", "agissiez", "agissaient"],
-    "vieillir":  ["vieillissais", "vieillissais", "vieillissait", "vieillissions", "vieillissiez", "vieillissaient"],
-    "grossir":   ["grossissais", "grossissais", "grossissait", "grossissions", "grossissiez", "grossissaient"],
-    "maigrir":   ["maigrissais", "maigrissais", "maigrissait", "maigrissions", "maigrissiez", "maigrissaient"],
-    "rougir":    ["rougissais", "rougissais", "rougissait", "rougissions", "rougissiez", "rougissaient"],
-    "ralentir":  ["ralentissais", "ralentissais", "ralentissait", "ralentissions", "ralentissiez", "ralentissaient"],
-    "avertir":   ["avertissais", "avertissais", "avertissait", "avertissions", "avertissiez", "avertissaient"],
-    "guérir":    ["guérissais", "guérissais", "guérissait", "guérissions", "guérissiez", "guérissaient"],
-    "saisir":    ["saisissais", "saisissais", "saisissait", "saisissions", "saisissiez", "saisissaient"],
-    "nourrir":   ["nourrissais", "nourrissais", "nourrissait", "nourrissions", "nourrissiez", "nourrissaient"],
-    "boire":     ["buvais", "buvais", "buvait", "buvions", "buviez", "buvaient"],
-    "écrire":    ["écrivais", "écrivais", "écrivait", "écrivions", "écriviez", "écrivaient"],
-    "lire":      ["lisais", "lisais", "lisait", "lisions", "lisiez", "lisaient"],
-    "partir":    ["partais", "partais", "partait", "partions", "partiez", "partaient"],
-    "dormir":    ["dormais", "dormais", "dormait", "dormions", "dormiez", "dormaient"],
-    "ouvrir":    ["ouvrais", "ouvrais", "ouvrait", "ouvrions", "ouvriez", "ouvraient"],
-    "recevoir":  ["recevais", "recevais", "recevait", "recevions", "receviez", "recevaient"],
-    "montrer":   ["montrais", "montrais", "montrait", "montrions", "montriez", "montraient"],
-    "écouter":   ["écoutais", "écoutais", "écoutait", "écoutions", "écoutiez", "écoutaient"],
-    "entendre":  ["entendais", "entendais", "entendait", "entendions", "entendiez", "entendaient"],
-    "attendre":  ["attendais", "attendais", "attendait", "attendions", "attendiez", "attendaient"],
-    "dépenser":  ["dépensais", "dépensais", "dépensait", "dépensions", "dépensiez", "dépensaient"],
-    "s'asseoir": ["m'asseyais", "t'asseyais", "s'asseyait", "nous asseyions", "vous asseyiez", "s'asseyaient"],
-    "monter":    ["montais", "montais", "montait", "montions", "montiez", "montaient"],
-    "dessiner":  ["dessinais", "dessinais", "dessinait", "dessinions", "dessiniez", "dessinaient"],
-    "voler":     ["volais", "volais", "volait", "volions", "voliez", "volaient"],
-    "raconter":  ["racontais", "racontais", "racontait", "racontions", "racontiez", "racontaient"],
-    "quitter":   ["quittais", "quittais", "quittait", "quittions", "quittiez", "quittaient"],
-    "se sentir": ["me sentais", "te sentais", "se sentait", "nous sentions", "vous sentiez", "se sentaient"],
-    "se quitter": ["me quittais", "te quittais", "se quittait", "nous quittions", "vous quittiez", "se quittaient"],
-    "garder":    ["gardais", "gardais", "gardait", "gardions", "gardiez", "gardaient"],
-    "rencontrer":["rencontrais", "rencontrais", "rencontrait", "rencontrions", "rencontriez", "rencontraient"],
-    "obtenir":   ["obtenais", "obtenais", "obtenait", "obtenions", "obteniez", "obtenaient"],
-    "sembler":   ["semblais", "semblais", "semblait", "semblions", "sembliez", "semblaient"],
-    "utiliser":  ["utilisais", "utilisais", "utilisait", "utilisions", "utilisiez", "utilisaient"],
-    "travailler":["travaillais", "travaillais", "travaillait", "travaillions", "travailliez", "travaillaient"],
-    "couper":    ["coupais", "coupais", "coupait", "coupions", "coupiez", "coupaient"],
-    "cuisiner":  ["cuisinais", "cuisinais", "cuisinait", "cuisinions", "cuisiniez", "cuisinaient"],
-    "perdre":    ["perdais", "perdais", "perdait", "perdions", "perdiez", "perdaient"],
-    "descendre": ["descendais", "descendais", "descendait", "descendions", "descendiez", "descendaient"],
-    "offrir":    ["offrais", "offrais", "offrait", "offrions", "offriez", "offraient"],
-    "souffrir":  ["souffrais", "souffrais", "souffrait", "souffrions", "souffriez", "souffraient"],
-    "découvrir": ["découvrais", "découvrais", "découvrait", "découvrions", "découvriez", "découvraient"],
-    "conduire":  ["conduisais", "conduisais", "conduisait", "conduisions", "conduisiez", "conduisaient"],
-    "construire":["construisais", "construisais", "construisait", "construisions", "construisiez", "construisaient"],
-    "produire":  ["produisais", "produisais", "produisait", "produisions", "produisiez", "produisaient"],
-    "traduire":  ["traduisais", "traduisais", "traduisait", "traduisions", "traduisiez", "traduisaient"],
-    "rire":      ["riais", "riais", "riait", "riions", "riiez", "riaient"],
-    "suivre":    ["suivais", "suivais", "suivait", "suivions", "suiviez", "suivaient"],
-    "naître":    ["naissais", "naissais", "naissait", "naissions", "naissiez", "naissaient"],
-    "mourir":    ["mourais", "mourais", "mourait", "mourions", "mouriez", "mouraient"],
-    "comprendre":["comprenais", "comprenais", "comprenait", "comprenions", "compreniez", "comprenaient"],
-    "apprendre": ["apprenais", "apprenais", "apprenait", "apprenions", "appreniez", "apprenaient"],
-}
-
-PAST_COMPOSE = {
-    "être":      ("être",   ["été",     "été",     "été",     "été",     "été",     "été"]),
-    "avoir":     ("avoir",  ["eu",      "eu",      "eu",      "eu",      "eu",      "eu"]),
-    "faire":     ("avoir",  ["fait",    "fait",    "fait",    "fait",    "fait",    "fait"]),
-    "dire":      ("avoir",  ["dit",     "dit",     "dit",     "dit",     "dit",     "dit"]),
-    "aller":     ("être",   ["allé",    "allé",    "allé",    "allés",   "allés",   "allés"]),
-    "voir":      ("avoir",  ["vu",      "vu",      "vu",      "vu",      "vu",      "vu"]),
-    "savoir":    ("avoir",  ["su",      "su",      "su",      "su",      "su",      "su"]),
-    "pouvoir":   ("avoir",  ["pu",      "pu",      "pu",      "pu",      "pu",      "pu"]),
-    "vouloir":   ("avoir",  ["voulu",   "voulu",   "voulu",   "voulu",   "voulu",   "voulu"]),
-    "venir":     ("être",   ["venu",    "venu",    "venu",    "venus",   "venus",   "venus"]),
-    "devoir":    ("avoir",  ["dû",      "dû",      "dû",      "dû",      "dû",      "dû"]),
-    "prendre":   ("avoir",  ["pris",    "pris",    "pris",    "pris",    "pris",    "pris"]),
-    "donner":    ("avoir",  ["donné",   "donné",   "donné",   "donné",   "donné",   "donné"]),
-    "trouver":   ("avoir",  ["trouvé",  "trouvé",  "trouvé",  "trouvé",  "trouvé",  "trouvé"]),
-    "penser":    ("avoir",  ["pensé",   "pensé",   "pensé",   "pensé",   "pensé",   "pensé"]),
-    "parler":    ("avoir",  ["parlé",   "parlé",   "parlé",   "parlé",   "parlé",   "parlé"]),
-    "mettre":    ("avoir",  ["mis",     "mis",     "mis",     "mis",     "mis",     "mis"]),
-    "aimer":     ("avoir",  ["aimé",    "aimé",    "aimé",    "aimé",    "aimé",    "aimé"]),
-    "passer":    ("avoir",  ["passé",   "passé",   "passé",   "passé",   "passé",   "passé"]),
-    "demander":  ("avoir",  ["demandé", "demandé", "demandé", "demandé", "demandé", "demandé"]),
-    "croire":    ("avoir",  ["cru",     "cru",     "cru",     "cru",     "cru",     "cru"]),
-    "laisser":   ("avoir",  ["laissé",  "laissé",  "laissé",  "laissé",  "laissé",  "laissé"]),
-    "porter":    ("avoir",  ["porté",   "porté",   "porté",   "porté",   "porté",   "porté"]),
-    "tenir":     ("avoir",  ["tenu",    "tenu",    "tenu",    "tenu",    "tenu",    "tenu"]),
-    "appeler":   ("avoir",  ["appelé",  "appelé",  "appelé",  "appelé",  "appelé",  "appelé"]),
-    "rester":    ("être",   ["resté",   "resté",   "resté",   "restés",  "restés",  "restés"]),
-    "sortir":    ("être",   ["sorti",   "sorti",   "sorti",   "sortis",  "sortis",  "sortis"]),
-    "vivre":     ("avoir",  ["vécu",    "vécu",    "vécu",    "vécu",    "vécu",    "vécu"]),
-    "tomber":    ("être",   ["tombé",   "tombé",   "tombé",   "tombés",  "tombés",  "tombés"]),
-    "connaître": ("avoir",  ["connu",   "connu",   "connu",   "connu",   "connu",   "connu"]),
-    "finir":     ("avoir",  ["fini",    "fini",    "fini",    "fini",    "fini",    "fini"]),
-    "choisir":   ("avoir",  ["choisi",  "choisi",  "choisi",  "choisi",  "choisi",  "choisi"]),
-    "réussir":   ("avoir",  ["réussi",  "réussi",  "réussi",  "réussi",  "réussi",  "réussi"]),
-    "remplir":   ("avoir",  ["rempli",  "rempli",  "rempli",  "rempli",  "rempli",  "rempli"]),
-    "réfléchir": ("avoir",  ["réfléchi","réfléchi","réfléchi","réfléchi","réfléchi","réfléchi"]),
-    "obéir":     ("avoir",  ["obéi",    "obéi",    "obéi",    "obéi",    "obéi",    "obéi"]),
-    "grandir":   ("avoir",  ["grandi",  "grandi",  "grandi",  "grandi",  "grandi",  "grandi"]),
-    "applaudir": ("avoir",  ["applaudi","applaudi","applaudi","applaudi","applaudi","applaudi"]),
-    "établir":   ("avoir",  ["établi",  "établi",  "établi",  "établi",  "établi",  "établi"]),
-    "bâtir":     ("avoir",  ["bâti",    "bâti",    "bâti",    "bâti",    "bâti",    "bâti"]),
-    "agir":      ("avoir",  ["agi",     "agi",     "agi",     "agi",     "agi",     "agi"]),
-    "vieillir":  ("avoir",  ["vieilli", "vieilli", "vieilli", "vieilli", "vieilli", "vieilli"]),
-    "grossir":   ("avoir",  ["grossi",  "grossi",  "grossi",  "grossi",  "grossi",  "grossi"]),
-    "maigrir":   ("avoir",  ["maigri",  "maigri",  "maigri",  "maigri",  "maigri",  "maigri"]),
-    "rougir":    ("avoir",  ["rougi",   "rougi",   "rougi",   "rougi",   "rougi",   "rougi"]),
-    "ralentir":  ("avoir",  ["ralenti", "ralenti", "ralenti", "ralenti", "ralenti", "ralenti"]),
-    "avertir":   ("avoir",  ["averti",  "averti",  "averti",  "averti",  "averti",  "averti"]),
-    "guérir":    ("avoir",  ["guéri",   "guéri",   "guéri",   "guéri",   "guéri",   "guéri"]),
-    "saisir":    ("avoir",  ["saisi",   "saisi",   "saisi",   "saisi",   "saisi",   "saisi"]),
-    "nourrir":   ("avoir",  ["nourri",  "nourri",  "nourri",  "nourri",  "nourri",  "nourri"]),
-    "boire":     ("avoir",  ["bu",      "bu",      "bu",      "bu",      "bu",      "bu"]),
-    "écrire":    ("avoir",  ["écrit",   "écrit",   "écrit",   "écrit",   "écrit",   "écrit"]),
-    "lire":      ("avoir",  ["lu",      "lu",      "lu",      "lu",      "lu",      "lu"]),
-    "partir":    ("être",   ["parti",   "parti",   "parti",   "partis",  "partis",  "partis"]),
-    "dormir":    ("avoir",  ["dormi",   "dormi",   "dormi",   "dormi",   "dormi",   "dormi"]),
-    "ouvrir":    ("avoir",  ["ouvert",  "ouvert",  "ouvert",  "ouvert",  "ouvert",  "ouvert"]),
-    "recevoir":  ("avoir",  ["reçu",    "reçu",    "reçu",    "reçu",    "reçu",    "reçu"]),
-    "montrer":   ("avoir",  ["montré",  "montré",  "montré",  "montré",  "montré",  "montré"]),
-    "écouter":   ("avoir",  ["écouté",  "écouté",  "écouté",  "écouté",  "écouté",  "écouté"]),
-    "entendre":  ("avoir",  ["entendu", "entendu", "entendu", "entendu", "entendu", "entendu"]),
-    "attendre":  ("avoir",  ["attendu", "attendu", "attendu", "attendu", "attendu", "attendu"]),
-    "dépenser":  ("avoir",  ["dépensé", "dépensé", "dépensé", "dépensé", "dépensé", "dépensé"]),
-    "s'asseoir": ("être",   ["assis",   "assis",   "assis",   "assis",   "assis",   "assis"]),
-    "monter":    ("être",   ["monté",   "monté",   "monté",   "montés",  "montés",  "montés"]),
-    "dessiner":  ("avoir",  ["dessiné", "dessiné", "dessiné", "dessiné", "dessiné", "dessiné"]),
-    "voler":     ("avoir",  ["volé",    "volé",    "volé",    "volé",    "volé",    "volé"]),
-    "raconter":  ("avoir",  ["raconté", "raconté", "raconté", "raconté", "raconté", "raconté"]),
-    "quitter":   ("avoir",  ["quitté",  "quitté",  "quitté",  "quitté",  "quitté",  "quitté"]),
-    "se sentir": ("être",   ["senti",   "senti",   "senti",   "sentis",  "sentis",  "sentis"]),
-    "se quitter": ("être",   ["quitté",   "quitté",   "quitté",   "quittés",  "quittés",  "quittés"]),
-    "garder":    ("avoir",  ["gardé",   "gardé",   "gardé",   "gardé",   "gardé",   "gardé"]),
-    "rencontrer":("avoir",  ["rencontré","rencontré","rencontré","rencontré","rencontré","rencontré"]),
-    "obtenir":   ("avoir",  ["obtenu",  "obtenu",  "obtenu",  "obtenu",  "obtenu",  "obtenu"]),
-    "sembler":   ("avoir",  ["semblé",  "semblé",  "semblé",  "semblé",  "semblé",  "semblé"]),
-    "utiliser":  ("avoir",  ["utilisé", "utilisé", "utilisé", "utilisé", "utilisé", "utilisé"]),
-    "travailler":("avoir",  ["travaillé","travaillé","travaillé","travaillé","travaillé","travaillé"]),
-    "couper":    ("avoir",  ["coupé",   "coupé",   "coupé",   "coupé",   "coupé",   "coupé"]),
-    "cuisiner":  ("avoir",  ["cuisiné", "cuisiné", "cuisiné", "cuisiné", "cuisiné", "cuisiné"]),
-    "perdre":    ("avoir",  ["perdu",   "perdu",   "perdu",   "perdu",   "perdu",   "perdu"]),
-    "descendre": ("être",   ["descendu","descendu","descendu","descendus","descendus","descendus"]),
-    "offrir":    ("avoir",  ["offert",  "offert",  "offert",  "offert",  "offert",  "offert"]),
-    "souffrir":  ("avoir",  ["souffert","souffert","souffert","souffert","souffert","souffert"]),
-    "découvrir": ("avoir",  ["découvert","découvert","découvert","découvert","découvert","découvert"]),
-    "conduire":  ("avoir",  ["conduit", "conduit", "conduit", "conduit", "conduit", "conduit"]),
-    "construire":("avoir",  ["construit","construit","construit","construit","construit","construit"]),
-    "produire":  ("avoir",  ["produit", "produit", "produit", "produit", "produit", "produit"]),
-    "traduire":  ("avoir",  ["traduit", "traduit", "traduit", "traduit", "traduit", "traduit"]),
-    "rire":      ("avoir",  ["ri",      "ri",      "ri",      "ri",      "ri",      "ri"]),
-    "suivre":    ("avoir",  ["suivi",   "suivi",   "suivi",   "suivi",   "suivi",   "suivi"]),
-    "naître":    ("être",   ["né",      "né",      "né",      "nés",     "nés",     "nés"]),
-    "mourir":    ("être",   ["mort",    "mort",    "mort",    "morts",   "morts",   "morts"]),
-    "comprendre":("avoir",  ["compris", "compris", "compris", "compris", "compris", "compris"]),
-    "apprendre": ("avoir",  ["appris",  "appris",  "appris",  "appris",  "appris",  "appris"]),
-}
-
-PRONOUNS = ["je", "tu", "il/elle/on", "nous", "vous", "ils/elles"]
-
-# Pronoun variations with gender - each can be randomly selected
-PRONOUN_VARIATIONS = [
-    ["je"],                           # je (no gender variation for 1st person singular)
-    ["tu"],                           # tu (no gender variation for 2nd person singular)
-    ["il", "elle", "on"],             # 3rd singular: masculine, feminine, or neutral
-    ["nous"],                         # nous (no variation for 1st person plural)
-    ["vous"],                         # vous (no variation for 2nd person plural)
-    ["ils", "elles"],                 # 3rd plural: masculine or feminine
-]
-
-# Agreement endings for être verbs based on pronoun choice
-# Format: {pronoun: (ending_singular, ending_plural_nous_vous, ending_plural_ils)}
-ETRE_AGREEMENTS = {
-    "je":    ("é",   "és",  "és"),   # default masculine
-    "tu":    ("é",   "és",  "és"),   # default masculine
-    "il":    ("é",   "és",  "és"),   # masculine
-    "elle":  ("ée",  "ées", "ées"),  # feminine
-    "on":    ("é",   "és",  "és"),   # default masculine (on = nous)
-    "nous":  ("és",  "és",  "és"),   # masculine plural
-    "vous":  ("és",  "és",  "és"),   # masculine plural
-    "ils":   ("és",  "és",  "és"),   # masculine plural
-    "elles": ("ées", "ées", "ées"),  # feminine plural
-}
-
-VERB_TRANSLATIONS = {
-    "être":      "to be",
-    "avoir":     "to have",
-    "faire":     "to do / to make",
-    "dire":      "to say / to tell",
-    "aller":     "to go",
-    "voir":      "to see",
-    "savoir":    "to know (facts)",
-    "pouvoir":   "to be able to / can",
-    "vouloir":   "to want",
-    "venir":     "to come",
-    "devoir":    "to have to / must",
-    "prendre":   "to take",
-    "donner":    "to give",
-    "trouver":   "to find",
-    "penser":    "to think",
-    "parler":    "to speak / to talk",
-    "mettre":    "to put / to place",
-    "aimer":     "to like / to love",
-    "passer":    "to pass / to spend (time)",
-    "demander":  "to ask",
-    "croire":    "to believe",
-    "laisser":   "to leave / to let",
-    "porter":    "to wear / to carry",
-    "tenir":     "to hold",
-    "appeler":   "to call",
-    "rester":    "to stay / to remain",
-    "sortir":    "to go out / to leave",
-    "vivre":     "to live",
-    "tomber":    "to fall",
-    "connaître": "to know (people/places)",
-    "finir":     "to finish",
-    "choisir":   "to choose",
-    "réussir":   "to succeed",
-    "remplir":   "to fill",
-    "réfléchir": "to reflect / to think",
-    "obéir":     "to obey",
-    "grandir":   "to grow",
-    "applaudir": "to applaud / to clap",
-    "établir":   "to establish",
-    "bâtir":     "to build",
-    "agir":      "to act",
-    "vieillir":  "to age / to grow old",
-    "grossir":   "to gain weight / to get bigger",
-    "maigrir":   "to lose weight / to get thinner",
-    "rougir":    "to blush / to turn red",
-    "ralentir":  "to slow down",
-    "avertir":   "to warn",
-    "guérir":    "to heal / to cure",
-    "saisir":    "to seize / to grab",
-    "nourrir":   "to feed / to nourish",
-    "boire":     "to drink",
-    "écrire":    "to write",
-    "lire":      "to read",
-    "partir":    "to leave / to depart",
-    "dormir":    "to sleep",
-    "ouvrir":    "to open",
-    "recevoir":  "to receive",
-    "montrer":   "to show",
-    "écouter":   "to listen (to)",
-    "entendre":  "to hear",
-    "attendre":  "to wait (for)",
-    "dépenser":  "to spend (money)",
-    "s'asseoir": "to sit (down)",
-    "monter":    "to go up / to climb",
-    "dessiner":  "to draw",
-    "voler":     "to fly / to steal",
-    "raconter":  "to tell (a story)",
-    "quitter":   "to leave / to quit",
-    "se quitter": "to leave each other / to part ways",
-    "se sentir": "to feel",
-    "garder":    "to keep / to guard",
-    "rencontrer":"to meet",
-    "obtenir":   "to obtain / to get",
-    "sembler":   "to seem",
-    "utiliser":  "to use",
-    "travailler":"to work",
-    "couper":    "to cut",
-    "cuisiner":  "to cook",
-    "perdre":    "to lose",
-    "descendre": "to go down / to descend",
-    "offrir":    "to offer",
-    "souffrir":  "to suffer",
-    "découvrir": "to discover",
-    "conduire":  "to drive",
-    "construire":"to build / to construct",
-    "produire":  "to produce",
-    "traduire":  "to translate",
-    "rire":      "to laugh",
-    "suivre":    "to follow",
-    "naître":    "to be born",
-    "mourir":    "to die",
-    "comprendre":"to understand",
-    "apprendre": "to learn",
-}
-
-VERB_TYPES = {
-    "regular_er": ["donner", "trouver", "penser", "parler", "aimer",
-                   "passer", "demander", "laisser", "porter", "rester", "tomber",
-                   "montrer", "écouter", "dépenser", "monter", "dessiner", "voler",
-                   "raconter", "quitter", "garder", "rencontrer", "sembler", "utiliser",
-                   "travailler", "couper", "cuisiner"],
-    "regular_ir": ["finir", "choisir", "réussir", "remplir", "réfléchir",
-                   "obéir", "grandir", "applaudir", "établir", "bâtir", "agir",
-                   "vieillir", "grossir", "maigrir", "rougir", "ralentir",
-                   "avertir", "guérir", "saisir", "nourrir"],
-    "irregular": ["être", "avoir", "faire", "dire", "aller", "voir", "savoir",
-                  "pouvoir", "vouloir", "venir", "devoir", "prendre", "mettre",
-                  "croire", "tenir", "appeler", "sortir", "vivre", "connaître",
-                  "boire", "écrire", "lire", "partir", "dormir", "ouvrir", "recevoir",
-                  "entendre", "attendre", "s'asseoir", "se sentir", "se quitter", "obtenir",
-                  "perdre", "descendre", "offrir", "souffrir", "découvrir", "conduire",
-                  "construire", "produire", "traduire", "rire", "suivre", "naître",
-                  "mourir", "comprendre", "apprendre"],
-}
-
-# ----------------------------------------------------------------------
 # SRS Helper Functions
 # ----------------------------------------------------------------------
-def get_due_combinations(verb_list: list[str], stats: dict[str, ConjugationStats], filter_tense: str = None) -> list[tuple[str, str]]:
+def get_due_combinations(verb_list: list[str], stats: dict[str, ConjugationStats],
+                         filter_tense: str = None,
+                         filter_tenses: list[str] = None) -> list[tuple[str, str]]:
     """
     Get list of (verb, tense) combinations that are due for review today.
     If no stats exist for a combination, it's considered due.
@@ -672,13 +182,19 @@ def get_due_combinations(verb_list: list[str], stats: dict[str, ConjugationStats
     Args:
         verb_list: List of verbs to check
         stats: Dictionary of conjugation statistics
-        filter_tense: Optional tense filter ("present", "future", "past", or "imparfait")
+        filter_tense: Optional single tense filter (legacy support)
+        filter_tenses: Optional list of tenses to check
     """
     today = date.today().isoformat()
     due_combinations = []
 
     # Determine which tenses to check
-    tenses_to_check = [filter_tense] if filter_tense else ["present", "future", "past", "imparfait"]
+    if filter_tense:
+        tenses_to_check = [filter_tense]
+    elif filter_tenses:
+        tenses_to_check = filter_tenses
+    else:
+        tenses_to_check = get_all_tenses()
 
     for verb in verb_list:
         for tense in tenses_to_check:
@@ -739,7 +255,7 @@ def ask_quality_rating(score: int, total: int) -> int:
             print("Please enter 0, 1, 2, 3, or press Enter")
 
 
-def show_stats_summary(stats: dict[str, ConjugationStats]):
+def show_stats_summary(stats: dict[str, ConjugationStats], verb_list: list[str] = None):
     """Display statistics summary"""
     if not stats:
         print("\nNo statistics yet. Start practicing to build your SRS data!")
@@ -762,6 +278,20 @@ def show_stats_summary(stats: dict[str, ConjugationStats]):
     print(f"Total reviews: {total_seen}")
     print(f"Overall accuracy: {accuracy:.1f}%")
 
+    # Count by tense
+    tense_counts = {}
+    for s in stats.values():
+        tense = s.key.split('|')[1]
+        if tense not in tense_counts:
+            tense_counts[tense] = 0
+        tense_counts[tense] += 1
+
+    if tense_counts:
+        print("\nCombinations by tense:")
+        for tense, count in sorted(tense_counts.items()):
+            display_name = TENSE_NAMES.get(tense, tense)
+            print(f"  {display_name}: {count}")
+
     # Show most difficult verbs
     difficult = sorted(stats.values(),
                       key=lambda s: s.times_correct / s.times_seen if s.times_seen > 0 else 0)[:5]
@@ -772,120 +302,14 @@ def show_stats_summary(stats: dict[str, ConjugationStats]):
             if s.times_seen == 0:
                 continue
             verb_tense = s.key.split('|')
+            tense_name = TENSE_NAMES.get(verb_tense[1], verb_tense[1])
             acc = s.times_correct / s.times_seen * 100
-            print(f"  {verb_tense[0]} ({verb_tense[1]}): {acc:.0f}% ({s.times_correct}/{s.times_seen})")
+            print(f"  {verb_tense[0]} ({tense_name}): {acc:.0f}% ({s.times_correct}/{s.times_seen})")
 
 
 # ----------------------------------------------------------------------
-# 2️⃣  Helpers
+# User Input Helpers
 # ----------------------------------------------------------------------
-def get_participle_with_agreement(base_participle: str, pronoun: str) -> str:
-    """Apply agreement to past participle based on pronoun (for être verbs only)."""
-    # Get the root of the participle (remove existing ending)
-    # Check longer endings first
-    if base_participle.endswith("és"):
-        root = base_participle[:-2]
-        base_ending = "é"
-    elif base_participle.endswith("is"):
-        root = base_participle[:-2]
-        base_ending = "i"
-    elif base_participle.endswith("é"):
-        root = base_participle[:-1]
-        base_ending = "é"
-    elif base_participle.endswith("i"):
-        root = base_participle[:-1]
-        base_ending = "i"
-    else:
-        return base_participle  # Irregular, keep as is
-
-    # Apply correct ending based on pronoun
-    if base_ending == "é":
-        # Participles ending in -é (allé, resté, tombé, etc.)
-        if pronoun == "elle":
-            return root + "ée"
-        elif pronoun == "elles":
-            return root + "ées"
-        elif pronoun in ["nous", "vous", "ils"]:
-            return root + "és"
-        else:  # je, tu, il, on (masculine singular)
-            return root + "é"
-    else:  # base_ending == "i"
-        # Participles ending in -i (sorti, parti)
-        if pronoun == "elle":
-            return root + "ie"
-        elif pronoun == "elles":
-            return root + "ies"
-        elif pronoun in ["nous", "vous", "ils"]:
-            return root + "is"
-        else:  # je, tu, il, on (masculine singular)
-            return root + "i"
-
-
-def get_table(infinitive: str, tense: str):
-    # Randomly select pronoun variations for this round
-    selected_pronouns = [random.choice(variations) for variations in PRONOUN_VARIATIONS]
-
-    if tense == "present":
-        return selected_pronouns, PRESENT[infinitive]
-    if tense == "future":
-        return selected_pronouns, FUTURE[infinitive]
-    if tense == "imparfait":
-        return selected_pronouns, IMPARFAIT[infinitive]
-
-    # passé composé
-    aux, part_list = PAST_COMPOSE[infinitive]
-    aux_forms = PRESENT[aux]  # auxiliary conjugated in présent
-
-    # If using avoir, no agreement needed
-    if aux == "avoir":
-        full = [f"{aux_forms[i]} {part_list[i]}" for i in range(6)]
-    else:  # être - apply gender agreement
-        full = []
-        for i, pronoun in enumerate(selected_pronouns):
-            # Get base participle and apply agreement
-            participle = get_participle_with_agreement(part_list[i], pronoun)
-            full.append(f"{aux_forms[i]} {participle}")
-
-    return selected_pronouns, full
-
-
-def choose_tense() -> str:
-    print("\nQuel temps voulez‑vous réviser ?")
-    print("  1 – Présent")
-    print("  2 – Passé composé")
-    print("  3 – Futur simple")
-    print("  4 – Imparfait")
-    while True:
-        c = input("Entrez le numéro (ou q pour quitter) : ").strip().lower()
-        if c == "q":
-            sys.exit(0)
-        if c in {"1", "2", "3", "4"}:
-            return {"1": "present", "2": "past", "3": "future", "4": "imparfait"}[c]
-        print("Choisissez 1, 2, 3 ou 4.")
-
-
-def choose_verb_type() -> list:
-    """Choose which type of verbs to practice. Returns a list of verbs."""
-    print("\nQuel type de verbes voulez-vous réviser ?")
-    print("  1 – Regular -ER verbs (26 verbs)")
-    print("  2 – Regular -IR verbs (20 verbs)")
-    print("  3 – Irregular verbs (45 verbs)")
-    print("  4 – All verbs (91 verbs)")
-    while True:
-        c = input("Entrez le numéro (ou q pour quitter) : ").strip().lower()
-        if c == "q":
-            sys.exit(0)
-        if c == "1":
-            return VERB_TYPES["regular_er"]
-        elif c == "2":
-            return VERB_TYPES["regular_ir"]
-        elif c == "3":
-            return VERB_TYPES["irregular"]
-        elif c == "4":
-            return list(PRESENT.keys())
-        print("Choisissez 1, 2, 3 ou 4.")
-
-
 def normalize_input(text: str) -> str:
     """
     Clean up input text by removing surrogate characters and normalizing Unicode.
@@ -895,27 +319,141 @@ def normalize_input(text: str) -> str:
     Unicode sequences.
     """
     # First, normalize to NFC (Canonical Decomposition, followed by Canonical Composition)
-    # This ensures accented characters are in their composed form (é instead of e + ́)
     normalized = unicodedata.normalize('NFC', text)
 
     # Remove any surrogate characters or invalid UTF-8 sequences
     cleaned = normalized.encode('utf-8', errors='ignore').decode('utf-8', errors='ignore')
 
     # Remove zero-width characters and other invisible Unicode artifacts
-    # that can be left behind when using backspace with accented characters
     cleaned = ''.join(
         char for char in cleaned
         if unicodedata.category(char) not in ('Cc', 'Cf', 'Mn')
-        or char in ('\n', '\r', '\t')  # Keep common whitespace
+        or char in ('\n', '\r', '\t')
     )
 
     return cleaned.strip()
 
 
-def ask_one_verb(infinitive: str, tense: str):
-    pronouns, correct = get_table(infinitive, tense)
-    translation = VERB_TRANSLATIONS.get(infinitive, "")
-    print(f"\nConjuguez le verbe « {infinitive} » ({translation}) au {tense}:")
+def choose_tense() -> str:
+    """Let user choose a tense to practice."""
+    print("\nQuel temps voulez-vous réviser ?")
+    print("  1 – Présent")
+    print("  2 – Passé composé")
+    print("  3 – Futur simple")
+    print("  4 – Imparfait")
+    print("  5 – Futur proche")
+    print("  6 – Conditionnel présent")
+    print("  7 – Conditionnel passé")
+    while True:
+        c = input("Entrez le numéro (ou q pour quitter) : ").strip().lower()
+        if c == "q":
+            sys.exit(0)
+        tense_map = {
+            "1": "present",
+            "2": "past",
+            "3": "future",
+            "4": "imparfait",
+            "5": "near_future",
+            "6": "conditional",
+            "7": "conditional_past",
+        }
+        if c in tense_map:
+            return tense_map[c]
+        print("Choisissez un numéro de 1 à 7.")
+
+
+def choose_verb_type(tier_filter: str = None) -> list:
+    """
+    Choose which type of verbs to practice. Returns a list of verbs.
+
+    Args:
+        tier_filter: If specified, only include verbs of this tier
+    """
+    # Get verb counts
+    all_verbs = get_all_verbs()
+    regular_er = get_verbs_by_type("regular_er")
+    regular_ir = get_verbs_by_type("regular_ir")
+    irregular = get_verbs_by_type("irregular")
+
+    # Apply tier filter if specified
+    if tier_filter:
+        tier_verbs = set(get_verbs_by_tier(tier_filter))
+        all_verbs = [v for v in all_verbs if v in tier_verbs]
+        regular_er = [v for v in regular_er if v in tier_verbs]
+        regular_ir = [v for v in regular_ir if v in tier_verbs]
+        irregular = [v for v in irregular if v in tier_verbs]
+
+    print("\nQuel type de verbes voulez-vous réviser ?")
+    print(f"  1 – Regular -ER verbs ({len(regular_er)} verbs)")
+    print(f"  2 – Regular -IR verbs ({len(regular_ir)} verbs)")
+    print(f"  3 – Irregular verbs ({len(irregular)} verbs)")
+    print(f"  4 – All verbs ({len(all_verbs)} verbs)")
+
+    while True:
+        c = input("Entrez le numéro (ou q pour quitter) : ").strip().lower()
+        if c == "q":
+            sys.exit(0)
+        if c == "1":
+            return regular_er
+        elif c == "2":
+            return regular_ir
+        elif c == "3":
+            return irregular
+        elif c == "4":
+            return all_verbs
+        print("Choisissez 1, 2, 3 ou 4.")
+
+
+def choose_tier() -> str:
+    """Let user choose a tier filter."""
+    # Get tier counts
+    core = get_verbs_by_tier("core")
+    intermediate = get_verbs_by_tier("intermediate")
+    advanced = get_verbs_by_tier("advanced")
+    all_verbs = get_all_verbs()
+
+    print("\nQuel niveau de verbes voulez-vous réviser ?")
+    print(f"  1 – Core verbs ({len(core)} most essential verbs)")
+    print(f"  2 – Intermediate verbs ({len(intermediate)} common verbs)")
+    print(f"  3 – Advanced verbs ({len(advanced)} less common verbs)")
+    print(f"  4 – All verbs ({len(all_verbs)} verbs)")
+
+    while True:
+        c = input("Entrez le numéro (ou q pour quitter) : ").strip().lower()
+        if c == "q":
+            sys.exit(0)
+        if c == "1":
+            return "core"
+        elif c == "2":
+            return "intermediate"
+        elif c == "3":
+            return "advanced"
+        elif c == "4":
+            return None  # No filter
+        print("Choisissez 1, 2, 3 ou 4.")
+
+
+# ----------------------------------------------------------------------
+# Main Practice Functions
+# ----------------------------------------------------------------------
+def ask_one_verb(infinitive: str, tense: str) -> tuple[int, int]:
+    """
+    Practice a single verb conjugation.
+
+    Returns (correct_count, total_count)
+    """
+    # Get random pronoun variations
+    selected_pronouns = get_random_pronouns()
+
+    # Get the conjugation
+    pronouns, correct_forms = conjugate(infinitive, tense, selected_pronouns)
+
+    # Get translation
+    translation = get_translation(infinitive)
+    tense_name = get_tense_display_name(tense)
+
+    print(f"\nConjuguez le verbe « {infinitive} » ({translation}) au {tense_name}:")
+
     answers = []
     for p in pronouns:
         ans = input(f"{p} ... ").strip()
@@ -923,19 +461,19 @@ def ask_one_verb(infinitive: str, tense: str):
         answers.append(ans)
 
     score = 0
-    for i, (u, c) in enumerate(zip(answers, correct)):
-        if u.lower() == c.lower():
-            print(f"✔ {pronouns[i]} {u}")
+    for i, (user_ans, correct_ans) in enumerate(zip(answers, correct_forms)):
+        if user_ans.lower() == correct_ans.lower():
+            print(f"  {pronouns[i]} {user_ans}")
             score += 1
         else:
-            print(f"✘ {pronouns[i]} {u} → correct: {c}")
+            print(f"  {pronouns[i]} {user_ans} -> correct: {correct_ans}")
 
-    print(f"Score pour ce verbe ({tense}) : {score}/6")
+    print(f"Score pour ce verbe ({tense_name}) : {score}/6")
     return score, 6
 
 
 # ----------------------------------------------------------------------
-# 3️⃣  Main loop
+# Main
 # ----------------------------------------------------------------------
 def main():
     # Parse command-line arguments
@@ -943,20 +481,36 @@ def main():
         description="French Conjugation Trainer with SRS support",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
+Tenses available:
+  - present: Présent
+  - future: Futur simple
+  - imparfait: Imparfait
+  - past: Passé composé
+  - near_future: Futur proche
+  - conditional: Conditionnel présent
+  - conditional_past: Conditionnel passé
+
+Verb tiers:
+  - core: Most essential verbs (~20 verbs)
+  - intermediate: Common verbs (~35 verbs)
+  - advanced: Less common verbs (~40 verbs)
+
 Examples:
   python3 conjugations.py                           # Normal practice mode
   python3 conjugations.py --srs                     # SRS mode (only review due verbs)
   python3 conjugations.py --srs --tense=present     # SRS mode for present tense only
-  python3 conjugations.py --srs --tense=future      # SRS mode for future tense only
-  python3 conjugations.py --srs --tense=past        # SRS mode for passé composé only
-  python3 conjugations.py --srs --tense=imparfait   # SRS mode for imparfait only
+  python3 conjugations.py --srs --tense=conditional # SRS mode for conditional only
+  python3 conjugations.py --tier=core               # Practice only core verbs
+  python3 conjugations.py --tier=core --srs         # SRS mode for core verbs only
   python3 conjugations.py --stats                   # Show statistics and exit
         """
     )
     parser.add_argument("--srs", action="store_true",
                        help="Enable Spaced Repetition System (only practice due verbs)")
-    parser.add_argument("--tense", type=str, choices=["present", "future", "past", "imparfait"],
+    parser.add_argument("--tense", type=str, choices=VALID_TENSE_FLAGS,
                        help="Filter by specific tense (only works with --srs)")
+    parser.add_argument("--tier", type=str, choices=["core", "intermediate", "advanced"],
+                       help="Filter by verb tier (core=most essential, intermediate=common, advanced=less common)")
     parser.add_argument("--stats", action="store_true",
                        help="Show statistics summary and exit")
 
@@ -976,37 +530,54 @@ Examples:
         return
 
     total_ok = 0
-    total_q  = 0
+    total_q = 0
 
-    print("=== Test de conjugaison française (présent, futur, passé, imparfait) ===")
+    # Build title with active tenses
+    tense_str = "7 tenses" if not args.tense else TENSE_NAMES.get(args.tense, args.tense)
+    print(f"=== Test de conjugaison française ({tense_str}) ===")
+
     if args.srs:
-        tense_name = {"present": "présent", "future": "futur simple", "past": "passé composé", "imparfait": "imparfait"}.get(args.tense, "all tenses")
         if args.tense:
-            print(f"📚 SRS Mode: Practicing {tense_name} verbs due for review today")
+            tense_name = TENSE_NAMES.get(args.tense, args.tense)
+            print(f"Mode SRS: Practice {tense_name} verbs due for review today")
         else:
-            print("📚 SRS Mode: Practicing verbs due for review today")
+            print("Mode SRS: Practice verbs due for review today")
+
+    if args.tier:
+        tier_names = {"core": "essentiels", "intermediate": "intermédiaires", "advanced": "avancés"}
+        print(f"Filtré par niveau: verbes {tier_names.get(args.tier, args.tier)}")
+
     print("Tapez 'q' à tout moment pour quitter.\n")
 
-    # Choose verb type once at the start
-    verb_list = choose_verb_type()
+    # Choose tier interactively if not specified
+    tier_filter = args.tier
+    if not tier_filter and not args.srs:
+        tier_filter = choose_tier()
+
+    # Choose verb type
+    verb_list = choose_verb_type(tier_filter)
+
+    if not verb_list:
+        print("Aucun verbe disponible avec ces filtres.")
+        return
 
     # If SRS mode, get due combinations
     if args.srs:
         due_combinations = get_due_combinations(verb_list, stats, args.tense)
         if not due_combinations:
-            print("\n✅ No verbs due for review today! Great work!")
-            print("Come back tomorrow for more practice, or run without --srs to practice any verb.")
+            print("\nAucun verbe à réviser aujourd'hui ! Excellent travail !")
+            print("Revenez demain pour plus de pratique, ou lancez sans --srs pour pratiquer n'importe quel verbe.")
             return
 
-        print(f"\n📝 {len(due_combinations)} verb-tense combinations due for review today")
-        print("Press Enter to continue...")
+        print(f"\n{len(due_combinations)} combinaisons verbe-temps à réviser aujourd'hui")
+        print("Appuyez sur Entrée pour continuer...")
         input()
 
     while True:
         # Select verb and tense
         if args.srs:
             if not due_combinations:
-                print("\n✅ All due verbs completed for today!")
+                print("\nTous les verbes du jour sont terminés !")
                 break
 
             # Pick a random due combination
@@ -1023,7 +594,7 @@ Examples:
             break
 
         total_ok += ok
-        total_q  += qty
+        total_q += qty
 
         # SRS: Ask for quality rating and update stats
         if args.srs:
@@ -1043,7 +614,7 @@ Examples:
 
             # Show remaining count
             if due_combinations:
-                print(f"\n📊 {len(due_combinations)} verb-tense combinations remaining today")
+                print(f"\n{len(due_combinations)} combinaisons verbe-temps restantes aujourd'hui")
 
         nxt = input("\nUn autre verbe ? (Entrée=oui, q=quitter) ").strip().lower()
         if nxt == "q":
@@ -1062,5 +633,5 @@ if __name__ == "__main__":
     try:
         main()
     except Exception as exc:
-        print(f"Erreur inattendue : {exc}", file=sys.stderr)
+        print(f"Erreur inattendue : {exc}", file=sys.stderr)
         sys.exit(1)
