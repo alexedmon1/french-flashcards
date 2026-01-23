@@ -9,6 +9,7 @@ wheels/
 # Virtual environments
 .venv
 .flashcard_data/progress.json
+.conjugation_data/
 missed.csv
 
 # Claude Code local settings

@@ -14,7 +14,7 @@
       "type": "irregular",
       "tier": "core",
       "translation": "to be",
-      "auxiliary": "être",
+      "auxiliary": "avoir",
       "past_participle": "été",
       "stems": {
         "future": "ser",
@@ -31,7 +31,8 @@
       "auxiliary": "avoir",
       "past_participle": "eu",
       "stems": {
-        "future": "aur"
+        "future": "aur",
+        "imparfait": "av"
       },
       "forms": {
         "present": ["ai", "as", "a", "avons", "avez", "ont"]

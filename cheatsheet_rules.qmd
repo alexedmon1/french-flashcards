@@ -1,0 +1,315 @@
+---
+title: "French Conjugation Reference Card"
+format:
+  pdf:
+    documentclass: article
+    papersize: a4
+    geometry:
+      - margin=1.5cm
+    fontsize: 9pt
+    include-in-header:
+      text: |
+        \usepackage{multicol}
+        \usepackage{booktabs}
+        \usepackage{array}
+        \usepackage{enumitem}
+        \setlist{nosep,leftmargin=*}
+        \pagestyle{empty}
+        \setlength{\parindent}{0pt}
+        \setlength{\parskip}{2pt}
+        \setlength{\tabcolsep}{3pt}
+        \renewcommand{\arraystretch}{1.1}
+        \newcommand{\csec}[1]{\vspace{4pt}\noindent\textbf{\large #1}\vspace{2pt}\par}
+        \newcommand{\csubsec}[1]{\vspace{2pt}\noindent\textbf{#1}\vspace{1pt}\par}
+---
+
+```{=latex}
+\begin{multicols}{2}
+
+\csec{1. Présent}
+
+\csubsec{Regular -ER} (stem = inf. $-$ \textit{er}):
+
+\begin{tabular}{lll}
+ & Sing. & Plur. \\
+\midrule
+1st & -e & -ons \\
+2nd & -es & -ez \\
+3rd & -e & -ent \\
+\end{tabular}
+
+\vspace{4pt}
+\csubsec{Regular -IR} (stem = inf. $-$ \textit{ir}):
+
+\begin{tabular}{lll}
+ & Sing. & Plur. \\
+\midrule
+1st & -is & -issons \\
+2nd & -is & -issez \\
+3rd & -it & -issent \\
+\end{tabular}
+
+\vspace{2pt}
+Irregular verbs: memorize individually.
+
+\csec{2. Futur Simple}
+
+\textbf{Stem:} infinitive (-RE verbs drop final \textit{e}); irregular verbs have special stems.
+
+\textbf{Endings} (same for all):
+
+\begin{tabular}{lll}
+ & Sing. & Plur. \\
+\midrule
+1st & -ai & -ons \\
+2nd & -as & -ez \\
+3rd & -a & -ont \\
+\end{tabular}
+
+\csec{3. Imparfait}
+
+\textbf{Stem:} nous-present $-$ \textit{ons} (ER: stem; IR: stem+\textit{iss}).
+
+\textbf{Endings} (same for all):
+
+\begin{tabular}{lll}
+ & Sing. & Plur. \\
+\midrule
+1st & -ais & -ions \\
+2nd & -ais & -iez \\
+3rd & -ait & -aient \\
+\end{tabular}
+
+\csec{4. Passé Composé}
+
+\textbf{Structure:} auxiliary (present) + past participle
+
+\begin{itemize}
+\item -ER $\rightarrow$ \textit{-é} \quad -IR $\rightarrow$ \textit{-i} \quad Irreg: memorize
+\item \textbf{Avoir} (most): j'ai, tu as, il a, nous avons, vous avez, ils ont
+\item \textbf{Être} (motion/reflex.): je suis, tu es, il est, nous sommes, vous êtes, ils sont
+\item With être: agree (elle +e, elles +es, ils/nous/vous +s)
+\end{itemize}
+
+\csec{5. Futur Proche}
+
+\textbf{Structure:} aller (present) + infinitive
+
+vais, vas, va, allons, allez, vont + inf.
+
+\csec{6. Conditionnel Présent}
+
+\textbf{Stem:} same as futur simple. \quad \textbf{Endings:} same as imparfait.
+
+\csec{7. Conditionnel Passé}
+
+\textbf{Structure:} auxiliary (conditional) + past participle
+
+\begin{itemize}
+\item \textbf{Avoir:} aurais, aurais, aurait, aurions, auriez, auraient
+\item \textbf{Être:} serais, serais, serait, serions, seriez, seraient
+\item Same agreement rules as passé composé.
+\end{itemize}
+
+\end{multicols}
+
+\vspace{2pt}\hrule\vspace{4pt}
+
+\begin{multicols}{2}
+
+\csec{Irregular Future/Conditional Stems}
+
+\begin{tabular}{llll}
+\toprule
+Verb & Stem & Verb & Stem \\
+\midrule
+être & ser- & avoir & aur- \\
+faire & fer- & aller & ir- \\
+voir & verr- & savoir & saur- \\
+pouvoir & pourr- & vouloir & voudr- \\
+venir & viendr- & devoir & devr- \\
+tenir & tiendr- & mourir & mourr- \\
+prendre & prendr- & mettre & mettr- \\
+connaître & connaîtr- & recevoir & recevr- \\
+obtenir & obtiendr- & appeler & appeller- \\
+naître & naîtr- & entendre & entendr- \\
+attendre & attendr- & perdre & perdr- \\
+descendre & descendr- & comprendre & comprendr- \\
+apprendre & apprendr- & & \\
+\bottomrule
+\end{tabular}
+
+\csec{Irregular Imparfait Stems}
+
+\begin{tabular}{llll}
+\toprule
+Verb & Stem & Verb & Stem \\
+\midrule
+être & ét- & avoir & av- \\
+faire & fais- & voir & voy- \\
+dire & dis- & croire & croy- \\
+savoir & sav- & pouvoir & pouv- \\
+vouloir & voul- & venir & ven- \\
+devoir & dev- & prendre & pren- \\
+mettre & mett- & boire & buv- \\
+écrire & écriv- & lire & lis- \\
+connaître & connaiss- & naître & naiss- \\
+mourir & mour- & recevoir & recev- \\
+tenir & ten- & obtenir & obten- \\
+vivre & viv- & suivre & suiv- \\
+\bottomrule
+\end{tabular}
+
+\end{multicols}
+
+\vspace{2pt}\hrule\vspace{4pt}
+
+\begin{multicols}{2}
+
+\csec{Irregular Past Participles}
+
+\begin{tabular}{llll}
+\toprule
+Verb & P.P. & Verb & P.P. \\
+\midrule
+être & été & avoir & eu \\
+faire & fait & dire & dit \\
+voir & vu & savoir & su \\
+pouvoir & pu & vouloir & voulu \\
+venir & venu & devoir & dû \\
+prendre & pris & mettre & mis \\
+croire & cru & vivre & vécu \\
+tenir & tenu & boire & bu \\
+écrire & écrit & lire & lu \\
+ouvrir & ouvert & recevoir & reçu \\
+offrir & offert & souffrir & souffert \\
+découvrir & découvert & conduire & conduit \\
+construire & construit & produire & produit \\
+traduire & traduit & rire & ri \\
+suivre & suivi & naître & né \\
+mourir & mort & comprendre & compris \\
+apprendre & appris & s'asseoir & assis \\
+\bottomrule
+\end{tabular}
+
+\csec{Être Auxiliary Verbs}
+
+Participle agrees with subject in compound tenses.
+
+\begin{tabular}{ll}
+\toprule
+Verb & Translation \\
+\midrule
+aller & to go \\
+venir & to come \\
+partir & to leave \\
+sortir & to go out \\
+monter & to go up \\
+descendre & to go down \\
+rester & to stay \\
+tomber & to fall \\
+naître & to be born \\
+mourir & to die \\
+\multicolumn{2}{l}{\textit{+ all reflexive verbs}} \\
+\bottomrule
+\end{tabular}
+
+\end{multicols}
+
+\vspace{2pt}\hrule\vspace{4pt}
+
+\csec{Irregular Present Tense Forms}
+
+\begin{multicols}{2}
+\small
+
+\textbf{être:} suis, es, est, sommes, êtes, sont
+
+\textbf{avoir:} ai, as, a, avons, avez, ont
+
+\textbf{faire:} fais, fais, fait, faisons, faites, font
+
+\textbf{dire:} dis, dis, dit, disons, dites, disent
+
+\textbf{aller:} vais, vas, va, allons, allez, vont
+
+\textbf{voir:} vois, vois, voit, voyons, voyez, voient
+
+\textbf{savoir:} sais, sais, sait, savons, savez, savent
+
+\textbf{pouvoir:} peux, peux, peut, pouvons, pouvez, peuvent
+
+\textbf{vouloir:} veux, veux, veut, voulons, voulez, veulent
+
+\textbf{venir:} viens, viens, vient, venons, venez, viennent
+
+\textbf{devoir:} dois, dois, doit, devons, devez, doivent
+
+\textbf{prendre:} prends, prends, prend, prenons, prenez, prennent
+
+\textbf{mettre:} mets, mets, met, mettons, mettez, mettent
+
+\textbf{partir:} pars, pars, part, partons, partez, partent
+
+\textbf{croire:} crois, crois, croit, croyons, croyez, croient
+
+\textbf{vivre:} vis, vis, vit, vivons, vivez, vivent
+
+\textbf{tenir:} tiens, tiens, tient, tenons, tenez, tiennent
+
+\textbf{connaître:} connais, connais, connait, connaissons, connaissez, connaissent
+
+\textbf{boire:} bois, bois, boit, buvons, buvez, boivent
+
+\textbf{écrire:} écris, écris, écrit, écrivons, écrivez, écrivent
+
+\textbf{lire:} lis, lis, lit, lisons, lisez, lisent
+
+\textbf{dormir:} dors, dors, dort, dormons, dormez, dorment
+
+\textbf{ouvrir:} ouvre, ouvres, ouvre, ouvrons, ouvrez, ouvrent
+
+\textbf{recevoir:} reçois, reçois, reçoit, recevons, recevez, reçoivent
+
+\textbf{appeler:} appelle, appelles, appelle, appelons, appelez, appellent
+
+\textbf{sortir:} sors, sors, sort, sortons, sortez, sortent
+
+\textbf{entendre:} entends, entends, entend, entendons, entendez, entendent
+
+\textbf{attendre:} attends, attends, attend, attendons, attendez, attendent
+
+\textbf{perdre:} perds, perds, perd, perdons, perdez, perdent
+
+\textbf{obtenir:} obtiens, obtiens, obtient, obtenons, obtenez, obtiennent
+
+\textbf{descendre:} descends, descends, descend, descendons, descendez, descendent
+
+\textbf{offrir:} offre, offres, offre, offrons, offrez, offrent
+
+\textbf{souffrir:} souffre, souffres, souffre, souffrons, souffrez, souffrent
+
+\textbf{découvrir:} découvre, découvres, découvre, découvrons, découvrez, découvrent
+
+\textbf{conduire:} conduis, conduis, conduit, conduisons, conduisez, conduisent
+
+\textbf{construire:} construis, construis, construit, construisons, construisez, construisent
+
+\textbf{produire:} produis, produis, produit, produisons, produisez, produisent
+
+\textbf{traduire:} traduis, traduis, traduit, traduisons, traduisez, traduisent
+
+\textbf{rire:} ris, ris, rit, rions, riez, rient
+
+\textbf{suivre:} suis, suis, suit, suivons, suivez, suivent
+
+\textbf{naître:} nais, nais, naît, naissons, naissez, naissent
+
+\textbf{mourir:} meurs, meurs, meurt, mourons, mourez, meurent
+
+\textbf{comprendre:} comprends, comprends, comprend, comprenons, comprenez, comprennent
+
+\textbf{apprendre:} apprends, apprends, apprend, apprenons, apprenez, apprennent
+
+\end{multicols}
+```
