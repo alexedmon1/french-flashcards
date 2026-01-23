@@ -31,8 +31,16 @@ def format_form(pronoun_idx, form):
     return f"{p} {form}"
 
 
+def latex_escape(text):
+    """Escape special LaTeX characters."""
+    replacements = [('&', r'\&'), ('#', r'\#'), ('%', r'\%'), ('_', r'\_')]
+    for old, new in replacements:
+        text = text.replace(old, new)
+    return text
+
+
 def generate_verb_entry(verb, verb_data, out):
-    """Generate a single verb's conjugation table."""
+    """Generate a single verb's conjugation table as raw LaTeX in a minipage."""
     translation = verb_data.get("translation", "")
     verb_type = verb_data.get("type", "")
     auxiliary = verb_data.get("auxiliary", "avoir")
@@ -40,30 +48,34 @@ def generate_verb_entry(verb, verb_data, out):
 
     type_short = {"regular_er": "-ER", "regular_ir": "-IR", "irregular": "irreg."}.get(verb_type, verb_type)
 
-    # Header
-    out.write(f"### {verb} *({translation})* {{.unnumbered}}\n\n")
-    out.write(f"Type: {type_short} | Aux: {auxiliary} | P.P.: {pp}\n\n")
-
     # Get all conjugations
     all_forms = []
     for tense in TENSES:
         _, forms = conjugate(verb, tense, selected_pronouns=STANDARD_PRONOUNS)
         all_forms.append(forms)
 
-    # Build table
-    out.write(f"| | {' | '.join(TENSE_HEADERS)} |\n")
-    out.write(f"|---|{'---|' * 7}\n")
+    # Wrap in minipage to prevent page breaks
+    out.write("\\begin{minipage}{\\linewidth}\n")
+
+    # Header
+    out.write(f"\\vspace{{4pt}}\n")
+    out.write(f"\\noindent\\textbf{{\\large {latex_escape(verb)}}} "
+              f"\\textit{{({latex_escape(translation)})}}\n\n")
+    out.write(f"\\noindent Type: {type_short} \\quad Aux: {auxiliary} \\quad P.P.: {latex_escape(pp)}\n\n")
+
+    # Build LaTeX tabular
+    out.write("\\begin{tabular}{l|lllllll}\n")
+    out.write(f" & {' & '.join(TENSE_HEADERS)} \\\\\n")
+    out.write("\\hline\n")
 
     for i in range(6):
-        row_cells = []
-        for t_idx, forms in enumerate(all_forms):
-            form = forms[i]
-            row_cells.append(form)
+        pronoun = DISPLAY_PRONOUNS[i].replace("/", "/\\hspace{0pt}")
+        row_cells = [latex_escape(forms[i]) for forms in all_forms]
+        out.write(f"\\textbf{{{pronoun}}} & {' & '.join(row_cells)} \\\\\n")
 
-        pronoun = DISPLAY_PRONOUNS[i]
-        out.write(f"| **{pronoun}** | {' | '.join(row_cells)} |\n")
-
-    out.write("\n")
+    out.write("\\end{tabular}\n")
+    out.write("\\end{minipage}\n")
+    out.write("\\vspace{6pt}\n\n")
 
 
 def main():
@@ -86,7 +98,6 @@ format:
       text: |
         \\usepackage{booktabs}
         \\usepackage{array}
-        \\usepackage{longtable}
         \\pagestyle{plain}
         \\setlength{\\parindent}{0pt}
         \\setlength{\\parskip}{3pt}
@@ -96,15 +107,19 @@ format:
 
 """)
 
+        out.write("```{=latex}\n")
+
         for tier in ["core", "intermediate", "advanced"]:
             verbs = get_verbs_by_tier(tier)
             tier_title = tier.capitalize()
 
-            out.write(f"## {tier_title} Tier ({len(verbs)} verbs)\n\n")
+            out.write(f"\\section*{{{tier_title} Tier ({len(verbs)} verbs)}}\n\n")
 
             for verb in verbs:
                 verb_data = get_verb(verb)
                 generate_verb_entry(verb, verb_data, out)
+
+        out.write("```\n")
 
     print("Generated: cheatsheet_verbs.qmd")
 

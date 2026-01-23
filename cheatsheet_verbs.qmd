@@ -13,7 +13,6 @@ format:
       text: |
         \usepackage{booktabs}
         \usepackage{array}
-        \usepackage{longtable}
         \pagestyle{plain}
         \setlength{\parindent}{0pt}
         \setlength{\parskip}{3pt}
@@ -21,1218 +20,1778 @@ format:
         \renewcommand{\arraystretch}{1.15}
 ---
 
-## Core Tier (20 verbs)
-
-### être *(to be)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: été
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | suis | serai | étais | serais | ai été | vais être | aurais été |
-| **tu** | es | seras | étais | serais | as été | vas être | aurais été |
-| **il/elle** | est | sera | était | serait | a été | va être | aurait été |
-| **nous** | sommes | serons | étions | serions | avons été | allons être | aurions été |
-| **vous** | êtes | serez | étiez | seriez | avez été | allez être | auriez été |
-| **ils/elles** | sont | seront | étaient | seraient | ont été | vont être | auraient été |
-
-### avoir *(to have)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: eu
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | ai | aurai | avais | aurais | ai eu | vais avoir | aurais eu |
-| **tu** | as | auras | avais | aurais | as eu | vas avoir | aurais eu |
-| **il/elle** | a | aura | avait | aurait | a eu | va avoir | aurait eu |
-| **nous** | avons | aurons | avions | aurions | avons eu | allons avoir | aurions eu |
-| **vous** | avez | aurez | aviez | auriez | avez eu | allez avoir | auriez eu |
-| **ils/elles** | ont | auront | avaient | auraient | ont eu | vont avoir | auraient eu |
-
-### faire *(to do / to make)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: fait
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | fais | ferai | faisais | ferais | ai fait | vais faire | aurais fait |
-| **tu** | fais | feras | faisais | ferais | as fait | vas faire | aurais fait |
-| **il/elle** | fait | fera | faisait | ferait | a fait | va faire | aurait fait |
-| **nous** | faisons | ferons | faisions | ferions | avons fait | allons faire | aurions fait |
-| **vous** | faites | ferez | faisiez | feriez | avez fait | allez faire | auriez fait |
-| **ils/elles** | font | feront | faisaient | feraient | ont fait | vont faire | auraient fait |
-
-### dire *(to say / to tell)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: dit
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | dis | dirai | disais | dirais | ai dit | vais dire | aurais dit |
-| **tu** | dis | diras | disais | dirais | as dit | vas dire | aurais dit |
-| **il/elle** | dit | dira | disait | dirait | a dit | va dire | aurait dit |
-| **nous** | disons | dirons | disions | dirions | avons dit | allons dire | aurions dit |
-| **vous** | dites | direz | disiez | diriez | avez dit | allez dire | auriez dit |
-| **ils/elles** | disent | diront | disaient | diraient | ont dit | vont dire | auraient dit |
-
-### aller *(to go)* {.unnumbered}
-
-Type: irreg. | Aux: être | P.P.: allé
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | vais | irai | allais | irais | suis allé | vais aller | serais allé |
-| **tu** | vas | iras | allais | irais | es allé | vas aller | serais allé |
-| **il/elle** | va | ira | allait | irait | est allé | va aller | serait allé |
-| **nous** | allons | irons | allions | irions | sommes allés | allons aller | serions allés |
-| **vous** | allez | irez | alliez | iriez | êtes allés | allez aller | seriez allés |
-| **ils/elles** | vont | iront | allaient | iraient | sont allés | vont aller | seraient allés |
-
-### voir *(to see)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: vu
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | vois | verrai | voyais | verrais | ai vu | vais voir | aurais vu |
-| **tu** | vois | verras | voyais | verrais | as vu | vas voir | aurais vu |
-| **il/elle** | voit | verra | voyait | verrait | a vu | va voir | aurait vu |
-| **nous** | voyons | verrons | voyions | verrions | avons vu | allons voir | aurions vu |
-| **vous** | voyez | verrez | voyiez | verriez | avez vu | allez voir | auriez vu |
-| **ils/elles** | voient | verront | voyaient | verraient | ont vu | vont voir | auraient vu |
-
-### savoir *(to know (facts))* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: su
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | sais | saurai | savais | saurais | ai su | vais savoir | aurais su |
-| **tu** | sais | sauras | savais | saurais | as su | vas savoir | aurais su |
-| **il/elle** | sait | saura | savait | saurait | a su | va savoir | aurait su |
-| **nous** | savons | saurons | savions | saurions | avons su | allons savoir | aurions su |
-| **vous** | savez | saurez | saviez | sauriez | avez su | allez savoir | auriez su |
-| **ils/elles** | savent | sauront | savaient | sauraient | ont su | vont savoir | auraient su |
-
-### pouvoir *(to be able to / can)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: pu
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | peux | pourrai | pouvais | pourrais | ai pu | vais pouvoir | aurais pu |
-| **tu** | peux | pourras | pouvais | pourrais | as pu | vas pouvoir | aurais pu |
-| **il/elle** | peut | pourra | pouvait | pourrait | a pu | va pouvoir | aurait pu |
-| **nous** | pouvons | pourrons | pouvions | pourrions | avons pu | allons pouvoir | aurions pu |
-| **vous** | pouvez | pourrez | pouviez | pourriez | avez pu | allez pouvoir | auriez pu |
-| **ils/elles** | peuvent | pourront | pouvaient | pourraient | ont pu | vont pouvoir | auraient pu |
-
-### vouloir *(to want)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: voulu
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | veux | voudrai | voulais | voudrais | ai voulu | vais vouloir | aurais voulu |
-| **tu** | veux | voudras | voulais | voudrais | as voulu | vas vouloir | aurais voulu |
-| **il/elle** | veut | voudra | voulait | voudrait | a voulu | va vouloir | aurait voulu |
-| **nous** | voulons | voudrons | voulions | voudrions | avons voulu | allons vouloir | aurions voulu |
-| **vous** | voulez | voudrez | vouliez | voudriez | avez voulu | allez vouloir | auriez voulu |
-| **ils/elles** | veulent | voudront | voulaient | voudraient | ont voulu | vont vouloir | auraient voulu |
-
-### venir *(to come)* {.unnumbered}
-
-Type: irreg. | Aux: être | P.P.: venu
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | viens | viendrai | venais | viendrais | suis venu | vais venir | serais venu |
-| **tu** | viens | viendras | venais | viendrais | es venu | vas venir | serais venu |
-| **il/elle** | vient | viendra | venait | viendrait | est venu | va venir | serait venu |
-| **nous** | venons | viendrons | venions | viendrions | sommes venus | allons venir | serions venus |
-| **vous** | venez | viendrez | veniez | viendriez | êtes venus | allez venir | seriez venus |
-| **ils/elles** | viennent | viendront | venaient | viendraient | sont venus | vont venir | seraient venus |
-
-### devoir *(to have to / must)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: dû
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | dois | devrai | devais | devrais | ai dû | vais devoir | aurais dû |
-| **tu** | dois | devras | devais | devrais | as dû | vas devoir | aurais dû |
-| **il/elle** | doit | devra | devait | devrait | a dû | va devoir | aurait dû |
-| **nous** | devons | devrons | devions | devrions | avons dû | allons devoir | aurions dû |
-| **vous** | devez | devrez | deviez | devriez | avez dû | allez devoir | auriez dû |
-| **ils/elles** | doivent | devront | devaient | devraient | ont dû | vont devoir | auraient dû |
-
-### prendre *(to take)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: pris
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | prends | prendrai | prenais | prendrais | ai pris | vais prendre | aurais pris |
-| **tu** | prends | prendras | prenais | prendrais | as pris | vas prendre | aurais pris |
-| **il/elle** | prend | prendra | prenait | prendrait | a pris | va prendre | aurait pris |
-| **nous** | prenons | prendrons | prenions | prendrions | avons pris | allons prendre | aurions pris |
-| **vous** | prenez | prendrez | preniez | prendriez | avez pris | allez prendre | auriez pris |
-| **ils/elles** | prennent | prendront | prenaient | prendraient | ont pris | vont prendre | auraient pris |
-
-### mettre *(to put / to place)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: mis
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | mets | mettrai | mettais | mettrais | ai mis | vais mettre | aurais mis |
-| **tu** | mets | mettras | mettais | mettrais | as mis | vas mettre | aurais mis |
-| **il/elle** | met | mettra | mettait | mettrait | a mis | va mettre | aurait mis |
-| **nous** | mettons | mettrons | mettions | mettrions | avons mis | allons mettre | aurions mis |
-| **vous** | mettez | mettrez | mettiez | mettriez | avez mis | allez mettre | auriez mis |
-| **ils/elles** | mettent | mettront | mettaient | mettraient | ont mis | vont mettre | auraient mis |
-
-### partir *(to leave / to depart)* {.unnumbered}
-
-Type: irreg. | Aux: être | P.P.: parti
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | pars | partirai | partais | partirais | suis parti | vais partir | serais parti |
-| **tu** | pars | partiras | partais | partirais | es parti | vas partir | serais parti |
-| **il/elle** | part | partira | partait | partirait | est parti | va partir | serait parti |
-| **nous** | partons | partirons | partions | partirions | sommes partis | allons partir | serions partis |
-| **vous** | partez | partirez | partiez | partiriez | êtes partis | allez partir | seriez partis |
-| **ils/elles** | partent | partiront | partaient | partiraient | sont partis | vont partir | seraient partis |
-
-### finir *(to finish)* {.unnumbered}
-
-Type: -IR | Aux: avoir | P.P.: fini
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | finis | finirai | finissais | finirais | ai fini | vais finir | aurais fini |
-| **tu** | finis | finiras | finissais | finirais | as fini | vas finir | aurais fini |
-| **il/elle** | finit | finira | finissait | finirait | a fini | va finir | aurait fini |
-| **nous** | finissons | finirons | finissions | finirions | avons fini | allons finir | aurions fini |
-| **vous** | finissez | finirez | finissiez | finiriez | avez fini | allez finir | auriez fini |
-| **ils/elles** | finissent | finiront | finissaient | finiraient | ont fini | vont finir | auraient fini |
-
-### parler *(to speak / to talk)* {.unnumbered}
-
-Type: -ER | Aux: avoir | P.P.: parlé
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | parle | parlerai | parlais | parlerais | ai parlé | vais parler | aurais parlé |
-| **tu** | parles | parleras | parlais | parlerais | as parlé | vas parler | aurais parlé |
-| **il/elle** | parle | parlera | parlait | parlerait | a parlé | va parler | aurait parlé |
-| **nous** | parlons | parlerons | parlions | parlerions | avons parlé | allons parler | aurions parlé |
-| **vous** | parlez | parlerez | parliez | parleriez | avez parlé | allez parler | auriez parlé |
-| **ils/elles** | parlent | parleront | parlaient | parleraient | ont parlé | vont parler | auraient parlé |
-
-### donner *(to give)* {.unnumbered}
-
-Type: -ER | Aux: avoir | P.P.: donné
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | donne | donnerai | donnais | donnerais | ai donné | vais donner | aurais donné |
-| **tu** | donnes | donneras | donnais | donnerais | as donné | vas donner | aurais donné |
-| **il/elle** | donne | donnera | donnait | donnerait | a donné | va donner | aurait donné |
-| **nous** | donnons | donnerons | donnions | donnerions | avons donné | allons donner | aurions donné |
-| **vous** | donnez | donnerez | donniez | donneriez | avez donné | allez donner | auriez donné |
-| **ils/elles** | donnent | donneront | donnaient | donneraient | ont donné | vont donner | auraient donné |
-
-### aimer *(to like / to love)* {.unnumbered}
-
-Type: -ER | Aux: avoir | P.P.: aimé
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | aime | aimerai | aimais | aimerais | ai aimé | vais aimer | aurais aimé |
-| **tu** | aimes | aimeras | aimais | aimerais | as aimé | vas aimer | aurais aimé |
-| **il/elle** | aime | aimera | aimait | aimerait | a aimé | va aimer | aurait aimé |
-| **nous** | aimons | aimerons | aimions | aimerions | avons aimé | allons aimer | aurions aimé |
-| **vous** | aimez | aimerez | aimiez | aimeriez | avez aimé | allez aimer | auriez aimé |
-| **ils/elles** | aiment | aimeront | aimaient | aimeraient | ont aimé | vont aimer | auraient aimé |
-
-### croire *(to believe)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: cru
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | crois | croirai | croyais | croirais | ai cru | vais croire | aurais cru |
-| **tu** | crois | croiras | croyais | croirais | as cru | vas croire | aurais cru |
-| **il/elle** | croit | croira | croyait | croirait | a cru | va croire | aurait cru |
-| **nous** | croyons | croirons | croyions | croirions | avons cru | allons croire | aurions cru |
-| **vous** | croyez | croirez | croyiez | croiriez | avez cru | allez croire | auriez cru |
-| **ils/elles** | croient | croiront | croyaient | croiraient | ont cru | vont croire | auraient cru |
-
-### vivre *(to live)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: vécu
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | vis | vivrai | vivais | vivrais | ai vécu | vais vivre | aurais vécu |
-| **tu** | vis | vivras | vivais | vivrais | as vécu | vas vivre | aurais vécu |
-| **il/elle** | vit | vivra | vivait | vivrait | a vécu | va vivre | aurait vécu |
-| **nous** | vivons | vivrons | vivions | vivrions | avons vécu | allons vivre | aurions vécu |
-| **vous** | vivez | vivrez | viviez | vivriez | avez vécu | allez vivre | auriez vécu |
-| **ils/elles** | vivent | vivront | vivaient | vivraient | ont vécu | vont vivre | auraient vécu |
-
-## Intermediate Tier (34 verbs)
-
-### trouver *(to find)* {.unnumbered}
-
-Type: -ER | Aux: avoir | P.P.: trouvé
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | trouve | trouverai | trouvais | trouverais | ai trouvé | vais trouver | aurais trouvé |
-| **tu** | trouves | trouveras | trouvais | trouverais | as trouvé | vas trouver | aurais trouvé |
-| **il/elle** | trouve | trouvera | trouvait | trouverait | a trouvé | va trouver | aurait trouvé |
-| **nous** | trouvons | trouverons | trouvions | trouverions | avons trouvé | allons trouver | aurions trouvé |
-| **vous** | trouvez | trouverez | trouviez | trouveriez | avez trouvé | allez trouver | auriez trouvé |
-| **ils/elles** | trouvent | trouveront | trouvaient | trouveraient | ont trouvé | vont trouver | auraient trouvé |
-
-### penser *(to think)* {.unnumbered}
-
-Type: -ER | Aux: avoir | P.P.: pensé
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | pense | penserai | pensais | penserais | ai pensé | vais penser | aurais pensé |
-| **tu** | penses | penseras | pensais | penserais | as pensé | vas penser | aurais pensé |
-| **il/elle** | pense | pensera | pensait | penserait | a pensé | va penser | aurait pensé |
-| **nous** | pensons | penserons | pensions | penserions | avons pensé | allons penser | aurions pensé |
-| **vous** | pensez | penserez | pensiez | penseriez | avez pensé | allez penser | auriez pensé |
-| **ils/elles** | pensent | penseront | pensaient | penseraient | ont pensé | vont penser | auraient pensé |
-
-### passer *(to pass / to spend (time))* {.unnumbered}
-
-Type: -ER | Aux: avoir | P.P.: passé
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | passe | passerai | passais | passerais | ai passé | vais passer | aurais passé |
-| **tu** | passes | passeras | passais | passerais | as passé | vas passer | aurais passé |
-| **il/elle** | passe | passera | passait | passerait | a passé | va passer | aurait passé |
-| **nous** | passons | passerons | passions | passerions | avons passé | allons passer | aurions passé |
-| **vous** | passez | passerez | passiez | passeriez | avez passé | allez passer | auriez passé |
-| **ils/elles** | passent | passeront | passaient | passeraient | ont passé | vont passer | auraient passé |
-
-### demander *(to ask)* {.unnumbered}
-
-Type: -ER | Aux: avoir | P.P.: demandé
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | demande | demanderai | demandais | demanderais | ai demandé | vais demander | aurais demandé |
-| **tu** | demandes | demanderas | demandais | demanderais | as demandé | vas demander | aurais demandé |
-| **il/elle** | demande | demandera | demandait | demanderait | a demandé | va demander | aurait demandé |
-| **nous** | demandons | demanderons | demandions | demanderions | avons demandé | allons demander | aurions demandé |
-| **vous** | demandez | demanderez | demandiez | demanderiez | avez demandé | allez demander | auriez demandé |
-| **ils/elles** | demandent | demanderont | demandaient | demanderaient | ont demandé | vont demander | auraient demandé |
-
-### laisser *(to leave / to let)* {.unnumbered}
-
-Type: -ER | Aux: avoir | P.P.: laissé
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | laisse | laisserai | laissais | laisserais | ai laissé | vais laisser | aurais laissé |
-| **tu** | laisses | laisseras | laissais | laisserais | as laissé | vas laisser | aurais laissé |
-| **il/elle** | laisse | laissera | laissait | laisserait | a laissé | va laisser | aurait laissé |
-| **nous** | laissons | laisserons | laissions | laisserions | avons laissé | allons laisser | aurions laissé |
-| **vous** | laissez | laisserez | laissiez | laisseriez | avez laissé | allez laisser | auriez laissé |
-| **ils/elles** | laissent | laisseront | laissaient | laisseraient | ont laissé | vont laisser | auraient laissé |
-
-### porter *(to wear / to carry)* {.unnumbered}
-
-Type: -ER | Aux: avoir | P.P.: porté
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | porte | porterai | portais | porterais | ai porté | vais porter | aurais porté |
-| **tu** | portes | porteras | portais | porterais | as porté | vas porter | aurais porté |
-| **il/elle** | porte | portera | portait | porterait | a porté | va porter | aurait porté |
-| **nous** | portons | porterons | portions | porterions | avons porté | allons porter | aurions porté |
-| **vous** | portez | porterez | portiez | porteriez | avez porté | allez porter | auriez porté |
-| **ils/elles** | portent | porteront | portaient | porteraient | ont porté | vont porter | auraient porté |
-
-### rester *(to stay / to remain)* {.unnumbered}
-
-Type: -ER | Aux: être | P.P.: resté
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | reste | resterai | restais | resterais | suis resté | vais rester | serais resté |
-| **tu** | restes | resteras | restais | resterais | es resté | vas rester | serais resté |
-| **il/elle** | reste | restera | restait | resterait | est resté | va rester | serait resté |
-| **nous** | restons | resterons | restions | resterions | sommes restés | allons rester | serions restés |
-| **vous** | restez | resterez | restiez | resteriez | êtes restés | allez rester | seriez restés |
-| **ils/elles** | restent | resteront | restaient | resteraient | sont restés | vont rester | seraient restés |
-
-### tomber *(to fall)* {.unnumbered}
-
-Type: -ER | Aux: être | P.P.: tombé
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | tombe | tomberai | tombais | tomberais | suis tombé | vais tomber | serais tombé |
-| **tu** | tombes | tomberas | tombais | tomberais | es tombé | vas tomber | serais tombé |
-| **il/elle** | tombe | tombera | tombait | tomberait | est tombé | va tomber | serait tombé |
-| **nous** | tombons | tomberons | tombions | tomberions | sommes tombés | allons tomber | serions tombés |
-| **vous** | tombez | tomberez | tombiez | tomberiez | êtes tombés | allez tomber | seriez tombés |
-| **ils/elles** | tombent | tomberont | tombaient | tomberaient | sont tombés | vont tomber | seraient tombés |
-
-### montrer *(to show)* {.unnumbered}
-
-Type: -ER | Aux: avoir | P.P.: montré
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | montre | montrerai | montrais | montrerais | ai montré | vais montrer | aurais montré |
-| **tu** | montres | montreras | montrais | montrerais | as montré | vas montrer | aurais montré |
-| **il/elle** | montre | montrera | montrait | montrerait | a montré | va montrer | aurait montré |
-| **nous** | montrons | montrerons | montrions | montrerions | avons montré | allons montrer | aurions montré |
-| **vous** | montrez | montrerez | montriez | montreriez | avez montré | allez montrer | auriez montré |
-| **ils/elles** | montrent | montreront | montraient | montreraient | ont montré | vont montrer | auraient montré |
-
-### écouter *(to listen (to))* {.unnumbered}
-
-Type: -ER | Aux: avoir | P.P.: écouté
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | écoute | écouterai | écoutais | écouterais | ai écouté | vais écouter | aurais écouté |
-| **tu** | écoutes | écouteras | écoutais | écouterais | as écouté | vas écouter | aurais écouté |
-| **il/elle** | écoute | écoutera | écoutait | écouterait | a écouté | va écouter | aurait écouté |
-| **nous** | écoutons | écouterons | écoutions | écouterions | avons écouté | allons écouter | aurions écouté |
-| **vous** | écoutez | écouterez | écoutiez | écouteriez | avez écouté | allez écouter | auriez écouté |
-| **ils/elles** | écoutent | écouteront | écoutaient | écouteraient | ont écouté | vont écouter | auraient écouté |
-
-### monter *(to go up / to climb)* {.unnumbered}
-
-Type: -ER | Aux: être | P.P.: monté
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | monte | monterai | montais | monterais | suis monté | vais monter | serais monté |
-| **tu** | montes | monteras | montais | monterais | es monté | vas monter | serais monté |
-| **il/elle** | monte | montera | montait | monterait | est monté | va monter | serait monté |
-| **nous** | montons | monterons | montions | monterions | sommes montés | allons monter | serions montés |
-| **vous** | montez | monterez | montiez | monteriez | êtes montés | allez monter | seriez montés |
-| **ils/elles** | montent | monteront | montaient | monteraient | sont montés | vont monter | seraient montés |
-
-### travailler *(to work)* {.unnumbered}
-
-Type: -ER | Aux: avoir | P.P.: travaillé
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | travaille | travaillerai | travaillais | travaillerais | ai travaillé | vais travailler | aurais travaillé |
-| **tu** | travailles | travailleras | travaillais | travaillerais | as travaillé | vas travailler | aurais travaillé |
-| **il/elle** | travaille | travaillera | travaillait | travaillerait | a travaillé | va travailler | aurait travaillé |
-| **nous** | travaillons | travaillerons | travaillions | travaillerions | avons travaillé | allons travailler | aurions travaillé |
-| **vous** | travaillez | travaillerez | travailliez | travailleriez | avez travaillé | allez travailler | auriez travaillé |
-| **ils/elles** | travaillent | travailleront | travaillaient | travailleraient | ont travaillé | vont travailler | auraient travaillé |
-
-### utiliser *(to use)* {.unnumbered}
-
-Type: -ER | Aux: avoir | P.P.: utilisé
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | utilise | utiliserai | utilisais | utiliserais | ai utilisé | vais utiliser | aurais utilisé |
-| **tu** | utilises | utiliseras | utilisais | utiliserais | as utilisé | vas utiliser | aurais utilisé |
-| **il/elle** | utilise | utilisera | utilisait | utiliserait | a utilisé | va utiliser | aurait utilisé |
-| **nous** | utilisons | utiliserons | utilisions | utiliserions | avons utilisé | allons utiliser | aurions utilisé |
-| **vous** | utilisez | utiliserez | utilisiez | utiliseriez | avez utilisé | allez utiliser | auriez utilisé |
-| **ils/elles** | utilisent | utiliseront | utilisaient | utiliseraient | ont utilisé | vont utiliser | auraient utilisé |
-
-### choisir *(to choose)* {.unnumbered}
-
-Type: -IR | Aux: avoir | P.P.: choisi
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | choisis | choisirai | choisissais | choisirais | ai choisi | vais choisir | aurais choisi |
-| **tu** | choisis | choisiras | choisissais | choisirais | as choisi | vas choisir | aurais choisi |
-| **il/elle** | choisit | choisira | choisissait | choisirait | a choisi | va choisir | aurait choisi |
-| **nous** | choisissons | choisirons | choisissions | choisirions | avons choisi | allons choisir | aurions choisi |
-| **vous** | choisissez | choisirez | choisissiez | choisiriez | avez choisi | allez choisir | auriez choisi |
-| **ils/elles** | choisissent | choisiront | choisissaient | choisiraient | ont choisi | vont choisir | auraient choisi |
-
-### réussir *(to succeed)* {.unnumbered}
-
-Type: -IR | Aux: avoir | P.P.: réussi
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | réussis | réussirai | réussissais | réussirais | ai réussi | vais réussir | aurais réussi |
-| **tu** | réussis | réussiras | réussissais | réussirais | as réussi | vas réussir | aurais réussi |
-| **il/elle** | réussit | réussira | réussissait | réussirait | a réussi | va réussir | aurait réussi |
-| **nous** | réussissons | réussirons | réussissions | réussirions | avons réussi | allons réussir | aurions réussi |
-| **vous** | réussissez | réussirez | réussissiez | réussiriez | avez réussi | allez réussir | auriez réussi |
-| **ils/elles** | réussissent | réussiront | réussissaient | réussiraient | ont réussi | vont réussir | auraient réussi |
-
-### remplir *(to fill)* {.unnumbered}
-
-Type: -IR | Aux: avoir | P.P.: rempli
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | remplis | remplirai | remplissais | remplirais | ai rempli | vais remplir | aurais rempli |
-| **tu** | remplis | rempliras | remplissais | remplirais | as rempli | vas remplir | aurais rempli |
-| **il/elle** | remplit | remplira | remplissait | remplirait | a rempli | va remplir | aurait rempli |
-| **nous** | remplissons | remplirons | remplissions | remplirions | avons rempli | allons remplir | aurions rempli |
-| **vous** | remplissez | remplirez | remplissiez | rempliriez | avez rempli | allez remplir | auriez rempli |
-| **ils/elles** | remplissent | rempliront | remplissaient | rempliraient | ont rempli | vont remplir | auraient rempli |
-
-### réfléchir *(to reflect / to think)* {.unnumbered}
-
-Type: -IR | Aux: avoir | P.P.: réfléchi
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | réfléchis | réfléchirai | réfléchissais | réfléchirais | ai réfléchi | vais réfléchir | aurais réfléchi |
-| **tu** | réfléchis | réfléchiras | réfléchissais | réfléchirais | as réfléchi | vas réfléchir | aurais réfléchi |
-| **il/elle** | réfléchit | réfléchira | réfléchissait | réfléchirait | a réfléchi | va réfléchir | aurait réfléchi |
-| **nous** | réfléchissons | réfléchirons | réfléchissions | réfléchirions | avons réfléchi | allons réfléchir | aurions réfléchi |
-| **vous** | réfléchissez | réfléchirez | réfléchissiez | réfléchiriez | avez réfléchi | allez réfléchir | auriez réfléchi |
-| **ils/elles** | réfléchissent | réfléchiront | réfléchissaient | réfléchiraient | ont réfléchi | vont réfléchir | auraient réfléchi |
-
-### obéir *(to obey)* {.unnumbered}
-
-Type: -IR | Aux: avoir | P.P.: obéi
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | obéis | obéirai | obéissais | obéirais | ai obéi | vais obéir | aurais obéi |
-| **tu** | obéis | obéiras | obéissais | obéirais | as obéi | vas obéir | aurais obéi |
-| **il/elle** | obéit | obéira | obéissait | obéirait | a obéi | va obéir | aurait obéi |
-| **nous** | obéissons | obéirons | obéissions | obéirions | avons obéi | allons obéir | aurions obéi |
-| **vous** | obéissez | obéirez | obéissiez | obéiriez | avez obéi | allez obéir | auriez obéi |
-| **ils/elles** | obéissent | obéiront | obéissaient | obéiraient | ont obéi | vont obéir | auraient obéi |
-
-### grandir *(to grow)* {.unnumbered}
-
-Type: -IR | Aux: avoir | P.P.: grandi
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | grandis | grandirai | grandissais | grandirais | ai grandi | vais grandir | aurais grandi |
-| **tu** | grandis | grandiras | grandissais | grandirais | as grandi | vas grandir | aurais grandi |
-| **il/elle** | grandit | grandira | grandissait | grandirait | a grandi | va grandir | aurait grandi |
-| **nous** | grandissons | grandirons | grandissions | grandirions | avons grandi | allons grandir | aurions grandi |
-| **vous** | grandissez | grandirez | grandissiez | grandiriez | avez grandi | allez grandir | auriez grandi |
-| **ils/elles** | grandissent | grandiront | grandissaient | grandiraient | ont grandi | vont grandir | auraient grandi |
-
-### tenir *(to hold)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: tenu
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | tiens | tiendrai | tenais | tiendrais | ai tenu | vais tenir | aurais tenu |
-| **tu** | tiens | tiendras | tenais | tiendrais | as tenu | vas tenir | aurais tenu |
-| **il/elle** | tient | tiendra | tenait | tiendrait | a tenu | va tenir | aurait tenu |
-| **nous** | tenons | tiendrons | tenions | tiendrions | avons tenu | allons tenir | aurions tenu |
-| **vous** | tenez | tiendrez | teniez | tiendriez | avez tenu | allez tenir | auriez tenu |
-| **ils/elles** | tiennent | tiendront | tenaient | tiendraient | ont tenu | vont tenir | auraient tenu |
-
-### appeler *(to call)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: appelé
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | appelle | appellerai | appelais | appellerais | ai appelé | vais appeler | aurais appelé |
-| **tu** | appelles | appelleras | appelais | appellerais | as appelé | vas appeler | aurais appelé |
-| **il/elle** | appelle | appellera | appelait | appellerait | a appelé | va appeler | aurait appelé |
-| **nous** | appelons | appellerons | appelions | appellerions | avons appelé | allons appeler | aurions appelé |
-| **vous** | appelez | appellerez | appeliez | appelleriez | avez appelé | allez appeler | auriez appelé |
-| **ils/elles** | appellent | appelleront | appelaient | appelleraient | ont appelé | vont appeler | auraient appelé |
-
-### sortir *(to go out / to leave)* {.unnumbered}
-
-Type: irreg. | Aux: être | P.P.: sorti
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | sors | sortirai | sortais | sortirais | suis sorti | vais sortir | serais sorti |
-| **tu** | sors | sortiras | sortais | sortirais | es sorti | vas sortir | serais sorti |
-| **il/elle** | sort | sortira | sortait | sortirait | est sorti | va sortir | serait sorti |
-| **nous** | sortons | sortirons | sortions | sortirions | sommes sortis | allons sortir | serions sortis |
-| **vous** | sortez | sortirez | sortiez | sortiriez | êtes sortis | allez sortir | seriez sortis |
-| **ils/elles** | sortent | sortiront | sortaient | sortiraient | sont sortis | vont sortir | seraient sortis |
-
-### connaître *(to know (people/places))* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: connu
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | connais | connaîtrai | connaissais | connaîtrais | ai connu | vais connaître | aurais connu |
-| **tu** | connais | connaîtras | connaissais | connaîtrais | as connu | vas connaître | aurais connu |
-| **il/elle** | connait | connaîtra | connaissait | connaîtrait | a connu | va connaître | aurait connu |
-| **nous** | connaissons | connaîtrons | connaissions | connaîtrions | avons connu | allons connaître | aurions connu |
-| **vous** | connaissez | connaîtrez | connaissiez | connaîtriez | avez connu | allez connaître | auriez connu |
-| **ils/elles** | connaissent | connaîtront | connaissaient | connaîtraient | ont connu | vont connaître | auraient connu |
-
-### boire *(to drink)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: bu
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | bois | boirai | buvais | boirais | ai bu | vais boire | aurais bu |
-| **tu** | bois | boiras | buvais | boirais | as bu | vas boire | aurais bu |
-| **il/elle** | boit | boira | buvait | boirait | a bu | va boire | aurait bu |
-| **nous** | buvons | boirons | buvions | boirions | avons bu | allons boire | aurions bu |
-| **vous** | buvez | boirez | buviez | boiriez | avez bu | allez boire | auriez bu |
-| **ils/elles** | boivent | boiront | buvaient | boiraient | ont bu | vont boire | auraient bu |
-
-### écrire *(to write)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: écrit
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | écris | écrirai | écrivais | écrirais | ai écrit | vais écrire | aurais écrit |
-| **tu** | écris | écriras | écrivais | écrirais | as écrit | vas écrire | aurais écrit |
-| **il/elle** | écrit | écrira | écrivait | écrirait | a écrit | va écrire | aurait écrit |
-| **nous** | écrivons | écrirons | écrivions | écririons | avons écrit | allons écrire | aurions écrit |
-| **vous** | écrivez | écrirez | écriviez | écririez | avez écrit | allez écrire | auriez écrit |
-| **ils/elles** | écrivent | écriront | écrivaient | écriraient | ont écrit | vont écrire | auraient écrit |
-
-### lire *(to read)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: lu
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | lis | lirai | lisais | lirais | ai lu | vais lire | aurais lu |
-| **tu** | lis | liras | lisais | lirais | as lu | vas lire | aurais lu |
-| **il/elle** | lit | lira | lisait | lirait | a lu | va lire | aurait lu |
-| **nous** | lisons | lirons | lisions | lirions | avons lu | allons lire | aurions lu |
-| **vous** | lisez | lirez | lisiez | liriez | avez lu | allez lire | auriez lu |
-| **ils/elles** | lisent | liront | lisaient | liraient | ont lu | vont lire | auraient lu |
-
-### dormir *(to sleep)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: dormi
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | dors | dormirai | dormais | dormirais | ai dormi | vais dormir | aurais dormi |
-| **tu** | dors | dormiras | dormais | dormirais | as dormi | vas dormir | aurais dormi |
-| **il/elle** | dort | dormira | dormait | dormirait | a dormi | va dormir | aurait dormi |
-| **nous** | dormons | dormirons | dormions | dormirions | avons dormi | allons dormir | aurions dormi |
-| **vous** | dormez | dormirez | dormiez | dormiriez | avez dormi | allez dormir | auriez dormi |
-| **ils/elles** | dorment | dormiront | dormaient | dormiraient | ont dormi | vont dormir | auraient dormi |
-
-### ouvrir *(to open)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: ouvert
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | ouvre | ouvrirai | ouvrais | ouvrirais | ai ouvert | vais ouvrir | aurais ouvert |
-| **tu** | ouvres | ouvriras | ouvrais | ouvrirais | as ouvert | vas ouvrir | aurais ouvert |
-| **il/elle** | ouvre | ouvrira | ouvrait | ouvrirait | a ouvert | va ouvrir | aurait ouvert |
-| **nous** | ouvrons | ouvrirons | ouvrions | ouvririons | avons ouvert | allons ouvrir | aurions ouvert |
-| **vous** | ouvrez | ouvrirez | ouvriez | ouvririez | avez ouvert | allez ouvrir | auriez ouvert |
-| **ils/elles** | ouvrent | ouvriront | ouvraient | ouvriraient | ont ouvert | vont ouvrir | auraient ouvert |
-
-### recevoir *(to receive)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: reçu
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | reçois | recevrai | recevais | recevrais | ai reçu | vais recevoir | aurais reçu |
-| **tu** | reçois | recevras | recevais | recevrais | as reçu | vas recevoir | aurais reçu |
-| **il/elle** | reçoit | recevra | recevait | recevrait | a reçu | va recevoir | aurait reçu |
-| **nous** | recevons | recevrons | recevions | recevrions | avons reçu | allons recevoir | aurions reçu |
-| **vous** | recevez | recevrez | receviez | recevriez | avez reçu | allez recevoir | auriez reçu |
-| **ils/elles** | reçoivent | recevront | recevaient | recevraient | ont reçu | vont recevoir | auraient reçu |
-
-### entendre *(to hear)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: entendu
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | entends | entendrai | entendais | entendrais | ai entendu | vais entendre | aurais entendu |
-| **tu** | entends | entendras | entendais | entendrais | as entendu | vas entendre | aurais entendu |
-| **il/elle** | entend | entendra | entendait | entendrait | a entendu | va entendre | aurait entendu |
-| **nous** | entendons | entendrons | entendions | entendrions | avons entendu | allons entendre | aurions entendu |
-| **vous** | entendez | entendrez | entendiez | entendriez | avez entendu | allez entendre | auriez entendu |
-| **ils/elles** | entendent | entendront | entendaient | entendraient | ont entendu | vont entendre | auraient entendu |
-
-### attendre *(to wait (for))* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: attendu
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | attends | attendrai | attendais | attendrais | ai attendu | vais attendre | aurais attendu |
-| **tu** | attends | attendras | attendais | attendrais | as attendu | vas attendre | aurais attendu |
-| **il/elle** | attend | attendra | attendait | attendrait | a attendu | va attendre | aurait attendu |
-| **nous** | attendons | attendrons | attendions | attendrions | avons attendu | allons attendre | aurions attendu |
-| **vous** | attendez | attendrez | attendiez | attendriez | avez attendu | allez attendre | auriez attendu |
-| **ils/elles** | attendent | attendront | attendaient | attendraient | ont attendu | vont attendre | auraient attendu |
-
-### perdre *(to lose)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: perdu
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | perds | perdrai | perdais | perdrais | ai perdu | vais perdre | aurais perdu |
-| **tu** | perds | perdras | perdais | perdrais | as perdu | vas perdre | aurais perdu |
-| **il/elle** | perd | perdra | perdait | perdrait | a perdu | va perdre | aurait perdu |
-| **nous** | perdons | perdrons | perdions | perdrions | avons perdu | allons perdre | aurions perdu |
-| **vous** | perdez | perdrez | perdiez | perdriez | avez perdu | allez perdre | auriez perdu |
-| **ils/elles** | perdent | perdront | perdaient | perdraient | ont perdu | vont perdre | auraient perdu |
-
-### comprendre *(to understand)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: compris
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | comprends | comprendrai | comprenais | comprendrais | ai compris | vais comprendre | aurais compris |
-| **tu** | comprends | comprendras | comprenais | comprendrais | as compris | vas comprendre | aurais compris |
-| **il/elle** | comprend | comprendra | comprenait | comprendrait | a compris | va comprendre | aurait compris |
-| **nous** | comprenons | comprendrons | comprenions | comprendrions | avons compris | allons comprendre | aurions compris |
-| **vous** | comprenez | comprendrez | compreniez | comprendriez | avez compris | allez comprendre | auriez compris |
-| **ils/elles** | comprennent | comprendront | comprenaient | comprendraient | ont compris | vont comprendre | auraient compris |
-
-### apprendre *(to learn)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: appris
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | apprends | apprendrai | apprenais | apprendrais | ai appris | vais apprendre | aurais appris |
-| **tu** | apprends | apprendras | apprenais | apprendrais | as appris | vas apprendre | aurais appris |
-| **il/elle** | apprend | apprendra | apprenait | apprendrait | a appris | va apprendre | aurait appris |
-| **nous** | apprenons | apprendrons | apprenions | apprendrions | avons appris | allons apprendre | aurions appris |
-| **vous** | apprenez | apprendrez | appreniez | apprendriez | avez appris | allez apprendre | auriez appris |
-| **ils/elles** | apprennent | apprendront | apprenaient | apprendraient | ont appris | vont apprendre | auraient appris |
-
-## Advanced Tier (39 verbs)
-
-### dépenser *(to spend (money))* {.unnumbered}
-
-Type: -ER | Aux: avoir | P.P.: dépensé
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | dépense | dépenserai | dépensais | dépenserais | ai dépensé | vais dépenser | aurais dépensé |
-| **tu** | dépenses | dépenseras | dépensais | dépenserais | as dépensé | vas dépenser | aurais dépensé |
-| **il/elle** | dépense | dépensera | dépensait | dépenserait | a dépensé | va dépenser | aurait dépensé |
-| **nous** | dépensons | dépenserons | dépensions | dépenserions | avons dépensé | allons dépenser | aurions dépensé |
-| **vous** | dépensez | dépenserez | dépensiez | dépenseriez | avez dépensé | allez dépenser | auriez dépensé |
-| **ils/elles** | dépensent | dépenseront | dépensaient | dépenseraient | ont dépensé | vont dépenser | auraient dépensé |
-
-### dessiner *(to draw)* {.unnumbered}
-
-Type: -ER | Aux: avoir | P.P.: dessiné
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | dessine | dessinerai | dessinais | dessinerais | ai dessiné | vais dessiner | aurais dessiné |
-| **tu** | dessines | dessineras | dessinais | dessinerais | as dessiné | vas dessiner | aurais dessiné |
-| **il/elle** | dessine | dessinera | dessinait | dessinerait | a dessiné | va dessiner | aurait dessiné |
-| **nous** | dessinons | dessinerons | dessinions | dessinerions | avons dessiné | allons dessiner | aurions dessiné |
-| **vous** | dessinez | dessinerez | dessiniez | dessineriez | avez dessiné | allez dessiner | auriez dessiné |
-| **ils/elles** | dessinent | dessineront | dessinaient | dessineraient | ont dessiné | vont dessiner | auraient dessiné |
-
-### voler *(to fly / to steal)* {.unnumbered}
-
-Type: -ER | Aux: avoir | P.P.: volé
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | vole | volerai | volais | volerais | ai volé | vais voler | aurais volé |
-| **tu** | voles | voleras | volais | volerais | as volé | vas voler | aurais volé |
-| **il/elle** | vole | volera | volait | volerait | a volé | va voler | aurait volé |
-| **nous** | volons | volerons | volions | volerions | avons volé | allons voler | aurions volé |
-| **vous** | volez | volerez | voliez | voleriez | avez volé | allez voler | auriez volé |
-| **ils/elles** | volent | voleront | volaient | voleraient | ont volé | vont voler | auraient volé |
-
-### raconter *(to tell (a story))* {.unnumbered}
-
-Type: -ER | Aux: avoir | P.P.: raconté
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | raconte | raconterai | racontais | raconterais | ai raconté | vais raconter | aurais raconté |
-| **tu** | racontes | raconteras | racontais | raconterais | as raconté | vas raconter | aurais raconté |
-| **il/elle** | raconte | racontera | racontait | raconterait | a raconté | va raconter | aurait raconté |
-| **nous** | racontons | raconterons | racontions | raconterions | avons raconté | allons raconter | aurions raconté |
-| **vous** | racontez | raconterez | racontiez | raconteriez | avez raconté | allez raconter | auriez raconté |
-| **ils/elles** | racontent | raconteront | racontaient | raconteraient | ont raconté | vont raconter | auraient raconté |
-
-### quitter *(to leave / to quit)* {.unnumbered}
-
-Type: -ER | Aux: avoir | P.P.: quitté
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | quitte | quitterai | quittais | quitterais | ai quitté | vais quitter | aurais quitté |
-| **tu** | quittes | quitteras | quittais | quitterais | as quitté | vas quitter | aurais quitté |
-| **il/elle** | quitte | quittera | quittait | quitterait | a quitté | va quitter | aurait quitté |
-| **nous** | quittons | quitterons | quittions | quitterions | avons quitté | allons quitter | aurions quitté |
-| **vous** | quittez | quitterez | quittiez | quitteriez | avez quitté | allez quitter | auriez quitté |
-| **ils/elles** | quittent | quitteront | quittaient | quitteraient | ont quitté | vont quitter | auraient quitté |
-
-### garder *(to keep / to guard)* {.unnumbered}
-
-Type: -ER | Aux: avoir | P.P.: gardé
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | garde | garderai | gardais | garderais | ai gardé | vais garder | aurais gardé |
-| **tu** | gardes | garderas | gardais | garderais | as gardé | vas garder | aurais gardé |
-| **il/elle** | garde | gardera | gardait | garderait | a gardé | va garder | aurait gardé |
-| **nous** | gardons | garderons | gardions | garderions | avons gardé | allons garder | aurions gardé |
-| **vous** | gardez | garderez | gardiez | garderiez | avez gardé | allez garder | auriez gardé |
-| **ils/elles** | gardent | garderont | gardaient | garderaient | ont gardé | vont garder | auraient gardé |
-
-### rencontrer *(to meet)* {.unnumbered}
-
-Type: -ER | Aux: avoir | P.P.: rencontré
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | rencontre | rencontrerai | rencontrais | rencontrerais | ai rencontré | vais rencontrer | aurais rencontré |
-| **tu** | rencontres | rencontreras | rencontrais | rencontrerais | as rencontré | vas rencontrer | aurais rencontré |
-| **il/elle** | rencontre | rencontrera | rencontrait | rencontrerait | a rencontré | va rencontrer | aurait rencontré |
-| **nous** | rencontrons | rencontrerons | rencontrions | rencontrerions | avons rencontré | allons rencontrer | aurions rencontré |
-| **vous** | rencontrez | rencontrerez | rencontriez | rencontreriez | avez rencontré | allez rencontrer | auriez rencontré |
-| **ils/elles** | rencontrent | rencontreront | rencontraient | rencontreraient | ont rencontré | vont rencontrer | auraient rencontré |
-
-### sembler *(to seem)* {.unnumbered}
-
-Type: -ER | Aux: avoir | P.P.: semblé
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | semble | semblerai | semblais | semblerais | ai semblé | vais sembler | aurais semblé |
-| **tu** | sembles | sembleras | semblais | semblerais | as semblé | vas sembler | aurais semblé |
-| **il/elle** | semble | semblera | semblait | semblerait | a semblé | va sembler | aurait semblé |
-| **nous** | semblons | semblerons | semblions | semblerions | avons semblé | allons sembler | aurions semblé |
-| **vous** | semblez | semblerez | sembliez | sembleriez | avez semblé | allez sembler | auriez semblé |
-| **ils/elles** | semblent | sembleront | semblaient | sembleraient | ont semblé | vont sembler | auraient semblé |
-
-### couper *(to cut)* {.unnumbered}
-
-Type: -ER | Aux: avoir | P.P.: coupé
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | coupe | couperai | coupais | couperais | ai coupé | vais couper | aurais coupé |
-| **tu** | coupes | couperas | coupais | couperais | as coupé | vas couper | aurais coupé |
-| **il/elle** | coupe | coupera | coupait | couperait | a coupé | va couper | aurait coupé |
-| **nous** | coupons | couperons | coupions | couperions | avons coupé | allons couper | aurions coupé |
-| **vous** | coupez | couperez | coupiez | couperiez | avez coupé | allez couper | auriez coupé |
-| **ils/elles** | coupent | couperont | coupaient | couperaient | ont coupé | vont couper | auraient coupé |
-
-### cuisiner *(to cook)* {.unnumbered}
-
-Type: -ER | Aux: avoir | P.P.: cuisiné
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | cuisine | cuisinerai | cuisinais | cuisinerais | ai cuisiné | vais cuisiner | aurais cuisiné |
-| **tu** | cuisines | cuisineras | cuisinais | cuisinerais | as cuisiné | vas cuisiner | aurais cuisiné |
-| **il/elle** | cuisine | cuisinera | cuisinait | cuisinerait | a cuisiné | va cuisiner | aurait cuisiné |
-| **nous** | cuisinons | cuisinerons | cuisinions | cuisinerions | avons cuisiné | allons cuisiner | aurions cuisiné |
-| **vous** | cuisinez | cuisinerez | cuisiniez | cuisineriez | avez cuisiné | allez cuisiner | auriez cuisiné |
-| **ils/elles** | cuisinent | cuisineront | cuisinaient | cuisineraient | ont cuisiné | vont cuisiner | auraient cuisiné |
-
-### applaudir *(to applaud / to clap)* {.unnumbered}
-
-Type: -IR | Aux: avoir | P.P.: applaudi
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | applaudis | applaudirai | applaudissais | applaudirais | ai applaudi | vais applaudir | aurais applaudi |
-| **tu** | applaudis | applaudiras | applaudissais | applaudirais | as applaudi | vas applaudir | aurais applaudi |
-| **il/elle** | applaudit | applaudira | applaudissait | applaudirait | a applaudi | va applaudir | aurait applaudi |
-| **nous** | applaudissons | applaudirons | applaudissions | applaudirions | avons applaudi | allons applaudir | aurions applaudi |
-| **vous** | applaudissez | applaudirez | applaudissiez | applaudiriez | avez applaudi | allez applaudir | auriez applaudi |
-| **ils/elles** | applaudissent | applaudiront | applaudissaient | applaudiraient | ont applaudi | vont applaudir | auraient applaudi |
-
-### établir *(to establish)* {.unnumbered}
-
-Type: -IR | Aux: avoir | P.P.: établi
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | établis | établirai | établissais | établirais | ai établi | vais établir | aurais établi |
-| **tu** | établis | établiras | établissais | établirais | as établi | vas établir | aurais établi |
-| **il/elle** | établit | établira | établissait | établirait | a établi | va établir | aurait établi |
-| **nous** | établissons | établirons | établissions | établirions | avons établi | allons établir | aurions établi |
-| **vous** | établissez | établirez | établissiez | établiriez | avez établi | allez établir | auriez établi |
-| **ils/elles** | établissent | établiront | établissaient | établiraient | ont établi | vont établir | auraient établi |
-
-### bâtir *(to build)* {.unnumbered}
-
-Type: -IR | Aux: avoir | P.P.: bâti
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | bâtis | bâtirai | bâtissais | bâtirais | ai bâti | vais bâtir | aurais bâti |
-| **tu** | bâtis | bâtiras | bâtissais | bâtirais | as bâti | vas bâtir | aurais bâti |
-| **il/elle** | bâtit | bâtira | bâtissait | bâtirait | a bâti | va bâtir | aurait bâti |
-| **nous** | bâtissons | bâtirons | bâtissions | bâtirions | avons bâti | allons bâtir | aurions bâti |
-| **vous** | bâtissez | bâtirez | bâtissiez | bâtiriez | avez bâti | allez bâtir | auriez bâti |
-| **ils/elles** | bâtissent | bâtiront | bâtissaient | bâtiraient | ont bâti | vont bâtir | auraient bâti |
-
-### agir *(to act)* {.unnumbered}
-
-Type: -IR | Aux: avoir | P.P.: agi
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | agis | agirai | agissais | agirais | ai agi | vais agir | aurais agi |
-| **tu** | agis | agiras | agissais | agirais | as agi | vas agir | aurais agi |
-| **il/elle** | agit | agira | agissait | agirait | a agi | va agir | aurait agi |
-| **nous** | agissons | agirons | agissions | agirions | avons agi | allons agir | aurions agi |
-| **vous** | agissez | agirez | agissiez | agiriez | avez agi | allez agir | auriez agi |
-| **ils/elles** | agissent | agiront | agissaient | agiraient | ont agi | vont agir | auraient agi |
-
-### vieillir *(to age / to grow old)* {.unnumbered}
-
-Type: -IR | Aux: avoir | P.P.: vieilli
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | vieillis | vieillirai | vieillissais | vieillirais | ai vieilli | vais vieillir | aurais vieilli |
-| **tu** | vieillis | vieilliras | vieillissais | vieillirais | as vieilli | vas vieillir | aurais vieilli |
-| **il/elle** | vieillit | vieillira | vieillissait | vieillirait | a vieilli | va vieillir | aurait vieilli |
-| **nous** | vieillissons | vieillirons | vieillissions | vieillirions | avons vieilli | allons vieillir | aurions vieilli |
-| **vous** | vieillissez | vieillirez | vieillissiez | vieilliriez | avez vieilli | allez vieillir | auriez vieilli |
-| **ils/elles** | vieillissent | vieilliront | vieillissaient | vieilliraient | ont vieilli | vont vieillir | auraient vieilli |
-
-### grossir *(to gain weight / to get bigger)* {.unnumbered}
-
-Type: -IR | Aux: avoir | P.P.: grossi
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | grossis | grossirai | grossissais | grossirais | ai grossi | vais grossir | aurais grossi |
-| **tu** | grossis | grossiras | grossissais | grossirais | as grossi | vas grossir | aurais grossi |
-| **il/elle** | grossit | grossira | grossissait | grossirait | a grossi | va grossir | aurait grossi |
-| **nous** | grossissons | grossirons | grossissions | grossirions | avons grossi | allons grossir | aurions grossi |
-| **vous** | grossissez | grossirez | grossissiez | grossiriez | avez grossi | allez grossir | auriez grossi |
-| **ils/elles** | grossissent | grossiront | grossissaient | grossiraient | ont grossi | vont grossir | auraient grossi |
-
-### maigrir *(to lose weight / to get thinner)* {.unnumbered}
-
-Type: -IR | Aux: avoir | P.P.: maigri
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | maigris | maigrirai | maigrissais | maigrirais | ai maigri | vais maigrir | aurais maigri |
-| **tu** | maigris | maigriras | maigrissais | maigrirais | as maigri | vas maigrir | aurais maigri |
-| **il/elle** | maigrit | maigrira | maigrissait | maigrirait | a maigri | va maigrir | aurait maigri |
-| **nous** | maigrissons | maigrirons | maigrissions | maigririons | avons maigri | allons maigrir | aurions maigri |
-| **vous** | maigrissez | maigrirez | maigrissiez | maigririez | avez maigri | allez maigrir | auriez maigri |
-| **ils/elles** | maigrissent | maigriront | maigrissaient | maigriraient | ont maigri | vont maigrir | auraient maigri |
-
-### rougir *(to blush / to turn red)* {.unnumbered}
-
-Type: -IR | Aux: avoir | P.P.: rougi
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | rougis | rougirai | rougissais | rougirais | ai rougi | vais rougir | aurais rougi |
-| **tu** | rougis | rougiras | rougissais | rougirais | as rougi | vas rougir | aurais rougi |
-| **il/elle** | rougit | rougira | rougissait | rougirait | a rougi | va rougir | aurait rougi |
-| **nous** | rougissons | rougirons | rougissions | rougirions | avons rougi | allons rougir | aurions rougi |
-| **vous** | rougissez | rougirez | rougissiez | rougiriez | avez rougi | allez rougir | auriez rougi |
-| **ils/elles** | rougissent | rougiront | rougissaient | rougiraient | ont rougi | vont rougir | auraient rougi |
-
-### ralentir *(to slow down)* {.unnumbered}
-
-Type: -IR | Aux: avoir | P.P.: ralenti
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | ralentis | ralentirai | ralentissais | ralentirais | ai ralenti | vais ralentir | aurais ralenti |
-| **tu** | ralentis | ralentiras | ralentissais | ralentirais | as ralenti | vas ralentir | aurais ralenti |
-| **il/elle** | ralentit | ralentira | ralentissait | ralentirait | a ralenti | va ralentir | aurait ralenti |
-| **nous** | ralentissons | ralentirons | ralentissions | ralentirions | avons ralenti | allons ralentir | aurions ralenti |
-| **vous** | ralentissez | ralentirez | ralentissiez | ralentiriez | avez ralenti | allez ralentir | auriez ralenti |
-| **ils/elles** | ralentissent | ralentiront | ralentissaient | ralentiraient | ont ralenti | vont ralentir | auraient ralenti |
-
-### avertir *(to warn)* {.unnumbered}
-
-Type: -IR | Aux: avoir | P.P.: averti
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | avertis | avertirai | avertissais | avertirais | ai averti | vais avertir | aurais averti |
-| **tu** | avertis | avertiras | avertissais | avertirais | as averti | vas avertir | aurais averti |
-| **il/elle** | avertit | avertira | avertissait | avertirait | a averti | va avertir | aurait averti |
-| **nous** | avertissons | avertirons | avertissions | avertirions | avons averti | allons avertir | aurions averti |
-| **vous** | avertissez | avertirez | avertissiez | avertiriez | avez averti | allez avertir | auriez averti |
-| **ils/elles** | avertissent | avertiront | avertissaient | avertiraient | ont averti | vont avertir | auraient averti |
-
-### guérir *(to heal / to cure)* {.unnumbered}
-
-Type: -IR | Aux: avoir | P.P.: guéri
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | guéris | guérirai | guérissais | guérirais | ai guéri | vais guérir | aurais guéri |
-| **tu** | guéris | guériras | guérissais | guérirais | as guéri | vas guérir | aurais guéri |
-| **il/elle** | guérit | guérira | guérissait | guérirait | a guéri | va guérir | aurait guéri |
-| **nous** | guérissons | guérirons | guérissions | guéririons | avons guéri | allons guérir | aurions guéri |
-| **vous** | guérissez | guérirez | guérissiez | guéririez | avez guéri | allez guérir | auriez guéri |
-| **ils/elles** | guérissent | guériront | guérissaient | guériraient | ont guéri | vont guérir | auraient guéri |
-
-### saisir *(to seize / to grab)* {.unnumbered}
-
-Type: -IR | Aux: avoir | P.P.: saisi
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | saisis | saisirai | saisissais | saisirais | ai saisi | vais saisir | aurais saisi |
-| **tu** | saisis | saisiras | saisissais | saisirais | as saisi | vas saisir | aurais saisi |
-| **il/elle** | saisit | saisira | saisissait | saisirait | a saisi | va saisir | aurait saisi |
-| **nous** | saisissons | saisirons | saisissions | saisirions | avons saisi | allons saisir | aurions saisi |
-| **vous** | saisissez | saisirez | saisissiez | saisiriez | avez saisi | allez saisir | auriez saisi |
-| **ils/elles** | saisissent | saisiront | saisissaient | saisiraient | ont saisi | vont saisir | auraient saisi |
-
-### nourrir *(to feed / to nourish)* {.unnumbered}
-
-Type: -IR | Aux: avoir | P.P.: nourri
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | nourris | nourrirai | nourrissais | nourrirais | ai nourri | vais nourrir | aurais nourri |
-| **tu** | nourris | nourriras | nourrissais | nourrirais | as nourri | vas nourrir | aurais nourri |
-| **il/elle** | nourrit | nourrira | nourrissait | nourrirait | a nourri | va nourrir | aurait nourri |
-| **nous** | nourrissons | nourrirons | nourrissions | nourririons | avons nourri | allons nourrir | aurions nourri |
-| **vous** | nourrissez | nourrirez | nourrissiez | nourririez | avez nourri | allez nourrir | auriez nourri |
-| **ils/elles** | nourrissent | nourriront | nourrissaient | nourriraient | ont nourri | vont nourrir | auraient nourri |
-
-### s'asseoir *(to sit (down))* {.unnumbered}
-
-Type: irreg. | Aux: être | P.P.: assis
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | m'assieds | m'assiérai | m'asseyais | s'asseoirais | me suis assis | vais me asseoir | me serais assis |
-| **tu** | t'assieds | t'assiéras | t'asseyais | s'asseoirais | te es assis | vas te asseoir | te serais assis |
-| **il/elle** | s'assied | s'assiéra | s'asseyait | s'asseoirait | se est assis | va se asseoir | se serait assis |
-| **nous** | nous asseyons | nous assiérons | nous asseyions | s'asseoirions | nous sommes assis | allons nous asseoir | nous serions assis |
-| **vous** | vous asseyez | vous assiérez | vous asseyiez | s'asseoiriez | vous êtes assis | allez vous asseoir | vous seriez assis |
-| **ils/elles** | s'asseyent | s'assiéront | s'asseyaient | s'asseoiraient | se sont assis | vont se asseoir | se seraient assis |
-
-### se sentir *(to feel)* {.unnumbered}
-
-Type: irreg. | Aux: être | P.P.: senti
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | me sens | se sentirai | sentais | se sentirais | me suis senti | vais me sentir | me serais senti |
-| **tu** | te sens | se sentiras | sentais | se sentirais | te es senti | vas te sentir | te serais senti |
-| **il/elle** | se sent | se sentira | sentait | se sentirait | se est senti | va se sentir | se serait senti |
-| **nous** | nous sentons | se sentirons | sentions | se sentirions | nous sommes sentis | allons nous sentir | nous serions sentis |
-| **vous** | vous sentez | se sentirez | sentiez | se sentiriez | vous êtes sentis | allez vous sentir | vous seriez sentis |
-| **ils/elles** | se sentent | se sentiront | sentaient | se sentiraient | se sont sentis | vont se sentir | se seraient sentis |
-
-### se quitter *(to leave each other / to part ways)* {.unnumbered}
-
-Type: irreg. | Aux: être | P.P.: quitté
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | me quitte | se quitterai | se quittais | se quitterais | me suis quitté | vais me quitter | me serais quitté |
-| **tu** | te quittes | se quitteras | se quittais | se quitterais | te es quitté | vas te quitter | te serais quitté |
-| **il/elle** | se quitte | se quittera | se quittait | se quitterait | se est quitté | va se quitter | se serait quitté |
-| **nous** | nous quittons | se quitterons | se quittions | se quitterions | nous sommes quittés | allons nous quitter | nous serions quittés |
-| **vous** | vous quittez | se quitterez | se quittiez | se quitteriez | vous êtes quittés | allez vous quitter | vous seriez quittés |
-| **ils/elles** | se quittent | se quitteront | se quittaient | se quitteraient | se sont quittés | vont se quitter | se seraient quittés |
-
-### obtenir *(to obtain / to get)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: obtenu
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | obtiens | obtiendrai | obtenais | obtiendrais | ai obtenu | vais obtenir | aurais obtenu |
-| **tu** | obtiens | obtiendras | obtenais | obtiendrais | as obtenu | vas obtenir | aurais obtenu |
-| **il/elle** | obtient | obtiendra | obtenait | obtiendrait | a obtenu | va obtenir | aurait obtenu |
-| **nous** | obtenons | obtiendrons | obtenions | obtiendrions | avons obtenu | allons obtenir | aurions obtenu |
-| **vous** | obtenez | obtiendrez | obteniez | obtiendriez | avez obtenu | allez obtenir | auriez obtenu |
-| **ils/elles** | obtiennent | obtiendront | obtenaient | obtiendraient | ont obtenu | vont obtenir | auraient obtenu |
-
-### descendre *(to go down / to descend)* {.unnumbered}
-
-Type: irreg. | Aux: être | P.P.: descendu
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | descends | descendrai | descendais | descendrais | suis descendu | vais descendre | serais descendu |
-| **tu** | descends | descendras | descendais | descendrais | es descendu | vas descendre | serais descendu |
-| **il/elle** | descend | descendra | descendait | descendrait | est descendu | va descendre | serait descendu |
-| **nous** | descendons | descendrons | descendions | descendrions | sommes descendus | allons descendre | serions descendus |
-| **vous** | descendez | descendrez | descendiez | descendriez | êtes descendus | allez descendre | seriez descendus |
-| **ils/elles** | descendent | descendront | descendaient | descendraient | sont descendus | vont descendre | seraient descendus |
-
-### offrir *(to offer)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: offert
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | offre | offrirai | offrais | offrirais | ai offert | vais offrir | aurais offert |
-| **tu** | offres | offriras | offrais | offrirais | as offert | vas offrir | aurais offert |
-| **il/elle** | offre | offrira | offrait | offrirait | a offert | va offrir | aurait offert |
-| **nous** | offrons | offrirons | offrions | offririons | avons offert | allons offrir | aurions offert |
-| **vous** | offrez | offrirez | offriez | offririez | avez offert | allez offrir | auriez offert |
-| **ils/elles** | offrent | offriront | offraient | offriraient | ont offert | vont offrir | auraient offert |
-
-### souffrir *(to suffer)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: souffert
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | souffre | souffrirai | souffrais | souffrirais | ai souffert | vais souffrir | aurais souffert |
-| **tu** | souffres | souffriras | souffrais | souffrirais | as souffert | vas souffrir | aurais souffert |
-| **il/elle** | souffre | souffrira | souffrait | souffrirait | a souffert | va souffrir | aurait souffert |
-| **nous** | souffrons | souffrirons | souffrions | souffririons | avons souffert | allons souffrir | aurions souffert |
-| **vous** | souffrez | souffrirez | souffriez | souffririez | avez souffert | allez souffrir | auriez souffert |
-| **ils/elles** | souffrent | souffriront | souffraient | souffriraient | ont souffert | vont souffrir | auraient souffert |
-
-### découvrir *(to discover)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: découvert
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | découvre | découvrirai | découvrais | découvrirais | ai découvert | vais découvrir | aurais découvert |
-| **tu** | découvres | découvriras | découvrais | découvrirais | as découvert | vas découvrir | aurais découvert |
-| **il/elle** | découvre | découvrira | découvrait | découvrirait | a découvert | va découvrir | aurait découvert |
-| **nous** | découvrons | découvrirons | découvrions | découvririons | avons découvert | allons découvrir | aurions découvert |
-| **vous** | découvrez | découvrirez | découvriez | découvririez | avez découvert | allez découvrir | auriez découvert |
-| **ils/elles** | découvrent | découvriront | découvraient | découvriraient | ont découvert | vont découvrir | auraient découvert |
-
-### conduire *(to drive)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: conduit
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | conduis | conduirai | conduisais | conduirais | ai conduit | vais conduire | aurais conduit |
-| **tu** | conduis | conduiras | conduisais | conduirais | as conduit | vas conduire | aurais conduit |
-| **il/elle** | conduit | conduira | conduisait | conduirait | a conduit | va conduire | aurait conduit |
-| **nous** | conduisons | conduirons | conduisions | conduirions | avons conduit | allons conduire | aurions conduit |
-| **vous** | conduisez | conduirez | conduisiez | conduiriez | avez conduit | allez conduire | auriez conduit |
-| **ils/elles** | conduisent | conduiront | conduisaient | conduiraient | ont conduit | vont conduire | auraient conduit |
-
-### construire *(to build / to construct)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: construit
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | construis | construirai | construisais | construirais | ai construit | vais construire | aurais construit |
-| **tu** | construis | construiras | construisais | construirais | as construit | vas construire | aurais construit |
-| **il/elle** | construit | construira | construisait | construirait | a construit | va construire | aurait construit |
-| **nous** | construisons | construirons | construisions | construirions | avons construit | allons construire | aurions construit |
-| **vous** | construisez | construirez | construisiez | construiriez | avez construit | allez construire | auriez construit |
-| **ils/elles** | construisent | construiront | construisaient | construiraient | ont construit | vont construire | auraient construit |
-
-### produire *(to produce)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: produit
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | produis | produirai | produisais | produirais | ai produit | vais produire | aurais produit |
-| **tu** | produis | produiras | produisais | produirais | as produit | vas produire | aurais produit |
-| **il/elle** | produit | produira | produisait | produirait | a produit | va produire | aurait produit |
-| **nous** | produisons | produirons | produisions | produirions | avons produit | allons produire | aurions produit |
-| **vous** | produisez | produirez | produisiez | produiriez | avez produit | allez produire | auriez produit |
-| **ils/elles** | produisent | produiront | produisaient | produiraient | ont produit | vont produire | auraient produit |
-
-### traduire *(to translate)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: traduit
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | traduis | traduirai | traduisais | traduirais | ai traduit | vais traduire | aurais traduit |
-| **tu** | traduis | traduiras | traduisais | traduirais | as traduit | vas traduire | aurais traduit |
-| **il/elle** | traduit | traduira | traduisait | traduirait | a traduit | va traduire | aurait traduit |
-| **nous** | traduisons | traduirons | traduisions | traduirions | avons traduit | allons traduire | aurions traduit |
-| **vous** | traduisez | traduirez | traduisiez | traduiriez | avez traduit | allez traduire | auriez traduit |
-| **ils/elles** | traduisent | traduiront | traduisaient | traduiraient | ont traduit | vont traduire | auraient traduit |
-
-### rire *(to laugh)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: ri
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | ris | rirai | riais | rirais | ai ri | vais rire | aurais ri |
-| **tu** | ris | riras | riais | rirais | as ri | vas rire | aurais ri |
-| **il/elle** | rit | rira | riait | rirait | a ri | va rire | aurait ri |
-| **nous** | rions | rirons | riions | ririons | avons ri | allons rire | aurions ri |
-| **vous** | riez | rirez | riiez | ririez | avez ri | allez rire | auriez ri |
-| **ils/elles** | rient | riront | riaient | riraient | ont ri | vont rire | auraient ri |
-
-### suivre *(to follow)* {.unnumbered}
-
-Type: irreg. | Aux: avoir | P.P.: suivi
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | suis | suivrai | suivais | suivrais | ai suivi | vais suivre | aurais suivi |
-| **tu** | suis | suivras | suivais | suivrais | as suivi | vas suivre | aurais suivi |
-| **il/elle** | suit | suivra | suivait | suivrait | a suivi | va suivre | aurait suivi |
-| **nous** | suivons | suivrons | suivions | suivrions | avons suivi | allons suivre | aurions suivi |
-| **vous** | suivez | suivrez | suiviez | suivriez | avez suivi | allez suivre | auriez suivi |
-| **ils/elles** | suivent | suivront | suivaient | suivraient | ont suivi | vont suivre | auraient suivi |
-
-### naître *(to be born)* {.unnumbered}
-
-Type: irreg. | Aux: être | P.P.: né
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | nais | naîtrai | naissais | naîtrais | suis né | vais naître | serais né |
-| **tu** | nais | naîtras | naissais | naîtrais | es né | vas naître | serais né |
-| **il/elle** | naît | naîtra | naissait | naîtrait | est né | va naître | serait né |
-| **nous** | naissons | naîtrons | naissions | naîtrions | sommes nés | allons naître | serions nés |
-| **vous** | naissez | naîtrez | naissiez | naîtriez | êtes nés | allez naître | seriez nés |
-| **ils/elles** | naissent | naîtront | naissaient | naîtraient | sont nés | vont naître | seraient nés |
-
-### mourir *(to die)* {.unnumbered}
-
-Type: irreg. | Aux: être | P.P.: mort
-
-| | Présent | Futur | Imparfait | Cond. | P. Composé | F. Proche | Cond. Passé |
-|---|---|---|---|---|---|---|---|
-| **je** | meurs | mourrai | mourais | mourrais | suis mort | vais mourir | serais mort |
-| **tu** | meurs | mourras | mourais | mourrais | es mort | vas mourir | serais mort |
-| **il/elle** | meurt | mourra | mourait | mourrait | est mort | va mourir | serait mort |
-| **nous** | mourons | mourrons | mourions | mourrions | sommes morts | allons mourir | serions morts |
-| **vous** | mourez | mourrez | mouriez | mourriez | êtes morts | allez mourir | seriez morts |
-| **ils/elles** | meurent | mourront | mouraient | mourraient | sont morts | vont mourir | seraient morts |
-
+```{=latex}
+\section*{Core Tier (20 verbs)}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large être} \textit{(to be)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: été
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & suis & serai & étais & serais & ai été & vais être & aurais été \\
+\textbf{tu} & es & seras & étais & serais & as été & vas être & aurais été \\
+\textbf{il/\hspace{0pt}elle} & est & sera & était & serait & a été & va être & aurait été \\
+\textbf{nous} & sommes & serons & étions & serions & avons été & allons être & aurions été \\
+\textbf{vous} & êtes & serez & étiez & seriez & avez été & allez être & auriez été \\
+\textbf{ils/\hspace{0pt}elles} & sont & seront & étaient & seraient & ont été & vont être & auraient été \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large avoir} \textit{(to have)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: eu
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & ai & aurai & avais & aurais & ai eu & vais avoir & aurais eu \\
+\textbf{tu} & as & auras & avais & aurais & as eu & vas avoir & aurais eu \\
+\textbf{il/\hspace{0pt}elle} & a & aura & avait & aurait & a eu & va avoir & aurait eu \\
+\textbf{nous} & avons & aurons & avions & aurions & avons eu & allons avoir & aurions eu \\
+\textbf{vous} & avez & aurez & aviez & auriez & avez eu & allez avoir & auriez eu \\
+\textbf{ils/\hspace{0pt}elles} & ont & auront & avaient & auraient & ont eu & vont avoir & auraient eu \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large faire} \textit{(to do / to make)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: fait
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & fais & ferai & faisais & ferais & ai fait & vais faire & aurais fait \\
+\textbf{tu} & fais & feras & faisais & ferais & as fait & vas faire & aurais fait \\
+\textbf{il/\hspace{0pt}elle} & fait & fera & faisait & ferait & a fait & va faire & aurait fait \\
+\textbf{nous} & faisons & ferons & faisions & ferions & avons fait & allons faire & aurions fait \\
+\textbf{vous} & faites & ferez & faisiez & feriez & avez fait & allez faire & auriez fait \\
+\textbf{ils/\hspace{0pt}elles} & font & feront & faisaient & feraient & ont fait & vont faire & auraient fait \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large dire} \textit{(to say / to tell)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: dit
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & dis & dirai & disais & dirais & ai dit & vais dire & aurais dit \\
+\textbf{tu} & dis & diras & disais & dirais & as dit & vas dire & aurais dit \\
+\textbf{il/\hspace{0pt}elle} & dit & dira & disait & dirait & a dit & va dire & aurait dit \\
+\textbf{nous} & disons & dirons & disions & dirions & avons dit & allons dire & aurions dit \\
+\textbf{vous} & dites & direz & disiez & diriez & avez dit & allez dire & auriez dit \\
+\textbf{ils/\hspace{0pt}elles} & disent & diront & disaient & diraient & ont dit & vont dire & auraient dit \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large aller} \textit{(to go)}
+
+\noindent Type: irreg. \quad Aux: être \quad P.P.: allé
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & vais & irai & allais & irais & suis allé & vais aller & serais allé \\
+\textbf{tu} & vas & iras & allais & irais & es allé & vas aller & serais allé \\
+\textbf{il/\hspace{0pt}elle} & va & ira & allait & irait & est allé & va aller & serait allé \\
+\textbf{nous} & allons & irons & allions & irions & sommes allés & allons aller & serions allés \\
+\textbf{vous} & allez & irez & alliez & iriez & êtes allés & allez aller & seriez allés \\
+\textbf{ils/\hspace{0pt}elles} & vont & iront & allaient & iraient & sont allés & vont aller & seraient allés \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large voir} \textit{(to see)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: vu
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & vois & verrai & voyais & verrais & ai vu & vais voir & aurais vu \\
+\textbf{tu} & vois & verras & voyais & verrais & as vu & vas voir & aurais vu \\
+\textbf{il/\hspace{0pt}elle} & voit & verra & voyait & verrait & a vu & va voir & aurait vu \\
+\textbf{nous} & voyons & verrons & voyions & verrions & avons vu & allons voir & aurions vu \\
+\textbf{vous} & voyez & verrez & voyiez & verriez & avez vu & allez voir & auriez vu \\
+\textbf{ils/\hspace{0pt}elles} & voient & verront & voyaient & verraient & ont vu & vont voir & auraient vu \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large savoir} \textit{(to know (facts))}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: su
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & sais & saurai & savais & saurais & ai su & vais savoir & aurais su \\
+\textbf{tu} & sais & sauras & savais & saurais & as su & vas savoir & aurais su \\
+\textbf{il/\hspace{0pt}elle} & sait & saura & savait & saurait & a su & va savoir & aurait su \\
+\textbf{nous} & savons & saurons & savions & saurions & avons su & allons savoir & aurions su \\
+\textbf{vous} & savez & saurez & saviez & sauriez & avez su & allez savoir & auriez su \\
+\textbf{ils/\hspace{0pt}elles} & savent & sauront & savaient & sauraient & ont su & vont savoir & auraient su \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large pouvoir} \textit{(to be able to / can)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: pu
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & peux & pourrai & pouvais & pourrais & ai pu & vais pouvoir & aurais pu \\
+\textbf{tu} & peux & pourras & pouvais & pourrais & as pu & vas pouvoir & aurais pu \\
+\textbf{il/\hspace{0pt}elle} & peut & pourra & pouvait & pourrait & a pu & va pouvoir & aurait pu \\
+\textbf{nous} & pouvons & pourrons & pouvions & pourrions & avons pu & allons pouvoir & aurions pu \\
+\textbf{vous} & pouvez & pourrez & pouviez & pourriez & avez pu & allez pouvoir & auriez pu \\
+\textbf{ils/\hspace{0pt}elles} & peuvent & pourront & pouvaient & pourraient & ont pu & vont pouvoir & auraient pu \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large vouloir} \textit{(to want)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: voulu
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & veux & voudrai & voulais & voudrais & ai voulu & vais vouloir & aurais voulu \\
+\textbf{tu} & veux & voudras & voulais & voudrais & as voulu & vas vouloir & aurais voulu \\
+\textbf{il/\hspace{0pt}elle} & veut & voudra & voulait & voudrait & a voulu & va vouloir & aurait voulu \\
+\textbf{nous} & voulons & voudrons & voulions & voudrions & avons voulu & allons vouloir & aurions voulu \\
+\textbf{vous} & voulez & voudrez & vouliez & voudriez & avez voulu & allez vouloir & auriez voulu \\
+\textbf{ils/\hspace{0pt}elles} & veulent & voudront & voulaient & voudraient & ont voulu & vont vouloir & auraient voulu \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large venir} \textit{(to come)}
+
+\noindent Type: irreg. \quad Aux: être \quad P.P.: venu
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & viens & viendrai & venais & viendrais & suis venu & vais venir & serais venu \\
+\textbf{tu} & viens & viendras & venais & viendrais & es venu & vas venir & serais venu \\
+\textbf{il/\hspace{0pt}elle} & vient & viendra & venait & viendrait & est venu & va venir & serait venu \\
+\textbf{nous} & venons & viendrons & venions & viendrions & sommes venus & allons venir & serions venus \\
+\textbf{vous} & venez & viendrez & veniez & viendriez & êtes venus & allez venir & seriez venus \\
+\textbf{ils/\hspace{0pt}elles} & viennent & viendront & venaient & viendraient & sont venus & vont venir & seraient venus \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large devoir} \textit{(to have to / must)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: dû
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & dois & devrai & devais & devrais & ai dû & vais devoir & aurais dû \\
+\textbf{tu} & dois & devras & devais & devrais & as dû & vas devoir & aurais dû \\
+\textbf{il/\hspace{0pt}elle} & doit & devra & devait & devrait & a dû & va devoir & aurait dû \\
+\textbf{nous} & devons & devrons & devions & devrions & avons dû & allons devoir & aurions dû \\
+\textbf{vous} & devez & devrez & deviez & devriez & avez dû & allez devoir & auriez dû \\
+\textbf{ils/\hspace{0pt}elles} & doivent & devront & devaient & devraient & ont dû & vont devoir & auraient dû \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large prendre} \textit{(to take)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: pris
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & prends & prendrai & prenais & prendrais & ai pris & vais prendre & aurais pris \\
+\textbf{tu} & prends & prendras & prenais & prendrais & as pris & vas prendre & aurais pris \\
+\textbf{il/\hspace{0pt}elle} & prend & prendra & prenait & prendrait & a pris & va prendre & aurait pris \\
+\textbf{nous} & prenons & prendrons & prenions & prendrions & avons pris & allons prendre & aurions pris \\
+\textbf{vous} & prenez & prendrez & preniez & prendriez & avez pris & allez prendre & auriez pris \\
+\textbf{ils/\hspace{0pt}elles} & prennent & prendront & prenaient & prendraient & ont pris & vont prendre & auraient pris \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large mettre} \textit{(to put / to place)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: mis
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & mets & mettrai & mettais & mettrais & ai mis & vais mettre & aurais mis \\
+\textbf{tu} & mets & mettras & mettais & mettrais & as mis & vas mettre & aurais mis \\
+\textbf{il/\hspace{0pt}elle} & met & mettra & mettait & mettrait & a mis & va mettre & aurait mis \\
+\textbf{nous} & mettons & mettrons & mettions & mettrions & avons mis & allons mettre & aurions mis \\
+\textbf{vous} & mettez & mettrez & mettiez & mettriez & avez mis & allez mettre & auriez mis \\
+\textbf{ils/\hspace{0pt}elles} & mettent & mettront & mettaient & mettraient & ont mis & vont mettre & auraient mis \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large partir} \textit{(to leave / to depart)}
+
+\noindent Type: irreg. \quad Aux: être \quad P.P.: parti
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & pars & partirai & partais & partirais & suis parti & vais partir & serais parti \\
+\textbf{tu} & pars & partiras & partais & partirais & es parti & vas partir & serais parti \\
+\textbf{il/\hspace{0pt}elle} & part & partira & partait & partirait & est parti & va partir & serait parti \\
+\textbf{nous} & partons & partirons & partions & partirions & sommes partis & allons partir & serions partis \\
+\textbf{vous} & partez & partirez & partiez & partiriez & êtes partis & allez partir & seriez partis \\
+\textbf{ils/\hspace{0pt}elles} & partent & partiront & partaient & partiraient & sont partis & vont partir & seraient partis \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large finir} \textit{(to finish)}
+
+\noindent Type: -IR \quad Aux: avoir \quad P.P.: fini
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & finis & finirai & finissais & finirais & ai fini & vais finir & aurais fini \\
+\textbf{tu} & finis & finiras & finissais & finirais & as fini & vas finir & aurais fini \\
+\textbf{il/\hspace{0pt}elle} & finit & finira & finissait & finirait & a fini & va finir & aurait fini \\
+\textbf{nous} & finissons & finirons & finissions & finirions & avons fini & allons finir & aurions fini \\
+\textbf{vous} & finissez & finirez & finissiez & finiriez & avez fini & allez finir & auriez fini \\
+\textbf{ils/\hspace{0pt}elles} & finissent & finiront & finissaient & finiraient & ont fini & vont finir & auraient fini \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large parler} \textit{(to speak / to talk)}
+
+\noindent Type: -ER \quad Aux: avoir \quad P.P.: parlé
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & parle & parlerai & parlais & parlerais & ai parlé & vais parler & aurais parlé \\
+\textbf{tu} & parles & parleras & parlais & parlerais & as parlé & vas parler & aurais parlé \\
+\textbf{il/\hspace{0pt}elle} & parle & parlera & parlait & parlerait & a parlé & va parler & aurait parlé \\
+\textbf{nous} & parlons & parlerons & parlions & parlerions & avons parlé & allons parler & aurions parlé \\
+\textbf{vous} & parlez & parlerez & parliez & parleriez & avez parlé & allez parler & auriez parlé \\
+\textbf{ils/\hspace{0pt}elles} & parlent & parleront & parlaient & parleraient & ont parlé & vont parler & auraient parlé \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large donner} \textit{(to give)}
+
+\noindent Type: -ER \quad Aux: avoir \quad P.P.: donné
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & donne & donnerai & donnais & donnerais & ai donné & vais donner & aurais donné \\
+\textbf{tu} & donnes & donneras & donnais & donnerais & as donné & vas donner & aurais donné \\
+\textbf{il/\hspace{0pt}elle} & donne & donnera & donnait & donnerait & a donné & va donner & aurait donné \\
+\textbf{nous} & donnons & donnerons & donnions & donnerions & avons donné & allons donner & aurions donné \\
+\textbf{vous} & donnez & donnerez & donniez & donneriez & avez donné & allez donner & auriez donné \\
+\textbf{ils/\hspace{0pt}elles} & donnent & donneront & donnaient & donneraient & ont donné & vont donner & auraient donné \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large aimer} \textit{(to like / to love)}
+
+\noindent Type: -ER \quad Aux: avoir \quad P.P.: aimé
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & aime & aimerai & aimais & aimerais & ai aimé & vais aimer & aurais aimé \\
+\textbf{tu} & aimes & aimeras & aimais & aimerais & as aimé & vas aimer & aurais aimé \\
+\textbf{il/\hspace{0pt}elle} & aime & aimera & aimait & aimerait & a aimé & va aimer & aurait aimé \\
+\textbf{nous} & aimons & aimerons & aimions & aimerions & avons aimé & allons aimer & aurions aimé \\
+\textbf{vous} & aimez & aimerez & aimiez & aimeriez & avez aimé & allez aimer & auriez aimé \\
+\textbf{ils/\hspace{0pt}elles} & aiment & aimeront & aimaient & aimeraient & ont aimé & vont aimer & auraient aimé \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large croire} \textit{(to believe)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: cru
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & crois & croirai & croyais & croirais & ai cru & vais croire & aurais cru \\
+\textbf{tu} & crois & croiras & croyais & croirais & as cru & vas croire & aurais cru \\
+\textbf{il/\hspace{0pt}elle} & croit & croira & croyait & croirait & a cru & va croire & aurait cru \\
+\textbf{nous} & croyons & croirons & croyions & croirions & avons cru & allons croire & aurions cru \\
+\textbf{vous} & croyez & croirez & croyiez & croiriez & avez cru & allez croire & auriez cru \\
+\textbf{ils/\hspace{0pt}elles} & croient & croiront & croyaient & croiraient & ont cru & vont croire & auraient cru \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large vivre} \textit{(to live)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: vécu
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & vis & vivrai & vivais & vivrais & ai vécu & vais vivre & aurais vécu \\
+\textbf{tu} & vis & vivras & vivais & vivrais & as vécu & vas vivre & aurais vécu \\
+\textbf{il/\hspace{0pt}elle} & vit & vivra & vivait & vivrait & a vécu & va vivre & aurait vécu \\
+\textbf{nous} & vivons & vivrons & vivions & vivrions & avons vécu & allons vivre & aurions vécu \\
+\textbf{vous} & vivez & vivrez & viviez & vivriez & avez vécu & allez vivre & auriez vécu \\
+\textbf{ils/\hspace{0pt}elles} & vivent & vivront & vivaient & vivraient & ont vécu & vont vivre & auraient vécu \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\section*{Intermediate Tier (34 verbs)}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large trouver} \textit{(to find)}
+
+\noindent Type: -ER \quad Aux: avoir \quad P.P.: trouvé
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & trouve & trouverai & trouvais & trouverais & ai trouvé & vais trouver & aurais trouvé \\
+\textbf{tu} & trouves & trouveras & trouvais & trouverais & as trouvé & vas trouver & aurais trouvé \\
+\textbf{il/\hspace{0pt}elle} & trouve & trouvera & trouvait & trouverait & a trouvé & va trouver & aurait trouvé \\
+\textbf{nous} & trouvons & trouverons & trouvions & trouverions & avons trouvé & allons trouver & aurions trouvé \\
+\textbf{vous} & trouvez & trouverez & trouviez & trouveriez & avez trouvé & allez trouver & auriez trouvé \\
+\textbf{ils/\hspace{0pt}elles} & trouvent & trouveront & trouvaient & trouveraient & ont trouvé & vont trouver & auraient trouvé \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large penser} \textit{(to think)}
+
+\noindent Type: -ER \quad Aux: avoir \quad P.P.: pensé
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & pense & penserai & pensais & penserais & ai pensé & vais penser & aurais pensé \\
+\textbf{tu} & penses & penseras & pensais & penserais & as pensé & vas penser & aurais pensé \\
+\textbf{il/\hspace{0pt}elle} & pense & pensera & pensait & penserait & a pensé & va penser & aurait pensé \\
+\textbf{nous} & pensons & penserons & pensions & penserions & avons pensé & allons penser & aurions pensé \\
+\textbf{vous} & pensez & penserez & pensiez & penseriez & avez pensé & allez penser & auriez pensé \\
+\textbf{ils/\hspace{0pt}elles} & pensent & penseront & pensaient & penseraient & ont pensé & vont penser & auraient pensé \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large passer} \textit{(to pass / to spend (time))}
+
+\noindent Type: -ER \quad Aux: avoir \quad P.P.: passé
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & passe & passerai & passais & passerais & ai passé & vais passer & aurais passé \\
+\textbf{tu} & passes & passeras & passais & passerais & as passé & vas passer & aurais passé \\
+\textbf{il/\hspace{0pt}elle} & passe & passera & passait & passerait & a passé & va passer & aurait passé \\
+\textbf{nous} & passons & passerons & passions & passerions & avons passé & allons passer & aurions passé \\
+\textbf{vous} & passez & passerez & passiez & passeriez & avez passé & allez passer & auriez passé \\
+\textbf{ils/\hspace{0pt}elles} & passent & passeront & passaient & passeraient & ont passé & vont passer & auraient passé \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large demander} \textit{(to ask)}
+
+\noindent Type: -ER \quad Aux: avoir \quad P.P.: demandé
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & demande & demanderai & demandais & demanderais & ai demandé & vais demander & aurais demandé \\
+\textbf{tu} & demandes & demanderas & demandais & demanderais & as demandé & vas demander & aurais demandé \\
+\textbf{il/\hspace{0pt}elle} & demande & demandera & demandait & demanderait & a demandé & va demander & aurait demandé \\
+\textbf{nous} & demandons & demanderons & demandions & demanderions & avons demandé & allons demander & aurions demandé \\
+\textbf{vous} & demandez & demanderez & demandiez & demanderiez & avez demandé & allez demander & auriez demandé \\
+\textbf{ils/\hspace{0pt}elles} & demandent & demanderont & demandaient & demanderaient & ont demandé & vont demander & auraient demandé \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large laisser} \textit{(to leave / to let)}
+
+\noindent Type: -ER \quad Aux: avoir \quad P.P.: laissé
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & laisse & laisserai & laissais & laisserais & ai laissé & vais laisser & aurais laissé \\
+\textbf{tu} & laisses & laisseras & laissais & laisserais & as laissé & vas laisser & aurais laissé \\
+\textbf{il/\hspace{0pt}elle} & laisse & laissera & laissait & laisserait & a laissé & va laisser & aurait laissé \\
+\textbf{nous} & laissons & laisserons & laissions & laisserions & avons laissé & allons laisser & aurions laissé \\
+\textbf{vous} & laissez & laisserez & laissiez & laisseriez & avez laissé & allez laisser & auriez laissé \\
+\textbf{ils/\hspace{0pt}elles} & laissent & laisseront & laissaient & laisseraient & ont laissé & vont laisser & auraient laissé \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large porter} \textit{(to wear / to carry)}
+
+\noindent Type: -ER \quad Aux: avoir \quad P.P.: porté
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & porte & porterai & portais & porterais & ai porté & vais porter & aurais porté \\
+\textbf{tu} & portes & porteras & portais & porterais & as porté & vas porter & aurais porté \\
+\textbf{il/\hspace{0pt}elle} & porte & portera & portait & porterait & a porté & va porter & aurait porté \\
+\textbf{nous} & portons & porterons & portions & porterions & avons porté & allons porter & aurions porté \\
+\textbf{vous} & portez & porterez & portiez & porteriez & avez porté & allez porter & auriez porté \\
+\textbf{ils/\hspace{0pt}elles} & portent & porteront & portaient & porteraient & ont porté & vont porter & auraient porté \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large rester} \textit{(to stay / to remain)}
+
+\noindent Type: -ER \quad Aux: être \quad P.P.: resté
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & reste & resterai & restais & resterais & suis resté & vais rester & serais resté \\
+\textbf{tu} & restes & resteras & restais & resterais & es resté & vas rester & serais resté \\
+\textbf{il/\hspace{0pt}elle} & reste & restera & restait & resterait & est resté & va rester & serait resté \\
+\textbf{nous} & restons & resterons & restions & resterions & sommes restés & allons rester & serions restés \\
+\textbf{vous} & restez & resterez & restiez & resteriez & êtes restés & allez rester & seriez restés \\
+\textbf{ils/\hspace{0pt}elles} & restent & resteront & restaient & resteraient & sont restés & vont rester & seraient restés \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large tomber} \textit{(to fall)}
+
+\noindent Type: -ER \quad Aux: être \quad P.P.: tombé
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & tombe & tomberai & tombais & tomberais & suis tombé & vais tomber & serais tombé \\
+\textbf{tu} & tombes & tomberas & tombais & tomberais & es tombé & vas tomber & serais tombé \\
+\textbf{il/\hspace{0pt}elle} & tombe & tombera & tombait & tomberait & est tombé & va tomber & serait tombé \\
+\textbf{nous} & tombons & tomberons & tombions & tomberions & sommes tombés & allons tomber & serions tombés \\
+\textbf{vous} & tombez & tomberez & tombiez & tomberiez & êtes tombés & allez tomber & seriez tombés \\
+\textbf{ils/\hspace{0pt}elles} & tombent & tomberont & tombaient & tomberaient & sont tombés & vont tomber & seraient tombés \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large montrer} \textit{(to show)}
+
+\noindent Type: -ER \quad Aux: avoir \quad P.P.: montré
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & montre & montrerai & montrais & montrerais & ai montré & vais montrer & aurais montré \\
+\textbf{tu} & montres & montreras & montrais & montrerais & as montré & vas montrer & aurais montré \\
+\textbf{il/\hspace{0pt}elle} & montre & montrera & montrait & montrerait & a montré & va montrer & aurait montré \\
+\textbf{nous} & montrons & montrerons & montrions & montrerions & avons montré & allons montrer & aurions montré \\
+\textbf{vous} & montrez & montrerez & montriez & montreriez & avez montré & allez montrer & auriez montré \\
+\textbf{ils/\hspace{0pt}elles} & montrent & montreront & montraient & montreraient & ont montré & vont montrer & auraient montré \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large écouter} \textit{(to listen (to))}
+
+\noindent Type: -ER \quad Aux: avoir \quad P.P.: écouté
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & écoute & écouterai & écoutais & écouterais & ai écouté & vais écouter & aurais écouté \\
+\textbf{tu} & écoutes & écouteras & écoutais & écouterais & as écouté & vas écouter & aurais écouté \\
+\textbf{il/\hspace{0pt}elle} & écoute & écoutera & écoutait & écouterait & a écouté & va écouter & aurait écouté \\
+\textbf{nous} & écoutons & écouterons & écoutions & écouterions & avons écouté & allons écouter & aurions écouté \\
+\textbf{vous} & écoutez & écouterez & écoutiez & écouteriez & avez écouté & allez écouter & auriez écouté \\
+\textbf{ils/\hspace{0pt}elles} & écoutent & écouteront & écoutaient & écouteraient & ont écouté & vont écouter & auraient écouté \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large monter} \textit{(to go up / to climb)}
+
+\noindent Type: -ER \quad Aux: être \quad P.P.: monté
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & monte & monterai & montais & monterais & suis monté & vais monter & serais monté \\
+\textbf{tu} & montes & monteras & montais & monterais & es monté & vas monter & serais monté \\
+\textbf{il/\hspace{0pt}elle} & monte & montera & montait & monterait & est monté & va monter & serait monté \\
+\textbf{nous} & montons & monterons & montions & monterions & sommes montés & allons monter & serions montés \\
+\textbf{vous} & montez & monterez & montiez & monteriez & êtes montés & allez monter & seriez montés \\
+\textbf{ils/\hspace{0pt}elles} & montent & monteront & montaient & monteraient & sont montés & vont monter & seraient montés \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large travailler} \textit{(to work)}
+
+\noindent Type: -ER \quad Aux: avoir \quad P.P.: travaillé
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & travaille & travaillerai & travaillais & travaillerais & ai travaillé & vais travailler & aurais travaillé \\
+\textbf{tu} & travailles & travailleras & travaillais & travaillerais & as travaillé & vas travailler & aurais travaillé \\
+\textbf{il/\hspace{0pt}elle} & travaille & travaillera & travaillait & travaillerait & a travaillé & va travailler & aurait travaillé \\
+\textbf{nous} & travaillons & travaillerons & travaillions & travaillerions & avons travaillé & allons travailler & aurions travaillé \\
+\textbf{vous} & travaillez & travaillerez & travailliez & travailleriez & avez travaillé & allez travailler & auriez travaillé \\
+\textbf{ils/\hspace{0pt}elles} & travaillent & travailleront & travaillaient & travailleraient & ont travaillé & vont travailler & auraient travaillé \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large utiliser} \textit{(to use)}
+
+\noindent Type: -ER \quad Aux: avoir \quad P.P.: utilisé
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & utilise & utiliserai & utilisais & utiliserais & ai utilisé & vais utiliser & aurais utilisé \\
+\textbf{tu} & utilises & utiliseras & utilisais & utiliserais & as utilisé & vas utiliser & aurais utilisé \\
+\textbf{il/\hspace{0pt}elle} & utilise & utilisera & utilisait & utiliserait & a utilisé & va utiliser & aurait utilisé \\
+\textbf{nous} & utilisons & utiliserons & utilisions & utiliserions & avons utilisé & allons utiliser & aurions utilisé \\
+\textbf{vous} & utilisez & utiliserez & utilisiez & utiliseriez & avez utilisé & allez utiliser & auriez utilisé \\
+\textbf{ils/\hspace{0pt}elles} & utilisent & utiliseront & utilisaient & utiliseraient & ont utilisé & vont utiliser & auraient utilisé \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large choisir} \textit{(to choose)}
+
+\noindent Type: -IR \quad Aux: avoir \quad P.P.: choisi
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & choisis & choisirai & choisissais & choisirais & ai choisi & vais choisir & aurais choisi \\
+\textbf{tu} & choisis & choisiras & choisissais & choisirais & as choisi & vas choisir & aurais choisi \\
+\textbf{il/\hspace{0pt}elle} & choisit & choisira & choisissait & choisirait & a choisi & va choisir & aurait choisi \\
+\textbf{nous} & choisissons & choisirons & choisissions & choisirions & avons choisi & allons choisir & aurions choisi \\
+\textbf{vous} & choisissez & choisirez & choisissiez & choisiriez & avez choisi & allez choisir & auriez choisi \\
+\textbf{ils/\hspace{0pt}elles} & choisissent & choisiront & choisissaient & choisiraient & ont choisi & vont choisir & auraient choisi \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large réussir} \textit{(to succeed)}
+
+\noindent Type: -IR \quad Aux: avoir \quad P.P.: réussi
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & réussis & réussirai & réussissais & réussirais & ai réussi & vais réussir & aurais réussi \\
+\textbf{tu} & réussis & réussiras & réussissais & réussirais & as réussi & vas réussir & aurais réussi \\
+\textbf{il/\hspace{0pt}elle} & réussit & réussira & réussissait & réussirait & a réussi & va réussir & aurait réussi \\
+\textbf{nous} & réussissons & réussirons & réussissions & réussirions & avons réussi & allons réussir & aurions réussi \\
+\textbf{vous} & réussissez & réussirez & réussissiez & réussiriez & avez réussi & allez réussir & auriez réussi \\
+\textbf{ils/\hspace{0pt}elles} & réussissent & réussiront & réussissaient & réussiraient & ont réussi & vont réussir & auraient réussi \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large remplir} \textit{(to fill)}
+
+\noindent Type: -IR \quad Aux: avoir \quad P.P.: rempli
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & remplis & remplirai & remplissais & remplirais & ai rempli & vais remplir & aurais rempli \\
+\textbf{tu} & remplis & rempliras & remplissais & remplirais & as rempli & vas remplir & aurais rempli \\
+\textbf{il/\hspace{0pt}elle} & remplit & remplira & remplissait & remplirait & a rempli & va remplir & aurait rempli \\
+\textbf{nous} & remplissons & remplirons & remplissions & remplirions & avons rempli & allons remplir & aurions rempli \\
+\textbf{vous} & remplissez & remplirez & remplissiez & rempliriez & avez rempli & allez remplir & auriez rempli \\
+\textbf{ils/\hspace{0pt}elles} & remplissent & rempliront & remplissaient & rempliraient & ont rempli & vont remplir & auraient rempli \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large réfléchir} \textit{(to reflect / to think)}
+
+\noindent Type: -IR \quad Aux: avoir \quad P.P.: réfléchi
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & réfléchis & réfléchirai & réfléchissais & réfléchirais & ai réfléchi & vais réfléchir & aurais réfléchi \\
+\textbf{tu} & réfléchis & réfléchiras & réfléchissais & réfléchirais & as réfléchi & vas réfléchir & aurais réfléchi \\
+\textbf{il/\hspace{0pt}elle} & réfléchit & réfléchira & réfléchissait & réfléchirait & a réfléchi & va réfléchir & aurait réfléchi \\
+\textbf{nous} & réfléchissons & réfléchirons & réfléchissions & réfléchirions & avons réfléchi & allons réfléchir & aurions réfléchi \\
+\textbf{vous} & réfléchissez & réfléchirez & réfléchissiez & réfléchiriez & avez réfléchi & allez réfléchir & auriez réfléchi \\
+\textbf{ils/\hspace{0pt}elles} & réfléchissent & réfléchiront & réfléchissaient & réfléchiraient & ont réfléchi & vont réfléchir & auraient réfléchi \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large obéir} \textit{(to obey)}
+
+\noindent Type: -IR \quad Aux: avoir \quad P.P.: obéi
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & obéis & obéirai & obéissais & obéirais & ai obéi & vais obéir & aurais obéi \\
+\textbf{tu} & obéis & obéiras & obéissais & obéirais & as obéi & vas obéir & aurais obéi \\
+\textbf{il/\hspace{0pt}elle} & obéit & obéira & obéissait & obéirait & a obéi & va obéir & aurait obéi \\
+\textbf{nous} & obéissons & obéirons & obéissions & obéirions & avons obéi & allons obéir & aurions obéi \\
+\textbf{vous} & obéissez & obéirez & obéissiez & obéiriez & avez obéi & allez obéir & auriez obéi \\
+\textbf{ils/\hspace{0pt}elles} & obéissent & obéiront & obéissaient & obéiraient & ont obéi & vont obéir & auraient obéi \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large grandir} \textit{(to grow)}
+
+\noindent Type: -IR \quad Aux: avoir \quad P.P.: grandi
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & grandis & grandirai & grandissais & grandirais & ai grandi & vais grandir & aurais grandi \\
+\textbf{tu} & grandis & grandiras & grandissais & grandirais & as grandi & vas grandir & aurais grandi \\
+\textbf{il/\hspace{0pt}elle} & grandit & grandira & grandissait & grandirait & a grandi & va grandir & aurait grandi \\
+\textbf{nous} & grandissons & grandirons & grandissions & grandirions & avons grandi & allons grandir & aurions grandi \\
+\textbf{vous} & grandissez & grandirez & grandissiez & grandiriez & avez grandi & allez grandir & auriez grandi \\
+\textbf{ils/\hspace{0pt}elles} & grandissent & grandiront & grandissaient & grandiraient & ont grandi & vont grandir & auraient grandi \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large tenir} \textit{(to hold)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: tenu
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & tiens & tiendrai & tenais & tiendrais & ai tenu & vais tenir & aurais tenu \\
+\textbf{tu} & tiens & tiendras & tenais & tiendrais & as tenu & vas tenir & aurais tenu \\
+\textbf{il/\hspace{0pt}elle} & tient & tiendra & tenait & tiendrait & a tenu & va tenir & aurait tenu \\
+\textbf{nous} & tenons & tiendrons & tenions & tiendrions & avons tenu & allons tenir & aurions tenu \\
+\textbf{vous} & tenez & tiendrez & teniez & tiendriez & avez tenu & allez tenir & auriez tenu \\
+\textbf{ils/\hspace{0pt}elles} & tiennent & tiendront & tenaient & tiendraient & ont tenu & vont tenir & auraient tenu \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large appeler} \textit{(to call)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: appelé
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & appelle & appellerai & appelais & appellerais & ai appelé & vais appeler & aurais appelé \\
+\textbf{tu} & appelles & appelleras & appelais & appellerais & as appelé & vas appeler & aurais appelé \\
+\textbf{il/\hspace{0pt}elle} & appelle & appellera & appelait & appellerait & a appelé & va appeler & aurait appelé \\
+\textbf{nous} & appelons & appellerons & appelions & appellerions & avons appelé & allons appeler & aurions appelé \\
+\textbf{vous} & appelez & appellerez & appeliez & appelleriez & avez appelé & allez appeler & auriez appelé \\
+\textbf{ils/\hspace{0pt}elles} & appellent & appelleront & appelaient & appelleraient & ont appelé & vont appeler & auraient appelé \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large sortir} \textit{(to go out / to leave)}
+
+\noindent Type: irreg. \quad Aux: être \quad P.P.: sorti
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & sors & sortirai & sortais & sortirais & suis sorti & vais sortir & serais sorti \\
+\textbf{tu} & sors & sortiras & sortais & sortirais & es sorti & vas sortir & serais sorti \\
+\textbf{il/\hspace{0pt}elle} & sort & sortira & sortait & sortirait & est sorti & va sortir & serait sorti \\
+\textbf{nous} & sortons & sortirons & sortions & sortirions & sommes sortis & allons sortir & serions sortis \\
+\textbf{vous} & sortez & sortirez & sortiez & sortiriez & êtes sortis & allez sortir & seriez sortis \\
+\textbf{ils/\hspace{0pt}elles} & sortent & sortiront & sortaient & sortiraient & sont sortis & vont sortir & seraient sortis \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large connaître} \textit{(to know (people/places))}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: connu
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & connais & connaîtrai & connaissais & connaîtrais & ai connu & vais connaître & aurais connu \\
+\textbf{tu} & connais & connaîtras & connaissais & connaîtrais & as connu & vas connaître & aurais connu \\
+\textbf{il/\hspace{0pt}elle} & connait & connaîtra & connaissait & connaîtrait & a connu & va connaître & aurait connu \\
+\textbf{nous} & connaissons & connaîtrons & connaissions & connaîtrions & avons connu & allons connaître & aurions connu \\
+\textbf{vous} & connaissez & connaîtrez & connaissiez & connaîtriez & avez connu & allez connaître & auriez connu \\
+\textbf{ils/\hspace{0pt}elles} & connaissent & connaîtront & connaissaient & connaîtraient & ont connu & vont connaître & auraient connu \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large boire} \textit{(to drink)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: bu
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & bois & boirai & buvais & boirais & ai bu & vais boire & aurais bu \\
+\textbf{tu} & bois & boiras & buvais & boirais & as bu & vas boire & aurais bu \\
+\textbf{il/\hspace{0pt}elle} & boit & boira & buvait & boirait & a bu & va boire & aurait bu \\
+\textbf{nous} & buvons & boirons & buvions & boirions & avons bu & allons boire & aurions bu \\
+\textbf{vous} & buvez & boirez & buviez & boiriez & avez bu & allez boire & auriez bu \\
+\textbf{ils/\hspace{0pt}elles} & boivent & boiront & buvaient & boiraient & ont bu & vont boire & auraient bu \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large écrire} \textit{(to write)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: écrit
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & écris & écrirai & écrivais & écrirais & ai écrit & vais écrire & aurais écrit \\
+\textbf{tu} & écris & écriras & écrivais & écrirais & as écrit & vas écrire & aurais écrit \\
+\textbf{il/\hspace{0pt}elle} & écrit & écrira & écrivait & écrirait & a écrit & va écrire & aurait écrit \\
+\textbf{nous} & écrivons & écrirons & écrivions & écririons & avons écrit & allons écrire & aurions écrit \\
+\textbf{vous} & écrivez & écrirez & écriviez & écririez & avez écrit & allez écrire & auriez écrit \\
+\textbf{ils/\hspace{0pt}elles} & écrivent & écriront & écrivaient & écriraient & ont écrit & vont écrire & auraient écrit \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large lire} \textit{(to read)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: lu
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & lis & lirai & lisais & lirais & ai lu & vais lire & aurais lu \\
+\textbf{tu} & lis & liras & lisais & lirais & as lu & vas lire & aurais lu \\
+\textbf{il/\hspace{0pt}elle} & lit & lira & lisait & lirait & a lu & va lire & aurait lu \\
+\textbf{nous} & lisons & lirons & lisions & lirions & avons lu & allons lire & aurions lu \\
+\textbf{vous} & lisez & lirez & lisiez & liriez & avez lu & allez lire & auriez lu \\
+\textbf{ils/\hspace{0pt}elles} & lisent & liront & lisaient & liraient & ont lu & vont lire & auraient lu \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large dormir} \textit{(to sleep)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: dormi
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & dors & dormirai & dormais & dormirais & ai dormi & vais dormir & aurais dormi \\
+\textbf{tu} & dors & dormiras & dormais & dormirais & as dormi & vas dormir & aurais dormi \\
+\textbf{il/\hspace{0pt}elle} & dort & dormira & dormait & dormirait & a dormi & va dormir & aurait dormi \\
+\textbf{nous} & dormons & dormirons & dormions & dormirions & avons dormi & allons dormir & aurions dormi \\
+\textbf{vous} & dormez & dormirez & dormiez & dormiriez & avez dormi & allez dormir & auriez dormi \\
+\textbf{ils/\hspace{0pt}elles} & dorment & dormiront & dormaient & dormiraient & ont dormi & vont dormir & auraient dormi \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large ouvrir} \textit{(to open)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: ouvert
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & ouvre & ouvrirai & ouvrais & ouvrirais & ai ouvert & vais ouvrir & aurais ouvert \\
+\textbf{tu} & ouvres & ouvriras & ouvrais & ouvrirais & as ouvert & vas ouvrir & aurais ouvert \\
+\textbf{il/\hspace{0pt}elle} & ouvre & ouvrira & ouvrait & ouvrirait & a ouvert & va ouvrir & aurait ouvert \\
+\textbf{nous} & ouvrons & ouvrirons & ouvrions & ouvririons & avons ouvert & allons ouvrir & aurions ouvert \\
+\textbf{vous} & ouvrez & ouvrirez & ouvriez & ouvririez & avez ouvert & allez ouvrir & auriez ouvert \\
+\textbf{ils/\hspace{0pt}elles} & ouvrent & ouvriront & ouvraient & ouvriraient & ont ouvert & vont ouvrir & auraient ouvert \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large recevoir} \textit{(to receive)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: reçu
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & reçois & recevrai & recevais & recevrais & ai reçu & vais recevoir & aurais reçu \\
+\textbf{tu} & reçois & recevras & recevais & recevrais & as reçu & vas recevoir & aurais reçu \\
+\textbf{il/\hspace{0pt}elle} & reçoit & recevra & recevait & recevrait & a reçu & va recevoir & aurait reçu \\
+\textbf{nous} & recevons & recevrons & recevions & recevrions & avons reçu & allons recevoir & aurions reçu \\
+\textbf{vous} & recevez & recevrez & receviez & recevriez & avez reçu & allez recevoir & auriez reçu \\
+\textbf{ils/\hspace{0pt}elles} & reçoivent & recevront & recevaient & recevraient & ont reçu & vont recevoir & auraient reçu \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large entendre} \textit{(to hear)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: entendu
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & entends & entendrai & entendais & entendrais & ai entendu & vais entendre & aurais entendu \\
+\textbf{tu} & entends & entendras & entendais & entendrais & as entendu & vas entendre & aurais entendu \\
+\textbf{il/\hspace{0pt}elle} & entend & entendra & entendait & entendrait & a entendu & va entendre & aurait entendu \\
+\textbf{nous} & entendons & entendrons & entendions & entendrions & avons entendu & allons entendre & aurions entendu \\
+\textbf{vous} & entendez & entendrez & entendiez & entendriez & avez entendu & allez entendre & auriez entendu \\
+\textbf{ils/\hspace{0pt}elles} & entendent & entendront & entendaient & entendraient & ont entendu & vont entendre & auraient entendu \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large attendre} \textit{(to wait (for))}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: attendu
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & attends & attendrai & attendais & attendrais & ai attendu & vais attendre & aurais attendu \\
+\textbf{tu} & attends & attendras & attendais & attendrais & as attendu & vas attendre & aurais attendu \\
+\textbf{il/\hspace{0pt}elle} & attend & attendra & attendait & attendrait & a attendu & va attendre & aurait attendu \\
+\textbf{nous} & attendons & attendrons & attendions & attendrions & avons attendu & allons attendre & aurions attendu \\
+\textbf{vous} & attendez & attendrez & attendiez & attendriez & avez attendu & allez attendre & auriez attendu \\
+\textbf{ils/\hspace{0pt}elles} & attendent & attendront & attendaient & attendraient & ont attendu & vont attendre & auraient attendu \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large perdre} \textit{(to lose)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: perdu
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & perds & perdrai & perdais & perdrais & ai perdu & vais perdre & aurais perdu \\
+\textbf{tu} & perds & perdras & perdais & perdrais & as perdu & vas perdre & aurais perdu \\
+\textbf{il/\hspace{0pt}elle} & perd & perdra & perdait & perdrait & a perdu & va perdre & aurait perdu \\
+\textbf{nous} & perdons & perdrons & perdions & perdrions & avons perdu & allons perdre & aurions perdu \\
+\textbf{vous} & perdez & perdrez & perdiez & perdriez & avez perdu & allez perdre & auriez perdu \\
+\textbf{ils/\hspace{0pt}elles} & perdent & perdront & perdaient & perdraient & ont perdu & vont perdre & auraient perdu \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large comprendre} \textit{(to understand)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: compris
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & comprends & comprendrai & comprenais & comprendrais & ai compris & vais comprendre & aurais compris \\
+\textbf{tu} & comprends & comprendras & comprenais & comprendrais & as compris & vas comprendre & aurais compris \\
+\textbf{il/\hspace{0pt}elle} & comprend & comprendra & comprenait & comprendrait & a compris & va comprendre & aurait compris \\
+\textbf{nous} & comprenons & comprendrons & comprenions & comprendrions & avons compris & allons comprendre & aurions compris \\
+\textbf{vous} & comprenez & comprendrez & compreniez & comprendriez & avez compris & allez comprendre & auriez compris \\
+\textbf{ils/\hspace{0pt}elles} & comprennent & comprendront & comprenaient & comprendraient & ont compris & vont comprendre & auraient compris \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large apprendre} \textit{(to learn)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: appris
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & apprends & apprendrai & apprenais & apprendrais & ai appris & vais apprendre & aurais appris \\
+\textbf{tu} & apprends & apprendras & apprenais & apprendrais & as appris & vas apprendre & aurais appris \\
+\textbf{il/\hspace{0pt}elle} & apprend & apprendra & apprenait & apprendrait & a appris & va apprendre & aurait appris \\
+\textbf{nous} & apprenons & apprendrons & apprenions & apprendrions & avons appris & allons apprendre & aurions appris \\
+\textbf{vous} & apprenez & apprendrez & appreniez & apprendriez & avez appris & allez apprendre & auriez appris \\
+\textbf{ils/\hspace{0pt}elles} & apprennent & apprendront & apprenaient & apprendraient & ont appris & vont apprendre & auraient appris \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\section*{Advanced Tier (39 verbs)}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large dépenser} \textit{(to spend (money))}
+
+\noindent Type: -ER \quad Aux: avoir \quad P.P.: dépensé
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & dépense & dépenserai & dépensais & dépenserais & ai dépensé & vais dépenser & aurais dépensé \\
+\textbf{tu} & dépenses & dépenseras & dépensais & dépenserais & as dépensé & vas dépenser & aurais dépensé \\
+\textbf{il/\hspace{0pt}elle} & dépense & dépensera & dépensait & dépenserait & a dépensé & va dépenser & aurait dépensé \\
+\textbf{nous} & dépensons & dépenserons & dépensions & dépenserions & avons dépensé & allons dépenser & aurions dépensé \\
+\textbf{vous} & dépensez & dépenserez & dépensiez & dépenseriez & avez dépensé & allez dépenser & auriez dépensé \\
+\textbf{ils/\hspace{0pt}elles} & dépensent & dépenseront & dépensaient & dépenseraient & ont dépensé & vont dépenser & auraient dépensé \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large dessiner} \textit{(to draw)}
+
+\noindent Type: -ER \quad Aux: avoir \quad P.P.: dessiné
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & dessine & dessinerai & dessinais & dessinerais & ai dessiné & vais dessiner & aurais dessiné \\
+\textbf{tu} & dessines & dessineras & dessinais & dessinerais & as dessiné & vas dessiner & aurais dessiné \\
+\textbf{il/\hspace{0pt}elle} & dessine & dessinera & dessinait & dessinerait & a dessiné & va dessiner & aurait dessiné \\
+\textbf{nous} & dessinons & dessinerons & dessinions & dessinerions & avons dessiné & allons dessiner & aurions dessiné \\
+\textbf{vous} & dessinez & dessinerez & dessiniez & dessineriez & avez dessiné & allez dessiner & auriez dessiné \\
+\textbf{ils/\hspace{0pt}elles} & dessinent & dessineront & dessinaient & dessineraient & ont dessiné & vont dessiner & auraient dessiné \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large voler} \textit{(to fly / to steal)}
+
+\noindent Type: -ER \quad Aux: avoir \quad P.P.: volé
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & vole & volerai & volais & volerais & ai volé & vais voler & aurais volé \\
+\textbf{tu} & voles & voleras & volais & volerais & as volé & vas voler & aurais volé \\
+\textbf{il/\hspace{0pt}elle} & vole & volera & volait & volerait & a volé & va voler & aurait volé \\
+\textbf{nous} & volons & volerons & volions & volerions & avons volé & allons voler & aurions volé \\
+\textbf{vous} & volez & volerez & voliez & voleriez & avez volé & allez voler & auriez volé \\
+\textbf{ils/\hspace{0pt}elles} & volent & voleront & volaient & voleraient & ont volé & vont voler & auraient volé \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large raconter} \textit{(to tell (a story))}
+
+\noindent Type: -ER \quad Aux: avoir \quad P.P.: raconté
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & raconte & raconterai & racontais & raconterais & ai raconté & vais raconter & aurais raconté \\
+\textbf{tu} & racontes & raconteras & racontais & raconterais & as raconté & vas raconter & aurais raconté \\
+\textbf{il/\hspace{0pt}elle} & raconte & racontera & racontait & raconterait & a raconté & va raconter & aurait raconté \\
+\textbf{nous} & racontons & raconterons & racontions & raconterions & avons raconté & allons raconter & aurions raconté \\
+\textbf{vous} & racontez & raconterez & racontiez & raconteriez & avez raconté & allez raconter & auriez raconté \\
+\textbf{ils/\hspace{0pt}elles} & racontent & raconteront & racontaient & raconteraient & ont raconté & vont raconter & auraient raconté \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large quitter} \textit{(to leave / to quit)}
+
+\noindent Type: -ER \quad Aux: avoir \quad P.P.: quitté
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & quitte & quitterai & quittais & quitterais & ai quitté & vais quitter & aurais quitté \\
+\textbf{tu} & quittes & quitteras & quittais & quitterais & as quitté & vas quitter & aurais quitté \\
+\textbf{il/\hspace{0pt}elle} & quitte & quittera & quittait & quitterait & a quitté & va quitter & aurait quitté \\
+\textbf{nous} & quittons & quitterons & quittions & quitterions & avons quitté & allons quitter & aurions quitté \\
+\textbf{vous} & quittez & quitterez & quittiez & quitteriez & avez quitté & allez quitter & auriez quitté \\
+\textbf{ils/\hspace{0pt}elles} & quittent & quitteront & quittaient & quitteraient & ont quitté & vont quitter & auraient quitté \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large garder} \textit{(to keep / to guard)}
+
+\noindent Type: -ER \quad Aux: avoir \quad P.P.: gardé
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & garde & garderai & gardais & garderais & ai gardé & vais garder & aurais gardé \\
+\textbf{tu} & gardes & garderas & gardais & garderais & as gardé & vas garder & aurais gardé \\
+\textbf{il/\hspace{0pt}elle} & garde & gardera & gardait & garderait & a gardé & va garder & aurait gardé \\
+\textbf{nous} & gardons & garderons & gardions & garderions & avons gardé & allons garder & aurions gardé \\
+\textbf{vous} & gardez & garderez & gardiez & garderiez & avez gardé & allez garder & auriez gardé \\
+\textbf{ils/\hspace{0pt}elles} & gardent & garderont & gardaient & garderaient & ont gardé & vont garder & auraient gardé \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large rencontrer} \textit{(to meet)}
+
+\noindent Type: -ER \quad Aux: avoir \quad P.P.: rencontré
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & rencontre & rencontrerai & rencontrais & rencontrerais & ai rencontré & vais rencontrer & aurais rencontré \\
+\textbf{tu} & rencontres & rencontreras & rencontrais & rencontrerais & as rencontré & vas rencontrer & aurais rencontré \\
+\textbf{il/\hspace{0pt}elle} & rencontre & rencontrera & rencontrait & rencontrerait & a rencontré & va rencontrer & aurait rencontré \\
+\textbf{nous} & rencontrons & rencontrerons & rencontrions & rencontrerions & avons rencontré & allons rencontrer & aurions rencontré \\
+\textbf{vous} & rencontrez & rencontrerez & rencontriez & rencontreriez & avez rencontré & allez rencontrer & auriez rencontré \\
+\textbf{ils/\hspace{0pt}elles} & rencontrent & rencontreront & rencontraient & rencontreraient & ont rencontré & vont rencontrer & auraient rencontré \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large sembler} \textit{(to seem)}
+
+\noindent Type: -ER \quad Aux: avoir \quad P.P.: semblé
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & semble & semblerai & semblais & semblerais & ai semblé & vais sembler & aurais semblé \\
+\textbf{tu} & sembles & sembleras & semblais & semblerais & as semblé & vas sembler & aurais semblé \\
+\textbf{il/\hspace{0pt}elle} & semble & semblera & semblait & semblerait & a semblé & va sembler & aurait semblé \\
+\textbf{nous} & semblons & semblerons & semblions & semblerions & avons semblé & allons sembler & aurions semblé \\
+\textbf{vous} & semblez & semblerez & sembliez & sembleriez & avez semblé & allez sembler & auriez semblé \\
+\textbf{ils/\hspace{0pt}elles} & semblent & sembleront & semblaient & sembleraient & ont semblé & vont sembler & auraient semblé \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large couper} \textit{(to cut)}
+
+\noindent Type: -ER \quad Aux: avoir \quad P.P.: coupé
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & coupe & couperai & coupais & couperais & ai coupé & vais couper & aurais coupé \\
+\textbf{tu} & coupes & couperas & coupais & couperais & as coupé & vas couper & aurais coupé \\
+\textbf{il/\hspace{0pt}elle} & coupe & coupera & coupait & couperait & a coupé & va couper & aurait coupé \\
+\textbf{nous} & coupons & couperons & coupions & couperions & avons coupé & allons couper & aurions coupé \\
+\textbf{vous} & coupez & couperez & coupiez & couperiez & avez coupé & allez couper & auriez coupé \\
+\textbf{ils/\hspace{0pt}elles} & coupent & couperont & coupaient & couperaient & ont coupé & vont couper & auraient coupé \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large cuisiner} \textit{(to cook)}
+
+\noindent Type: -ER \quad Aux: avoir \quad P.P.: cuisiné
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & cuisine & cuisinerai & cuisinais & cuisinerais & ai cuisiné & vais cuisiner & aurais cuisiné \\
+\textbf{tu} & cuisines & cuisineras & cuisinais & cuisinerais & as cuisiné & vas cuisiner & aurais cuisiné \\
+\textbf{il/\hspace{0pt}elle} & cuisine & cuisinera & cuisinait & cuisinerait & a cuisiné & va cuisiner & aurait cuisiné \\
+\textbf{nous} & cuisinons & cuisinerons & cuisinions & cuisinerions & avons cuisiné & allons cuisiner & aurions cuisiné \\
+\textbf{vous} & cuisinez & cuisinerez & cuisiniez & cuisineriez & avez cuisiné & allez cuisiner & auriez cuisiné \\
+\textbf{ils/\hspace{0pt}elles} & cuisinent & cuisineront & cuisinaient & cuisineraient & ont cuisiné & vont cuisiner & auraient cuisiné \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large applaudir} \textit{(to applaud / to clap)}
+
+\noindent Type: -IR \quad Aux: avoir \quad P.P.: applaudi
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & applaudis & applaudirai & applaudissais & applaudirais & ai applaudi & vais applaudir & aurais applaudi \\
+\textbf{tu} & applaudis & applaudiras & applaudissais & applaudirais & as applaudi & vas applaudir & aurais applaudi \\
+\textbf{il/\hspace{0pt}elle} & applaudit & applaudira & applaudissait & applaudirait & a applaudi & va applaudir & aurait applaudi \\
+\textbf{nous} & applaudissons & applaudirons & applaudissions & applaudirions & avons applaudi & allons applaudir & aurions applaudi \\
+\textbf{vous} & applaudissez & applaudirez & applaudissiez & applaudiriez & avez applaudi & allez applaudir & auriez applaudi \\
+\textbf{ils/\hspace{0pt}elles} & applaudissent & applaudiront & applaudissaient & applaudiraient & ont applaudi & vont applaudir & auraient applaudi \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large établir} \textit{(to establish)}
+
+\noindent Type: -IR \quad Aux: avoir \quad P.P.: établi
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & établis & établirai & établissais & établirais & ai établi & vais établir & aurais établi \\
+\textbf{tu} & établis & établiras & établissais & établirais & as établi & vas établir & aurais établi \\
+\textbf{il/\hspace{0pt}elle} & établit & établira & établissait & établirait & a établi & va établir & aurait établi \\
+\textbf{nous} & établissons & établirons & établissions & établirions & avons établi & allons établir & aurions établi \\
+\textbf{vous} & établissez & établirez & établissiez & établiriez & avez établi & allez établir & auriez établi \\
+\textbf{ils/\hspace{0pt}elles} & établissent & établiront & établissaient & établiraient & ont établi & vont établir & auraient établi \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large bâtir} \textit{(to build)}
+
+\noindent Type: -IR \quad Aux: avoir \quad P.P.: bâti
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & bâtis & bâtirai & bâtissais & bâtirais & ai bâti & vais bâtir & aurais bâti \\
+\textbf{tu} & bâtis & bâtiras & bâtissais & bâtirais & as bâti & vas bâtir & aurais bâti \\
+\textbf{il/\hspace{0pt}elle} & bâtit & bâtira & bâtissait & bâtirait & a bâti & va bâtir & aurait bâti \\
+\textbf{nous} & bâtissons & bâtirons & bâtissions & bâtirions & avons bâti & allons bâtir & aurions bâti \\
+\textbf{vous} & bâtissez & bâtirez & bâtissiez & bâtiriez & avez bâti & allez bâtir & auriez bâti \\
+\textbf{ils/\hspace{0pt}elles} & bâtissent & bâtiront & bâtissaient & bâtiraient & ont bâti & vont bâtir & auraient bâti \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large agir} \textit{(to act)}
+
+\noindent Type: -IR \quad Aux: avoir \quad P.P.: agi
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & agis & agirai & agissais & agirais & ai agi & vais agir & aurais agi \\
+\textbf{tu} & agis & agiras & agissais & agirais & as agi & vas agir & aurais agi \\
+\textbf{il/\hspace{0pt}elle} & agit & agira & agissait & agirait & a agi & va agir & aurait agi \\
+\textbf{nous} & agissons & agirons & agissions & agirions & avons agi & allons agir & aurions agi \\
+\textbf{vous} & agissez & agirez & agissiez & agiriez & avez agi & allez agir & auriez agi \\
+\textbf{ils/\hspace{0pt}elles} & agissent & agiront & agissaient & agiraient & ont agi & vont agir & auraient agi \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large vieillir} \textit{(to age / to grow old)}
+
+\noindent Type: -IR \quad Aux: avoir \quad P.P.: vieilli
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & vieillis & vieillirai & vieillissais & vieillirais & ai vieilli & vais vieillir & aurais vieilli \\
+\textbf{tu} & vieillis & vieilliras & vieillissais & vieillirais & as vieilli & vas vieillir & aurais vieilli \\
+\textbf{il/\hspace{0pt}elle} & vieillit & vieillira & vieillissait & vieillirait & a vieilli & va vieillir & aurait vieilli \\
+\textbf{nous} & vieillissons & vieillirons & vieillissions & vieillirions & avons vieilli & allons vieillir & aurions vieilli \\
+\textbf{vous} & vieillissez & vieillirez & vieillissiez & vieilliriez & avez vieilli & allez vieillir & auriez vieilli \\
+\textbf{ils/\hspace{0pt}elles} & vieillissent & vieilliront & vieillissaient & vieilliraient & ont vieilli & vont vieillir & auraient vieilli \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large grossir} \textit{(to gain weight / to get bigger)}
+
+\noindent Type: -IR \quad Aux: avoir \quad P.P.: grossi
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & grossis & grossirai & grossissais & grossirais & ai grossi & vais grossir & aurais grossi \\
+\textbf{tu} & grossis & grossiras & grossissais & grossirais & as grossi & vas grossir & aurais grossi \\
+\textbf{il/\hspace{0pt}elle} & grossit & grossira & grossissait & grossirait & a grossi & va grossir & aurait grossi \\
+\textbf{nous} & grossissons & grossirons & grossissions & grossirions & avons grossi & allons grossir & aurions grossi \\
+\textbf{vous} & grossissez & grossirez & grossissiez & grossiriez & avez grossi & allez grossir & auriez grossi \\
+\textbf{ils/\hspace{0pt}elles} & grossissent & grossiront & grossissaient & grossiraient & ont grossi & vont grossir & auraient grossi \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large maigrir} \textit{(to lose weight / to get thinner)}
+
+\noindent Type: -IR \quad Aux: avoir \quad P.P.: maigri
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & maigris & maigrirai & maigrissais & maigrirais & ai maigri & vais maigrir & aurais maigri \\
+\textbf{tu} & maigris & maigriras & maigrissais & maigrirais & as maigri & vas maigrir & aurais maigri \\
+\textbf{il/\hspace{0pt}elle} & maigrit & maigrira & maigrissait & maigrirait & a maigri & va maigrir & aurait maigri \\
+\textbf{nous} & maigrissons & maigrirons & maigrissions & maigririons & avons maigri & allons maigrir & aurions maigri \\
+\textbf{vous} & maigrissez & maigrirez & maigrissiez & maigririez & avez maigri & allez maigrir & auriez maigri \\
+\textbf{ils/\hspace{0pt}elles} & maigrissent & maigriront & maigrissaient & maigriraient & ont maigri & vont maigrir & auraient maigri \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large rougir} \textit{(to blush / to turn red)}
+
+\noindent Type: -IR \quad Aux: avoir \quad P.P.: rougi
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & rougis & rougirai & rougissais & rougirais & ai rougi & vais rougir & aurais rougi \\
+\textbf{tu} & rougis & rougiras & rougissais & rougirais & as rougi & vas rougir & aurais rougi \\
+\textbf{il/\hspace{0pt}elle} & rougit & rougira & rougissait & rougirait & a rougi & va rougir & aurait rougi \\
+\textbf{nous} & rougissons & rougirons & rougissions & rougirions & avons rougi & allons rougir & aurions rougi \\
+\textbf{vous} & rougissez & rougirez & rougissiez & rougiriez & avez rougi & allez rougir & auriez rougi \\
+\textbf{ils/\hspace{0pt}elles} & rougissent & rougiront & rougissaient & rougiraient & ont rougi & vont rougir & auraient rougi \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large ralentir} \textit{(to slow down)}
+
+\noindent Type: -IR \quad Aux: avoir \quad P.P.: ralenti
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & ralentis & ralentirai & ralentissais & ralentirais & ai ralenti & vais ralentir & aurais ralenti \\
+\textbf{tu} & ralentis & ralentiras & ralentissais & ralentirais & as ralenti & vas ralentir & aurais ralenti \\
+\textbf{il/\hspace{0pt}elle} & ralentit & ralentira & ralentissait & ralentirait & a ralenti & va ralentir & aurait ralenti \\
+\textbf{nous} & ralentissons & ralentirons & ralentissions & ralentirions & avons ralenti & allons ralentir & aurions ralenti \\
+\textbf{vous} & ralentissez & ralentirez & ralentissiez & ralentiriez & avez ralenti & allez ralentir & auriez ralenti \\
+\textbf{ils/\hspace{0pt}elles} & ralentissent & ralentiront & ralentissaient & ralentiraient & ont ralenti & vont ralentir & auraient ralenti \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large avertir} \textit{(to warn)}
+
+\noindent Type: -IR \quad Aux: avoir \quad P.P.: averti
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & avertis & avertirai & avertissais & avertirais & ai averti & vais avertir & aurais averti \\
+\textbf{tu} & avertis & avertiras & avertissais & avertirais & as averti & vas avertir & aurais averti \\
+\textbf{il/\hspace{0pt}elle} & avertit & avertira & avertissait & avertirait & a averti & va avertir & aurait averti \\
+\textbf{nous} & avertissons & avertirons & avertissions & avertirions & avons averti & allons avertir & aurions averti \\
+\textbf{vous} & avertissez & avertirez & avertissiez & avertiriez & avez averti & allez avertir & auriez averti \\
+\textbf{ils/\hspace{0pt}elles} & avertissent & avertiront & avertissaient & avertiraient & ont averti & vont avertir & auraient averti \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large guérir} \textit{(to heal / to cure)}
+
+\noindent Type: -IR \quad Aux: avoir \quad P.P.: guéri
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & guéris & guérirai & guérissais & guérirais & ai guéri & vais guérir & aurais guéri \\
+\textbf{tu} & guéris & guériras & guérissais & guérirais & as guéri & vas guérir & aurais guéri \\
+\textbf{il/\hspace{0pt}elle} & guérit & guérira & guérissait & guérirait & a guéri & va guérir & aurait guéri \\
+\textbf{nous} & guérissons & guérirons & guérissions & guéririons & avons guéri & allons guérir & aurions guéri \\
+\textbf{vous} & guérissez & guérirez & guérissiez & guéririez & avez guéri & allez guérir & auriez guéri \\
+\textbf{ils/\hspace{0pt}elles} & guérissent & guériront & guérissaient & guériraient & ont guéri & vont guérir & auraient guéri \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large saisir} \textit{(to seize / to grab)}
+
+\noindent Type: -IR \quad Aux: avoir \quad P.P.: saisi
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & saisis & saisirai & saisissais & saisirais & ai saisi & vais saisir & aurais saisi \\
+\textbf{tu} & saisis & saisiras & saisissais & saisirais & as saisi & vas saisir & aurais saisi \\
+\textbf{il/\hspace{0pt}elle} & saisit & saisira & saisissait & saisirait & a saisi & va saisir & aurait saisi \\
+\textbf{nous} & saisissons & saisirons & saisissions & saisirions & avons saisi & allons saisir & aurions saisi \\
+\textbf{vous} & saisissez & saisirez & saisissiez & saisiriez & avez saisi & allez saisir & auriez saisi \\
+\textbf{ils/\hspace{0pt}elles} & saisissent & saisiront & saisissaient & saisiraient & ont saisi & vont saisir & auraient saisi \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large nourrir} \textit{(to feed / to nourish)}
+
+\noindent Type: -IR \quad Aux: avoir \quad P.P.: nourri
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & nourris & nourrirai & nourrissais & nourrirais & ai nourri & vais nourrir & aurais nourri \\
+\textbf{tu} & nourris & nourriras & nourrissais & nourrirais & as nourri & vas nourrir & aurais nourri \\
+\textbf{il/\hspace{0pt}elle} & nourrit & nourrira & nourrissait & nourrirait & a nourri & va nourrir & aurait nourri \\
+\textbf{nous} & nourrissons & nourrirons & nourrissions & nourririons & avons nourri & allons nourrir & aurions nourri \\
+\textbf{vous} & nourrissez & nourrirez & nourrissiez & nourririez & avez nourri & allez nourrir & auriez nourri \\
+\textbf{ils/\hspace{0pt}elles} & nourrissent & nourriront & nourrissaient & nourriraient & ont nourri & vont nourrir & auraient nourri \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large s'asseoir} \textit{(to sit (down))}
+
+\noindent Type: irreg. \quad Aux: être \quad P.P.: assis
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & m'assieds & m'assiérai & m'asseyais & s'asseoirais & me suis assis & vais me asseoir & me serais assis \\
+\textbf{tu} & t'assieds & t'assiéras & t'asseyais & s'asseoirais & te es assis & vas te asseoir & te serais assis \\
+\textbf{il/\hspace{0pt}elle} & s'assied & s'assiéra & s'asseyait & s'asseoirait & se est assis & va se asseoir & se serait assis \\
+\textbf{nous} & nous asseyons & nous assiérons & nous asseyions & s'asseoirions & nous sommes assis & allons nous asseoir & nous serions assis \\
+\textbf{vous} & vous asseyez & vous assiérez & vous asseyiez & s'asseoiriez & vous êtes assis & allez vous asseoir & vous seriez assis \\
+\textbf{ils/\hspace{0pt}elles} & s'asseyent & s'assiéront & s'asseyaient & s'asseoiraient & se sont assis & vont se asseoir & se seraient assis \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large se sentir} \textit{(to feel)}
+
+\noindent Type: irreg. \quad Aux: être \quad P.P.: senti
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & me sens & se sentirai & sentais & se sentirais & me suis senti & vais me sentir & me serais senti \\
+\textbf{tu} & te sens & se sentiras & sentais & se sentirais & te es senti & vas te sentir & te serais senti \\
+\textbf{il/\hspace{0pt}elle} & se sent & se sentira & sentait & se sentirait & se est senti & va se sentir & se serait senti \\
+\textbf{nous} & nous sentons & se sentirons & sentions & se sentirions & nous sommes sentis & allons nous sentir & nous serions sentis \\
+\textbf{vous} & vous sentez & se sentirez & sentiez & se sentiriez & vous êtes sentis & allez vous sentir & vous seriez sentis \\
+\textbf{ils/\hspace{0pt}elles} & se sentent & se sentiront & sentaient & se sentiraient & se sont sentis & vont se sentir & se seraient sentis \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large se quitter} \textit{(to leave each other / to part ways)}
+
+\noindent Type: irreg. \quad Aux: être \quad P.P.: quitté
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & me quitte & se quitterai & se quittais & se quitterais & me suis quitté & vais me quitter & me serais quitté \\
+\textbf{tu} & te quittes & se quitteras & se quittais & se quitterais & te es quitté & vas te quitter & te serais quitté \\
+\textbf{il/\hspace{0pt}elle} & se quitte & se quittera & se quittait & se quitterait & se est quitté & va se quitter & se serait quitté \\
+\textbf{nous} & nous quittons & se quitterons & se quittions & se quitterions & nous sommes quittés & allons nous quitter & nous serions quittés \\
+\textbf{vous} & vous quittez & se quitterez & se quittiez & se quitteriez & vous êtes quittés & allez vous quitter & vous seriez quittés \\
+\textbf{ils/\hspace{0pt}elles} & se quittent & se quitteront & se quittaient & se quitteraient & se sont quittés & vont se quitter & se seraient quittés \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large obtenir} \textit{(to obtain / to get)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: obtenu
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & obtiens & obtiendrai & obtenais & obtiendrais & ai obtenu & vais obtenir & aurais obtenu \\
+\textbf{tu} & obtiens & obtiendras & obtenais & obtiendrais & as obtenu & vas obtenir & aurais obtenu \\
+\textbf{il/\hspace{0pt}elle} & obtient & obtiendra & obtenait & obtiendrait & a obtenu & va obtenir & aurait obtenu \\
+\textbf{nous} & obtenons & obtiendrons & obtenions & obtiendrions & avons obtenu & allons obtenir & aurions obtenu \\
+\textbf{vous} & obtenez & obtiendrez & obteniez & obtiendriez & avez obtenu & allez obtenir & auriez obtenu \\
+\textbf{ils/\hspace{0pt}elles} & obtiennent & obtiendront & obtenaient & obtiendraient & ont obtenu & vont obtenir & auraient obtenu \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large descendre} \textit{(to go down / to descend)}
+
+\noindent Type: irreg. \quad Aux: être \quad P.P.: descendu
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & descends & descendrai & descendais & descendrais & suis descendu & vais descendre & serais descendu \\
+\textbf{tu} & descends & descendras & descendais & descendrais & es descendu & vas descendre & serais descendu \\
+\textbf{il/\hspace{0pt}elle} & descend & descendra & descendait & descendrait & est descendu & va descendre & serait descendu \\
+\textbf{nous} & descendons & descendrons & descendions & descendrions & sommes descendus & allons descendre & serions descendus \\
+\textbf{vous} & descendez & descendrez & descendiez & descendriez & êtes descendus & allez descendre & seriez descendus \\
+\textbf{ils/\hspace{0pt}elles} & descendent & descendront & descendaient & descendraient & sont descendus & vont descendre & seraient descendus \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large offrir} \textit{(to offer)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: offert
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & offre & offrirai & offrais & offrirais & ai offert & vais offrir & aurais offert \\
+\textbf{tu} & offres & offriras & offrais & offrirais & as offert & vas offrir & aurais offert \\
+\textbf{il/\hspace{0pt}elle} & offre & offrira & offrait & offrirait & a offert & va offrir & aurait offert \\
+\textbf{nous} & offrons & offrirons & offrions & offririons & avons offert & allons offrir & aurions offert \\
+\textbf{vous} & offrez & offrirez & offriez & offririez & avez offert & allez offrir & auriez offert \\
+\textbf{ils/\hspace{0pt}elles} & offrent & offriront & offraient & offriraient & ont offert & vont offrir & auraient offert \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large souffrir} \textit{(to suffer)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: souffert
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & souffre & souffrirai & souffrais & souffrirais & ai souffert & vais souffrir & aurais souffert \\
+\textbf{tu} & souffres & souffriras & souffrais & souffrirais & as souffert & vas souffrir & aurais souffert \\
+\textbf{il/\hspace{0pt}elle} & souffre & souffrira & souffrait & souffrirait & a souffert & va souffrir & aurait souffert \\
+\textbf{nous} & souffrons & souffrirons & souffrions & souffririons & avons souffert & allons souffrir & aurions souffert \\
+\textbf{vous} & souffrez & souffrirez & souffriez & souffririez & avez souffert & allez souffrir & auriez souffert \\
+\textbf{ils/\hspace{0pt}elles} & souffrent & souffriront & souffraient & souffriraient & ont souffert & vont souffrir & auraient souffert \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large découvrir} \textit{(to discover)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: découvert
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & découvre & découvrirai & découvrais & découvrirais & ai découvert & vais découvrir & aurais découvert \\
+\textbf{tu} & découvres & découvriras & découvrais & découvrirais & as découvert & vas découvrir & aurais découvert \\
+\textbf{il/\hspace{0pt}elle} & découvre & découvrira & découvrait & découvrirait & a découvert & va découvrir & aurait découvert \\
+\textbf{nous} & découvrons & découvrirons & découvrions & découvririons & avons découvert & allons découvrir & aurions découvert \\
+\textbf{vous} & découvrez & découvrirez & découvriez & découvririez & avez découvert & allez découvrir & auriez découvert \\
+\textbf{ils/\hspace{0pt}elles} & découvrent & découvriront & découvraient & découvriraient & ont découvert & vont découvrir & auraient découvert \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large conduire} \textit{(to drive)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: conduit
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & conduis & conduirai & conduisais & conduirais & ai conduit & vais conduire & aurais conduit \\
+\textbf{tu} & conduis & conduiras & conduisais & conduirais & as conduit & vas conduire & aurais conduit \\
+\textbf{il/\hspace{0pt}elle} & conduit & conduira & conduisait & conduirait & a conduit & va conduire & aurait conduit \\
+\textbf{nous} & conduisons & conduirons & conduisions & conduirions & avons conduit & allons conduire & aurions conduit \\
+\textbf{vous} & conduisez & conduirez & conduisiez & conduiriez & avez conduit & allez conduire & auriez conduit \\
+\textbf{ils/\hspace{0pt}elles} & conduisent & conduiront & conduisaient & conduiraient & ont conduit & vont conduire & auraient conduit \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large construire} \textit{(to build / to construct)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: construit
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & construis & construirai & construisais & construirais & ai construit & vais construire & aurais construit \\
+\textbf{tu} & construis & construiras & construisais & construirais & as construit & vas construire & aurais construit \\
+\textbf{il/\hspace{0pt}elle} & construit & construira & construisait & construirait & a construit & va construire & aurait construit \\
+\textbf{nous} & construisons & construirons & construisions & construirions & avons construit & allons construire & aurions construit \\
+\textbf{vous} & construisez & construirez & construisiez & construiriez & avez construit & allez construire & auriez construit \\
+\textbf{ils/\hspace{0pt}elles} & construisent & construiront & construisaient & construiraient & ont construit & vont construire & auraient construit \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large produire} \textit{(to produce)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: produit
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & produis & produirai & produisais & produirais & ai produit & vais produire & aurais produit \\
+\textbf{tu} & produis & produiras & produisais & produirais & as produit & vas produire & aurais produit \\
+\textbf{il/\hspace{0pt}elle} & produit & produira & produisait & produirait & a produit & va produire & aurait produit \\
+\textbf{nous} & produisons & produirons & produisions & produirions & avons produit & allons produire & aurions produit \\
+\textbf{vous} & produisez & produirez & produisiez & produiriez & avez produit & allez produire & auriez produit \\
+\textbf{ils/\hspace{0pt}elles} & produisent & produiront & produisaient & produiraient & ont produit & vont produire & auraient produit \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large traduire} \textit{(to translate)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: traduit
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & traduis & traduirai & traduisais & traduirais & ai traduit & vais traduire & aurais traduit \\
+\textbf{tu} & traduis & traduiras & traduisais & traduirais & as traduit & vas traduire & aurais traduit \\
+\textbf{il/\hspace{0pt}elle} & traduit & traduira & traduisait & traduirait & a traduit & va traduire & aurait traduit \\
+\textbf{nous} & traduisons & traduirons & traduisions & traduirions & avons traduit & allons traduire & aurions traduit \\
+\textbf{vous} & traduisez & traduirez & traduisiez & traduiriez & avez traduit & allez traduire & auriez traduit \\
+\textbf{ils/\hspace{0pt}elles} & traduisent & traduiront & traduisaient & traduiraient & ont traduit & vont traduire & auraient traduit \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large rire} \textit{(to laugh)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: ri
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & ris & rirai & riais & rirais & ai ri & vais rire & aurais ri \\
+\textbf{tu} & ris & riras & riais & rirais & as ri & vas rire & aurais ri \\
+\textbf{il/\hspace{0pt}elle} & rit & rira & riait & rirait & a ri & va rire & aurait ri \\
+\textbf{nous} & rions & rirons & riions & ririons & avons ri & allons rire & aurions ri \\
+\textbf{vous} & riez & rirez & riiez & ririez & avez ri & allez rire & auriez ri \\
+\textbf{ils/\hspace{0pt}elles} & rient & riront & riaient & riraient & ont ri & vont rire & auraient ri \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large suivre} \textit{(to follow)}
+
+\noindent Type: irreg. \quad Aux: avoir \quad P.P.: suivi
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & suis & suivrai & suivais & suivrais & ai suivi & vais suivre & aurais suivi \\
+\textbf{tu} & suis & suivras & suivais & suivrais & as suivi & vas suivre & aurais suivi \\
+\textbf{il/\hspace{0pt}elle} & suit & suivra & suivait & suivrait & a suivi & va suivre & aurait suivi \\
+\textbf{nous} & suivons & suivrons & suivions & suivrions & avons suivi & allons suivre & aurions suivi \\
+\textbf{vous} & suivez & suivrez & suiviez & suivriez & avez suivi & allez suivre & auriez suivi \\
+\textbf{ils/\hspace{0pt}elles} & suivent & suivront & suivaient & suivraient & ont suivi & vont suivre & auraient suivi \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large naître} \textit{(to be born)}
+
+\noindent Type: irreg. \quad Aux: être \quad P.P.: né
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & nais & naîtrai & naissais & naîtrais & suis né & vais naître & serais né \\
+\textbf{tu} & nais & naîtras & naissais & naîtrais & es né & vas naître & serais né \\
+\textbf{il/\hspace{0pt}elle} & naît & naîtra & naissait & naîtrait & est né & va naître & serait né \\
+\textbf{nous} & naissons & naîtrons & naissions & naîtrions & sommes nés & allons naître & serions nés \\
+\textbf{vous} & naissez & naîtrez & naissiez & naîtriez & êtes nés & allez naître & seriez nés \\
+\textbf{ils/\hspace{0pt}elles} & naissent & naîtront & naissaient & naîtraient & sont nés & vont naître & seraient nés \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+\begin{minipage}{\linewidth}
+\vspace{4pt}
+\noindent\textbf{\large mourir} \textit{(to die)}
+
+\noindent Type: irreg. \quad Aux: être \quad P.P.: mort
+
+\begin{tabular}{l|lllllll}
+ & Présent & Futur & Imparfait & Cond. & P. Composé & F. Proche & Cond. Passé \\
+\hline
+\textbf{je} & meurs & mourrai & mourais & mourrais & suis mort & vais mourir & serais mort \\
+\textbf{tu} & meurs & mourras & mourais & mourrais & es mort & vas mourir & serais mort \\
+\textbf{il/\hspace{0pt}elle} & meurt & mourra & mourait & mourrait & est mort & va mourir & serait mort \\
+\textbf{nous} & mourons & mourrons & mourions & mourrions & sommes morts & allons mourir & serions morts \\
+\textbf{vous} & mourez & mourrez & mouriez & mourriez & êtes morts & allez mourir & seriez morts \\
+\textbf{ils/\hspace{0pt}elles} & meurent & mourront & mouraient & mourraient & sont morts & vont mourir & seraient morts \\
+\end{tabular}
+\end{minipage}
+\vspace{6pt}
+
+```
