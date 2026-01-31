@@ -318,17 +318,58 @@ def normalize_input(text: str) -> str:
     backspace, which can leave behind invisible combining characters or malformed
     Unicode sequences.
     """
+    # Explicitly remove backspace characters and what they were meant to delete
+    # This handles cases where backspace doesn't fully delete in the terminal buffer
+    while '\x08' in text or '\x7f' in text:
+        # Handle backspace (BS) - delete previous character
+        if '\x08' in text:
+            idx = text.index('\x08')
+            if idx > 0:
+                text = text[:idx-1] + text[idx+1:]
+            else:
+                text = text[1:]
+        # Handle DEL character
+        if '\x7f' in text:
+            idx = text.index('\x7f')
+            if idx > 0:
+                text = text[:idx-1] + text[idx+1:]
+            else:
+                text = text[1:]
+
     # First, normalize to NFC (Canonical Decomposition, followed by Canonical Composition)
     normalized = unicodedata.normalize('NFC', text)
 
     # Remove any surrogate characters or invalid UTF-8 sequences
     cleaned = normalized.encode('utf-8', errors='ignore').decode('utf-8', errors='ignore')
 
-    # Remove zero-width characters and other invisible Unicode artifacts
+    # Characters to explicitly remove (zero-width and other invisible characters)
+    invisible_chars = {
+        '\u200b',  # Zero-width space
+        '\u200c',  # Zero-width non-joiner
+        '\u200d',  # Zero-width joiner
+        '\u2060',  # Word joiner
+        '\ufeff',  # Byte order mark / zero-width no-break space
+        '\u00ad',  # Soft hyphen
+        '\u034f',  # Combining grapheme joiner
+        '\u061c',  # Arabic letter mark
+        '\u115f',  # Hangul choseong filler
+        '\u1160',  # Hangul jungseong filler
+        '\u17b4',  # Khmer vowel inherent aq
+        '\u17b5',  # Khmer vowel inherent aa
+        '\u180e',  # Mongolian vowel separator
+        '\u2000', '\u2001', '\u2002', '\u2003', '\u2004', '\u2005',  # Various spaces
+        '\u2006', '\u2007', '\u2008', '\u2009', '\u200a',  # More spaces
+        '\u202a', '\u202b', '\u202c', '\u202d', '\u202e',  # Directional formatting
+        '\u2066', '\u2067', '\u2068', '\u2069',  # Isolate formatting
+    }
+
+    # Remove zero-width characters, control characters, and other invisible Unicode artifacts
+    # But preserve combining marks that are part of valid precomposed characters (already handled by NFC)
     cleaned = ''.join(
         char for char in cleaned
-        if unicodedata.category(char) not in ('Cc', 'Cf', 'Mn')
-        or char in ('\n', '\r', '\t')
+        if char not in invisible_chars
+        and (unicodedata.category(char) not in ('Cc', 'Cf')
+             or char in ('\n', '\r', '\t'))
     )
 
     return cleaned.strip()
