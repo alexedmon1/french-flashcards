@@ -15,7 +15,8 @@
       "answer": "qui",
       "alternatives": [],
       "hint": "Sujet du verbe 'est'",
-      "explanation": "'Qui' remplace le sujet du verbe. Le livre EST sur la table."
+      "explanation": "'Qui' remplace le sujet du verbe. Le livre EST sur la table.",
+      "translation": "It's the book that is on the table."
     },
     {
       "id": "pr002",
@@ -25,7 +26,8 @@
       "answer": "que",
       "alternatives": ["qu'"],
       "hint": "COD — il y a déjà un sujet (j')",
-      "explanation": "'Que' remplace le COD. J'ai vu LE FILM."
+      "explanation": "'Que' remplace le COD. J'ai vu LE FILM.",
+      "translation": "It's the movie that I saw yesterday."
     },
     {
       "id": "pr003",
@@ -35,7 +37,8 @@
       "answer": "qui",
       "alternatives": [],
       "hint": "Sujet du verbe 'parle'",
-      "explanation": "'Qui' remplace le sujet. La fille PARLE."
+      "explanation": "'Qui' remplace le sujet. La fille PARLE.",
+      "translation": "The girl who is speaking is my sister."
     },
     {
       "id": "pr004",
@@ -45,7 +48,8 @@
       "answer": "que",
       "alternatives": [],
       "hint": "COD — il y a déjà un sujet (tu)",
-      "explanation": "'Que' remplace le COD. Tu as fait LE GÂTEAU."
+      "explanation": "'Que' remplace le COD. Tu as fait LE GÂTEAU.",
+      "translation": "The cake that you made is delicious."
     },
     {
       "id": "pr005",
@@ -55,7 +59,8 @@
       "answer": "qui",
       "alternatives": [],
       "hint": "Sujet du verbe 'habite'",
-      "explanation": "'Qui' remplace le sujet. Un ami HABITE à Paris."
+      "explanation": "'Qui' remplace le sujet. Un ami HABITE à Paris.",
+      "translation": "I have a friend who lives in Paris."
     },
     {
       "id": "pr006",
@@ -65,7 +70,8 @@
       "answer": "qu'",
       "alternatives": ["que"],
       "hint": "COD — sujet 'elle' + voyelle",
-      "explanation": "'Que' remplace le COD et s'élide devant une voyelle → qu'elle."
+      "explanation": "'Que' remplace le COD et s'élide devant une voyelle → qu'elle.",
+      "translation": "The song that she sings is beautiful."
     },
     {
       "id": "pr007",
@@ -75,7 +81,8 @@
       "answer": "qui",
       "alternatives": [],
       "hint": "Sujet du verbe 'enseigne'",
-      "explanation": "'Qui' remplace le sujet. Le professeur ENSEIGNE."
+      "explanation": "'Qui' remplace le sujet. Le professeur ENSEIGNE.",
+      "translation": "The teacher who teaches French is kind."
     },
     {
       "id": "pr008",
@@ -85,7 +92,8 @@
       "answer": "que",
       "alternatives": [],
       "hint": "COD — il y a déjà un sujet (tu)",
-      "explanation": "'Que' remplace le COD. Tu m'as offert LES FLEURS."
+      "explanation": "'Que' remplace le COD. Tu m'as offert LES FLEURS.",
+      "translation": "The flowers that you gave me are magnificent."
     },
     {
       "id": "pr009",
@@ -95,7 +103,8 @@
       "answer": "qui",
       "alternatives": [],
       "hint": "Sujet du verbe 'a gagné'",
-      "explanation": "'Qui' remplace le sujet. L'homme A GAGNÉ le prix."
+      "explanation": "'Qui' remplace le sujet. L'homme A GAGNÉ le prix.",
+      "translation": "It's the man who won the prize."
     },
     {
       "id": "pr010",
@@ -105,7 +114,8 @@
       "answer": "que",
       "alternatives": [],
       "hint": "COD — il y a déjà un sujet (je)",
-      "explanation": "'Que' remplace le COD. Je lis LE LIVRE."
+      "explanation": "'Que' remplace le COD. Je lis LE LIVRE.",
+      "translation": "The book that I'm reading is interesting."
     },
     {
       "id": "pr011",
@@ -115,7 +125,8 @@
       "answer": "qui",
       "alternatives": [],
       "hint": "Sujet du verbe 'travaille'",
-      "explanation": "'Qui' remplace le sujet. La femme TRAVAILLE ici."
+      "explanation": "'Qui' remplace le sujet. La femme TRAVAILLE ici.",
+      "translation": "The woman who works here is a doctor."
     },
     {
       "id": "pr012",
@@ -125,7 +136,8 @@
       "answer": "qu'",
       "alternatives": ["que"],
       "hint": "COD — sujet 'elle' + voyelle",
-      "explanation": "'Que' remplace le COD et s'élide devant 'elle' → qu'elle."
+      "explanation": "'Que' remplace le COD et s'élide devant 'elle' → qu'elle.",
+      "translation": "The dish that she prepared is excellent."
     },
     {
       "id": "pr013",
@@ -135,7 +147,8 @@
       "answer": "qui",
       "alternatives": [],
       "hint": "Sujet du verbe 'jouent'",
-      "explanation": "'Qui' remplace le sujet. Les enfants JOUENT dans le parc."
+      "explanation": "'Qui' remplace le sujet. Les enfants JOUENT dans le parc.",
+      "translation": "The children who are playing in the park are happy."
     },
     {
       "id": "pr014",
@@ -145,7 +158,8 @@
       "answer": "que",
       "alternatives": ["qu'"],
       "hint": "COD — il y a déjà un sujet (j')",
-      "explanation": "'Que' remplace le COD. J'ai acheté LA ROBE."
+      "explanation": "'Que' remplace le COD. J'ai acheté LA ROBE.",
+      "translation": "The dress that I bought is red."
     },
     {
       "id": "pr015",
@@ -155,7 +169,8 @@
       "answer": "qui",
       "alternatives": [],
       "hint": "Sujet du verbe 'fait'",
-      "explanation": "'Qui' remplace le sujet. L'histoire FAIT rêver."
+      "explanation": "'Qui' remplace le sujet. L'histoire FAIT rêver.",
+      "translation": "It's a story that makes you dream."
     },
     {
       "id": "pr016",
@@ -165,7 +180,8 @@
       "answer": "que",
       "alternatives": [],
       "hint": "COD — il y a déjà un sujet (nous)",
-      "explanation": "'Que' remplace le COD. Nous avons invité LES AMIS."
+      "explanation": "'Que' remplace le COD. Nous avons invité LES AMIS.",
+      "translation": "The friends that we invited are arriving tonight."
     },
     {
       "id": "pr017",
@@ -175,7 +191,8 @@
       "answer": "qui",
       "alternatives": [],
       "hint": "Sujet du verbe 'dort'",
-      "explanation": "'Qui' remplace le sujet. Le chat DORT sur le canapé."
+      "explanation": "'Qui' remplace le sujet. Le chat DORT sur le canapé.",
+      "translation": "The cat that is sleeping on the couch is mine."
     },
     {
       "id": "pr018",
@@ -185,7 +202,8 @@
       "answer": "qu'",
       "alternatives": ["que"],
       "hint": "COD — sujet 'il' + voyelle",
-      "explanation": "'Que' remplace le COD et s'élide devant 'il' → qu'il."
+      "explanation": "'Que' remplace le COD et s'élide devant 'il' → qu'il.",
+      "translation": "The gift that he gave me is magnificent."
     },
     {
       "id": "pr019",
@@ -195,7 +213,8 @@
       "answer": "où",
       "alternatives": [],
       "hint": "Lieu — 'dans cette ville'",
-      "explanation": "'Où' remplace un complément de lieu. Je suis né DANS CETTE VILLE."
+      "explanation": "'Où' remplace un complément de lieu. Je suis né DANS CETTE VILLE.",
+      "translation": "The city where I was born is small."
     },
     {
       "id": "pr020",
@@ -205,7 +224,8 @@
       "answer": "où",
       "alternatives": [],
       "hint": "Temps — 'ce jour-là'",
-      "explanation": "'Où' remplace aussi un complément de temps. IL EST ARRIVÉ CE JOUR-LÀ."
+      "explanation": "'Où' remplace aussi un complément de temps. IL EST ARRIVÉ CE JOUR-LÀ.",
+      "translation": "The day when he arrived, it was raining."
     },
     {
       "id": "pr021",
@@ -215,7 +235,8 @@
       "answer": "dont",
       "alternatives": [],
       "hint": "Verbe 'parler DE'",
-      "explanation": "'Dont' remplace 'de + quelque chose'. On parle DE ce film."
+      "explanation": "'Dont' remplace 'de + quelque chose'. On parle DE ce film.",
+      "translation": "It's the movie that everyone is talking about."
     },
     {
       "id": "pr022",
@@ -225,7 +246,8 @@
       "answer": "dont",
       "alternatives": [],
       "hint": "Possession — 'la fille DE cet homme'",
-      "explanation": "'Dont' exprime la possession. La fille DE cet homme est médecin."
+      "explanation": "'Dont' exprime la possession. La fille DE cet homme est médecin.",
+      "translation": "The man whose daughter is a doctor works here."
     },
     {
       "id": "pr023",
@@ -235,7 +257,8 @@
       "answer": "où",
       "alternatives": [],
       "hint": "Lieu — 'dans cette maison'",
-      "explanation": "'Où' remplace un complément de lieu. J'habite DANS CETTE MAISON."
+      "explanation": "'Où' remplace un complément de lieu. J'habite DANS CETTE MAISON.",
+      "translation": "The house where I live is big."
     },
     {
       "id": "pr024",
@@ -245,7 +268,8 @@
       "answer": "dont",
       "alternatives": [],
       "hint": "Verbe 'avoir besoin DE'",
-      "explanation": "'Dont' remplace 'de + quelque chose'. J'ai besoin DE ce livre."
+      "explanation": "'Dont' remplace 'de + quelque chose'. J'ai besoin DE ce livre.",
+      "translation": "The book that I need is at the library."
     },
     {
       "id": "pr025",
@@ -255,7 +279,8 @@
       "answer": "où",
       "alternatives": [],
       "hint": "Temps — 'cette année-là'",
-      "explanation": "'Où' remplace un complément de temps. Nous nous sommes rencontrés CETTE ANNÉE-LÀ."
+      "explanation": "'Où' remplace un complément de temps. Nous nous sommes rencontrés CETTE ANNÉE-LÀ.",
+      "translation": "The year when we met was 2019."
     },
     {
       "id": "pr026",
@@ -265,7 +290,8 @@
       "answer": "dont",
       "alternatives": [],
       "hint": "Expression 'être fier DE'",
-      "explanation": "'Dont' remplace 'de + quelque chose'. Je suis fier DE ce projet."
+      "explanation": "'Dont' remplace 'de + quelque chose'. Je suis fier DE ce projet.",
+      "translation": "It's a project that I'm proud of."
     },
     {
       "id": "pr027",
@@ -275,7 +301,8 @@
       "answer": "dont",
       "alternatives": [],
       "hint": "Verbe 'parler DE'",
-      "explanation": "'Dont' remplace 'de + quelque chose'. Je t'ai parlé DE cette personne."
+      "explanation": "'Dont' remplace 'de + quelque chose'. Je t'ai parlé DE cette personne.",
+      "translation": "The person I told you about is coming tomorrow."
     },
     {
       "id": "pr028",
@@ -285,7 +312,8 @@
       "answer": "où",
       "alternatives": [],
       "hint": "Lieu — 'dans ce restaurant'",
-      "explanation": "'Où' remplace un complément de lieu. Nous avons mangé DANS CE RESTAURANT."
+      "explanation": "'Où' remplace un complément de lieu. Nous avons mangé DANS CE RESTAURANT.",
+      "translation": "The restaurant where we ate was excellent."
     },
     {
       "id": "pr029",
@@ -295,7 +323,8 @@
       "answer": "que",
       "alternatives": [],
       "hint": "COD — il y a déjà un sujet (je)",
-      "explanation": "'Que' remplace le COD. Je connais LE GARÇON."
+      "explanation": "'Que' remplace le COD. Je connais LE GARÇON.",
+      "translation": "The boy that I know is nice."
     },
     {
       "id": "pr030",
@@ -305,7 +334,8 @@
       "answer": "dont",
       "alternatives": [],
       "hint": "Verbe 'avoir besoin DE'",
-      "explanation": "'Dont' remplace 'de + quelque chose'. Tu as besoin DE cet outil."
+      "explanation": "'Dont' remplace 'de + quelque chose'. Tu as besoin DE cet outil.",
+      "translation": "The tool that you need is in the garage."
     },
     {
       "id": "pr031",
@@ -315,7 +345,8 @@
       "answer": "où",
       "alternatives": [],
       "hint": "Temps — 'à ce moment-là'",
-      "explanation": "'Où' remplace un complément de temps. J'ai compris À CE MOMENT-LÀ."
+      "explanation": "'Où' remplace un complément de temps. J'ai compris À CE MOMENT-LÀ.",
+      "translation": "The moment when I understood it, I was happy."
     },
     {
       "id": "pr032",
@@ -325,7 +356,8 @@
       "answer": "pour laquelle",
       "alternatives": ["dont"],
       "hint": "Cause — 'pour cette raison'",
-      "explanation": "'Pour laquelle' ou 'dont' peuvent exprimer la cause ici."
+      "explanation": "'Pour laquelle' ou 'dont' peuvent exprimer la cause ici.",
+      "translation": "The reason why he left is unknown."
     },
     {
       "id": "pr033",
@@ -335,7 +367,8 @@
       "answer": "dont",
       "alternatives": [],
       "hint": "Possession — 'les parents DE cet enfant'",
-      "explanation": "'Dont' exprime la possession. Les parents DE cet enfant sont absents."
+      "explanation": "'Dont' exprime la possession. Les parents DE cet enfant sont absents.",
+      "translation": "The child whose parents are away is sleeping at our place."
     },
     {
       "id": "pr034",
@@ -345,7 +378,8 @@
       "answer": "d'où",
       "alternatives": ["dont"],
       "hint": "Provenance — 'de cette région'",
-      "explanation": "'D'où' ou 'dont' expriment la provenance. Il vient DE CETTE RÉGION."
+      "explanation": "'D'où' ou 'dont' expriment la provenance. Il vient DE CETTE RÉGION.",
+      "translation": "The region where he comes from is mountainous."
     },
     {
       "id": "pr035",
@@ -355,7 +389,8 @@
       "answer": "que",
       "alternatives": [],
       "hint": "COD — il y a déjà un sujet (tu)",
-      "explanation": "'Que' remplace le COD. Tu cherchais LE STYLO."
+      "explanation": "'Que' remplace le COD. Tu cherchais LE STYLO.",
+      "translation": "Here's the pen that you were looking for."
     },
     {
       "id": "pr036",
@@ -365,7 +400,8 @@
       "answer": "dont",
       "alternatives": [],
       "hint": "Verbe 'rêver DE'",
-      "explanation": "'Dont' remplace 'de + quelque chose'. Je rêve DE cet acteur."
+      "explanation": "'Dont' remplace 'de + quelque chose'. Je rêve DE cet acteur.",
+      "translation": "It's the actor I dream about."
     },
     {
       "id": "pr037",
@@ -375,7 +411,8 @@
       "answer": "où",
       "alternatives": [],
       "hint": "Lieu — 'dans ce pays'",
-      "explanation": "'Où' remplace un complément de lieu. Elle voyage DANS CE PAYS."
+      "explanation": "'Où' remplace un complément de lieu. Elle voyage DANS CE PAYS.",
+      "translation": "The country where she is traveling is magnificent."
     },
     {
       "id": "pr038",
@@ -385,7 +422,8 @@
       "answer": "qui",
       "alternatives": [],
       "hint": "Sujet du verbe 'aboie'",
-      "explanation": "'Qui' remplace le sujet. Le chien ABOIE beaucoup."
+      "explanation": "'Qui' remplace le sujet. Le chien ABOIE beaucoup.",
+      "translation": "The dog that barks a lot bothers the neighbors."
     },
     {
       "id": "pr039",
@@ -395,7 +433,8 @@
       "answer": "dont",
       "alternatives": [],
       "hint": "Possession — 'la solution DE ce problème'",
-      "explanation": "'Dont' exprime la possession. La solution DE ce problème est simple."
+      "explanation": "'Dont' exprime la possession. La solution DE ce problème est simple.",
+      "translation": "It's a problem whose solution is simple."
     },
     {
       "id": "pr040",
@@ -405,7 +444,8 @@
       "answer": "où",
       "alternatives": [],
       "hint": "Lieu — 'dans cet hôtel'",
-      "explanation": "'Où' remplace un complément de lieu. Nous avons dormi DANS CET HÔTEL."
+      "explanation": "'Où' remplace un complément de lieu. Nous avons dormi DANS CET HÔTEL.",
+      "translation": "The hotel where we slept was comfortable."
     },
     {
       "id": "pr041",
@@ -415,7 +455,8 @@
       "answer": "dont",
       "alternatives": [],
       "hint": "Verbe 'parler DE'",
-      "explanation": "'Dont' remplace 'de + quelque chose'. Je t'ai parlé DE ce professeur."
+      "explanation": "'Dont' remplace 'de + quelque chose'. Je t'ai parlé DE ce professeur.",
+      "translation": "The teacher I told you about is very competent."
     },
     {
       "id": "pr042",
@@ -425,7 +466,8 @@
       "answer": "ce qui",
       "alternatives": [],
       "hint": "Pas d'antécédent + sujet du verbe",
-      "explanation": "'Ce qui' = 'la chose qui'. Sujet du verbe 'se passe', sans antécédent défini."
+      "explanation": "'Ce qui' = 'la chose qui'. Sujet du verbe 'se passe', sans antécédent défini.",
+      "translation": "I don't know what is happening."
     },
     {
       "id": "pr043",
@@ -435,7 +477,8 @@
       "answer": "ce que",
       "alternatives": ["ce qu'"],
       "hint": "Pas d'antécédent + COD",
-      "explanation": "'Ce que' = 'la chose que'. COD du verbe 'vouloir', sans antécédent défini."
+      "explanation": "'Ce que' = 'la chose que'. COD du verbe 'vouloir', sans antécédent défini.",
+      "translation": "Tell me what you want."
     },
     {
       "id": "pr044",
@@ -445,7 +488,8 @@
       "answer": "Ce qui",
       "alternatives": ["ce qui"],
       "hint": "En début de phrase, sans antécédent + sujet",
-      "explanation": "'Ce qui' en début de phrase = 'la chose qui'. Sujet du verbe 'intéresse'."
+      "explanation": "'Ce qui' en début de phrase = 'la chose qui'. Sujet du verbe 'intéresse'.",
+      "translation": "What interests me is music."
     },
     {
       "id": "pr045",
@@ -455,7 +499,8 @@
       "answer": "ce que",
       "alternatives": ["ce qu'"],
       "hint": "Pas d'antécédent + COD",
-      "explanation": "'Ce que' = 'la chose que'. COD du verbe 'dire', sans antécédent défini."
+      "explanation": "'Ce que' = 'la chose que'. COD du verbe 'dire', sans antécédent défini.",
+      "translation": "I don't understand what you're saying."
     },
     {
       "id": "pr046",
@@ -465,7 +510,8 @@
       "answer": "laquelle",
       "alternatives": [],
       "hint": "Préposition 'sur' + nom féminin singulier",
-      "explanation": "Après une préposition, on utilise 'lequel/laquelle'. 'La table' est féminin singulier → laquelle."
+      "explanation": "Après une préposition, on utilise 'lequel/laquelle'. 'La table' est féminin singulier → laquelle.",
+      "translation": "The table on which I put my books is made of wood."
     },
     {
       "id": "pr047",
@@ -475,7 +521,8 @@
       "answer": "lequel",
       "alternatives": [],
       "hint": "Préposition 'avec' + nom masculin singulier",
-      "explanation": "Après une préposition, on utilise 'lequel/laquelle'. 'Le stylo' est masculin singulier → lequel."
+      "explanation": "Après une préposition, on utilise 'lequel/laquelle'. 'Le stylo' est masculin singulier → lequel.",
+      "translation": "The pen with which I write is blue."
     },
     {
       "id": "pr048",
@@ -485,7 +532,8 @@
       "answer": "lesquelles",
       "alternatives": [],
       "hint": "Préposition 'pour' + nom féminin pluriel",
-      "explanation": "Après une préposition, 'les raisons' est féminin pluriel → lesquelles."
+      "explanation": "Après une préposition, 'les raisons' est féminin pluriel → lesquelles.",
+      "translation": "The reasons for which he resigned are clear."
     },
     {
       "id": "pr049",
@@ -495,7 +543,8 @@
       "answer": "Ce qui",
       "alternatives": ["ce qui"],
       "hint": "En début de phrase, sans antécédent + sujet",
-      "explanation": "'Ce qui' en début de phrase = 'la chose qui'. Sujet du verbe 'est'."
+      "explanation": "'Ce qui' en début de phrase = 'la chose qui'. Sujet du verbe 'est'.",
+      "translation": "What is important is to practice."
     },
     {
       "id": "pr050",
@@ -505,7 +554,8 @@
       "answer": "lesquels",
       "alternatives": [],
       "hint": "Préposition 'chez' + nom masculin pluriel",
-      "explanation": "Après une préposition, 'les amis' est masculin pluriel → lesquels."
+      "explanation": "Après une préposition, 'les amis' est masculin pluriel → lesquels.",
+      "translation": "The friends at whose place we slept are nice."
     },
     {
       "id": "pr051",
@@ -515,7 +565,8 @@
       "answer": "ce qu'",
       "alternatives": ["ce que"],
       "hint": "Pas d'antécédent + COD + voyelle",
-      "explanation": "'Ce que' s'élide devant 'il' → ce qu'il veut."
+      "explanation": "'Ce que' s'élide devant 'il' → ce qu'il veut.",
+      "translation": "He does what he wants."
     },
     {
       "id": "pr052",
@@ -525,7 +576,8 @@
       "answer": "laquelle",
       "alternatives": [],
       "hint": "Préposition 'sur' + nom féminin singulier",
-      "explanation": "Après une préposition, 'la chaise' est féminin singulier → laquelle."
+      "explanation": "Après une préposition, 'la chaise' est féminin singulier → laquelle.",
+      "translation": "The chair on which you are sitting is broken."
     },
     {
       "id": "pr053",
@@ -535,7 +587,8 @@
       "answer": "ce qui",
       "alternatives": ["ce qu'il"],
       "hint": "Pas d'antécédent + sujet du verbe",
-      "explanation": "'Ce qui' = 'la chose qui'. Sujet du verbe 'se passer'."
+      "explanation": "'Ce qui' = 'la chose qui'. Sujet du verbe 'se passer'.",
+      "translation": "Tell me what happened."
     },
     {
       "id": "pr054",
@@ -545,7 +598,8 @@
       "answer": "lequel",
       "alternatives": [],
       "hint": "Préposition 'sous' + nom masculin singulier",
-      "explanation": "Après une préposition, 'le pont' est masculin singulier → lequel."
+      "explanation": "Après une préposition, 'le pont' est masculin singulier → lequel.",
+      "translation": "The bridge under which the river flows is old."
     },
     {
       "id": "pr055",
@@ -555,7 +609,8 @@
       "answer": "ce dont",
       "alternatives": [],
       "hint": "Pas d'antécédent + verbe 'avoir besoin DE'",
-      "explanation": "'Ce dont' = 'la chose dont'. Verbe 'avoir besoin DE quelque chose'."
+      "explanation": "'Ce dont' = 'la chose dont'. Verbe 'avoir besoin DE quelque chose'.",
+      "translation": "I don't know what she needs."
     },
     {
       "id": "pr056",
@@ -565,7 +620,8 @@
       "answer": "Ce qui",
       "alternatives": ["ce qui"],
       "hint": "En début de phrase, sans antécédent + sujet",
-      "explanation": "'Ce qui' en début de phrase = 'la chose qui'. Sujet du verbe 'plaît'."
+      "explanation": "'Ce qui' en début de phrase = 'la chose qui'. Sujet du verbe 'plaît'.",
+      "translation": "What I like is the quiet."
     },
     {
       "id": "pr057",
@@ -575,7 +631,8 @@
       "answer": "laquelle",
       "alternatives": [],
       "hint": "Préposition 'par' + nom féminin singulier",
-      "explanation": "Après une préposition, 'la fenêtre' est féminin singulier → laquelle."
+      "explanation": "Après une préposition, 'la fenêtre' est féminin singulier → laquelle.",
+      "translation": "The window through which the light comes in is large."
     },
     {
       "id": "pr058",
@@ -585,7 +642,8 @@
       "answer": "ce qui",
       "alternatives": [],
       "hint": "Pas d'antécédent + sujet du verbe",
-      "explanation": "'Ce qui' = 'la chose qui'. Sujet du verbe 'semble'."
+      "explanation": "'Ce qui' = 'la chose qui'. Sujet du verbe 'semble'.",
+      "translation": "Do what seems right to you."
     },
     {
       "id": "pr059",
@@ -595,7 +653,8 @@
       "answer": "lesquels",
       "alternatives": [],
       "hint": "Préposition 'avec' + nom masculin pluriel",
-      "explanation": "Après une préposition, 'les collègues' est masculin pluriel → lesquels."
+      "explanation": "Après une préposition, 'les collègues' est masculin pluriel → lesquels.",
+      "translation": "The colleagues with whom I work are competent."
     },
     {
       "id": "pr060",
@@ -605,7 +664,8 @@
       "answer": "Ce que",
       "alternatives": ["ce que"],
       "hint": "En début de phrase, sans antécédent + COD",
-      "explanation": "'Ce que' en début de phrase = 'la chose que'. COD du verbe 'vouloir'."
+      "explanation": "'Ce que' en début de phrase = 'la chose que'. COD du verbe 'vouloir'.",
+      "translation": "What I want is to travel."
     },
     {
       "id": "pr061",
@@ -615,7 +675,8 @@
       "answer": "ce dont",
       "alternatives": [],
       "hint": "Pas d'antécédent + verbe 'avoir peur DE'",
-      "explanation": "'Ce dont' = 'la chose dont'. Verbe 'avoir peur DE quelque chose'."
+      "explanation": "'Ce dont' = 'la chose dont'. Verbe 'avoir peur DE quelque chose'.",
+      "translation": "You know what I'm afraid of."
     }
   ]
 }

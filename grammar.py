@@ -458,6 +458,10 @@ def ask_one_exercise(exercise: dict, exercise_num: int = None, total: int = None
     # Show explanation
     print(f"  Explication : {exercise['explanation']}")
 
+    # Show translation if available
+    if exercise.get("translation"):
+        print(f"  Traduction : {exercise['translation']}")
+
     return correct
 
 
