@@ -1,381 +1,435 @@
-un anorak,raincoat,clothing
-un pantalon,pants,clothing
-un tee-shirt,T-shirt,clothing
-des chaussettes,socks,clothing
-une chemise,shirt,clothing
-une veste,jacket,clothing
-des baskets,sneakers,clothing
-une robe,dress,clothing
-des chaussures,shoes,clothing
-des lunettes de soleil,sunglasses,clothing
-une crème solaire,suncreen,clothing
-une trousse de toilette,toiletry bag,clothing
-un slip,panties,clothing
-une colette,panties,clothing
-un soutien-gorge,bra,clothing
-une écharpe,scarf,clothing
-un pull,pullover,clothing
-des sandales,sandals,clothing
-un maillot de bain,swimsuit,clothing
-un bonnet,hat,clothing
-une casquette,cap,clothing
-un sweet,sweatshirt,clothing
-un short,shorts,clothing
-une jupe,skirt,clothing
-une tuque,hat,clothing
-une culotte,women`s panties,clothing
-un boxer,men`s underwear,clothing
-un blouson,jacket,clothing
-un manteau,coat,clothing
-un haut,top,clothing
-un costume,suit,clothing
-une cravate,tie,clothing
-un noeud papillon,bow tie,clothing
-un tailleur,lady’s suit,clothing
-un uniforme,uniform,clothing
-un gilet,waistcoat|vest,clothing
-un cardigan,cardigan,clothing
-un maillot,vest|undershirt,clothing
-un caleçon,boxer shorts|shorts,clothing
-un gant,gloves,clothing
-une chausette,a sock,clothing
-une chaussure,a shoe,clothing
-une botte,boot,clothing
-une sandale,a sandal,clothing
-la joie,joy,emotions
-la tristesse,sadness,emotions
-la colère,anger,emotions
-la peur,fear,emotions
-la surprise,surprise,emotions
-le dégoût,disgust,emotions
-content,satisfied,emotions
-joyeux,joyful,emotions
-heureux,happy,emotions
-ému,moved|touched,emotions
-touché,touched,emotions
-amoureux,in love,emotions
-fâché,angry,emotions
-énervé,irritated|angry,emotions
-vexé,offended,emotions
-frustré,frustrated,emotions
-inquiet,worried,emotions
-anxieux,anxious,emotions
-stressé,stressed,emotions
-déprimé,depressed,emotions
-déçu,disappointed,emotions
-étonné,surprised|astonished,emotions
-choqué,shocked,emotions
-impressionné,impressed,emotions
-mal à l'aise,uncomfortable,emotions
-dégoûté,disgusted,emotions
-écœuré,disgusted|sickened,emotions
-se sentir,to feel,emotions
-douter,to doubt,emotions
-hésiter,to hesitate,emotions
-regretter,to regret,emotions
-craindre,to fear,emotions
-souffrir,to suffer,emotions
-s'inquiéter,to be worried,emotions
-l'amour,love,emotions
-le doute,doubt,emotions
-l'hésitation,hesitation,emotions
-le regret,regret,emotions
-la crainte,fear,emotions
-la souffrance,suffering,emotions
-l'inquiétude,worry,emotions
-bonjour,hello,flashcards
-oui,yes,flashcards
-non,no,flashcards
-le chat,cat,flashcards
-le chien,dog,flashcards
-il est jeune,he is young,la description physique
-elle est jeune,she is young,la description physique
-il est âgé,he is old,la description physique
-il est vieux,he is old,la description physique
-elle est âgée,she is old,la description physique
-elle est vieille,she is old,la description physique
-il est beau,he is pretty,la description physique
-elle est belle,she is pretty,la description physique
-il est laid,he is ugly,la description physique
-il est moche,he is ugly,la description physique
-elle est laide,she is ugly,la description physique
-elle est moche,she is ugly,la description physique
-il est grand,he is tall,la description physique
-elle est grande,she is tall,la description physique
-il est petit,he is short,la description physique
-elle est petite,she is short,la description physique
-il est gros,he is fat,la description physique
-il est obèse,he is fat,la description physique
-elle est grosse,she is fat,la description physique
-elle est obèse,she is fat,la description physique
-il est mince,he is skinny,la description physique
-elle est mince,she is skinny,la description physique
-elle a des cheveux noirs,she has black hair,la description physique
-elle est brune,she is brunette,la description physique
-elle a des cheveux châtain,she has brown hair,la description physique
-elle a des cheveux blonds,she has blonde hair,la description physique
-elle est blonde,she is blonde,la description physique
-elle a des cheveux roux,she has red hair,la description physique
-elle est rousse,she is red,la description physique
-elle a des cheveux gris,she has grey hair,la description physique
-il a les cheveux blancs,he has white hair,la description physique
-elle a les cheveux longs,she has long hair,la description physique
-elle a les cheveux courts,she has short hair,la description physique
-elle a les cheveux raides,she has straight hair,la description physique
-elle a les cheveux frisés,she has curly hair,la description physique
-elle a les cheveux bouclés,she has curly hair,la description physique
-elle a les cheveux ondulés,she has wavy hair,la description physique
-elle a les cheveux crépus,she has afro hair,la description physique
-elle a des grand yeux,she has big eyes,la description physique
-il a des petits yeux,he has small eyes,la description physique
-elle a les yeux noirs,she has black eyes,la description physique
-elle a les yeux marron,she has brown eyes,la description physique
-elle a les yeux bleus,she has blue eyes,la description physique
-elle a les yeux verts,she has green eyes,la description physique
-il a une barbe,he has a beard,la description physique
-il est barbu,he is bearded,la description physique
-il a une moustache,he has a mustache,la description physique
-il est moustachu,he is mustached,la description physique
-il est chauve,he is shaven,la description physique
-il est tatoué,he is tattooed,la description physique
-il ya du vent,windy,la météo
-il fait chaud,hot,la météo
-il neige,snows,la météo
-il y a des nuages,cloudy,la météo
-il y a de l’òrage,stoym,la météo
-il ya a du soleil,sunny,la météo
-il pleut,rainy,la météo
-il fait beau,sunny,la météo
-l’été,summer,la météo
-l’hiver,winter,la météo
-l’automne,autumn,la météo
-le printemps,spring,la météo
-les saisons,seasons,la météo
-les pays,countries,la météo
-la météo,weather,la météo
-la tête,head,le corps humain
-le visage,face,le corps humain
-le front,forehead,le corps humain
-la nuque,nape of the neck,le corps humain
-l'épaule,shoulder,le corps humain
-le bras,arm,le corps humain
-le coude,elbow,le corps humain
-le dos,back,le corps humain
-le doigt,finger,le corps humain
-la main,hand,le corps humain
-le ventre,stomach,le corps humain
-la jambe,leg,le corps humain
-le genou,knee,le corps humain
-le pied,foot,le corps humain
-les fesses,buttocks,le corps humain
-la cheville,ankle,le corps humain
-les cheveux,hair,le corps humain
-l'œil,eye,le corps humain
-les yeux,eyes,le corps humain
-l'oreille,ear,le corps humain
-le nez,nose,le corps humain
-les dents,teeth,le corps humain
-la bouche,mouth,le corps humain
-le cou,neck,le corps humain
-la langue,tongue,le corps humain
-lundi,monday,les jours de la semaine
-mardi,tuesday,les jours de la semaine
-mercredi,wednesday,les jours de la semaine
-jeudi,thursday,les jours de la semaine
-vendredi,friday,les jours de la semaine
-samedi,saturday,les jours de la semaine
-dimanche,sunday,les jours de la semaine
-aujourd’hui,today,les jours de la semaine
-hier,yesterday,les jours de la semaine
-demain,tomorrow,les jours de la semaine
-la banque,bank,les lieux publics
-le bar,bar,les lieux publics
-la bibliothèque,library,les lieux publics
-la bijouterie,jeweller`s shop,les lieux publics
-la boucherie,butcher`s shop,les lieux publics
-la boulangerie,baker`s shop,les lieux publics
-la cinéma,movie theater,les lieux publics
-la clinique,private hospital,les lieux publics
-le poste de police,police station,les lieux publics
-l`école primaire,primary school,les lieux publics
-le supermarché,supermarket,les lieux publics
-le fleuriste,florist`s shop,les lieux publics
-la gare,train station,les lieux publics
-l`hôpital,hospital,les lieux publics
-l`hôtel,hotel,les lieux publics
-le parc,park,les lieux publics
-la librairie,bookstore,les lieux publics
-le lycée,high school,les lieux publics
-la mairie,city hall,les lieux publics
-le musée,museum,les lieux publics
-l`office de tourisme,tourist office,les lieux publics
-la pharmacie,drugstore,les lieux publics
-la poissonnerie,fish shop,les lieux publics
-la poste,post office,les lieux publics
-le restaurant,restaurant,les lieux publics
-le salon de coiffure,hairdressing salon,les lieux publics
-l’université,university,les lieux publics
-Janvier,January,les mois
-Février,February,les mois
-Mars,March,les mois
-Avril,April,les mois
-Mai,May,les mois
-Juin,June,les mois
-Juillet,July,les mois
-Août,August,les mois
-Septembre,September,les mois
-Octobre,October,les mois
-Novembre,November,les mois
-Décembre,December,les mois
-une culotte,panties,les vêtements
-un boxer,underwear,les vêtements
-un gilet,waistcoat,les vêtements
-un maillot,undershirt,les vêtements
-un caleçon,boxer shorts,les vêtements
-à,to|at|in,prepositions
-à côte de,next to|beside,prepositions
-au sujet de,about|on the subject of,prepositions
-avant,before,prepositions
-chez,at the home of|office of|among,prepositions
-d’après,according to,prepositions
-de,from|of|about,prepositions
-depuis,since|for,prepositions
-devant,in front of,prepositions
-durant,during|while,prepositions
-en,in|on|to,prepositions
-en dehors de,outside,prepositions
-en face de,facing|across from,prepositions
-entre,between,prepositions
-environ,approximately,prepositions
-hors de,outside,prepositions
-jusque,until|up to|even,prepositions
-loin de,far from,prepositions
-nalgré,despite,prepositions
-promi,among,prepositions
-près de,near,prepositions
-quant à,as for|regarding,prepositions
-sans,without,prepositions
-selon,according to,prepositions
-suivant,according to,prepositions
-sur,on,prepositions
-vers,toward,prepositions
-d’habitude,usually,prepositions
-parfois,sometimes,prepositions
-de temps en temps,sometimes,prepositions
-quelquefois,sometimes,prepositions
-rarement,rarely,prepositions
-jamais,never,prepositions
-﻿Comment vous appelez-vous?,What's your name?,questions
-Comment allez-vous?,How are you?,questions
-Comment ça va?,How are you?,questions
-Comment ça s'écrit?,How do you spell that?,questions
-D'où venez-vous?,Where do you come from?,questions
-D'où viens-tu?,Where do you come from?,questions
-Quel âge avez-vous?,How old are you?,questions
-Qu'est-ce que vous étudiez?,What do you study?,questions
-Qu'est-ce que tu vas faire ce week-end?,What are you going to do this weekend?,questions
-Tu veux sortir avec nous ce soir?,Do you want to go out with us tonight?,questions
-À quelle heure commence le concert?,When does the concert start?,questions
-À quelle heure se termine le concert?,When does the concert end?,questions
-Qu'est-ce qui s'est passé?,What happened?,questions
-Quel est votre passe-temps préféré?,What is your hobby?,questions
-Quel est ton passe-temps préféré?,What is your hobby?,questions
-Parlez-vous anglais?,Do you speak English?,questions
-Quelle heure est-il?,What time is it?,questions
-À quelle heure part le train pour Marseille?,What time does the train depart for Marseille?,questions
-Quel temps fait-il aujourd'hui?,What's the weather like today?,questions
-Quel jour somme-nous?,What day is it?,questions
-Où se trouve…?,Where is…(specific thing) found?,questions
-Où est …?,Where is…?,questions
-Comment va-t-on à…?,How do I get to…?,questions
-Combien ça coûte?,How much does this cost?,questions
-Vous faites quoi comme métier?,What's your occupation?,questions
-Pouvez-vous traduire pour moi?,Can you translate for me?,questions
-Peux-tu m'expliquer en français?,Can you explain in French to me?,questions
-Peux-tu m'expliquer en anglais?,Can you explain in English to me?,questions
-Est-ce que tu me comprends?,Do you understand?,questions
-Pourriez-vous répéter|s'il vous plaît?,Can you repeat that|please?,questions
-Pouvez vous parles plus lentement?,Can you speak slower?,questions
-Qu'est-ce qui se passe?,What's happening?,questions
-Qu'est-ce que tu entends par …?,What do you mean by … ?,questions
-Il fait combien de degrés?,What temperature is it?,questions
-Il fait quel temps?,What is the weather?,questions
-se réveiller,to wake up,routine
-le matin,morning,routine
-se lever,to get up,routine
-s’habiller,to dress up,routine
-se brosser les dents,to brush the teeth,routine
-se laver le visage,to wash the face,routine
-prendre une douche,to take a shower,routine
-prendre le petit-déjeuner,to take the breakfast,routine
-L’après-midi,afternoon,routine
-aller au travail,to go to work,routine
-travailler,to work,routine
-déjeuner,to have lunch,routine
-dîner,to have lunch,routine
-prendre une pause,to take a break,routine
-faire une sieste,to do a nap,routine
-le soir,evening,routine
-faire du sport,to exercise,routine
-préparer le repas,to prepare the meal,routine
-manger,to eat,routine
-faire une promenade,to go for a walk,routine
-se promener,to walk,routine
-lire des livres,to read books,routine
-écouter de la musique,to listen to music,routine
-regardes des films ou des séries,to watch some movies or tv shows,routine
-voir des amis,to see some friends,routine
-aller au cinéma,to go to the cinema,routine
-jouer aux jeux vidéo,to play video games,routine
-﻿aimer,to like,verbs
-regarder,to look at,verbs
-parler,to talk|to speak,verbs
-écouter,to listen to,verbs
-chanter,to sing,verbs
-danser,to dance,verbs
-rire,to laugh,verbs
-bouger,to move,verbs
-entrer,to enter,verbs
-sortir,to exit|to go out,verbs
-rester,to stay,verbs
-acheter,to buy,verbs
-étudier,to study,verbs
-prendre,to take,verbs
-conduire,to drive,verbs
-arrêter,to stop,verbs
-commencer,to begin,verbs
-finir,to finish,verbs
-laver,to wash,verbs
-lever,to lift|to raise,verbs
-penser,to think,verbs
-courir,to run,verbs
-marcher,to walk,verbs
-faire,to do|to make,verbs
-aller,to go,verbs
-venir,to come,verbs
-emprunter,to borrow,verbs
-prêter,to lend,verbs
-aider,to help,verbs
-prier,to pray to,verbs
-choisir,to choose,verbs
-dormir,to sleep,verbs
-boire,to drink,verbs
-mettre,to put,verbs
-écrire,to write,verbs
-lire,to read,verbs
-pousser,to push|to grow,verbs
-réchauffer,to reheat,verbs
-recommencer,to resume|to start again,verbs
-arriver,to arrive,verbs
-profiter,to take advantage of,verbs
-nager,to swim,verbs
-déménager,to move (house)|to remove,verbs
-montrer,to show,verbs
-rendrer,to give back|to return,verbs
-partager,to share,verbs
-sembler,to seem,verbs
-visiter,to visit,verbs
-il ya du vent,it’s windy,weather
-il fait chaud,it’s hot,weather
-il y a de l’òrage,storms,weather
-il pleut,rain,weather
+un anorak,raincoat,clothing,
+un pantalon,pants,clothing,
+un tee-shirt,T-shirt,clothing,
+des chaussettes,socks,clothing,
+une chemise,shirt,clothing,
+une veste,jacket,clothing,
+des baskets,sneakers,clothing,
+une robe,dress,clothing,
+des chaussures,shoes,clothing,
+des lunettes de soleil,sunglasses,clothing,
+une crème solaire,suncreen,clothing,
+une trousse de toilette,toiletry bag,clothing,
+un slip,panties,clothing,
+une colette,panties,clothing,
+un soutien-gorge,bra,clothing,
+une écharpe,scarf,clothing,
+un pull,pullover,clothing,
+des sandales,sandals,clothing,
+un maillot de bain,swimsuit,clothing,
+un bonnet,hat,clothing,
+une casquette,cap,clothing,
+un sweet,sweatshirt,clothing,
+un short,shorts,clothing,
+une jupe,skirt,clothing,
+une tuque,hat,clothing,
+une culotte,women`s panties,clothing,
+un boxer,men`s underwear,clothing,
+un blouson,jacket,clothing,
+un manteau,coat,clothing,
+un haut,top,clothing,
+un costume,suit,clothing,
+une cravate,tie,clothing,
+un noeud papillon,bow tie,clothing,
+un tailleur,lady’s suit,clothing,
+un uniforme,uniform,clothing,
+un gilet,waistcoat|vest,clothing,
+un cardigan,cardigan,clothing,
+un maillot,vest|undershirt,clothing,
+un caleçon,boxer shorts|shorts,clothing,
+un gant,gloves,clothing,
+une chausette,a sock,clothing,
+une chaussure,a shoe,clothing,
+une botte,boot,clothing,
+une sandale,a sandal,clothing,
+la joie,joy,emotions,
+la tristesse,sadness,emotions,
+la colère,anger,emotions,
+la peur,fear,emotions,
+la surprise,surprise,emotions,
+le dégoût,disgust,emotions,
+content,satisfied,emotions,
+joyeux,joyful,emotions,
+heureux,happy,emotions,
+ému,moved|touched,emotions,
+touché,touched,emotions,
+amoureux,in love,emotions,
+fâché,angry,emotions,
+énervé,irritated|angry,emotions,
+vexé,offended,emotions,
+frustré,frustrated,emotions,
+inquiet,worried,emotions,
+anxieux,anxious,emotions,
+stressé,stressed,emotions,
+déprimé,depressed,emotions,
+déçu,disappointed,emotions,
+étonné,surprised|astonished,emotions,
+choqué,shocked,emotions,
+impressionné,impressed,emotions,
+mal à l'aise,uncomfortable,emotions,
+dégoûté,disgusted,emotions,
+écœuré,disgusted|sickened,emotions,
+se sentir,to feel,emotions,
+douter,to doubt,emotions,
+hésiter,to hesitate,emotions,
+regretter,to regret,emotions,
+craindre,to fear,emotions,
+souffrir,to suffer,emotions,
+s'inquiéter,to be worried,emotions,
+l'amour,love,emotions,
+le doute,doubt,emotions,
+l'hésitation,hesitation,emotions,
+le regret,regret,emotions,
+la crainte,fear,emotions,
+la souffrance,suffering,emotions,
+l'inquiétude,worry,emotions,
+bonjour,hello,flashcards,
+oui,yes,flashcards,
+non,no,flashcards,
+le chat,cat,flashcards,
+le chien,dog,flashcards,
+il est jeune,he is young,la description physique,
+elle est jeune,she is young,la description physique,
+il est âgé,he is old,la description physique,
+il est vieux,he is old,la description physique,
+elle est âgée,she is old,la description physique,
+elle est vieille,she is old,la description physique,
+il est beau,he is pretty,la description physique,
+elle est belle,she is pretty,la description physique,
+il est laid,he is ugly,la description physique,
+il est moche,he is ugly,la description physique,
+elle est laide,she is ugly,la description physique,
+elle est moche,she is ugly,la description physique,
+il est grand,he is tall,la description physique,
+elle est grande,she is tall,la description physique,
+il est petit,he is short,la description physique,
+elle est petite,she is short,la description physique,
+il est gros,he is fat,la description physique,
+il est obèse,he is fat,la description physique,
+elle est grosse,she is fat,la description physique,
+elle est obèse,she is fat,la description physique,
+il est mince,he is skinny,la description physique,
+elle est mince,she is skinny,la description physique,
+elle a des cheveux noirs,she has black hair,la description physique,
+elle est brune,she is brunette,la description physique,
+elle a des cheveux châtain,she has brown hair,la description physique,
+elle a des cheveux blonds,she has blonde hair,la description physique,
+elle est blonde,she is blonde,la description physique,
+elle a des cheveux roux,she has red hair,la description physique,
+elle est rousse,she is red,la description physique,
+elle a des cheveux gris,she has grey hair,la description physique,
+il a les cheveux blancs,he has white hair,la description physique,
+elle a les cheveux longs,she has long hair,la description physique,
+elle a les cheveux courts,she has short hair,la description physique,
+elle a les cheveux raides,she has straight hair,la description physique,
+elle a les cheveux frisés,she has curly hair,la description physique,
+elle a les cheveux bouclés,she has curly hair,la description physique,
+elle a les cheveux ondulés,she has wavy hair,la description physique,
+elle a les cheveux crépus,she has afro hair,la description physique,
+elle a des grand yeux,she has big eyes,la description physique,
+il a des petits yeux,he has small eyes,la description physique,
+elle a les yeux noirs,she has black eyes,la description physique,
+elle a les yeux marron,she has brown eyes,la description physique,
+elle a les yeux bleus,she has blue eyes,la description physique,
+elle a les yeux verts,she has green eyes,la description physique,
+il a une barbe,he has a beard,la description physique,
+il est barbu,he is bearded,la description physique,
+il a une moustache,he has a mustache,la description physique,
+il est moustachu,he is mustached,la description physique,
+il est chauve,he is shaven,la description physique,
+il est tatoué,he is tattooed,la description physique,
+il ya du vent,windy,la météo,
+il fait chaud,hot,la météo,
+il neige,snows,la météo,
+il y a des nuages,cloudy,la météo,
+il y a de l’òrage,stoym,la météo,
+il ya a du soleil,sunny,la météo,
+il pleut,rainy,la météo,
+il fait beau,sunny,la météo,
+l’été,summer,la météo,
+l’hiver,winter,la météo,
+l’automne,autumn,la météo,
+le printemps,spring,la météo,
+les saisons,seasons,la météo,
+les pays,countries,la météo,
+la météo,weather,la météo,
+la tête,head,le corps humain,
+le visage,face,le corps humain,
+le front,forehead,le corps humain,
+la nuque,nape of the neck,le corps humain,
+l'épaule,shoulder,le corps humain,
+le bras,arm,le corps humain,
+le coude,elbow,le corps humain,
+le dos,back,le corps humain,
+le doigt,finger,le corps humain,
+la main,hand,le corps humain,
+le ventre,stomach,le corps humain,
+la jambe,leg,le corps humain,
+le genou,knee,le corps humain,
+le pied,foot,le corps humain,
+les fesses,buttocks,le corps humain,
+la cheville,ankle,le corps humain,
+les cheveux,hair,le corps humain,
+l'œil,eye,le corps humain,
+les yeux,eyes,le corps humain,
+l'oreille,ear,le corps humain,
+le nez,nose,le corps humain,
+les dents,teeth,le corps humain,
+la bouche,mouth,le corps humain,
+le cou,neck,le corps humain,
+la langue,tongue,le corps humain,
+lundi,monday,les jours de la semaine,
+mardi,tuesday,les jours de la semaine,
+mercredi,wednesday,les jours de la semaine,
+jeudi,thursday,les jours de la semaine,
+vendredi,friday,les jours de la semaine,
+samedi,saturday,les jours de la semaine,
+dimanche,sunday,les jours de la semaine,
+aujourd’hui,today,les jours de la semaine,
+hier,yesterday,les jours de la semaine,
+demain,tomorrow,les jours de la semaine,
+la banque,bank,les lieux publics,
+le bar,bar,les lieux publics,
+la bibliothèque,library,les lieux publics,
+la bijouterie,jeweller`s shop,les lieux publics,
+la boucherie,butcher`s shop,les lieux publics,
+la boulangerie,baker`s shop,les lieux publics,
+la cinéma,movie theater,les lieux publics,
+la clinique,private hospital,les lieux publics,
+le poste de police,police station,les lieux publics,
+l`école primaire,primary school,les lieux publics,
+le supermarché,supermarket,les lieux publics,
+le fleuriste,florist`s shop,les lieux publics,
+la gare,train station,les lieux publics,
+l`hôpital,hospital,les lieux publics,
+l`hôtel,hotel,les lieux publics,
+le parc,park,les lieux publics,
+la librairie,bookstore,les lieux publics,
+le lycée,high school,les lieux publics,
+la mairie,city hall,les lieux publics,
+le musée,museum,les lieux publics,
+l`office de tourisme,tourist office,les lieux publics,
+la pharmacie,drugstore,les lieux publics,
+la poissonnerie,fish shop,les lieux publics,
+la poste,post office,les lieux publics,
+le restaurant,restaurant,les lieux publics,
+le salon de coiffure,hairdressing salon,les lieux publics,
+l’université,university,les lieux publics,
+Janvier,January,les mois,
+Février,February,les mois,
+Mars,March,les mois,
+Avril,April,les mois,
+Mai,May,les mois,
+Juin,June,les mois,
+Juillet,July,les mois,
+Août,August,les mois,
+Septembre,September,les mois,
+Octobre,October,les mois,
+Novembre,November,les mois,
+Décembre,December,les mois,
+une culotte,panties,les vêtements,
+un boxer,underwear,les vêtements,
+un gilet,waistcoat,les vêtements,
+un maillot,undershirt,les vêtements,
+un caleçon,boxer shorts,les vêtements,
+une ferme,a farm,les_meilleurs_amis,f
+une sœur,a sister,les_meilleurs_amis,f
+un frère,a brother,les_meilleurs_amis,m
+se soucier,to worry,les_meilleurs_amis,
+la nourriture,food,les_meilleurs_amis,f
+une aile,a wing,les_meilleurs_amis,f
+un canard,a duck,les_meilleurs_amis,m
+sauvage,wild,les_meilleurs_amis,
+envier,to envy,les_meilleurs_amis,
+voler,to fly,les_meilleurs_amis,
+apprendre,to learn,les_meilleurs_amis,
+les rudiments,the basics,les_meilleurs_amis,m
+oser,to dare,les_meilleurs_amis,
+s'envoler,to fly away,les_meilleurs_amis,
+une merveille,a marvel,les_meilleurs_amis,f
+d'aussi haut,from so high,les_meilleurs_amis,
+l'amitié,friendship,les_meilleurs_amis,f
+en pleurs,in tears,les_meilleurs_amis,
+sangloter,to sob,les_meilleurs_amis,
+le sud,the south,les_meilleurs_amis,m
+à chaudes larmes,crying bitterly,les_meilleurs_amis,
+se promettre,to promise each other,les_meilleurs_amis,
+le chagrin,grief,les_meilleurs_amis,m
+seul,alone,les_meilleurs_amis,
+une cascade,a waterfall,les_meilleurs_amis,f
+un moulin,a mill,les_meilleurs_amis,m
+un rocher,a rock,les_meilleurs_amis,m
+un pont,a bridge,les_meilleurs_amis,m
+tomber malade,to fall ill,les_meilleurs_amis,
+s'inquiéter,to worry,les_meilleurs_amis,
+manquer,to miss,les_meilleurs_amis,
+rendre visite,to visit,les_meilleurs_amis,
+soupirer,to sigh,les_meilleurs_amis,
+balbutier,to stammer,les_meilleurs_amis,
+un petit déjeuner,a breakfast,les_meilleurs_amis,m
+une leçon,a lesson,les_meilleurs_amis,f
+les dispositions,the aptitude,les_meilleurs_amis,f
+le travail,the work,les_meilleurs_amis,m
+un régime,a diet,les_meilleurs_amis,m
+la gymnastique,gymnastics,les_meilleurs_amis,f
+quotidien,daily|everyday,les_meilleurs_amis,
+les gâteaux,the cakes,les_meilleurs_amis,m
+inspirer,to breathe in,les_meilleurs_amis,
+souffler,to breathe out,les_meilleurs_amis,
+s'amuser,to have fun,les_meilleurs_amis,
+convenablement,properly,les_meilleurs_amis,
+quelque chose,something,les_meilleurs_amis,
+s'apercevoir,to realize,les_meilleurs_amis,
+au fond de lui,deep down,les_meilleurs_amis,
+une troupe,a troupe,les_meilleurs_amis,f
+un exploit,a feat,les_meilleurs_amis,m
+à travers,across,les_meilleurs_amis,
+réuni,reunited,les_meilleurs_amis,
+merveilleux,wonderful,les_meilleurs_amis,
+à,to|at|in,prepositions,
+à côte de,next to|beside,prepositions,
+au sujet de,about|on the subject of,prepositions,
+avant,before,prepositions,
+chez,at the home of|office of|among,prepositions,
+d’après,according to,prepositions,
+de,from|of|about,prepositions,
+depuis,since|for,prepositions,
+devant,in front of,prepositions,
+durant,during|while,prepositions,
+en,in|on|to,prepositions,
+en dehors de,outside,prepositions,
+en face de,facing|across from,prepositions,
+entre,between,prepositions,
+environ,approximately,prepositions,
+hors de,outside,prepositions,
+jusque,until|up to|even,prepositions,
+loin de,far from,prepositions,
+nalgré,despite,prepositions,
+promi,among,prepositions,
+près de,near,prepositions,
+quant à,as for|regarding,prepositions,
+sans,without,prepositions,
+selon,according to,prepositions,
+suivant,according to,prepositions,
+sur,on,prepositions,
+vers,toward,prepositions,
+d’habitude,usually,prepositions,
+parfois,sometimes,prepositions,
+de temps en temps,sometimes,prepositions,
+quelquefois,sometimes,prepositions,
+rarement,rarely,prepositions,
+jamais,never,prepositions,
+﻿Comment vous appelez-vous?,What's your name?,questions,
+Comment allez-vous?,How are you?,questions,
+Comment ça va?,How are you?,questions,
+Comment ça s'écrit?,How do you spell that?,questions,
+D'où venez-vous?,Where do you come from?,questions,
+D'où viens-tu?,Where do you come from?,questions,
+Quel âge avez-vous?,How old are you?,questions,
+Qu'est-ce que vous étudiez?,What do you study?,questions,
+Qu'est-ce que tu vas faire ce week-end?,What are you going to do this weekend?,questions,
+Tu veux sortir avec nous ce soir?,Do you want to go out with us tonight?,questions,
+À quelle heure commence le concert?,When does the concert start?,questions,
+À quelle heure se termine le concert?,When does the concert end?,questions,
+Qu'est-ce qui s'est passé?,What happened?,questions,
+Quel est votre passe-temps préféré?,What is your hobby?,questions,
+Quel est ton passe-temps préféré?,What is your hobby?,questions,
+Parlez-vous anglais?,Do you speak English?,questions,
+Quelle heure est-il?,What time is it?,questions,
+À quelle heure part le train pour Marseille?,What time does the train depart for Marseille?,questions,
+Quel temps fait-il aujourd'hui?,What's the weather like today?,questions,
+Quel jour somme-nous?,What day is it?,questions,
+Où se trouve…?,Where is…(specific thing) found?,questions,
+Où est …?,Where is…?,questions,
+Comment va-t-on à…?,How do I get to…?,questions,
+Combien ça coûte?,How much does this cost?,questions,
+Vous faites quoi comme métier?,What's your occupation?,questions,
+Pouvez-vous traduire pour moi?,Can you translate for me?,questions,
+Peux-tu m'expliquer en français?,Can you explain in French to me?,questions,
+Peux-tu m'expliquer en anglais?,Can you explain in English to me?,questions,
+Est-ce que tu me comprends?,Do you understand?,questions,
+Pourriez-vous répéter|s'il vous plaît?,Can you repeat that|please?,questions,
+Pouvez vous parles plus lentement?,Can you speak slower?,questions,
+Qu'est-ce qui se passe?,What's happening?,questions,
+Qu'est-ce que tu entends par …?,What do you mean by … ?,questions,
+Il fait combien de degrés?,What temperature is it?,questions,
+Il fait quel temps?,What is the weather?,questions,
+se réveiller,to wake up,routine,
+le matin,morning,routine,
+se lever,to get up,routine,
+s’habiller,to dress up,routine,
+se brosser les dents,to brush the teeth,routine,
+se laver le visage,to wash the face,routine,
+prendre une douche,to take a shower,routine,
+prendre le petit-déjeuner,to take the breakfast,routine,
+L’après-midi,afternoon,routine,
+aller au travail,to go to work,routine,
+travailler,to work,routine,
+déjeuner,to have lunch,routine,
+dîner,to have lunch,routine,
+prendre une pause,to take a break,routine,
+faire une sieste,to do a nap,routine,
+le soir,evening,routine,
+faire du sport,to exercise,routine,
+préparer le repas,to prepare the meal,routine,
+manger,to eat,routine,
+faire une promenade,to go for a walk,routine,
+se promener,to walk,routine,
+lire des livres,to read books,routine,
+écouter de la musique,to listen to music,routine,
+regardes des films ou des séries,to watch some movies or tv shows,routine,
+voir des amis,to see some friends,routine,
+aller au cinéma,to go to the cinema,routine,
+jouer aux jeux vidéo,to play video games,routine,
+﻿aimer,to like,verbs,
+regarder,to look at,verbs,
+parler,to talk|to speak,verbs,
+écouter,to listen to,verbs,
+chanter,to sing,verbs,
+danser,to dance,verbs,
+rire,to laugh,verbs,
+bouger,to move,verbs,
+entrer,to enter,verbs,
+sortir,to exit|to go out,verbs,
+rester,to stay,verbs,
+acheter,to buy,verbs,
+étudier,to study,verbs,
+prendre,to take,verbs,
+conduire,to drive,verbs,
+arrêter,to stop,verbs,
+commencer,to begin,verbs,
+finir,to finish,verbs,
+laver,to wash,verbs,
+lever,to lift|to raise,verbs,
+penser,to think,verbs,
+courir,to run,verbs,
+marcher,to walk,verbs,
+faire,to do|to make,verbs,
+aller,to go,verbs,
+venir,to come,verbs,
+emprunter,to borrow,verbs,
+prêter,to lend,verbs,
+aider,to help,verbs,
+prier,to pray to,verbs,
+choisir,to choose,verbs,
+dormir,to sleep,verbs,
+boire,to drink,verbs,
+mettre,to put,verbs,
+écrire,to write,verbs,
+lire,to read,verbs,
+pousser,to push|to grow,verbs,
+réchauffer,to reheat,verbs,
+recommencer,to resume|to start again,verbs,
+arriver,to arrive,verbs,
+profiter,to take advantage of,verbs,
+nager,to swim,verbs,
+déménager,to move (house)|to remove,verbs,
+montrer,to show,verbs,
+rendrer,to give back|to return,verbs,
+partager,to share,verbs,
+sembler,to seem,verbs,
+visiter,to visit,verbs,
+il ya du vent,it’s windy,weather,
+il fait chaud,it’s hot,weather,
+il y a de l’òrage,storms,weather,
+il pleut,rain,weather,

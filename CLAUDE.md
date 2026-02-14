@@ -408,7 +408,7 @@ son,his|her|sound,Common 1
 
 - **Python version**: Requires Python 3.13+ (see `pyproject.toml`)
 - **Dependencies**: `spyder-kernels>=3.1.0` (for development environment)
-- **Package manager**: Uses `uv` (see `uv.lock`)
+- **Package manager**: Uses `uv` (see `uv.lock`). **Always use `uv` for all Python-related operations** (installing packages, running scripts, etc.). Never use `pip` or bare `python`/`python3` directly.
 - **No tests**: Currently no test suite
 - **main.py**: Placeholder file, not used
 
