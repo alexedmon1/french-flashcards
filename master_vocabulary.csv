@@ -1,544 +1,93 @@
-﻿comme,as|like,Common 1
-je,I,Common 1
-son,his|her|sound,Common 1
-que,that|what|than,Common 1
-il,he|it,Common 1
-était,was,Common 1
-pour,for,Common 1
-sont,are,Common 1
-avec,with,Common 1
-ils,they,Common 1
-être,be,Common 1
-à,at|to,Common 1
-un,one|a|an,Common 1
-avoir,have,Common 1
-ce,this,Common 1
-partir,leave,Common 1
-par,by|through,Common 1
-chaud,hot|warm,Common 1
-mot,word,Common 1
-mais,but,Common 1
-certains,some,Common 1
-est,is|east,Common 1
-vous,you,Common 1
-ou,or,Common 1
-eu,had|got,Common 1
-la,the,Common 1
-de,of|off,Common 1
-et,and,Common 1
-dans,in,Common 1
-nous,we|us,Common 1
-boîte,can|box,Common 1
-dehors,out,Common 1
-autre,other,Common 1
-étaient,were,Common 1
-qui,which|who,Common 1
-faire,do|make,Common 1
-leur,their,Common 1
-temps,time,Common 1
-si,if|so,Common 1
-volonté,will,Common 1
-comment,how,Common 1
-chaque,each,Common 1
-dire,tell|say,Common 1
-ne,does,Common 1
-ensemble,set|together|whole,Common 1
-trois,three,Common 1
-vouloir,want,Common 1
-air,air,Common 1
-bien,well,Common 1
-aussi,also,Common 1
-jouer,play,Common 2
-petit,small,Common 2
-fin,end|fine,Common 2
-mettre,put,Common 2
-maison,house|home,Common 2
-lire,read,Common 2
-main,hand,Common 2
-port,port,Common 2
-grand,large|big|great,Common 2
-épeler,spell,Common 2
-ajouter,add,Common 2
-même,even|same,Common 2
-terre,land|earth,Common 2
-ici,here,Common 2
-tel,such,Common 2
-suivre,follow,Common 2
-faut,must,Common 2
-acte,act,Common 2
-pourquoi,why,Common 2
-interroger,ask,Common 2
-hommes,men,Common 2
-changement,change,Common 2
-allé,go,Common 2
-lumière,light,Common 2
-gentil,kind,Common 2
-besoin,need,Common 2
-image,picture,Common 2
-essayer,try,Common 2
-encore,again|still|yet,Common 2
-animal,animal,Common 2
-point,point,Common 2
-mère,mother,Common 2
-monde,world,Common 2
-près,near,Common 2
-construire,build,Common 2
-soi,self,Common 2
-père,father,Common 2
-tout,any,Common 2
-nouveau,new,Common 2
-travail,work,Common 2
-partie,part,Common 2
-prendre,take,Common 2
-obtenir,get,Common 2
-lieu,place,Common 2
-fabriqué,made,Common 2
-vivre,live,Common 2
-où,where,Common 2
-après,after,Common 2
-arrière,back,Common 2
-peu,little|few,Common 2
-seulement,only,Common 2
-tour,round|turn|ride,Common 2
-homme,man,Common 2
-année,year,Common 2
-montrer,show,Common 2
-tous,every|all,Common 2
-bon,good,Common 2
-moi,me,Common 2
-donner,give,Common 2
-notre,our,Common 2
-sous,under,Common 2
-nom,name|noun,Common 2
-très,very,Common 2
-juste,just,Common 2
-forme,form|shape,Common 2
-phrase,sentence,Common 2
-penser,think,Common 2
-aider,help,Common 2
-faible,low,Common 2
-ligne,line,Common 2
-différer,differ,Common 2
-cause,cause,Common 2
-beaucoup,much|many,Common 2
-signifier,mean,Common 2
-avant,before|front,Common 2
-déménagement,(house) move,Common 2
-droit,right,Common 2
-garçon,boy,Common 2
-vieux,old,Common 2
-trop,too,Common 2
-elle,she,Common 2
-là,there,Common 2
-quand,when,Common 2
-utiliser,use,Common 2
-votre,your,Common 2
-manière,way,Common 2
-sur,on|about|over,Common 2
-puis,then,Common 2
-les,them,Common 2
-écrire,write,Common 2
-voudrais,would,Common 2
-ces,these,Common 2
-long,long,Common 3
-chose,thing,Common 3
-voir,see,Common 3
-lui,him,Common 3
-deux,two,Common 3
-a,has,Common 3
-regarder,look|watch,Common 3
-jour,day,Common 3
-pourrait,could,Common 3
-aller,go,Common 3
-venir,come,Common 3
-fait,did|fact,Common 3
-nombre,number,Common 3
-aucun,no,Common 3
-plus,more|most,Common 3
-personnes,people,Common 3
-ma,my,Common 3
-savoir,know,Common 3
-eau,water,Common 3
-appel,call,Common 3
-première,first,Common 3
-peut,may,Common 3
-vers,toward|towards,Common 3
-côté,side,Common 3
-été,been|summer,Common 3
-maintenant,now,Common 3
-trouver,find,Common 3
-tête,head,Common 3
-supporter,stand,Common 3
-propre,own,Common 3
-page,page,Common 3
-devrait,should,Common 3
-pays,country,Common 3
-trouvé,found,Common 3
-réponse,answer,Common 3
-école,school,Common 3
-croître,grow,Common 3
-étude,study,Common 3
-apprendre,learn,Common 3
-usine,factory,Common 3
-couvercle,cover,Common 3
-nourriture,food,Common 3
-soleil,sun,Common 3
-quatre,four,Common 3
-entre,between|among,Common 3
-état,state,Common 3
-garder,keep,Common 3
-œil,eye,Common 3
-jamais,never|ever,Common 3
-dernier,last,Common 3
-laisser,let|leave,Common 3
-pensée,thought,Common 3
-ville,city|town,Common 3
-arbre,tree,Common 3
-traverser,cross,Common 3
-ferme,farm,Common 3
-dur,hard,Common 3
-début,start,Common 3
-puissance,might|power,Common 3
-histoire,story,Common 3
-scie,saw,Common 3
-loin,far,Common 3
-mer,sea,Common 3
-tirer,draw|pull,Common 3
-gauche,left,Common 3
-tard,late,Common 3
-courir,run,Common 3
-presse,press,Common 3
-proche,close,Common 3
-nuit,night,Common 3
-réel,real,Common 3
-vie,life,Common 3
-nord,north,Common 3
-livre,book|pound,Common 3
-porter,carry,Common 3
-a pris,took,Common 3
-science,science,Common 3
-manger,eat,Common 3
-chambre,room,Common 3
-ami,friend,Common 3
-a commencé,began,Common 3
-idée,idea,Common 3
-poisson,fish,Common 3
-montagne,mountain,Common 3
-arrêtez,stop,Common 3
-base,base,Common 3
-entendre,hear,Common 3
-cheval,horse,Common 4
-couper,cut,Common 4
-sûr,sure,Common 4
-couleur,color,Common 4
-face,face,Common 4
-bois,wood,Common 4
-principal,main,Common 4
-ouvert,open,Common 4
-paraître,seem,Common 4
-suivant,next,Common 4
-blanc,white,Common 4
-enfants,children,Common 4
-commencer,begin,Common 4
-marcher,walk,Common 4
-exemple,example,Common 4
-facilité,ease,Common 4
-papier,paper,Common 4
-groupe,group,Common 4
-toujours,always,Common 4
-musique,music,Common 4
-ceux,those,Common 4
-marque,mark,Common 4
-souvent,often,Common 4
-lettre,letter,Common 4
-mile,mile,Common 4
-rivière,river,Common 4
-voiture,car,Common 4
-pieds,feet,Common 4
-soins,care,Common 4
-deuxième,second,Common 4
-assez,enough,Common 4
-plaine,plain,Common 4
-fille,girl,Common 4
-habituel,usual,Common 4
-jeune,young,Common 4
-prêt,ready,Common 4
-au-dessus,above,Common 4
-rouge,red,Common 4
-liste,list,Common 4
-sentir,feel,Common 4
-parler,talk|speak,Common 4
-oiseau,bird,Common 4
-bientôt,soon,Common 4
-corps,body,Common 4
-chien,dog,Common 4
-famille,family,Common 4
-direct,direct,Common 4
-pose,pose,Common 4
-chanson,song,Common 4
-mesurer,measure,Common 4
-porte,door,Common 4
-produit,product,Common 4
-noir,black,Common 4
-court,short,Common 4
-chiffre,numeral,Common 4
-classe,class,Common 4
-vent,wind,Common 4
-question,question|matter,Common 4
-arriver,happen,Common 4
-complète,complete,Common 4
-navire,ship,Common 4
-zone,area,Common 4
-moitié,half,Common 4
-rock,rock,Common 4
-ordre,order,Common 4
-feu,fire,Common 4
-sud,south,Common 4
-problème,problem,Common 4
-pièce,piece,Common 4
-dit,told|said,Common 4
-savait,knew,Common 4
-passer,pass,Common 4
-depuis,since,Common 4
-haut,top|high,Common 4
-roi,king,Common 4
-rue,street,Common 4
-pouce,inch,Common 4
-multiplier,multiply,Common 4
-rien,nothing,Common 5
-cours,course,Common 5
-rester,stay,Common 5
-roue,wheel,Common 5
-plein,full,Common 5
-force,force,Common 5
-bleu,blue,Common 5
-objet,object,Common 5
-décider,decide,Common 5
-surface,surface,Common 5
-profond,deep,Common 5
-lune,moon,Common 5
-île,island,Common 5
-pied,foot,Common 5
-système,system,Common 5
-occupé,busy,Common 5
-test,test,Common 5
-record,record,Common 5
-bateau,boat,Common 5
-commun,common,Common 5
-or,gold,Common 5
-possible,possible,Common 5
-plan,plan,Common 5
-place,space|room,Common 5
-sec,dry,Common 5
-se demander,wonder,Common 5
-rire,laugh,Common 5
-mille,thousand,Common 5
-vérifier,check,Common 5
-jeu,game,Common 5
-assimiler,assimilate,Common 5
-manquer,miss,Common 5
-apporté,brought,Common 5
-chaleur,heat,Common 5
-neige,snow,Common 5
-pneu,tire,Common 5
-apporter,bring,Common 5
-lointain,distant,Common 5
-remplir,fill,Common 5
-peindre,paint,Common 5
-langue,language|tongue,Common 5
-unité,unit,Common 5
-certain,certain,Common 5
-voler,fly,Common 5
-tomber,fall,Common 5
-conduire,lead,Common 5
-cri,cry,Common 5
-sombre,dark,Common 5
-machine,machine,Common 5
-note,note,Common 5
-patienter,wait,Common 5
-figure,figure,Common 5
-étoile,star,Common 5
-domaine,field,Common 5
-se reposer,rest,Common 5
-correct,correct,Common 5
-capable,able,Common 5
-terminé,done,Common 5
-beauté,beauty,Common 5
-entraînement,training,Common 5
-résisté,stood up,Common 5
-contenir,contain,Common 5
-enseigner,teach,Common 5
-semaine,week,Common 5
-finale,final,Common 5
-donné,gave,Common 5
-vert,green,Common 5
-oh,oh,Common 5
-rapide,quick|fast,Common 5
-développer,develop,Common 5
-océan,ocean,Common 5
-gratuit,free,Common 5
-minute,minute,Common 5
-fort,strong,Common 5
-spécial,special,Common 5
-esprit,mind,Common 6
-derrière,behind,Common 6
-clair,clear,Common 6
-queue,tail,Common 6
-produire,produce,Common 6
-espace,space,Common 6
-entendu,heard,Common 6
-meilleur,best,Common 6
-heure,hour,Common 6
-mieux,better,Common 6
-vrai,TRUE,Common 6
-pendant,during,Common 6
-cent,hundred,Common 6
-cinq,five,Common 6
-rappeler,remember,Common 6
-étape,step,Common 6
-tôt,early,Common 6
-tenir,hold,Common 6
-ouest,west,Common 6
-sol,ground,Common 6
-intérêt,interest,Common 6
-atteindre,reach,Common 6
-verbe,verb,Common 6
-chanter,sing,Common 6
-écouter,listen,Common 6
-six,six,Common 6
-table,table,Common 6
-voyage,travel,Common 6
-moins,less,Common 6
-matin,morning,Common 6
-dix,ten,Common 6
-simple,simple,Common 6
-plusieurs,several,Common 6
-voyelle,vowel,Common 6
-guerre,war,Common 6
-poser,lay,Common 6
-contre,against,Common 6
-modèle,pattern,Common 6
-lent,slow,Common 6
-centre,center,Common 6
-amour,love,Common 6
-personne,person,Common 6
-argent,money,Common 6
-servir,serve,Common 6
-apparaître,appear,Common 6
-route,road,Common 6
-carte,map,Common 6
-pluie,rain,Common 6
-règle,rule,Common 6
-gouverner,govern,Common 6
-froid,cold,Common 7
-avis,notice,Common 7
-voix,voice,Common 7
-énergie,energy,Common 7
-chasse,hunt,Common 7
-probable,probable,Common 7
-lit,bed,Common 7
-frère,brother,Common 7
-œuf,egg,Common 7
-cellule,cell,Common 7
-croire,believe,Common 7
-peut-être,perhaps,Common 7
-choisir,pick,Common 7
-soudain,sudden,Common 7
-compter,count,Common 7
-carré,square,Common 7
-raison,reason,Common 7
-longueur,length,Common 7
-représenter,represent,Common 7
-art,art,Common 7
-sujet,subject,Common 7
-région,region,Common 7
-taille,size,Common 7
-varier,vary,Common 7
-régler,settle,Common 7
-poids,weight,Common 7
-général,general,Common 7
-glace,ice,Common 7
-cercle,circle,Common 7
-paire,pair,Common 7
-inclure,include,Common 7
-fracture,divide,Common 7
-syllabe,syllable,Common 7
-feutre,felt,Common 7
-grandiose,grand,Common 7
-balle,ball,Common 7
-vague,wave,Common 7
-tomber,drop,Common 7
-cœur,heart,Common 7
-présent,present,Common 7
-lourd,heavy,Common 7
-danse,dance,Common 7
-moteur,engine,Common 7
-position,position,Common 7
-bras,arm,Common 7
-large,wide,Common 7
-voile,sail,Common 7
-matériel,material,Common 7
-fraction,fraction,Common 7
-forêt,forest,Common 7
-s’asseoir,sit,Common 7
-course,race,Common 7
-fenêtre,window,Common 7
-magasin,store,Common 7
-train,train,Common 7
-sommeil,sleep,Common 7
-prouver,prove,Common 7
-seul,lone,Common 7
-jambe,leg,Common 7
-exercice,exercise,Common 7
-mur,wall,Common 7
-capture,catch,Common 7
-monture,mount,Common 7
-souhaiter,wish,Common 7
-ciel,sky,Common 7
-conseil,board,Common 7
-un anorak,raincoat,les vêtements
-un pantalon,pants,les vêtements
-un tee-shirt,T-shirt,les vêtements
-des chaussettes,socks,les vêtements
-une chemise,shirt,les vêtements
-une veste,jacket,les vêtements
-des baskets,sneakers,les vêtements
-une robe,dress,les vêtements
-des chaussures,shoes,les vêtements
-des lunettes de soleil,sunglasses,les vêtements
-une crème solaire,suncreen,les vêtements
-une trousse de toilette,toiletry bag,les vêtements
-un slip,panties,les vêtements
-une colette,panties,les vêtements
-un soutien-gorge,bra,les vêtements
-une écharpe,scarf,les vêtements
-un pull,pullover,les vêtements
-des sandales,sandals,les vêtements
-un maillot de bain,swimsuit,les vêtements
-un bonnet,hat,les vêtements
-une casquette,cap,les vêtements
-un sweet,sweatshirt,les vêtements
-un short,shorts,les vêtements
-une jupe,skirt,les vêtements
-une tuque,hat,les vêtements
-un boxer,boxers,les vêtements
-un blouson,jacket,les vêtements
-un manteau,coat,les vêtements
-un haut,top,les vêtements
-un costume,suit,les vêtements
-une cravate,tie,les vêtements
-un noeud papillon,bow tie,les vêtements
-un tailleur,lady’s suit,les vêtements
-un uniforme,uniform,les vêtements
-un gilet,waistcoat|vest,les vêtements
-un cardigan,cardigan,les vêtements
-un maillot,vest|undershirt,les vêtements
-un caleçon,boxers|shorts,les vêtements
-un gant,a glove,les vêtements
-une chausette,a sock,les vêtements
-une chaussure,a shoe,les vêtements
-une botte,a boot,les vêtements
-une sandale,a sandal,les vêtements
+un anorak,raincoat,clothing
+un pantalon,pants,clothing
+un tee-shirt,T-shirt,clothing
+des chaussettes,socks,clothing
+une chemise,shirt,clothing
+une veste,jacket,clothing
+des baskets,sneakers,clothing
+une robe,dress,clothing
+des chaussures,shoes,clothing
+des lunettes de soleil,sunglasses,clothing
+une crème solaire,suncreen,clothing
+une trousse de toilette,toiletry bag,clothing
+un slip,panties,clothing
+une colette,panties,clothing
+un soutien-gorge,bra,clothing
+une écharpe,scarf,clothing
+un pull,pullover,clothing
+des sandales,sandals,clothing
+un maillot de bain,swimsuit,clothing
+un bonnet,hat,clothing
+une casquette,cap,clothing
+un sweet,sweatshirt,clothing
+un short,shorts,clothing
+une jupe,skirt,clothing
+une tuque,hat,clothing
+une culotte,women`s panties,clothing
+un boxer,men`s underwear,clothing
+un blouson,jacket,clothing
+un manteau,coat,clothing
+un haut,top,clothing
+un costume,suit,clothing
+une cravate,tie,clothing
+un noeud papillon,bow tie,clothing
+un tailleur,lady’s suit,clothing
+un uniforme,uniform,clothing
+un gilet,waistcoat|vest,clothing
+un cardigan,cardigan,clothing
+un maillot,vest|undershirt,clothing
+un caleçon,boxer shorts|shorts,clothing
+un gant,gloves,clothing
+une chausette,a sock,clothing
+une chaussure,a shoe,clothing
+une botte,boot,clothing
+une sandale,a sandal,clothing
+la joie,joy,emotions
+la tristesse,sadness,emotions
+la colère,anger,emotions
+la peur,fear,emotions
+la surprise,surprise,emotions
+le dégoût,disgust,emotions
+content,satisfied,emotions
+joyeux,joyful,emotions
+heureux,happy,emotions
+ému,moved|touched,emotions
+touché,touched,emotions
+amoureux,in love,emotions
+fâché,angry,emotions
+énervé,irritated|angry,emotions
+vexé,offended,emotions
+frustré,frustrated,emotions
+inquiet,worried,emotions
+anxieux,anxious,emotions
+stressé,stressed,emotions
+déprimé,depressed,emotions
+déçu,disappointed,emotions
+étonné,surprised|astonished,emotions
+choqué,shocked,emotions
+impressionné,impressed,emotions
+mal à l'aise,uncomfortable,emotions
+dégoûté,disgusted,emotions
+écœuré,disgusted|sickened,emotions
+se sentir,to feel,emotions
+douter,to doubt,emotions
+hésiter,to hesitate,emotions
+regretter,to regret,emotions
+craindre,to fear,emotions
+souffrir,to suffer,emotions
+s'inquiéter,to be worried,emotions
+l'amour,love,emotions
+le doute,doubt,emotions
+l'hésitation,hesitation,emotions
+le regret,regret,emotions
+la crainte,fear,emotions
+la souffrance,suffering,emotions
+l'inquiétude,worry,emotions
+bonjour,hello,flashcards
+oui,yes,flashcards
+non,no,flashcards
+le chat,cat,flashcards
+le chien,dog,flashcards
 il est jeune,he is young,la description physique
 elle est jeune,she is young,la description physique
 il est âgé,he is old,la description physique
@@ -589,6 +138,46 @@ il a une moustache,he has a mustache,la description physique
 il est moustachu,he is mustached,la description physique
 il est chauve,he is shaven,la description physique
 il est tatoué,he is tattooed,la description physique
+il ya du vent,windy,la météo
+il fait chaud,hot,la météo
+il neige,snows,la météo
+il y a des nuages,cloudy,la météo
+il y a de l’òrage,stoym,la météo
+il ya a du soleil,sunny,la météo
+il pleut,rainy,la météo
+il fait beau,sunny,la météo
+l’été,summer,la météo
+l’hiver,winter,la météo
+l’automne,autumn,la météo
+le printemps,spring,la météo
+les saisons,seasons,la météo
+les pays,countries,la météo
+la météo,weather,la météo
+la tête,head,le corps humain
+le visage,face,le corps humain
+le front,forehead,le corps humain
+la nuque,nape of the neck,le corps humain
+l'épaule,shoulder,le corps humain
+le bras,arm,le corps humain
+le coude,elbow,le corps humain
+le dos,back,le corps humain
+le doigt,finger,le corps humain
+la main,hand,le corps humain
+le ventre,stomach,le corps humain
+la jambe,leg,le corps humain
+le genou,knee,le corps humain
+le pied,foot,le corps humain
+les fesses,buttocks,le corps humain
+la cheville,ankle,le corps humain
+les cheveux,hair,le corps humain
+l'œil,eye,le corps humain
+les yeux,eyes,le corps humain
+l'oreille,ear,le corps humain
+le nez,nose,le corps humain
+les dents,teeth,le corps humain
+la bouche,mouth,le corps humain
+le cou,neck,le corps humain
+la langue,tongue,le corps humain
 lundi,monday,les jours de la semaine
 mardi,tuesday,les jours de la semaine
 mercredi,wednesday,les jours de la semaine
@@ -638,46 +227,44 @@ Septembre,September,les mois
 Octobre,October,les mois
 Novembre,November,les mois
 Décembre,December,les mois
-à,to|at|in,prépositions
-à côte de,next to|beside,prépositions
-au sujet de,about|on the subject of,prépositions
-avant,before,prépositions
-chez,at the home of|office of|among,prépositions
-d’après,according to,prépositions
-de,from|of|about,prépositions
-depuis,since|for,prépositions
-devant,in front of,prépositions
-durant,during|while,prépositions
-en,in|on|to,prépositions
-en dehors de,outside,prépositions
-en face de,facing|across from,prépositions
-entre,between,prépositions
-environ,approximately,prépositions
-hors de,outside,prépositions
-jusque,until|up to|even,prépositions
-loin de,far from,prépositions
-nalgré,despite,prépositions
-promi,among,prépositions
-près de,near,prépositions
-quant à,as for|regarding,prépositions
-sans,without,prépositions
-selon,according to,prépositions
-suivant,according to,prépositions
-sur,on,prépositions
-vers,toward,prépositions
-d’habitude,usually,prépositions
-parfois,sometimes,prépositions
-de temps en temps,sometimes,prépositions
-quelquefois,sometimes,prépositions
-rarement,rarely,prépositions
-jamais,never,prépositions
-grâce à,thanks to,prépositions
-parce que,because,prépositions
-à cause de,because of,prépositions
-chacun,each,prépositions
-plus tard,later,prépositions
-pendant que,while,prépositions
-pendant,during,prépositions
+une culotte,panties,les vêtements
+un boxer,underwear,les vêtements
+un gilet,waistcoat,les vêtements
+un maillot,undershirt,les vêtements
+un caleçon,boxer shorts,les vêtements
+à,to|at|in,prepositions
+à côte de,next to|beside,prepositions
+au sujet de,about|on the subject of,prepositions
+avant,before,prepositions
+chez,at the home of|office of|among,prepositions
+d’après,according to,prepositions
+de,from|of|about,prepositions
+depuis,since|for,prepositions
+devant,in front of,prepositions
+durant,during|while,prepositions
+en,in|on|to,prepositions
+en dehors de,outside,prepositions
+en face de,facing|across from,prepositions
+entre,between,prepositions
+environ,approximately,prepositions
+hors de,outside,prepositions
+jusque,until|up to|even,prepositions
+loin de,far from,prepositions
+nalgré,despite,prepositions
+promi,among,prepositions
+près de,near,prepositions
+quant à,as for|regarding,prepositions
+sans,without,prepositions
+selon,according to,prepositions
+suivant,according to,prepositions
+sur,on,prepositions
+vers,toward,prepositions
+d’habitude,usually,prepositions
+parfois,sometimes,prepositions
+de temps en temps,sometimes,prepositions
+quelquefois,sometimes,prepositions
+rarement,rarely,prepositions
+jamais,never,prepositions
 ﻿Comment vous appelez-vous?,What's your name?,questions
 Comment allez-vous?,How are you?,questions
 Comment ça va?,How are you?,questions
@@ -788,195 +375,7 @@ rendrer,to give back|to return,verbs
 partager,to share,verbs
 sembler,to seem,verbs
 visiter,to visit,verbs
-attendre,to wait (for),verbs
-dépenser,to spend (money),verbs
-s'asseoir,to sit (down),verbs
-monter,to go up|to climb,verbs
-dessiner,to draw,verbs
-raconter,to tell (a story),verbs
-quitter,to leave|to quit,verbs
-se quitter,to leave each other|to part ways,verbs
-se sentir,to feel,verbs
-rencontrer,to meet,verbs
-obtenir,to obtain|to get,verbs
-utiliser,to use,verbs
-couper,to cut,verbs
-cuisiner,to cook,verbs
-il ya du vent,windy,la météo
-il fait chaud,hot,la météo
-il neige,snows,la météo
-il y a des nuages,cloudy,la météo
-il y a de l’òrage,stoym,la météo
-il ya a du soleil,sunny,la météo
-il pleut,rainy,la météo
-il fait beau,sunny,la météo
-l’été,summer,la météo
-l’hiver,winter,la météo
-l’automne,autumn,la météo
-le printemps,spring,la météo
-les saisons,seasons,la météo
-les pays,countries,la météo
-la météo,weather,la météo
-un ananas,a pineapple,la nourriture
-une banane,a banana,la nourriture
-un citron,a lemon,la nourriture
-une fraise,a strawberry,la nourriture
-une orange,an orange,la nourriture
-une pêche,a peach,la nourriture
-une poire,a pear,la nourriture
-une pomme,an apple,la nourriture
-du raisin,grapes,la nourriture
-une tomate,a tomato,la nourriture
-du melon d’eau,watermelon,la nourriture
-une carotte,a carrot,la nourriture
-un oignon,an onion,la nourriture
-un poireau,a leek,la nourriture
-un chou-fleur,a cauliflower,la nourriture
-une patate,a potato,la nourriture
-de la salade,a salad,la nourriture
-une aubergine,an eggplant,la nourriture
-un poivron,a pepper,la nourriture
-un brocoli,a broccoli,la nourriture
-des haricots verts,green beans,la nourriture
-de l’eau,water,la nourriture
-du vin,wine,la nourriture
-un jus de fruits,fruit juice,la nourriture
-une bière ,a beer,la nourriture
-un cocktail,a cocktail,la nourriture
-un soda,a soda,la nourriture
-un café,a coffee,la nourriture
-un thé,a tea,la nourriture
-un chocolat chaud,a hot chocolate,la nourriture
-le sel,the salt,la nourriture
-le poivre,the pepper,la nourriture
-le sucre,the sugar,la nourriture
-la moutarde,the mustard,la nourriture
-le ketchup,the ketchup,la nourriture
-la mayonnaise,the mayonnaise,la nourriture
-le vinaigre,the vinegar,la nourriture
-les herbes,the herbs,la nourriture
-les épices,the spices,la nourriture
-l’huile,the oil,la nourriture
-le lait,the milk,la nourriture
-le fromage,the cheese,la nourriture
-un yaourt,a yogurt,la nourriture
-le beurre,the butter,la nourriture
-le boeuf,the beef,la nourriture
-le poulet,the chicken,la nourriture
-la dinde,the turkey,la nourriture
-l’oeuf,the egg,la nourriture
-le porc,the pork,la nourriture
-la saucisse,the sausage,la nourriture
-la charcuterie,the delicatessen,la nourriture
-le poisson,the fish,la nourriture
-un gâteau,a cake,la nourriture
-une glace,an ice cream,la nourriture
-une tarte,a pie,la nourriture
-un bonbon,a candy,la nourriture
-un chocolat,a chocolate,la nourriture
-un biscuit,a cookie,la nourriture
-une pizza,a pizza,la nourriture
-une ratatouille,a ratatouille,la nourriture
-un hamburger,a hamburger,la nourriture
-une soupe,a soup,la nourriture
-les pâtes,the pastas,la nourriture
-les frites,the french fries,la nourriture
-le riz,the rice,la nourriture
-la purée de patates,the mashed potatoes,la nourriture
-le salon,the living room,la maison
-une lampe,a light,la maison
-une table,a table,la maison
-un fauteuil bleu,a blue armchair,la maison
-un canapé jaune,a yellow couch,la maison
-une bibliothèque marron,a brown bookshelf,la maison
-L’entrée,entrance,la maison
-un tapis,a carpet,la maison
-un miroir,a mirror,la maison
-deux commodes,two dressers,la maison
-un porte-manteau,a coat rack,la maison
-la cuisine,the kitchen,la maison
-une grant table marron,a big brown table,la maison
-deux tasses avec du café,2 cups with coffee,la maison
-un frigo,a fridge,la maison
-un micro-ondes,a microwave,la maison
-un four,an oven,la maison
-a robinet,sink,la maison
-une assiette,a plate,la maison
-une cuisinière,a cooker ,la maison
-la salle à manger,the dining room,la maison
-une table,a table,la maison
-une chaises,a chair,la maison
-des rideaux,curtains,la maison
-la chambre ,the room,la maison
-la chambe à coucher,the bedroom,la maison
-un lit,a bed,la maison
-une armoire,a closet,la maison
-la salle de bain,bathroom,la maison
-la douche,a shower,la maison
-le bain,a bath tub,la maison
-la toilette,a toilet,la maison
-des serviettes,towels,la maison
-le garage,the garage,la maison
-la voiture,the car,la maison
-le jardin,the garden,la maison
-des fleurs,flowers,la maison
-un grand arbre,a big tree,la maison
-la cour,the yard,la maison
-agir,to act,verbs
-appeler,to call,verbs
-applaudir,to applaud|to clap,verbs
-apprendre,to learn,verbs
-avertir,to warn,verbs
-avoir,to have,verbs
-bâtir,to build,verbs
-comprendre,to understand,verbs
-connaître,to know (people/places),verbs
-construire,to build|to construct,verbs
-croire,to believe,verbs
-demander,to ask,verbs
-descendre,to go down|to descend,verbs
-devoir,to have to|must,verbs
-dire,to say|to tell,verbs
-donner,to give,verbs
-découvrir,to discover,verbs
-entendre,to hear,verbs
-garder,to keep|to guard,verbs
-grandir,to grow,verbs
-grossir,to gain weight|to get bigger,verbs
-guérir,to heal|to cure,verbs
-laisser,to leave|to let,verbs
-maigrir,to lose weight|to get thinner,verbs
-mourir,to die,verbs
-naître,to be born,verbs
-nourrir,to feed|to nourish,verbs
-obéir,to obey,verbs
-offrir,to offer,verbs
-ouvrir,to open,verbs
-partir,to leave|to depart,verbs
-passer,to pass|to spend (time),verbs
-perdre,to lose,verbs
-porter,to wear|to carry,verbs
-pouvoir,to be able to|can,verbs
-produire,to produce,verbs
-ralentir,to slow down,verbs
-recevoir,to receive,verbs
-remplir,to fill,verbs
-rougir,to blush|to turn red,verbs
-réfléchir,to reflect|to think,verbs
-réussir,to succeed,verbs
-saisir,to seize|to grab,verbs
-savoir,to know (facts),verbs
-souffrir,to suffer,verbs
-suivre,to follow,verbs
-tenir,to hold,verbs
-tomber,to fall,verbs
-traduire,to translate,verbs
-travailler,to work,verbs
-trouver,to find,verbs
-vieillir,to age|to grow old,verbs
-vivre,to live,verbs
-voir,to see,verbs
-voler,to fly|to steal,verbs
-vouloir,to want,verbs
-établir,to establish,verbs
-être,to be,verbs
+il ya du vent,it’s windy,weather
+il fait chaud,it’s hot,weather
+il y a de l’òrage,storms,weather
+il pleut,rain,weather
