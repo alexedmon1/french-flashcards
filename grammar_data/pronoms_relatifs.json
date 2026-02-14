@@ -1,0 +1,621 @@
+{
+  "topic": "Pronoms relatifs",
+  "description": "Les pronoms relatifs: qui, que, où, dont, lequel, ce qui, ce que",
+  "levels": {
+    "1": "qui vs que",
+    "2": "qui, que, où, dont",
+    "3": "pronoms composés + ce qui/ce que"
+  },
+  "exercises": [
+    {
+      "id": "pr001",
+      "level": 1,
+      "sentence_before": "C'est le livre",
+      "sentence_after": "est sur la table.",
+      "answer": "qui",
+      "alternatives": [],
+      "hint": "Sujet du verbe 'est'",
+      "explanation": "'Qui' remplace le sujet du verbe. Le livre EST sur la table."
+    },
+    {
+      "id": "pr002",
+      "level": 1,
+      "sentence_before": "C'est le film",
+      "sentence_after": "j'ai vu hier.",
+      "answer": "que",
+      "alternatives": ["qu'"],
+      "hint": "COD — il y a déjà un sujet (j')",
+      "explanation": "'Que' remplace le COD. J'ai vu LE FILM."
+    },
+    {
+      "id": "pr003",
+      "level": 1,
+      "sentence_before": "La fille",
+      "sentence_after": "parle est ma sœur.",
+      "answer": "qui",
+      "alternatives": [],
+      "hint": "Sujet du verbe 'parle'",
+      "explanation": "'Qui' remplace le sujet. La fille PARLE."
+    },
+    {
+      "id": "pr004",
+      "level": 1,
+      "sentence_before": "Le gâteau",
+      "sentence_after": "tu as fait est délicieux.",
+      "answer": "que",
+      "alternatives": [],
+      "hint": "COD — il y a déjà un sujet (tu)",
+      "explanation": "'Que' remplace le COD. Tu as fait LE GÂTEAU."
+    },
+    {
+      "id": "pr005",
+      "level": 1,
+      "sentence_before": "J'ai un ami",
+      "sentence_after": "habite à Paris.",
+      "answer": "qui",
+      "alternatives": [],
+      "hint": "Sujet du verbe 'habite'",
+      "explanation": "'Qui' remplace le sujet. Un ami HABITE à Paris."
+    },
+    {
+      "id": "pr006",
+      "level": 1,
+      "sentence_before": "La chanson",
+      "sentence_after": "elle chante est belle.",
+      "answer": "qu'",
+      "alternatives": ["que"],
+      "hint": "COD — sujet 'elle' + voyelle",
+      "explanation": "'Que' remplace le COD et s'élide devant une voyelle → qu'elle."
+    },
+    {
+      "id": "pr007",
+      "level": 1,
+      "sentence_before": "Le professeur",
+      "sentence_after": "enseigne le français est gentil.",
+      "answer": "qui",
+      "alternatives": [],
+      "hint": "Sujet du verbe 'enseigne'",
+      "explanation": "'Qui' remplace le sujet. Le professeur ENSEIGNE."
+    },
+    {
+      "id": "pr008",
+      "level": 1,
+      "sentence_before": "Les fleurs",
+      "sentence_after": "tu m'as offertes sont magnifiques.",
+      "answer": "que",
+      "alternatives": [],
+      "hint": "COD — il y a déjà un sujet (tu)",
+      "explanation": "'Que' remplace le COD. Tu m'as offert LES FLEURS."
+    },
+    {
+      "id": "pr009",
+      "level": 1,
+      "sentence_before": "C'est l'homme",
+      "sentence_after": "a gagné le prix.",
+      "answer": "qui",
+      "alternatives": [],
+      "hint": "Sujet du verbe 'a gagné'",
+      "explanation": "'Qui' remplace le sujet. L'homme A GAGNÉ le prix."
+    },
+    {
+      "id": "pr010",
+      "level": 1,
+      "sentence_before": "Le livre",
+      "sentence_after": "je lis est intéressant.",
+      "answer": "que",
+      "alternatives": [],
+      "hint": "COD — il y a déjà un sujet (je)",
+      "explanation": "'Que' remplace le COD. Je lis LE LIVRE."
+    },
+    {
+      "id": "pr011",
+      "level": 1,
+      "sentence_before": "La femme",
+      "sentence_after": "travaille ici est médecin.",
+      "answer": "qui",
+      "alternatives": [],
+      "hint": "Sujet du verbe 'travaille'",
+      "explanation": "'Qui' remplace le sujet. La femme TRAVAILLE ici."
+    },
+    {
+      "id": "pr012",
+      "level": 1,
+      "sentence_before": "Le plat",
+      "sentence_after": "elle a préparé est excellent.",
+      "answer": "qu'",
+      "alternatives": ["que"],
+      "hint": "COD — sujet 'elle' + voyelle",
+      "explanation": "'Que' remplace le COD et s'élide devant 'elle' → qu'elle."
+    },
+    {
+      "id": "pr013",
+      "level": 1,
+      "sentence_before": "Les enfants",
+      "sentence_after": "jouent dans le parc sont heureux.",
+      "answer": "qui",
+      "alternatives": [],
+      "hint": "Sujet du verbe 'jouent'",
+      "explanation": "'Qui' remplace le sujet. Les enfants JOUENT dans le parc."
+    },
+    {
+      "id": "pr014",
+      "level": 1,
+      "sentence_before": "La robe",
+      "sentence_after": "j'ai achetée est rouge.",
+      "answer": "que",
+      "alternatives": ["qu'"],
+      "hint": "COD — il y a déjà un sujet (j')",
+      "explanation": "'Que' remplace le COD. J'ai acheté LA ROBE."
+    },
+    {
+      "id": "pr015",
+      "level": 1,
+      "sentence_before": "C'est une histoire",
+      "sentence_after": "fait rêver.",
+      "answer": "qui",
+      "alternatives": [],
+      "hint": "Sujet du verbe 'fait'",
+      "explanation": "'Qui' remplace le sujet. L'histoire FAIT rêver."
+    },
+    {
+      "id": "pr016",
+      "level": 1,
+      "sentence_before": "Les amis",
+      "sentence_after": "nous avons invités arrivent ce soir.",
+      "answer": "que",
+      "alternatives": [],
+      "hint": "COD — il y a déjà un sujet (nous)",
+      "explanation": "'Que' remplace le COD. Nous avons invité LES AMIS."
+    },
+    {
+      "id": "pr017",
+      "level": 1,
+      "sentence_before": "Le chat",
+      "sentence_after": "dort sur le canapé est le mien.",
+      "answer": "qui",
+      "alternatives": [],
+      "hint": "Sujet du verbe 'dort'",
+      "explanation": "'Qui' remplace le sujet. Le chat DORT sur le canapé."
+    },
+    {
+      "id": "pr018",
+      "level": 1,
+      "sentence_before": "Le cadeau",
+      "sentence_after": "il m'a donné est magnifique.",
+      "answer": "qu'",
+      "alternatives": ["que"],
+      "hint": "COD — sujet 'il' + voyelle",
+      "explanation": "'Que' remplace le COD et s'élide devant 'il' → qu'il."
+    },
+    {
+      "id": "pr019",
+      "level": 2,
+      "sentence_before": "La ville",
+      "sentence_after": "je suis né est petite.",
+      "answer": "où",
+      "alternatives": [],
+      "hint": "Lieu — 'dans cette ville'",
+      "explanation": "'Où' remplace un complément de lieu. Je suis né DANS CETTE VILLE."
+    },
+    {
+      "id": "pr020",
+      "level": 2,
+      "sentence_before": "Le jour",
+      "sentence_after": "il est arrivé, il pleuvait.",
+      "answer": "où",
+      "alternatives": [],
+      "hint": "Temps — 'ce jour-là'",
+      "explanation": "'Où' remplace aussi un complément de temps. IL EST ARRIVÉ CE JOUR-LÀ."
+    },
+    {
+      "id": "pr021",
+      "level": 2,
+      "sentence_before": "C'est le film",
+      "sentence_after": "tout le monde parle.",
+      "answer": "dont",
+      "alternatives": [],
+      "hint": "Verbe 'parler DE'",
+      "explanation": "'Dont' remplace 'de + quelque chose'. On parle DE ce film."
+    },
+    {
+      "id": "pr022",
+      "level": 2,
+      "sentence_before": "L'homme",
+      "sentence_after": "la fille est médecin travaille ici.",
+      "answer": "dont",
+      "alternatives": [],
+      "hint": "Possession — 'la fille DE cet homme'",
+      "explanation": "'Dont' exprime la possession. La fille DE cet homme est médecin."
+    },
+    {
+      "id": "pr023",
+      "level": 2,
+      "sentence_before": "La maison",
+      "sentence_after": "j'habite est grande.",
+      "answer": "où",
+      "alternatives": [],
+      "hint": "Lieu — 'dans cette maison'",
+      "explanation": "'Où' remplace un complément de lieu. J'habite DANS CETTE MAISON."
+    },
+    {
+      "id": "pr024",
+      "level": 2,
+      "sentence_before": "Le livre",
+      "sentence_after": "j'ai besoin est à la bibliothèque.",
+      "answer": "dont",
+      "alternatives": [],
+      "hint": "Verbe 'avoir besoin DE'",
+      "explanation": "'Dont' remplace 'de + quelque chose'. J'ai besoin DE ce livre."
+    },
+    {
+      "id": "pr025",
+      "level": 2,
+      "sentence_before": "L'année",
+      "sentence_after": "nous nous sommes rencontrés était 2019.",
+      "answer": "où",
+      "alternatives": [],
+      "hint": "Temps — 'cette année-là'",
+      "explanation": "'Où' remplace un complément de temps. Nous nous sommes rencontrés CETTE ANNÉE-LÀ."
+    },
+    {
+      "id": "pr026",
+      "level": 2,
+      "sentence_before": "C'est un projet",
+      "sentence_after": "je suis fier.",
+      "answer": "dont",
+      "alternatives": [],
+      "hint": "Expression 'être fier DE'",
+      "explanation": "'Dont' remplace 'de + quelque chose'. Je suis fier DE ce projet."
+    },
+    {
+      "id": "pr027",
+      "level": 2,
+      "sentence_before": "La personne",
+      "sentence_after": "je t'ai parlé vient demain.",
+      "answer": "dont",
+      "alternatives": [],
+      "hint": "Verbe 'parler DE'",
+      "explanation": "'Dont' remplace 'de + quelque chose'. Je t'ai parlé DE cette personne."
+    },
+    {
+      "id": "pr028",
+      "level": 2,
+      "sentence_before": "Le restaurant",
+      "sentence_after": "nous avons mangé était excellent.",
+      "answer": "où",
+      "alternatives": [],
+      "hint": "Lieu — 'dans ce restaurant'",
+      "explanation": "'Où' remplace un complément de lieu. Nous avons mangé DANS CE RESTAURANT."
+    },
+    {
+      "id": "pr029",
+      "level": 2,
+      "sentence_before": "Le garçon",
+      "sentence_after": "je connais est sympa.",
+      "answer": "que",
+      "alternatives": [],
+      "hint": "COD — il y a déjà un sujet (je)",
+      "explanation": "'Que' remplace le COD. Je connais LE GARÇON."
+    },
+    {
+      "id": "pr030",
+      "level": 2,
+      "sentence_before": "L'outil",
+      "sentence_after": "tu as besoin est dans le garage.",
+      "answer": "dont",
+      "alternatives": [],
+      "hint": "Verbe 'avoir besoin DE'",
+      "explanation": "'Dont' remplace 'de + quelque chose'. Tu as besoin DE cet outil."
+    },
+    {
+      "id": "pr031",
+      "level": 2,
+      "sentence_before": "Le moment",
+      "sentence_after": "je l'ai compris, j'étais content.",
+      "answer": "où",
+      "alternatives": [],
+      "hint": "Temps — 'à ce moment-là'",
+      "explanation": "'Où' remplace un complément de temps. J'ai compris À CE MOMENT-LÀ."
+    },
+    {
+      "id": "pr032",
+      "level": 2,
+      "sentence_before": "La raison",
+      "sentence_after": "il est parti est inconnue.",
+      "answer": "pour laquelle",
+      "alternatives": ["dont"],
+      "hint": "Cause — 'pour cette raison'",
+      "explanation": "'Pour laquelle' ou 'dont' peuvent exprimer la cause ici."
+    },
+    {
+      "id": "pr033",
+      "level": 2,
+      "sentence_before": "L'enfant",
+      "sentence_after": "les parents sont absents dort chez nous.",
+      "answer": "dont",
+      "alternatives": [],
+      "hint": "Possession — 'les parents DE cet enfant'",
+      "explanation": "'Dont' exprime la possession. Les parents DE cet enfant sont absents."
+    },
+    {
+      "id": "pr034",
+      "level": 2,
+      "sentence_before": "La région",
+      "sentence_after": "il vient est montagneuse.",
+      "answer": "d'où",
+      "alternatives": ["dont"],
+      "hint": "Provenance — 'de cette région'",
+      "explanation": "'D'où' ou 'dont' expriment la provenance. Il vient DE CETTE RÉGION."
+    },
+    {
+      "id": "pr035",
+      "level": 2,
+      "sentence_before": "Voilà le stylo",
+      "sentence_after": "tu cherchais.",
+      "answer": "que",
+      "alternatives": [],
+      "hint": "COD — il y a déjà un sujet (tu)",
+      "explanation": "'Que' remplace le COD. Tu cherchais LE STYLO."
+    },
+    {
+      "id": "pr036",
+      "level": 2,
+      "sentence_before": "C'est l'acteur",
+      "sentence_after": "je rêve.",
+      "answer": "dont",
+      "alternatives": [],
+      "hint": "Verbe 'rêver DE'",
+      "explanation": "'Dont' remplace 'de + quelque chose'. Je rêve DE cet acteur."
+    },
+    {
+      "id": "pr037",
+      "level": 2,
+      "sentence_before": "Le pays",
+      "sentence_after": "elle voyage est magnifique.",
+      "answer": "où",
+      "alternatives": [],
+      "hint": "Lieu — 'dans ce pays'",
+      "explanation": "'Où' remplace un complément de lieu. Elle voyage DANS CE PAYS."
+    },
+    {
+      "id": "pr038",
+      "level": 2,
+      "sentence_before": "Le chien",
+      "sentence_after": "aboie beaucoup dérange les voisins.",
+      "answer": "qui",
+      "alternatives": [],
+      "hint": "Sujet du verbe 'aboie'",
+      "explanation": "'Qui' remplace le sujet. Le chien ABOIE beaucoup."
+    },
+    {
+      "id": "pr039",
+      "level": 2,
+      "sentence_before": "C'est un problème",
+      "sentence_after": "la solution est simple.",
+      "answer": "dont",
+      "alternatives": [],
+      "hint": "Possession — 'la solution DE ce problème'",
+      "explanation": "'Dont' exprime la possession. La solution DE ce problème est simple."
+    },
+    {
+      "id": "pr040",
+      "level": 2,
+      "sentence_before": "L'hôtel",
+      "sentence_after": "nous avons dormi était confortable.",
+      "answer": "où",
+      "alternatives": [],
+      "hint": "Lieu — 'dans cet hôtel'",
+      "explanation": "'Où' remplace un complément de lieu. Nous avons dormi DANS CET HÔTEL."
+    },
+    {
+      "id": "pr041",
+      "level": 2,
+      "sentence_before": "Le professeur",
+      "sentence_after": "je t'ai parlé est très compétent.",
+      "answer": "dont",
+      "alternatives": [],
+      "hint": "Verbe 'parler DE'",
+      "explanation": "'Dont' remplace 'de + quelque chose'. Je t'ai parlé DE ce professeur."
+    },
+    {
+      "id": "pr042",
+      "level": 3,
+      "sentence_before": "Je ne sais pas",
+      "sentence_after": "se passe.",
+      "answer": "ce qui",
+      "alternatives": [],
+      "hint": "Pas d'antécédent + sujet du verbe",
+      "explanation": "'Ce qui' = 'la chose qui'. Sujet du verbe 'se passe', sans antécédent défini."
+    },
+    {
+      "id": "pr043",
+      "level": 3,
+      "sentence_before": "Dis-moi",
+      "sentence_after": "tu veux.",
+      "answer": "ce que",
+      "alternatives": ["ce qu'"],
+      "hint": "Pas d'antécédent + COD",
+      "explanation": "'Ce que' = 'la chose que'. COD du verbe 'vouloir', sans antécédent défini."
+    },
+    {
+      "id": "pr044",
+      "level": 3,
+      "sentence_before": "",
+      "sentence_after": "m'intéresse, c'est la musique.",
+      "answer": "Ce qui",
+      "alternatives": ["ce qui"],
+      "hint": "En début de phrase, sans antécédent + sujet",
+      "explanation": "'Ce qui' en début de phrase = 'la chose qui'. Sujet du verbe 'intéresse'."
+    },
+    {
+      "id": "pr045",
+      "level": 3,
+      "sentence_before": "Je ne comprends pas",
+      "sentence_after": "tu dis.",
+      "answer": "ce que",
+      "alternatives": ["ce qu'"],
+      "hint": "Pas d'antécédent + COD",
+      "explanation": "'Ce que' = 'la chose que'. COD du verbe 'dire', sans antécédent défini."
+    },
+    {
+      "id": "pr046",
+      "level": 3,
+      "sentence_before": "La table sur",
+      "sentence_after": "j'ai posé mes livres est en bois.",
+      "answer": "laquelle",
+      "alternatives": [],
+      "hint": "Préposition 'sur' + nom féminin singulier",
+      "explanation": "Après une préposition, on utilise 'lequel/laquelle'. 'La table' est féminin singulier → laquelle."
+    },
+    {
+      "id": "pr047",
+      "level": 3,
+      "sentence_before": "Le stylo avec",
+      "sentence_after": "j'écris est bleu.",
+      "answer": "lequel",
+      "alternatives": [],
+      "hint": "Préposition 'avec' + nom masculin singulier",
+      "explanation": "Après une préposition, on utilise 'lequel/laquelle'. 'Le stylo' est masculin singulier → lequel."
+    },
+    {
+      "id": "pr048",
+      "level": 3,
+      "sentence_before": "Les raisons pour",
+      "sentence_after": "il a démissionné sont claires.",
+      "answer": "lesquelles",
+      "alternatives": [],
+      "hint": "Préposition 'pour' + nom féminin pluriel",
+      "explanation": "Après une préposition, 'les raisons' est féminin pluriel → lesquelles."
+    },
+    {
+      "id": "pr049",
+      "level": 3,
+      "sentence_before": "",
+      "sentence_after": "est important, c'est de pratiquer.",
+      "answer": "Ce qui",
+      "alternatives": ["ce qui"],
+      "hint": "En début de phrase, sans antécédent + sujet",
+      "explanation": "'Ce qui' en début de phrase = 'la chose qui'. Sujet du verbe 'est'."
+    },
+    {
+      "id": "pr050",
+      "level": 3,
+      "sentence_before": "Les amis chez",
+      "sentence_after": "nous avons dormi sont sympathiques.",
+      "answer": "lesquels",
+      "alternatives": [],
+      "hint": "Préposition 'chez' + nom masculin pluriel",
+      "explanation": "Après une préposition, 'les amis' est masculin pluriel → lesquels."
+    },
+    {
+      "id": "pr051",
+      "level": 3,
+      "sentence_before": "Il fait",
+      "sentence_after": "il veut.",
+      "answer": "ce qu'",
+      "alternatives": ["ce que"],
+      "hint": "Pas d'antécédent + COD + voyelle",
+      "explanation": "'Ce que' s'élide devant 'il' → ce qu'il veut."
+    },
+    {
+      "id": "pr052",
+      "level": 3,
+      "sentence_before": "La chaise sur",
+      "sentence_after": "tu es assis est cassée.",
+      "answer": "laquelle",
+      "alternatives": [],
+      "hint": "Préposition 'sur' + nom féminin singulier",
+      "explanation": "Après une préposition, 'la chaise' est féminin singulier → laquelle."
+    },
+    {
+      "id": "pr053",
+      "level": 3,
+      "sentence_before": "Raconte-moi",
+      "sentence_after": "s'est passé.",
+      "answer": "ce qui",
+      "alternatives": ["ce qu'il"],
+      "hint": "Pas d'antécédent + sujet du verbe",
+      "explanation": "'Ce qui' = 'la chose qui'. Sujet du verbe 'se passer'."
+    },
+    {
+      "id": "pr054",
+      "level": 3,
+      "sentence_before": "Le pont sous",
+      "sentence_after": "passe la rivière est ancien.",
+      "answer": "lequel",
+      "alternatives": [],
+      "hint": "Préposition 'sous' + nom masculin singulier",
+      "explanation": "Après une préposition, 'le pont' est masculin singulier → lequel."
+    },
+    {
+      "id": "pr055",
+      "level": 3,
+      "sentence_before": "Je ne sais pas",
+      "sentence_after": "elle a besoin.",
+      "answer": "ce dont",
+      "alternatives": [],
+      "hint": "Pas d'antécédent + verbe 'avoir besoin DE'",
+      "explanation": "'Ce dont' = 'la chose dont'. Verbe 'avoir besoin DE quelque chose'."
+    },
+    {
+      "id": "pr056",
+      "level": 3,
+      "sentence_before": "",
+      "sentence_after": "me plaît, c'est le calme.",
+      "answer": "Ce qui",
+      "alternatives": ["ce qui"],
+      "hint": "En début de phrase, sans antécédent + sujet",
+      "explanation": "'Ce qui' en début de phrase = 'la chose qui'. Sujet du verbe 'plaît'."
+    },
+    {
+      "id": "pr057",
+      "level": 3,
+      "sentence_before": "La fenêtre par",
+      "sentence_after": "entre la lumière est grande.",
+      "answer": "laquelle",
+      "alternatives": [],
+      "hint": "Préposition 'par' + nom féminin singulier",
+      "explanation": "Après une préposition, 'la fenêtre' est féminin singulier → laquelle."
+    },
+    {
+      "id": "pr058",
+      "level": 3,
+      "sentence_before": "Fais",
+      "sentence_after": "te semble juste.",
+      "answer": "ce qui",
+      "alternatives": [],
+      "hint": "Pas d'antécédent + sujet du verbe",
+      "explanation": "'Ce qui' = 'la chose qui'. Sujet du verbe 'semble'."
+    },
+    {
+      "id": "pr059",
+      "level": 3,
+      "sentence_before": "Les collègues avec",
+      "sentence_after": "je travaille sont compétents.",
+      "answer": "lesquels",
+      "alternatives": [],
+      "hint": "Préposition 'avec' + nom masculin pluriel",
+      "explanation": "Après une préposition, 'les collègues' est masculin pluriel → lesquels."
+    },
+    {
+      "id": "pr060",
+      "level": 3,
+      "sentence_before": "",
+      "sentence_after": "je veux, c'est voyager.",
+      "answer": "Ce que",
+      "alternatives": ["ce que"],
+      "hint": "En début de phrase, sans antécédent + COD",
+      "explanation": "'Ce que' en début de phrase = 'la chose que'. COD du verbe 'vouloir'."
+    },
+    {
+      "id": "pr061",
+      "level": 3,
+      "sentence_before": "Tu sais",
+      "sentence_after": "j'ai peur.",
+      "answer": "ce dont",
+      "alternatives": [],
+      "hint": "Pas d'antécédent + verbe 'avoir peur DE'",
+      "explanation": "'Ce dont' = 'la chose dont'. Verbe 'avoir peur DE quelque chose'."
+    }
+  ]
+}

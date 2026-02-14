@@ -14,8 +14,10 @@ A French language learning application with multiple components:
 3. **Conjugation trainer** (`conjugations.py`) - Verb conjugation practice for 7 tenses with tier system
 4. **Conjugation engine** (`conjugation_engine.py`) - Core conjugation logic module
 5. **Verb data** (`conjugation_data/verbs.json`) - External JSON database of verbs
-6. **Master vocabulary** (`master_vocabulary.csv`) - Combined file with all vocabulary from individual CSVs with category tags
-7. **CSV combiner** (`combine_csvs.py`) - Tool to regenerate master vocabulary file
+6. **Grammar trainer** (`grammar.py`) - Fill-in-the-blank grammar exercises with SRS support
+7. **Grammar data** (`grammar_data/`) - JSON exercise files, auto-discovered by the trainer
+8. **Master vocabulary** (`master_vocabulary.csv`) - Combined file with all vocabulary from individual CSVs with category tags
+9. **CSV combiner** (`combine_csvs.py`) - Tool to regenerate master vocabulary file
 
 ## Running the Application
 
@@ -133,6 +135,56 @@ python3 conjugations.py --tier=core --srs
 
 # View your statistics
 python3 conjugations.py --stats
+```
+
+### Grammar Trainer
+```bash
+python3 grammar.py [options]
+```
+Practice French grammar with fill-in-the-blank exercises. Topics are auto-discovered from JSON files in `grammar_data/`.
+
+**Currently available topics:**
+- Pronoms relatifs (qui, que, où, dont, lequel, ce qui, ce que) — 61 exercises across 3 levels
+
+**Levels (for pronoms relatifs):**
+- **Level 1**: `qui` vs `que` (~18 exercises)
+- **Level 2**: `qui`, `que`, `où`, `dont` (~23 exercises)
+- **Level 3**: Pronoms composés (`lequel`, `laquelle`, etc.) + `ce qui`/`ce que` (~20 exercises)
+
+**Command-line options:**
+- `--help`: Show detailed help message
+- `--srs`: Spaced Repetition System (only practice due exercises)
+- `--level=<N>`: Filter by difficulty level (1, 2, or 3)
+- `--stats`: Show progress statistics and exit
+
+**Features:**
+- Auto-discovers topics from JSON files in `grammar_data/`
+- Interactive topic and level selection
+- Hint system (type `h` during an exercise)
+- Accent-sensitive answer checking (`où` ≠ `ou`)
+- Alternative answers supported (e.g., `que`/`qu'`)
+- SRS with SM-2 algorithm for spaced review
+- Session summaries with accuracy stats
+
+**Examples:**
+```bash
+# Show help
+python3 grammar.py --help
+
+# Interactive mode (simplest - just run it!)
+python3 grammar.py
+
+# Practice level 1 only (qui vs que)
+python3 grammar.py --level=1
+
+# SRS mode - only practice due exercises
+python3 grammar.py --srs
+
+# SRS mode for level 2 only
+python3 grammar.py --srs --level=2
+
+# View your statistics
+python3 grammar.py --stats
 ```
 
 ### Master Vocabulary Management
@@ -309,6 +361,34 @@ son,his|her|sound,Common 1
 - **Irregular verbs**: Add past_participle, stems, and/or explicit forms as needed
 - **Tiers**: core (most essential), intermediate (common), advanced (less common)
 
+### grammar.py
+- **Grammar trainer**: Fill-in-the-blank exercises with SRS support
+- **Auto-discovery**: Loads topics from JSON files in `grammar_data/`
+- **CLI**: `python3 grammar.py [--srs] [--level=N] [--stats] [--help]`
+- **GrammarStats class**: SM-2 algorithm (same pattern as ConjugationStats)
+- **Data persistence**: Uses `.grammar_data/` directory for SRS data
+- **normalize_input()**: Same Unicode cleanup as conjugations.py
+- **Answer checking**: Exact match, case-insensitive, with alternatives list
+- **Hint system**: Type `h` during an exercise to see a hint
+
+### grammar_data/*.json
+- **Exercise data files**: Auto-discovered by grammar.py
+- **Exercise structure**:
+  ```json
+  {
+    "id": "pr001",
+    "level": 1,
+    "sentence_before": "C'est le livre",
+    "sentence_after": "est sur la table.",
+    "answer": "qui",
+    "alternatives": [],
+    "hint": "Sujet du verbe 'est'",
+    "explanation": "'Qui' remplace le sujet du verbe."
+  }
+  ```
+- **Fields**: `id` (unique), `level` (1-3), `sentence_before`/`sentence_after` (text around blank), `answer`, `alternatives` (e.g., `["qu'"]` for `que`), `hint`, `explanation`
+- **Adding new topics**: Create a new JSON file in `grammar_data/` with `topic`, `description`, `levels`, and `exercises` keys
+
 ### combine_csvs.py
 - **Purpose**: Combines all individual CSV files into master_vocabulary.csv
 - **Process**: Reads all CSVs from vocabulary/ folder, adds category column (from filename), removes duplicates
@@ -406,8 +486,24 @@ python3 conjugations.py --srs --tense=conditional
 
 # Or pre-select category without prompts (flashcards)
 python3 flashcards.py --category=verbs --srs
+
+# Check grammar exercises due today
+python3 grammar.py --stats
+
+# Practice grammar with SRS
+python3 grammar.py --srs
+
+# Practice level 1 only (easiest - qui vs que)
+python3 grammar.py --level=1
 ```
+
+### Adding Grammar Exercises
+1. Create a new JSON file in `grammar_data/` (or edit an existing one)
+2. Follow the exercise structure with `id`, `level`, `sentence_before`, `sentence_after`, `answer`, `alternatives`, `hint`, `explanation`
+3. The trainer auto-discovers new JSON files — no code changes needed
+4. Possible future topics: COD/COI, articles, subjunctive triggers
 
 ### Resetting Progress
 - Delete `.flashcard_data/` directory to reset flashcard SRS data and statistics
 - Delete `.conjugation_data/` directory to reset conjugation SRS data and statistics
+- Delete `.grammar_data/` directory to reset grammar SRS data and statistics

@@ -10,6 +10,7 @@ wheels/
 .venv
 .flashcard_data/progress.json
 .conjugation_data/
+.grammar_data/
 missed.csv
 
 # Claude Code local settings
