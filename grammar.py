@@ -514,6 +514,29 @@ def update_progress(correct: int, total: int):
     save_progress(progress)
 
 
+def _build_epilog() -> str:
+    """Build dynamic help epilog from discovered topics."""
+    lines = ["Topics are auto-discovered from JSON files in grammar_data/.\n"]
+    topics = discover_topics()
+    if topics:
+        lines.append("Currently available:")
+        for name, path in topics.items():
+            data = load_topic(path)
+            lines.append(f"  - {name}: {data.get('description', data.get('topic', name))}")
+            levels = data.get("levels", {})
+            if levels:
+                for num, desc in sorted(levels.items(), key=lambda x: int(x[0])):
+                    lines.append(f"      Level {num}: {desc}")
+        lines.append("")
+    lines.append("Examples:")
+    lines.append("  python3 grammar.py                    # Interactive mode")
+    lines.append("  python3 grammar.py --level=1          # Practice level 1 only")
+    lines.append("  python3 grammar.py --srs              # SRS mode (only review due exercises)")
+    lines.append("  python3 grammar.py --srs --level=2    # SRS mode for level 2 only")
+    lines.append("  python3 grammar.py --stats            # Show statistics and exit")
+    return "\n".join(lines) + "\n"
+
+
 # ----------------------------------------------------------------------
 # Main
 # ----------------------------------------------------------------------
@@ -521,24 +544,7 @@ def main():
     parser = argparse.ArgumentParser(
         description="French Grammar Trainer with SRS support",
         formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog="""\
-Topics are auto-discovered from JSON files in grammar_data/.
-
-Currently available:
-  - pronoms_relatifs: Pronoms relatifs (qui, que, où, dont, lequel, ce qui, ce que)
-
-Levels (for pronoms relatifs):
-  - 1: qui vs que
-  - 2: qui, que, où, dont
-  - 3: pronoms composés (lequel, laquelle, etc.) + ce qui/ce que
-
-Examples:
-  python3 grammar.py                    # Interactive mode
-  python3 grammar.py --level=1          # Practice level 1 only
-  python3 grammar.py --srs              # SRS mode (only review due exercises)
-  python3 grammar.py --srs --level=2    # SRS mode for level 2 only
-  python3 grammar.py --stats            # Show statistics and exit
-""",
+        epilog=_build_epilog(),
     )
     parser.add_argument(
         "--srs",
