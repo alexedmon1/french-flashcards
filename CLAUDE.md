@@ -278,7 +278,6 @@ son,his|her|sound,Common 1
 - `vocabulary/questions.csv` - Question words/phrases (35 words)
 - `vocabulary/routine.csv` - Daily routine vocabulary (43 words)
 - `vocabulary/freq_words.csv` - Frequently used words (498 words)
-- `missed.csv` - Auto-generated file tracking incorrectly recalled flashcards (root folder)
 
 ## Code Architecture
 

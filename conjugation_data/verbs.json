@@ -2,7 +2,7 @@
   "metadata": {
     "version": "1.0",
     "description": "French verb conjugation data for the conjugation trainer",
-    "total_verbs": 91,
+    "total_verbs": 111,
     "tiers": {
       "core": "Most essential verbs for beginners (~20 verbs)",
       "intermediate": "Common verbs for intermediate learners (~35 verbs)",
@@ -917,6 +917,257 @@
       },
       "forms": {
         "present": ["apprends", "apprends", "apprend", "apprenons", "apprenez", "apprennent"]
+      }
+    },
+    "courir": {
+      "type": "irregular",
+      "tier": "intermediate",
+      "translation": "to run",
+      "auxiliary": "avoir",
+      "past_participle": "couru",
+      "stems": {
+        "future": "courr",
+        "imparfait": "cour"
+      },
+      "forms": {
+        "present": ["cours", "cours", "court", "courons", "courez", "courent"]
+      }
+    },
+    "envoyer": {
+      "type": "irregular",
+      "tier": "intermediate",
+      "translation": "to send",
+      "auxiliary": "avoir",
+      "past_participle": "envoyé",
+      "stems": {
+        "future": "enverr",
+        "imparfait": "envoy"
+      },
+      "forms": {
+        "present": ["envoie", "envoies", "envoie", "envoyons", "envoyez", "envoient"]
+      }
+    },
+    "devenir": {
+      "type": "irregular",
+      "tier": "intermediate",
+      "translation": "to become",
+      "auxiliary": "être",
+      "past_participle": "devenu",
+      "stems": {
+        "future": "deviendr",
+        "imparfait": "deven"
+      },
+      "forms": {
+        "present": ["deviens", "deviens", "devient", "devenons", "devenez", "deviennent"]
+      }
+    },
+    "répondre": {
+      "type": "irregular",
+      "tier": "intermediate",
+      "translation": "to answer / to reply",
+      "auxiliary": "avoir",
+      "past_participle": "répondu",
+      "stems": {
+        "future": "répondr",
+        "imparfait": "répond"
+      },
+      "forms": {
+        "present": ["réponds", "réponds", "répond", "répondons", "répondez", "répondent"]
+      }
+    },
+    "vendre": {
+      "type": "irregular",
+      "tier": "intermediate",
+      "translation": "to sell",
+      "auxiliary": "avoir",
+      "past_participle": "vendu",
+      "stems": {
+        "future": "vendr",
+        "imparfait": "vend"
+      },
+      "forms": {
+        "present": ["vends", "vends", "vend", "vendons", "vendez", "vendent"]
+      }
+    },
+    "rendre": {
+      "type": "irregular",
+      "tier": "intermediate",
+      "translation": "to give back / to return",
+      "auxiliary": "avoir",
+      "past_participle": "rendu",
+      "stems": {
+        "future": "rendr",
+        "imparfait": "rend"
+      },
+      "forms": {
+        "present": ["rends", "rends", "rend", "rendons", "rendez", "rendent"]
+      }
+    },
+    "plaire": {
+      "type": "irregular",
+      "tier": "intermediate",
+      "translation": "to please",
+      "auxiliary": "avoir",
+      "past_participle": "plu",
+      "stems": {
+        "future": "plair",
+        "imparfait": "plais"
+      },
+      "forms": {
+        "present": ["plais", "plais", "plaît", "plaisons", "plaisez", "plaisent"]
+      }
+    },
+    "paraître": {
+      "type": "irregular",
+      "tier": "intermediate",
+      "translation": "to appear / to seem",
+      "auxiliary": "avoir",
+      "past_participle": "paru",
+      "stems": {
+        "future": "paraîtr",
+        "imparfait": "paraiss"
+      },
+      "forms": {
+        "present": ["parais", "parais", "paraît", "paraissons", "paraissez", "paraissent"]
+      }
+    },
+    "craindre": {
+      "type": "irregular",
+      "tier": "advanced",
+      "translation": "to fear",
+      "auxiliary": "avoir",
+      "past_participle": "craint",
+      "stems": {
+        "future": "craindr",
+        "imparfait": "craign"
+      },
+      "forms": {
+        "present": ["crains", "crains", "craint", "craignons", "craignez", "craignent"]
+      }
+    },
+    "peindre": {
+      "type": "irregular",
+      "tier": "advanced",
+      "translation": "to paint",
+      "auxiliary": "avoir",
+      "past_participle": "peint",
+      "stems": {
+        "future": "peindr",
+        "imparfait": "peign"
+      },
+      "forms": {
+        "present": ["peins", "peins", "peint", "peignons", "peignez", "peignent"]
+      }
+    },
+    "joindre": {
+      "type": "irregular",
+      "tier": "advanced",
+      "translation": "to join / to reach",
+      "auxiliary": "avoir",
+      "past_participle": "joint",
+      "stems": {
+        "future": "joindr",
+        "imparfait": "joign"
+      },
+      "forms": {
+        "present": ["joins", "joins", "joint", "joignons", "joignez", "joignent"]
+      }
+    },
+    "valoir": {
+      "type": "irregular",
+      "tier": "advanced",
+      "translation": "to be worth",
+      "auxiliary": "avoir",
+      "past_participle": "valu",
+      "stems": {
+        "future": "vaudr",
+        "imparfait": "val"
+      },
+      "forms": {
+        "present": ["vaux", "vaux", "vaut", "valons", "valez", "valent"]
+      }
+    },
+    "battre": {
+      "type": "irregular",
+      "tier": "advanced",
+      "translation": "to beat / to hit",
+      "auxiliary": "avoir",
+      "past_participle": "battu",
+      "stems": {
+        "future": "battr",
+        "imparfait": "batt"
+      },
+      "forms": {
+        "present": ["bats", "bats", "bat", "battons", "battez", "battent"]
+      }
+    },
+    "promettre": {
+      "type": "irregular",
+      "tier": "advanced",
+      "translation": "to promise",
+      "auxiliary": "avoir",
+      "past_participle": "promis",
+      "stems": {
+        "future": "promettr",
+        "imparfait": "promett"
+      },
+      "forms": {
+        "present": ["promets", "promets", "promet", "promettons", "promettez", "promettent"]
+      }
+    },
+    "permettre": {
+      "type": "irregular",
+      "tier": "advanced",
+      "translation": "to allow / to permit",
+      "auxiliary": "avoir",
+      "past_participle": "permis",
+      "stems": {
+        "future": "permettr",
+        "imparfait": "permett"
+      },
+      "forms": {
+        "present": ["permets", "permets", "permet", "permettons", "permettez", "permettent"]
+      }
+    },
+    "cueillir": {
+      "type": "irregular",
+      "tier": "advanced",
+      "translation": "to pick / to gather",
+      "auxiliary": "avoir",
+      "past_participle": "cueilli",
+      "stems": {
+        "future": "cueiller",
+        "imparfait": "cueill"
+      },
+      "forms": {
+        "present": ["cueille", "cueilles", "cueille", "cueillons", "cueillez", "cueillent"]
+      }
+    },
+    "revenir": {
+      "type": "irregular",
+      "tier": "advanced",
+      "translation": "to come back / to return",
+      "auxiliary": "être",
+      "past_participle": "revenu",
+      "stems": {
+        "future": "reviendr",
+        "imparfait": "reven"
+      },
+      "forms": {
+        "present": ["reviens", "reviens", "revient", "revenons", "revenez", "reviennent"]
+      }
+    },
+    "fuir": {
+      "type": "irregular",
+      "tier": "advanced",
+      "translation": "to flee / to run away",
+      "auxiliary": "avoir",
+      "past_participle": "fui",
+      "stems": {
+        "imparfait": "fuy"
+      },
+      "forms": {
+        "present": ["fuis", "fuis", "fuit", "fuyons", "fuyez", "fuient"]
       }
     }
   }
