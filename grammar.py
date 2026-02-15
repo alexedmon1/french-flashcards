@@ -426,6 +426,10 @@ def ask_one_exercise(exercise: dict, exercise_num: int = None, total: int = None
     sentence = format_sentence(exercise, "__________")
     print(f"Complétez : {sentence}")
 
+    # Show context if provided (essential information for answering)
+    if exercise.get("context"):
+        print(f"  ({exercise['context']})")
+
     # Get user input
     while True:
         user_input = input("\nVotre réponse (h=indice, q=quitter) : ").strip()

@@ -14,7 +14,8 @@
       "sentence_after": "grande que Pierre.",
       "answer": "plus",
       "alternatives": [],
-      "hint": "Marie > Pierre (taille)",
+      "context": "Marie is taller than Pierre.",
+      "hint": "Supériorité: plus ... que",
       "explanation": "'Plus ... que' exprime la supériorité. Marie est PLUS grande que Pierre.",
       "translation": "Marie is taller than Pierre."
     },
@@ -25,7 +26,8 @@
       "sentence_after": "intéressant que l'autre.",
       "answer": "moins",
       "alternatives": [],
-      "hint": "Ce film < l'autre (intérêt)",
+      "context": "This movie is less interesting than the other one.",
+      "hint": "Infériorité: moins ... que",
       "explanation": "'Moins ... que' exprime l'infériorité.",
       "translation": "This movie is less interesting than the other one."
     },
@@ -36,7 +38,8 @@
       "sentence_after": "intelligent que son frère.",
       "answer": "aussi",
       "alternatives": [],
-      "hint": "Paul = son frère (intelligence)",
+      "context": "Paul is as intelligent as his brother.",
+      "hint": "Égalité: aussi ... que",
       "explanation": "'Aussi ... que' exprime l'égalité.",
       "translation": "Paul is as intelligent as his brother."
     },
@@ -58,7 +61,8 @@
       "sentence_after": "gros que le tien.",
       "answer": "plus",
       "alternatives": [],
-      "hint": "Mon chat > le tien (taille)",
+      "context": "My cat is fatter than yours.",
+      "hint": "Supériorité: plus ... que",
       "explanation": "'Plus ... que' pour la supériorité.",
       "translation": "My cat is fatter than yours."
     },
@@ -80,7 +84,8 @@
       "sentence_after": "froid aujourd'hui qu'hier.",
       "answer": "moins",
       "alternatives": [],
-      "hint": "Aujourd'hui < hier (froid)",
+      "context": "It's less cold today than yesterday.",
+      "hint": "Infériorité: moins ... que",
       "explanation": "'Moins ... que' exprime l'infériorité.",
       "translation": "It's less cold today than yesterday."
     },
@@ -91,7 +96,8 @@
       "sentence_after": "sportive que moi.",
       "answer": "aussi",
       "alternatives": [],
-      "hint": "Ma sœur = moi (sport)",
+      "context": "My sister is as sporty as me.",
+      "hint": "Égalité: aussi ... que",
       "explanation": "'Aussi ... que' pour l'égalité.",
       "translation": "My sister is as sporty as me."
     },
@@ -113,7 +119,8 @@
       "sentence_after": "difficile que le précédent.",
       "answer": "plus",
       "alternatives": ["moins", "aussi"],
-      "hint": "Quel mot complète la comparaison? (supériorité)",
+      "context": "This exercise is more difficult than the previous one.",
+      "hint": "plus/moins/aussi sont tous possibles ici",
       "explanation": "'Plus ... que' pour la supériorité. 'Moins' et 'aussi' sont aussi possibles selon le contexte.",
       "translation": "This exercise is more difficult than the previous one."
     },
@@ -124,7 +131,8 @@
       "sentence_after": "lentement que toi.",
       "answer": "plus",
       "alternatives": ["moins", "aussi"],
-      "hint": "Comparaison avec un adverbe",
+      "context": "He speaks more slowly than you.",
+      "hint": "Comparaison avec un adverbe — plus/moins/aussi possibles",
       "explanation": "On utilise aussi plus/moins/aussi avec les adverbes: plus lentement que.",
       "translation": "He speaks more slowly than you."
     },
@@ -135,7 +143,8 @@
       "sentence_after": "grand que Paris.",
       "answer": "moins",
       "alternatives": [],
-      "hint": "Lyon < Paris (taille de la ville)",
+      "context": "Lyon is smaller than Paris.",
+      "hint": "Infériorité: moins ... que",
       "explanation": "'Moins ... que' car Lyon est plus petit que Paris.",
       "translation": "Lyon is smaller than Paris."
     },
@@ -157,7 +166,8 @@
       "sentence_after": "bruyants que les adultes.",
       "answer": "plus",
       "alternatives": [],
-      "hint": "Les enfants > les adultes (bruit)",
+      "context": "Children are noisier than adults.",
+      "hint": "Supériorité: plus ... que",
       "explanation": "'Plus ... que' pour la supériorité.",
       "translation": "Children are noisier than adults."
     },
@@ -179,6 +189,7 @@
       "sentence_after": "restaurant de la ville.",
       "answer": "le meilleur",
       "alternatives": [],
+      "context": "It's the best restaurant in town.",
       "hint": "Superlatif irrégulier de 'bon' (masculin)",
       "explanation": "'Le meilleur' est le superlatif irrégulier de 'bon'. On ne dit pas 'le plus bon'.",
       "translation": "It's the best restaurant in town."
@@ -190,6 +201,7 @@
       "sentence_after": "élève de la classe.",
       "answer": "la meilleure",
       "alternatives": [],
+      "context": "Marie is the best student in the class.",
       "hint": "Superlatif irrégulier de 'bonne' (féminin)",
       "explanation": "'La meilleure' est le superlatif féminin de 'bon/bonne'.",
       "translation": "Marie is the best student in the class."
@@ -201,6 +213,7 @@
       "sentence_after": "film que j'ai jamais vu.",
       "answer": "le pire",
       "alternatives": ["le plus mauvais"],
+      "context": "It's the worst movie I've ever seen.",
       "hint": "Superlatif irrégulier de 'mauvais'",
       "explanation": "'Le pire' est le superlatif irrégulier de 'mauvais'. 'Le plus mauvais' est aussi accepté.",
       "translation": "It's the worst movie I've ever seen."
@@ -212,7 +225,8 @@
       "sentence_after": "du monde.",
       "answer": "la plus haute",
       "alternatives": [],
-      "hint": "Superlatif de supériorité de 'haute'",
+      "context": "It's the highest mountain in the world.",
+      "hint": "Superlatif de supériorité: le/la/les plus + adjectif",
       "explanation": "Le superlatif se forme avec 'le/la/les plus' + adjectif.",
       "translation": "It's the highest mountain in the world."
     },
@@ -223,7 +237,8 @@
       "sentence_after": "de l'année.",
       "answer": "le plus long",
       "alternatives": [],
-      "hint": "Superlatif de supériorité de 'long'",
+      "context": "It's the longest day of the year.",
+      "hint": "Superlatif de supériorité: le plus + adjectif",
       "explanation": "'Le plus long' = superlatif de supériorité.",
       "translation": "It's the longest day of the year."
     },
@@ -234,7 +249,8 @@
       "sentence_after": "de la ville.",
       "answer": "la moins large",
       "alternatives": ["la plus étroite"],
-      "hint": "Superlatif d'infériorité de 'large'",
+      "context": "It's the narrowest street in town.",
+      "hint": "Superlatif d'infériorité: la moins + adjectif",
       "explanation": "'La moins large' = superlatif d'infériorité. 'La plus étroite' marche aussi.",
       "translation": "It's the narrowest street in town."
     },
@@ -245,7 +261,8 @@
       "sentence_after": "de l'université.",
       "answer": "les plus sérieux",
       "alternatives": [],
-      "hint": "Superlatif pluriel de 'sérieux'",
+      "context": "They are the most serious students at the university.",
+      "hint": "Superlatif pluriel: les plus + adjectif",
       "explanation": "'Les plus' + adjectif pour le superlatif pluriel.",
       "translation": "They are the most serious students at the university."
     },
@@ -256,7 +273,8 @@
       "sentence_after": "que celui de ma mère.",
       "answer": "meilleur",
       "alternatives": [],
-      "hint": "Comparatif irrégulier de 'bon'",
+      "context": "This cake is better than my mother's.",
+      "hint": "Comparatif irrégulier de 'bon' — pas 'plus bon'",
       "explanation": "'Meilleur' est le comparatif irrégulier de 'bon'. On ne dit pas 'plus bon'.",
       "translation": "This cake is better than my mother's."
     },
@@ -267,6 +285,7 @@
       "sentence_after": "que la mienne.",
       "answer": "pire",
       "alternatives": ["plus mauvaise"],
+      "context": "Her grade is worse than mine.",
       "hint": "Comparatif irrégulier de 'mauvais(e)'",
       "explanation": "'Pire' est le comparatif irrégulier de 'mauvais'. 'Plus mauvais(e)' est aussi accepté.",
       "translation": "Her grade is worse than mine."
@@ -278,7 +297,8 @@
       "sentence_after": "que son frère.",
       "answer": "mieux",
       "alternatives": [],
-      "hint": "Comparatif irrégulier de 'bien' (adverbe)",
+      "context": "He sings better than his brother.",
+      "hint": "Comparatif irrégulier de 'bien' — pas 'plus bien'",
       "explanation": "'Mieux' est le comparatif de 'bien'. On ne dit pas 'plus bien'.",
       "translation": "He sings better than his brother."
     },
@@ -289,6 +309,7 @@
       "sentence_after": ".",
       "answer": "le mieux",
       "alternatives": [],
+      "context": "He's the student who works the best.",
       "hint": "Superlatif de l'adverbe 'bien'",
       "explanation": "'Le mieux' est le superlatif de 'bien'.",
       "translation": "He's the student who works the best."
@@ -300,7 +321,8 @@
       "sentence_after": "ville de France.",
       "answer": "la plus grande",
       "alternatives": [],
-      "hint": "Superlatif de 'grande' (féminin)",
+      "context": "Paris is the biggest city in France.",
+      "hint": "Superlatif féminin: la plus + adjectif",
       "explanation": "'La plus grande' = superlatif féminin de supériorité.",
       "translation": "Paris is the biggest city in France."
     },
@@ -311,6 +333,7 @@
       "sentence_after": "du magasin.",
       "answer": "les moins chères",
       "alternatives": [],
+      "context": "These are the least expensive shoes in the store.",
       "hint": "Superlatif d'infériorité, féminin pluriel",
       "explanation": "'Les moins chères' = superlatif d'infériorité au féminin pluriel.",
       "translation": "These are the least expensive shoes in the store."
@@ -322,6 +345,7 @@
       "sentence_after": "que l'autre.",
       "answer": "meilleure",
       "alternatives": [],
+      "context": "This solution is better than the other one.",
       "hint": "Comparatif irrégulier de 'bonne' (féminin)",
       "explanation": "'Meilleure' = comparatif féminin de 'bon/bonne'.",
       "translation": "This solution is better than the other one."
@@ -333,7 +357,8 @@
       "sentence_after": "à résoudre.",
       "answer": "le plus difficile",
       "alternatives": [],
-      "hint": "Superlatif de 'difficile'",
+      "context": "It's the most difficult problem to solve.",
+      "hint": "Superlatif: le plus + adjectif",
       "explanation": "'Le plus difficile' = superlatif de supériorité.",
       "translation": "It's the most difficult problem to solve."
     },
@@ -344,7 +369,8 @@
       "sentence_after": "de touristes cette année que l'année dernière.",
       "answer": "plus",
       "alternatives": [],
-      "hint": "Comparaison de quantité (nom)",
+      "context": "There are more tourists this year than last year.",
+      "hint": "Comparaison de quantité: plus de + nom",
       "explanation": "'Plus de' + nom pour comparer des quantités.",
       "translation": "There are more tourists this year than last year."
     },
@@ -355,7 +381,8 @@
       "sentence_after": "de patience que lui.",
       "answer": "moins",
       "alternatives": [],
-      "hint": "Comparaison de quantité (infériorité)",
+      "context": "She has less patience than him.",
+      "hint": "Comparaison de quantité: moins de + nom",
       "explanation": "'Moins de' + nom pour une quantité inférieure.",
       "translation": "She has less patience than him."
     },
@@ -366,7 +393,8 @@
       "sentence_after": "de livres que toi.",
       "answer": "autant",
       "alternatives": [],
-      "hint": "Égalité de quantité (pas 'aussi'!)",
+      "context": "I have as many books as you.",
+      "hint": "Égalité de quantité: autant de + nom (pas 'aussi'!)",
       "explanation": "'Autant de' + nom pour l'égalité de quantité. 'Aussi' s'utilise avec un adjectif, 'autant' avec un nom.",
       "translation": "I have as many books as you."
     },
@@ -377,7 +405,8 @@
       "sentence_after": "que ses collègues.",
       "answer": "autant",
       "alternatives": [],
-      "hint": "Égalité avec un verbe (pas 'aussi'!)",
+      "context": "She works as much as her colleagues.",
+      "hint": "Égalité avec un verbe: verbe + autant (pas 'aussi'!)",
       "explanation": "'Autant' s'utilise après un verbe pour l'égalité. Verbe + autant + que.",
       "translation": "She works as much as her colleagues."
     },
@@ -388,6 +417,7 @@
       "sentence_after": "il grossit.",
       "answer": "plus",
       "alternatives": [],
+      "context": "The more he eats, the more he gains weight.",
       "hint": "Double comparatif: plus ... plus ...",
       "explanation": "'Plus ... plus ...' exprime une progression parallèle (the more ... the more).",
       "translation": "The more he eats, the more he gains weight."
@@ -399,6 +429,7 @@
       "sentence_after": "on fait d'erreurs.",
       "answer": "moins",
       "alternatives": [],
+      "context": "The more we study, the fewer mistakes we make.",
       "hint": "Double comparatif: plus ... moins ...",
       "explanation": "'Plus ... moins ...' = the more ... the less.",
       "translation": "The more we study, the fewer mistakes we make."
@@ -410,6 +441,7 @@
       "sentence_after": "meilleur que celui d'à côté.",
       "answer": "bien",
       "alternatives": ["beaucoup"],
+      "context": "This restaurant is much better than the one next door.",
       "hint": "Intensifieur devant un comparatif (pas 'très'!)",
       "explanation": "On utilise 'bien' ou 'beaucoup' pour renforcer un comparatif. Jamais 'très'.",
       "translation": "This restaurant is much better than the one next door."
@@ -421,7 +453,8 @@
       "sentence_after": "plus grand que je pensais.",
       "answer": "bien",
       "alternatives": ["beaucoup"],
-      "hint": "Renforcer un comparatif",
+      "context": "He is much taller than I thought.",
+      "hint": "Intensifieur devant un comparatif (pas 'très'!)",
       "explanation": "'Bien plus' ou 'beaucoup plus' pour intensifier la comparaison.",
       "translation": "He is much taller than I thought."
     },
@@ -432,7 +465,8 @@
       "sentence_after": "chanteuse de sa génération.",
       "answer": "la meilleure",
       "alternatives": [],
-      "hint": "'De loin' renforce quel type de structure?",
+      "context": "She is by far the best singer of her generation.",
+      "hint": "'De loin' + superlatif",
       "explanation": "'De loin' + superlatif pour insister sur la supériorité absolue.",
       "translation": "She is by far the best singer of her generation."
     },
@@ -443,7 +477,7 @@
       "sentence_after": "il ne le devrait.",
       "answer": "qu'",
       "alternatives": ["que"],
-      "hint": "'Que' devant une voyelle",
+      "hint": "'Que' s'élide devant une voyelle",
       "explanation": "'Que' devient 'qu'' devant une voyelle ou un 'h' muet.",
       "translation": "He eats more than he should."
     },
@@ -454,6 +488,7 @@
       "sentence_after": "on est fatigué.",
       "answer": "plus",
       "alternatives": [],
+      "context": "The less we sleep, the more tired we are.",
       "hint": "Double comparatif: moins ... plus ...",
       "explanation": "'Moins ... plus ...' = the less ... the more.",
       "translation": "The less we sleep, the more tired we are."
@@ -465,7 +500,8 @@
       "sentence_after": "d'amis que sa sœur.",
       "answer": "plus",
       "alternatives": [],
-      "hint": "Comparaison de quantité (supériorité + nom)",
+      "context": "She has more friends than her sister.",
+      "hint": "Comparaison de quantité: plus de + nom",
       "explanation": "'Plus de' + nom + 'que' pour comparer des quantités.",
       "translation": "She has more friends than her sister."
     },
@@ -476,7 +512,7 @@
       "sentence_after": "j'aie jamais vu.",
       "answer": "que",
       "alternatives": [],
-      "hint": "Après un superlatif + nom, quel pronom relatif?",
+      "hint": "Pronom relatif après un superlatif",
       "explanation": "Après un superlatif, on utilise 'que' + subjonctif pour une relative.",
       "translation": "It's the longest movie I've ever seen."
     },
@@ -487,7 +523,8 @@
       "sentence_after": "d'argent que d'habitude.",
       "answer": "autant",
       "alternatives": [],
-      "hint": "Égalité de quantité avec un nom",
+      "context": "He has as much money as usual.",
+      "hint": "Égalité de quantité: autant de + nom",
       "explanation": "'Autant de' + nom pour l'égalité de quantité.",
       "translation": "He has as much money as usual."
     },
@@ -498,7 +535,8 @@
       "sentence_after": "rapide que l'autre.",
       "answer": "plus",
       "alternatives": ["moins"],
-      "hint": "'Un peu' modifie quel comparatif?",
+      "context": "This car is a little faster than the other one.",
+      "hint": "'Un peu' + comparatif pour une petite différence",
       "explanation": "'Un peu plus/moins' pour une petite différence.",
       "translation": "This car is a little faster than the other one."
     }
