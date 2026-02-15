@@ -468,7 +468,7 @@ def ask_one_exercise(exercise: dict, exercise_num: int = None, total: int = None
 # ----------------------------------------------------------------------
 # Session Summary
 # ----------------------------------------------------------------------
-def show_session_summary(correct: int, total: int):
+def show_session_summary(correct: int, total: int, missed: list = None):
     """Display end-of-session summary."""
     if total == 0:
         print("\nAucun exercice complété.")
@@ -487,6 +487,15 @@ def show_session_summary(correct: int, total: int):
         print("Pas mal ! Continuez à pratiquer.")
     else:
         print("Continuez à pratiquer, vous allez vous améliorer !")
+
+    # Show missed exercises for review
+    if missed:
+        print("\n--- Erreurs à revoir ---")
+        for ex in missed:
+            filled = format_sentence(ex, ex["answer"])
+            print(f"  {filled}")
+            if ex.get("explanation"):
+                print(f"    -> {ex['explanation']}")
 
 
 def update_progress(correct: int, total: int):
@@ -617,6 +626,7 @@ def main():
     total_exercises = len(exercises)
     total_correct = 0
     total_done = 0
+    missed_exercises = []
 
     for i, exercise in enumerate(exercises, 1):
         try:
@@ -628,6 +638,8 @@ def main():
         total_done += 1
         if correct:
             total_correct += 1
+        else:
+            missed_exercises.append(exercise)
 
         # SRS: ask for quality rating and update stats
         if args.srs:
@@ -653,7 +665,7 @@ def main():
                 break
 
     # Session summary
-    show_session_summary(total_correct, total_done)
+    show_session_summary(total_correct, total_done, missed_exercises)
 
     # Update progress if any exercises were done
     if total_done > 0:

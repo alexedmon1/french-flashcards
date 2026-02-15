@@ -27,8 +27,6 @@ from typing import Optional
 DATA_DIR = Path(".flashcard_data")
 STATS_FILE = DATA_DIR / "card_stats.json"
 PROGRESS_FILE = DATA_DIR / "progress.json"
-MISSED_PATH = Path("missed.csv")
-
 # SRS intervals (in days) - simplified SM-2 algorithm
 INTERVALS = {
     0: 0,      # Wrong - review same session
@@ -514,7 +512,7 @@ def run_study_session(
         if not due_cards:
             print("✅ No cards due for review today! Great job!")
             print(f"   Total cards in deck: {len(cards)}")
-            return {"total": 0, "correct": 0, "missed": []}
+            return {"total": 0, "correct": 0}
 
         study_cards = due_cards
         print(f"📚 {len(study_cards)} cards due for review today (out of {len(cards)} total)")
@@ -524,13 +522,20 @@ def run_study_session(
 
     correct_count = 0
     missed_cards = []
-    results = []
 
     print(f"\n=== Study Session ({mode.upper()} mode) ===\n")
 
     for idx, card in enumerate(study_cards, 1):
         print(f"\n[{idx}/{len(study_cards)}]")
         print("-" * 50)
+
+        # Determine question and correct answer for miss tracking
+        if lang_direction == "english":
+            question_text = card.french
+            answer_text = card.english
+        else:
+            question_text = card.english
+            answer_text = card.french
 
         # Ask question based on mode
         if mode == "easy":
@@ -547,11 +552,10 @@ def run_study_session(
         if practice_gender and card.gender and is_correct:
             gender_question(card)  # Doesn't affect main score
 
-        # Update stats
         if is_correct:
             correct_count += 1
         else:
-            missed_cards.append(card)
+            missed_cards.append((question_text, answer_text))
 
         # Update SRS
         if use_srs:
@@ -579,7 +583,7 @@ def run_study_session(
     return {
         "total": len(study_cards),
         "correct": correct_count,
-        "missed": [(c.french, c.english) for c in missed_cards]
+        "missed": missed_cards,
     }
 
 
@@ -912,26 +916,23 @@ def main():
     print("=== Session Summary ===")
     print(f"Total cards reviewed : {result['total']}")
     print(f"Correctly answered   : {result['correct']}")
-    print(f"Missed / need review : {len(result['missed'])}")
+    missed_count = result['total'] - result['correct']
+    print(f"Missed / need review : {missed_count}")
 
     if result['total'] > 0:
         accuracy = (result['correct'] / result['total']) * 100
         print(f"Accuracy             : {accuracy:.1f}%")
 
+    # Show missed cards for review
+    if result.get('missed'):
+        print("\n--- Missed Cards ---")
+        for question, answer in result['missed']:
+            print(f"  {question}  ->  {answer}")
+
     # Update progress
     if result['total'] > 0:
         progress = update_progress(result)
         print(f"\n🔥 Current streak    : {progress['streak']} day(s)")
-
-    # Save missed cards
-    if result['missed']:
-        with MISSED_PATH.open("w", newline="", encoding="utf-8") as f:
-            writer = csv.writer(f)
-            writer.writerows(result['missed'])
-        print(f"\n🗂️  Missed cards saved to: {MISSED_PATH}")
-    elif MISSED_PATH.exists():
-        MISSED_PATH.unlink()
-        print("\n✅ Perfect score! Missed list cleared.")
 
     print("=" * 50)
 

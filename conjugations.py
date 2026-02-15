@@ -477,11 +477,12 @@ def choose_tier() -> str:
 # ----------------------------------------------------------------------
 # Main Practice Functions
 # ----------------------------------------------------------------------
-def ask_one_verb(infinitive: str, tense: str) -> tuple[int, int]:
+def ask_one_verb(infinitive: str, tense: str) -> tuple[int, int, list]:
     """
     Practice a single verb conjugation.
 
-    Returns (correct_count, total_count)
+    Returns (correct_count, total_count, missed_list)
+    missed_list contains (pronoun, user_answer, correct_answer) tuples
     """
     # Get random pronoun variations
     selected_pronouns = get_random_pronouns()
@@ -502,15 +503,17 @@ def ask_one_verb(infinitive: str, tense: str) -> tuple[int, int]:
         answers.append(ans)
 
     score = 0
+    missed = []
     for i, (user_ans, correct_ans) in enumerate(zip(answers, correct_forms)):
         if user_ans.lower() == correct_ans.lower():
             print(f"  {pronouns[i]} {user_ans}")
             score += 1
         else:
             print(f"  {pronouns[i]} {user_ans} -> correct: {correct_ans}")
+            missed.append((pronouns[i], user_ans, correct_ans))
 
     print(f"Score pour ce verbe ({tense_name}) : {score}/6")
-    return score, 6
+    return score, 6, missed
 
 
 # ----------------------------------------------------------------------
@@ -572,6 +575,7 @@ Examples:
 
     total_ok = 0
     total_q = 0
+    all_misses = []  # (infinitive, tense, missed_list)
 
     # Build title with active tenses
     tense_str = "7 tenses" if not args.tense else TENSE_NAMES.get(args.tense, args.tense)
@@ -629,13 +633,15 @@ Examples:
             infinitive = random.choice(verb_list)
 
         try:
-            ok, qty = ask_one_verb(infinitive, tense)
+            ok, qty, missed = ask_one_verb(infinitive, tense)
         except (KeyboardInterrupt, EOFError):
             print("\nInterruption détectée – au revoir !")
             break
 
         total_ok += ok
         total_q += qty
+        if missed:
+            all_misses.append((infinitive, tense, missed))
 
         # SRS: Ask for quality rating and update stats
         if args.srs:
@@ -666,6 +672,15 @@ Examples:
         print("\n--- Résultat final ---")
         print(f"Points obtenus : {total_ok}/{total_q}")
         print(f"Taux de réussite : {pct:.1f}%")
+
+        # Show missed conjugations for review
+        if all_misses:
+            print("\n--- Erreurs à revoir ---")
+            for infinitive, tense, missed in all_misses:
+                tense_name = get_tense_display_name(tense)
+                print(f"  {infinitive} ({tense_name}) :")
+                for pronoun, user_ans, correct_ans in missed:
+                    print(f"    {pronoun} {correct_ans}  (vous : {user_ans})")
     else:
         print("\nAucun point enregistré.")
 
