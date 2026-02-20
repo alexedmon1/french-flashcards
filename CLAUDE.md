@@ -198,7 +198,7 @@ Textual TUI that combines vocabulary, conjugation, and grammar into a single dai
 
 **Screens:**
 - **Dashboard**: Shows due counts per type (vocabulary/conjugation/grammar), streak, estimated time. Press `s` to start, `q` to quit.
-- **Exercise**: Mixed session of up to 25 items, balanced equally across the 3 types (~8 each). Progress bar and timer at top. Type answer and press Enter. Type `h` for a hint. Press Escape to end early. After 15 minutes, suggests a stopping point.
+- **Exercise**: Mixed session of up to 60 items, balanced equally across the 3 types (~20 each). Progress bar and timer at top. Type answer and press Enter. Type `h` for a hint. Press Escape to end early. After 15 minutes, suggests a stopping point.
 - **Summary**: Time elapsed, accuracy, per-type breakdown, missed items list, streak update. Press `d` for dashboard, `q` to quit.
 
 **Exercise behavior:**
@@ -210,7 +210,7 @@ Textual TUI that combines vocabulary, conjugation, and grammar into a single dai
 **Session algorithm:**
 - Collects due items from all 3 pools (overdue + due today + new)
 - Balanced round-robin: each type gets ~1/3 of session slots
-- New items capped at 5 per session to avoid overwhelm
+- New items capped at 10 per session to avoid overwhelm
 - Overdue items prioritized within each type
 
 **Data:**

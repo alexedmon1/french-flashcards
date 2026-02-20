@@ -282,8 +282,8 @@ class DashboardScreen(Screen):
 
         total = sum(counts.values())
         est_minutes = max(1, round(total * 0.75))  # ~45s per item
-        if total > 25:
-            est_minutes = max(1, round(25 * 0.75))  # capped at session size
+        if total > 60:
+            est_minutes = max(1, round(60 * 0.75))  # capped at session size
 
         lines = []
         lines.append(f"  Vocabulary:    [cyan]{counts['Vocabulary']}[/]")
@@ -291,7 +291,7 @@ class DashboardScreen(Screen):
         lines.append(f"  Grammar:       [yellow]{counts['Grammar']}[/]")
         lines.append("")
         lines.append(f"  Total due:     [bold green]{total}[/]")
-        session_size = min(total, 25)
+        session_size = min(total, 60)
         lines.append(f"  Session size:  {session_size} items (~{est_minutes} min)")
         lines.append(f"  Streak:        {progress['streak']} day(s)")
 

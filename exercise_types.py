@@ -378,7 +378,7 @@ def _balanced_sample(items_by_type: dict[str, list[Exercise]], budget: int) -> l
     return selected
 
 
-def load_all_due(max_items: int = 25, max_new: int = 5) -> list[Exercise]:
+def load_all_due(max_items: int = 60, max_new: int = 10) -> list[Exercise]:
     """
     Load all due exercises from all 3 pools.
 
