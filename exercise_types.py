@@ -178,12 +178,16 @@ class GrammarExercise(Exercise):
         self.key = key
 
     def get_prompt(self) -> str:
+        topic_display = self.topic_name.replace("_", " ").title()
         before = self.data.get("sentence_before", "")
         after = self.data.get("sentence_after", "")
         context = self.data.get("context", "")
-        sentence = f"{before} __________ {after}".strip()
+        translation = self.data.get("translation", "")
+        sentence = f"{topic_display}\n{before} __________ {after}".strip()
         if context:
             sentence += f"\n({context})"
+        if translation and translation != context:
+            sentence += f"\n{translation}"
         return sentence
 
     def get_correct(self) -> str:
