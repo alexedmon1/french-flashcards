@@ -15,11 +15,14 @@ import json
 import random
 import sys
 import time
-import unicodedata
 from datetime import datetime, date
 from difflib import SequenceMatcher
 from pathlib import Path
 from typing import Optional
+
+from srs_core import SRSStats, normalize_input
+from srs_core import load_stats as _load_srs_stats
+from srs_core import save_stats as _save_srs_stats
 
 # ----------------------------------------------------------------------
 # Configuration
@@ -27,13 +30,6 @@ from typing import Optional
 DATA_DIR = Path(".flashcard_data")
 STATS_FILE = DATA_DIR / "card_stats.json"
 PROGRESS_FILE = DATA_DIR / "progress.json"
-# SRS intervals (in days) - simplified SM-2 algorithm
-INTERVALS = {
-    0: 0,      # Wrong - review same session
-    1: 1,      # Hard - 1 day
-    2: 3,      # Good - 3 days
-    3: 7,      # Easy - 1 week
-}
 
 # ----------------------------------------------------------------------
 # Data Models
@@ -60,87 +56,22 @@ class Card:
         return f"Card({self.french}, {self.english}, {self.category}, {self.gender})"
 
 
-class CardStats:
-    def __init__(self, key: str):
-        self.key = key
-        self.times_seen = 0
-        self.times_correct = 0
-        self.last_reviewed = None
-        self.interval = 0  # days until next review
-        self.ease_factor = 2.5
-        self.due_date = date.today().isoformat()
-
-    def to_dict(self):
-        return {
-            "times_seen": self.times_seen,
-            "times_correct": self.times_correct,
-            "last_reviewed": self.last_reviewed,
-            "interval": self.interval,
-            "ease_factor": self.ease_factor,
-            "due_date": self.due_date
-        }
-
-    @classmethod
-    def from_dict(cls, key: str, data: dict):
-        stats = cls(key)
-        stats.times_seen = data.get("times_seen", 0)
-        stats.times_correct = data.get("times_correct", 0)
-        stats.last_reviewed = data.get("last_reviewed")
-        stats.interval = data.get("interval", 0)
-        stats.ease_factor = data.get("ease_factor", 2.5)
-        stats.due_date = data.get("due_date", date.today().isoformat())
-        return stats
-
-    def update(self, quality: int):
-        """Update stats based on performance (0=wrong, 1=hard, 2=good, 3=easy)"""
-        self.times_seen += 1
-        if quality > 0:
-            self.times_correct += 1
-
-        self.last_reviewed = date.today().isoformat()
-
-        # Update ease factor (simplified SM-2)
-        self.ease_factor = max(1.3, self.ease_factor + (0.1 - (3 - quality) * (0.08 + (3 - quality) * 0.02)))
-
-        # Calculate next interval
-        if quality == 0:
-            self.interval = 0
-        else:
-            if self.times_correct == 1:
-                self.interval = INTERVALS[quality]
-            else:
-                self.interval = int(self.interval * self.ease_factor)
-
-        # Calculate due date
-        from datetime import timedelta
-        next_date = date.today() + timedelta(days=self.interval)
-        self.due_date = next_date.isoformat()
+class CardStats(SRSStats):
+    """SRS stats for a vocabulary card. Inherits all behavior from SRSStats."""
+    pass
 
 
 # ----------------------------------------------------------------------
 # Storage Functions
 # ----------------------------------------------------------------------
-def ensure_data_dir():
-    DATA_DIR.mkdir(exist_ok=True)
-
-
 def load_stats() -> dict[str, CardStats]:
     """Load card statistics from JSON file"""
-    if not STATS_FILE.exists():
-        return {}
-
-    with STATS_FILE.open() as f:
-        data = json.load(f)
-
-    return {key: CardStats.from_dict(key, val) for key, val in data.items()}
+    return _load_srs_stats(STATS_FILE, CardStats)
 
 
 def save_stats(stats: dict[str, CardStats]):
     """Save card statistics to JSON file"""
-    ensure_data_dir()
-    data = {key: val.to_dict() for key, val in stats.items()}
-    with STATS_FILE.open("w") as f:
-        json.dump(data, f, indent=2)
+    _save_srs_stats(stats, STATS_FILE)
 
 
 def load_progress() -> dict:
@@ -154,7 +85,7 @@ def load_progress() -> dict:
 
 def save_progress(progress: dict):
     """Save progress history"""
-    ensure_data_dir()
+    DATA_DIR.mkdir(exist_ok=True)
     with PROGRESS_FILE.open("w") as f:
         json.dump(progress, f, indent=2)
 
@@ -243,75 +174,10 @@ def load_cards(csv_path: Path, category_filter: Optional[str] = None) -> list[Ca
     return cards
 
 
+
 # ----------------------------------------------------------------------
-# Answer Checking
+# Answer Checking (normalize_input imported from srs_core)
 # ----------------------------------------------------------------------
-def normalize_input(text: str) -> str:
-    """
-    Clean up input text by removing surrogate characters and normalizing Unicode.
-
-    This handles issues that can occur when typing accented characters and using
-    backspace, which can leave behind invisible combining characters or malformed
-    Unicode sequences.
-    """
-    # Explicitly remove backspace characters and what they were meant to delete
-    # This handles cases where backspace doesn't fully delete in the terminal buffer
-    while '\x08' in text or '\x7f' in text:
-        # Handle backspace (BS) - delete previous character
-        if '\x08' in text:
-            idx = text.index('\x08')
-            if idx > 0:
-                text = text[:idx-1] + text[idx+1:]
-            else:
-                text = text[1:]
-        # Handle DEL character
-        if '\x7f' in text:
-            idx = text.index('\x7f')
-            if idx > 0:
-                text = text[:idx-1] + text[idx+1:]
-            else:
-                text = text[1:]
-
-    # First, normalize to NFC (Canonical Decomposition, followed by Canonical Composition)
-    # This ensures accented characters are in their composed form (é instead of e + ́)
-    normalized = unicodedata.normalize('NFC', text)
-
-    # Remove any surrogate characters or invalid UTF-8 sequences
-    cleaned = normalized.encode('utf-8', errors='ignore').decode('utf-8', errors='ignore')
-
-    # Characters to explicitly remove (zero-width and other invisible characters)
-    invisible_chars = {
-        '\u200b',  # Zero-width space
-        '\u200c',  # Zero-width non-joiner
-        '\u200d',  # Zero-width joiner
-        '\u2060',  # Word joiner
-        '\ufeff',  # Byte order mark / zero-width no-break space
-        '\u00ad',  # Soft hyphen
-        '\u034f',  # Combining grapheme joiner
-        '\u061c',  # Arabic letter mark
-        '\u115f',  # Hangul choseong filler
-        '\u1160',  # Hangul jungseong filler
-        '\u17b4',  # Khmer vowel inherent aq
-        '\u17b5',  # Khmer vowel inherent aa
-        '\u180e',  # Mongolian vowel separator
-        '\u2000', '\u2001', '\u2002', '\u2003', '\u2004', '\u2005',  # Various spaces
-        '\u2006', '\u2007', '\u2008', '\u2009', '\u200a',  # More spaces
-        '\u202a', '\u202b', '\u202c', '\u202d', '\u202e',  # Directional formatting
-        '\u2066', '\u2067', '\u2068', '\u2069',  # Isolate formatting
-    }
-
-    # Remove zero-width characters, control characters, and other invisible Unicode artifacts
-    # But preserve combining marks that are part of valid precomposed characters (already handled by NFC)
-    cleaned = ''.join(
-        char for char in cleaned
-        if char not in invisible_chars
-        and (unicodedata.category(char) not in ('Cc', 'Cf')
-             or char in ('\n', '\r', '\t'))  # Keep common whitespace
-    )
-
-    return cleaned.strip()
-
-
 def similarity_ratio(s1: str, s2: str) -> float:
     """Calculate similarity between two strings (0.0 to 1.0)"""
     return SequenceMatcher(None, s1.lower(), s2.lower()).ratio()

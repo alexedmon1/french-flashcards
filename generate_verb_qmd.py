@@ -12,8 +12,8 @@ from conjugation_engine import (
 STANDARD_PRONOUNS = ["je", "tu", "il", "nous", "vous", "ils"]
 DISPLAY_PRONOUNS = ["je", "tu", "il/elle", "nous", "vous", "ils/elles"]
 
-TENSES = ["present", "future", "imparfait", "conditional", "past", "near_future", "conditional_past"]
-TENSE_HEADERS = ["Présent", "Futur", "Imparfait", "Cond.", "P. Composé", "F. Proche", "Cond. Passé"]
+TENSES = ["present", "future", "imparfait", "conditional", "past"]
+TENSE_HEADERS = ["Présent", "Futur", "Imparfait", "Cond.", "P. Composé"]
 
 
 def elide_je(form):

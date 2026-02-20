@@ -6,14 +6,12 @@ Conjugation Engine - Generates French verb conjugations algorithmically
 This module loads verb data from verbs.json and generates conjugations for
 regular verbs using patterns, while using stored forms for irregular verbs.
 
-Supports 7 tenses:
+Supports 5 tenses:
 - présent (present)
 - futur simple (future)
 - imparfait (imparfait)
 - passé composé (past)
-- futur proche (near_future)
 - conditionnel présent (conditional)
-- conditionnel passé (conditional_past)
 """
 
 import json
@@ -48,16 +46,11 @@ IR_ENDINGS = {
     "conditional": ["ais", "ais", "ait", "ions", "iez", "aient"],
 }
 
-# Avoir conjugations (for passé composé and conditionnel passé)
+# Avoir conjugations (for passé composé)
 AVOIR_PRESENT = ["ai", "as", "a", "avons", "avez", "ont"]
-AVOIR_CONDITIONAL = ["aurais", "aurais", "aurait", "aurions", "auriez", "auraient"]
 
-# Être conjugations (for passé composé and conditionnel passé)
+# Être conjugations (for passé composé)
 ETRE_PRESENT = ["suis", "es", "est", "sommes", "êtes", "sont"]
-ETRE_CONDITIONAL = ["serais", "serais", "serait", "serions", "seriez", "seraient"]
-
-# Aller present (for futur proche)
-ALLER_PRESENT = ["vais", "vas", "va", "allons", "allez", "vont"]
 
 # Pronoun variations with gender
 PRONOUN_VARIATIONS = [
@@ -358,50 +351,6 @@ def conjugate_passe_compose(infinitive: str, verb_data: dict,
     return result
 
 
-def conjugate_futur_proche(infinitive: str, verb_data: dict) -> list[str]:
-    """
-    Generate futur proche (near future) tense conjugation.
-    Structure: aller (present) + infinitive
-    """
-    is_reflexive = verb_data.get("reflexive", False)
-
-    if is_reflexive:
-        # For reflexive verbs: je vais me lever
-        base_inf = infinitive.replace("se ", "").replace("s'", "")
-        reflexive_pronouns = ["me", "te", "se", "nous", "vous", "se"]
-        return [f"{ALLER_PRESENT[i]} {reflexive_pronouns[i]} {base_inf}"
-                for i in range(6)]
-    else:
-        return [f"{ALLER_PRESENT[i]} {infinitive}" for i in range(6)]
-
-
-def conjugate_conditional_past(infinitive: str, verb_data: dict,
-                                selected_pronouns: list[str]) -> list[str]:
-    """
-    Generate conditionnel passé tense conjugation.
-    Structure: avoir/être (conditional) + past participle
-    """
-    auxiliary = verb_data.get("auxiliary", "avoir")
-    participle = get_past_participle(infinitive, verb_data)
-
-    # Get conditional forms of auxiliary
-    aux_forms = AVOIR_CONDITIONAL if auxiliary == "avoir" else ETRE_CONDITIONAL
-
-    # Handle reflexive verbs
-    is_reflexive = verb_data.get("reflexive", False)
-
-    result = []
-    for i, pronoun in enumerate(selected_pronouns):
-        agreed_participle = apply_participle_agreement(participle, pronoun, auxiliary)
-
-        if is_reflexive:
-            result.append(f"{REFLEXIVE_PRONOUNS[i]}{aux_forms[i]} {agreed_participle}")
-        else:
-            result.append(f"{aux_forms[i]} {agreed_participle}")
-
-    return result
-
-
 # ----------------------------------------------------------------------
 # Main conjugation interface
 # ----------------------------------------------------------------------
@@ -418,8 +367,7 @@ def conjugate(infinitive: str, tense: str,
 
     Args:
         infinitive: The verb infinitive (e.g., "parler")
-        tense: One of "present", "future", "imparfait", "past",
-               "near_future", "conditional", "conditional_past"
+        tense: One of "present", "future", "imparfait", "past", "conditional"
         selected_pronouns: Optional list of 6 pronouns to use.
                           If None, random pronouns are selected.
 
@@ -442,12 +390,8 @@ def conjugate(infinitive: str, tense: str,
         forms = conjugate_imparfait(infinitive, verb_data)
     elif tense == "past":
         forms = conjugate_passe_compose(infinitive, verb_data, selected_pronouns)
-    elif tense == "near_future":
-        forms = conjugate_futur_proche(infinitive, verb_data)
     elif tense == "conditional":
         forms = conjugate_conditional(infinitive, verb_data)
-    elif tense == "conditional_past":
-        forms = conjugate_conditional_past(infinitive, verb_data, selected_pronouns)
     else:
         raise ValueError(f"Unknown tense: {tense}")
 
@@ -465,17 +409,14 @@ def get_tense_display_name(tense: str) -> str:
         "future": "futur simple",
         "imparfait": "imparfait",
         "past": "passé composé",
-        "near_future": "futur proche",
         "conditional": "conditionnel présent",
-        "conditional_past": "conditionnel passé",
     }
     return names.get(tense, tense)
 
 
 def get_all_tenses() -> list[str]:
     """Get list of all supported tense codes."""
-    return ["present", "future", "imparfait", "past",
-            "near_future", "conditional", "conditional_past"]
+    return ["present", "future", "imparfait", "past", "conditional"]
 
 
 # ----------------------------------------------------------------------
@@ -487,8 +428,7 @@ if __name__ == "__main__":
     print("Testing conjugation engine...\n")
 
     test_verbs = ["parler", "finir", "être", "avoir", "aller"]
-    test_tenses = ["present", "future", "imparfait", "past", "near_future",
-                   "conditional", "conditional_past"]
+    test_tenses = ["present", "future", "imparfait", "past", "conditional"]
 
     for verb in test_verbs:
         print(f"\n=== {verb} ({get_translation(verb)}) ===")

@@ -50,6 +50,7 @@
       "sentence_after": "moi.",
       "answer": "que",
       "alternatives": [],
+      "context": "She runs faster than me.",
       "hint": "Mot de comparaison après l'adjectif/adverbe",
       "explanation": "'Que' introduit le deuxième élément de la comparaison.",
       "translation": "She runs faster than me."
@@ -73,6 +74,7 @@
       "sentence_after": "l'avenue.",
       "answer": "que",
       "alternatives": [],
+      "context": "This street is as wide as the avenue.",
       "hint": "Mot qui relie les deux éléments comparés",
       "explanation": "'Que' est toujours nécessaire après plus/moins/aussi + adjectif.",
       "translation": "This street is as wide as the avenue."
@@ -108,6 +110,7 @@
       "sentence_after": "le bus.",
       "answer": "que",
       "alternatives": [],
+      "context": "The train is faster than the bus.",
       "hint": "Mot de liaison dans la comparaison",
       "explanation": "'Que' relie les deux éléments comparés.",
       "translation": "The train is faster than the bus."
@@ -155,6 +158,7 @@
       "sentence_after": "celle du restaurant.",
       "answer": "que",
       "alternatives": [],
+      "context": "This pizza is as good as the restaurant's one.",
       "hint": "Mot de liaison après l'adjectif",
       "explanation": "'Que' est obligatoire pour compléter la comparaison d'égalité.",
       "translation": "This pizza is as good as the restaurant's one."
@@ -178,6 +182,7 @@
       "sentence_after": "l'autre.",
       "answer": "que",
       "alternatives": [],
+      "context": "This book is cheaper than the other one.",
       "hint": "Mot de comparaison après moins + adjectif",
       "explanation": "'Que' complète toujours la structure comparative.",
       "translation": "This book is cheaper than the other one."
@@ -477,6 +482,7 @@
       "sentence_after": "il ne le devrait.",
       "answer": "qu'",
       "alternatives": ["que"],
+      "context": "He eats more than he should.",
       "hint": "'Que' s'élide devant une voyelle",
       "explanation": "'Que' devient 'qu'' devant une voyelle ou un 'h' muet.",
       "translation": "He eats more than he should."
@@ -512,6 +518,7 @@
       "sentence_after": "j'aie jamais vu.",
       "answer": "que",
       "alternatives": [],
+      "context": "It's the longest movie I've ever seen.",
       "hint": "Pronom relatif après un superlatif",
       "explanation": "Après un superlatif, on utilise 'que' + subjonctif pour une relative.",
       "translation": "It's the longest movie I've ever seen."
