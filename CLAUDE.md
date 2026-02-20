@@ -11,13 +11,18 @@ A French language learning application with multiple components:
 2. **Current trainer** (`flashcards.py`) - Advanced version with SRS, typing modes, progress tracking, and interactive prompts
 
 ### Additional Components
-3. **Conjugation trainer** (`conjugations.py`) - Verb conjugation practice for 7 tenses with tier system
+3. **Conjugation trainer** (`conjugations.py`) - Verb conjugation practice for 5 tenses with tier system
 4. **Conjugation engine** (`conjugation_engine.py`) - Core conjugation logic module
 5. **Verb data** (`conjugation_data/verbs.json`) - External JSON database of verbs
 6. **Grammar trainer** (`grammar.py`) - Fill-in-the-blank grammar exercises with SRS support
 7. **Grammar data** (`grammar_data/`) - JSON exercise files, auto-discovered by the trainer
 8. **Master vocabulary** (`master_vocabulary.csv`) - Combined file with all vocabulary from individual CSVs with category tags
 9. **CSV combiner** (`combine_csvs.py`) - Tool to regenerate master vocabulary file
+
+### Unified Daily Trainer
+10. **Daily trainer** (`daily_trainer.py`) - Textual TUI combining all 3 trainers into one daily session
+11. **SRS core** (`srs_core.py`) - Shared SM-2 algorithm and utilities used by all trainers
+12. **Exercise types** (`exercise_types.py`) - Unified exercise abstraction and session loader
 
 ## Running the Application
 
@@ -80,16 +85,14 @@ python3 flashcards.py --list-categories
 ```bash
 python3 conjugations.py [options]
 ```
-Practice French verb conjugations across **7 tenses** with **93 verbs** organized by tier, and optional **SRS support**.
+Practice French verb conjugations across **5 tenses** with **93 verbs** organized by tier, and optional **SRS support**.
 
 **Tenses available:**
 - Présent (present)
 - Futur simple (future)
 - Imparfait (imparfait)
 - Passé composé (past)
-- Futur proche (near_future)
 - Conditionnel présent (conditional)
-- Conditionnel passé (conditional_past)
 
 **Command-line options:**
 - `--help`: Show detailed help message
@@ -106,7 +109,7 @@ Practice French verb conjugations across **7 tenses** with **93 verbs** organize
   - **Intermediate** (~35 verbs): Common verbs for intermediate learners
   - **Advanced** (~40 verbs): Less common verbs for advanced learners
 - Randomized pronoun variations (il/elle/on, ils/elles) for natural practice
-- Gender agreement for passé composé/conditionnel passé with être verbs
+- Gender agreement for passé composé with être verbs
 - SRS quality ratings (Wrong/Hard/Good/Easy) to optimize review schedule
 - External verb data in JSON format for easy additions
 
@@ -185,6 +188,39 @@ python3 grammar.py --srs --level=2
 
 # View your statistics
 python3 grammar.py --stats
+```
+
+### Daily Trainer (Recommended)
+```bash
+python3 daily_trainer.py
+```
+Textual TUI that combines vocabulary, conjugation, and grammar into a single daily practice session. Pulls due items from all 3 SRS pools and presents them in a mixed flow.
+
+**Screens:**
+- **Dashboard**: Shows due counts per type (vocabulary/conjugation/grammar), streak, estimated time. Press `s` to start, `q` to quit.
+- **Exercise**: Mixed session of up to 25 items, balanced equally across the 3 types (~8 each). Progress bar and timer at top. Type answer and press Enter. Type `h` for a hint. Press Escape to end early. After 15 minutes, suggests a stopping point.
+- **Summary**: Time elapsed, accuracy, per-type breakdown, missed items list, streak update. Press `d` for dashboard, `q` to quit.
+
+**Exercise behavior:**
+- **Vocabulary**: Random direction per card (French->English or English->French). Fuzzy matching with 85% similarity threshold. Parenthetical parts are optional (e.g., "to sit down" matches "to sit (down)").
+- **Conjugation**: Single random pronoun per card (not all 6) for faster pace.
+- **Grammar**: Fill-in-the-blank, same as standalone grammar trainer.
+- **Quality ratings**: Auto-calculated (correct=Good/2, wrong=Wrong/0) — no manual rating step.
+
+**Session algorithm:**
+- Collects due items from all 3 pools (overdue + due today + new)
+- Balanced round-robin: each type gets ~1/3 of session slots
+- New items capped at 5 per session to avoid overwhelm
+- Overdue items prioritized within each type
+
+**Data:**
+- SRS data shared with standalone trainers (same `.flashcard_data/`, `.conjugation_data/`, `.grammar_data/` directories)
+- Session history and streak in `.daily_trainer_data/progress.json`
+
+**Examples:**
+```bash
+# Launch the TUI
+python3 daily_trainer.py
 ```
 
 ### Master Vocabulary Management
@@ -299,23 +335,22 @@ son,his|her|sound,Common 1
   - `progress.json`: Session history, streaks, overall statistics
 - **Card class**: Supports french, english, category, and gender fields
 - **Multiple study modes**: Multiple choice, typing (fuzzy/exact), timed challenges
-- **Spaced Repetition**: Simplified SM-2 algorithm with quality ratings (0-3)
+- **Spaced Repetition**: CardStats (inherits from SRSStats) with SM-2 algorithm
 - **Category filtering**: Interactive selection or command-line specification
 - **Help system**: Built-in `--help` flag for detailed usage information
 - **Backward compatible**: Works with all existing CSV formats (2, 3, or 4 columns)
 
 ### conjugations.py
 - **Refactored design**: Uses `conjugation_engine.py` for all conjugation logic
-- **7 tenses**: présent, futur simple, imparfait, passé composé, futur proche, conditionnel présent, conditionnel passé
+- **5 tenses**: présent, futur simple, imparfait, passé composé, conditionnel présent
 - **Tier system**: verbs organized into core (~20), intermediate (~35), advanced (~40)
 - **Interactive loop**: User selects tier, verb type, and tense; random verb chosen, all 6 pronouns tested
-- **SRS support**: ConjugationStats class tracks verb-tense combinations with SM-2 algorithm
+- **SRS support**: ConjugationStats class (inherits from SRSStats) tracks verb-tense combinations
   - Data persistence in `.conjugation_data/` directory
   - `conjugation_stats.json`: Per-combination SRS data (intervals, ease factors, due dates)
   - `conjugation_progress.json`: Session history and statistics
   - Quality ratings (0-3) determine next review interval
   - Filtering by due date when `--srs` flag is used
-  - Existing SRS data remains compatible with new tenses
 
 ### conjugation_engine.py
 - **Core module**: Loads verb data and generates conjugations algorithmically
@@ -330,9 +365,7 @@ son,his|her|sound,Common 1
   - Future: future stem + future endings
   - Imparfait: imparfait stem + imparfait endings
   - Passé composé: avoir/être present + past participle with agreement
-  - Futur proche: aller present + infinitive
   - Conditional: future stem + conditional endings
-  - Conditional past: avoir/être conditional + past participle with agreement
 
 ### conjugation_data/verbs.json
 - **External verb database**: All verb definitions in JSON format
@@ -364,9 +397,8 @@ son,his|her|sound,Common 1
 - **Grammar trainer**: Fill-in-the-blank exercises with SRS support
 - **Auto-discovery**: Loads topics from JSON files in `grammar_data/`
 - **CLI**: `python3 grammar.py [--srs] [--level=N] [--stats] [--help]`
-- **GrammarStats class**: SM-2 algorithm (same pattern as ConjugationStats)
+- **GrammarStats class**: Inherits from SRSStats (shared SM-2 algorithm)
 - **Data persistence**: Uses `.grammar_data/` directory for SRS data
-- **normalize_input()**: Same Unicode cleanup as conjugations.py
 - **Answer checking**: Exact match, case-insensitive, with alternatives list
 - **Hint system**: Type `h` during an exercise to see a hint
 
@@ -403,10 +435,36 @@ son,his|her|sound,Common 1
 - **Options**: --clean (remove old files), --backup (create backup), --keep-pipes (preserve pipes)
 - **Use case**: When you've been editing master_vocabulary.csv directly and want to sync changes back
 
+### srs_core.py
+- **Shared SRS module**: Extracted from duplicated code across all 3 trainers
+- **SRSStats class**: Base class with `update(quality)`, `to_dict()`, `from_dict()` — implements simplified SM-2 algorithm
+- **INTERVALS**: `{0: 0, 1: 1, 2: 3, 3: 7}` days mapping for quality ratings
+- **normalize_input()**: Unicode cleanup for accented character input (backspace handling, NFC normalization, invisible character removal)
+- **load_stats() / save_stats()**: Generic file I/O for any SRSStats subclass
+- **Inheritance**: CardStats, ConjugationStats, GrammarStats all inherit from SRSStats
+
+### exercise_types.py
+- **Exercise ABC**: Abstract base with `get_prompt()`, `get_correct()`, `check()`, `get_hint()`
+- **VocabularyExercise**: Wraps a vocab card with random direction (French->English or English->French). Fuzzy matching with parenthetical expansion and 85% similarity threshold.
+- **ConjugationExercise**: Wraps a verb+tense+single random pronoun. Exact match checking.
+- **GrammarExercise**: Wraps a grammar exercise dict. Exact match with alternatives.
+- **load_all_due()**: Factory that loads due items from all 3 SRS pools with balanced round-robin sampling across types
+- **get_due_counts()**: Lightweight counter for dashboard display
+- **_fuzzy_match() / _expand_parens()**: Answer matching helpers for vocabulary
+
+### daily_trainer.py
+- **Textual TUI app**: Entry point for unified daily practice
+- **DashboardScreen**: Shows due counts, streak, estimated time. Keybindings: `s` start, `q` quit.
+- **ExerciseScreen**: Presents exercises one at a time with progress bar and timer. Keybindings: `h` hint (via input), Escape to end early. Auto-advances after Enter on feedback.
+- **SummaryScreen**: Shows results, per-type breakdown, missed items, streak. Keybindings: `d` dashboard, `q` quit.
+- **Session persistence**: `.daily_trainer_data/progress.json` for streak and session history
+- **SRS updates**: Writes to the same per-type stats files used by standalone trainers
+- **CSS**: Inline Textual CSS for layout and color-coded type labels (cyan=vocab, magenta=conjugation, yellow=grammar)
+
 ## Development Notes
 
 - **Python version**: Requires Python 3.13+ (see `pyproject.toml`)
-- **Dependencies**: `spyder-kernels>=3.1.0` (for development environment)
+- **Dependencies**: `spyder-kernels>=3.1.0` (for development environment), `textual>=8.0.0` (TUI framework for daily trainer)
 - **Package manager**: Uses `uv` (see `uv.lock`). **Always use `uv` for all Python-related operations** (installing packages, running scripts, etc.). Never use `pip` or bare `python`/`python3` directly.
 - **No tests**: Currently no test suite
 - **main.py**: Placeholder file, not used
@@ -462,6 +520,11 @@ son,his|her|sound,Common 1
 
 ### Recommended Daily Practice
 ```bash
+# BEST: Unified daily session (vocab + conjugation + grammar mixed together)
+python3 daily_trainer.py
+
+# Or use individual trainers for focused practice:
+
 # Check vocabulary due today
 python3 flashcards.py --stats
 
@@ -506,3 +569,5 @@ python3 grammar.py --level=1
 - Delete `.flashcard_data/` directory to reset flashcard SRS data and statistics
 - Delete `.conjugation_data/` directory to reset conjugation SRS data and statistics
 - Delete `.grammar_data/` directory to reset grammar SRS data and statistics
+- Delete `.daily_trainer_data/` directory to reset daily trainer streak and session history
+- Note: Daily trainer shares SRS data with standalone trainers, so resetting any of the above affects both
