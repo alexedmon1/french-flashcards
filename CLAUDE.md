@@ -206,6 +206,7 @@ Textual TUI that combines vocabulary, conjugation, and grammar into a single dai
 - **Conjugation**: Single random pronoun per card (not all 6) for faster pace.
 - **Grammar**: Fill-in-the-blank, same as standalone grammar trainer.
 - **Quality ratings**: Auto-calculated (correct=Good/2, wrong=Wrong/0) — no manual rating step.
+- **Feedback display**: After each answer, shows your input and the correct answer on separate lines so you can compare (especially useful for fuzzy-matched vocabulary).
 
 **Session algorithm:**
 - Collects due items from all 3 pools (overdue + due today + new)

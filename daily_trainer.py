@@ -459,9 +459,9 @@ class ExerciseScreen(Screen):
         # Show feedback
         feedback = self.query_one("#feedback-label", Label)
         if correct:
-            feedback.update(f"[bold green]Correct![/] {ex.get_correct()}")
+            feedback.update(f"[bold green]Correct![/]\nYou wrote: [italic]{user_input}[/]\nAnswer: {ex.get_correct()}")
         else:
-            feedback.update(f"[bold red]Incorrect.[/] Correct: {ex.get_correct()}")
+            feedback.update(f"[bold red]Incorrect.[/]\nYou wrote: [italic]{user_input}[/]\nCorrect: {ex.get_correct()}")
 
         # Update progress bar
         pbar = self.query_one("#exercise-progress", ProgressBar)
