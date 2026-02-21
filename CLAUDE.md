@@ -306,15 +306,21 @@ son,his|her|sound,Common 1
 ```
 
 ### Available Vocabulary Files (in vocabulary/ folder)
+- `vocabulary/adjectives.csv` - Adjectives (50 words)
+- `vocabulary/emotions.csv` - Emotions and feelings (41 words)
 - `vocabulary/flashcards.csv` - General vocabulary (5 words)
-- `vocabulary/verbs.csv` - Infinitive verbs (48 words)
-- `vocabulary/weather.csv` - Weather-related terms (27 words)
-- `vocabulary/clothing.csv` - Clothing vocabulary (26 words)
-- `vocabulary/locations.csv` - Places and locations (27 words)
-- `vocabulary/prepositions.csv` - Prepositions (27 words)
+- `vocabulary/la description physique.csv` - Physical descriptions (50 words)
+- `vocabulary/le corps humain.csv` - Body parts (25 words)
+- `vocabulary/les jours de la semaine.csv` - Days of the week (10 words)
+- `vocabulary/les lieux publics.csv` - Public places (27 words)
+- `vocabulary/les vêtements.csv` - Clothing vocabulary (43 words)
+- `vocabulary/les_meilleurs_amis.csv` - Story vocabulary (56 words)
+- `vocabulary/months.csv` - Months of the year (12 words)
+- `vocabulary/prepositions.csv` - Prepositions and adverbs (33 words)
 - `vocabulary/questions.csv` - Question words/phrases (35 words)
-- `vocabulary/routine.csv` - Daily routine vocabulary (43 words)
-- `vocabulary/freq_words.csv` - Frequently used words (498 words)
+- `vocabulary/routine.csv` - Daily routine vocabulary (27 words)
+- `vocabulary/verbs.csv` - Infinitive verbs (136 words)
+- `vocabulary/weather.csv` - Weather-related terms (15 words)
 
 ## Code Architecture
 
