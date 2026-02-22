@@ -382,6 +382,39 @@ def _balanced_sample(items_by_type: dict[str, list[Exercise]], budget: int) -> l
     return selected
 
 
+def _prioritize_and_cap(
+    exercises: list[Exercise],
+    stats: dict[str, SRSStats],
+    max_items: int = 60,
+    max_new: int = 10,
+) -> list[Exercise]:
+    """Prioritize exercises: overdue > due_today > new, capped at max_items.
+
+    New items are capped at max_new to avoid overwhelm.
+    """
+    today = date.today().isoformat()
+    overdue = []
+    due_today = []
+    new_items = []
+
+    for ex in exercises:
+        stat = stats.get(ex.key)
+        if stat is None:
+            new_items.append(ex)
+        elif stat.due_date < today:
+            overdue.append(ex)
+        else:
+            due_today.append(ex)
+
+    random.shuffle(overdue)
+    random.shuffle(due_today)
+    random.shuffle(new_items)
+
+    new_items = new_items[:max_new]
+    combined = overdue + due_today + new_items
+    return combined[:max_items]
+
+
 def load_all_due(max_items: int = 60, max_new: int = 10) -> list[Exercise]:
     """
     Load all due exercises from all 3 pools.
@@ -437,6 +470,54 @@ def load_all_due(max_items: int = 60, max_new: int = 10) -> list[Exercise]:
     session = _balanced_sample(prioritized_by_type, max_items)
     random.shuffle(session)
     return session
+
+
+def load_vocab_due(max_items: int = 60) -> list[Exercise]:
+    """Load due vocabulary exercises for focused practice."""
+    exercises, stats = _load_vocab_exercises()
+    result = _prioritize_and_cap(exercises, stats, max_items)
+    random.shuffle(result)
+    return result
+
+
+def load_conjugation_due(tense_filter: str | None = None, max_items: int = 60) -> list[Exercise]:
+    """Load due conjugation exercises, optionally filtered by tense."""
+    exercises, stats = _load_conjugation_exercises()
+    if tense_filter:
+        exercises = [ex for ex in exercises if ex.tense == tense_filter]
+    result = _prioritize_and_cap(exercises, stats, max_items)
+    random.shuffle(result)
+    return result
+
+
+def load_grammar_due(max_items: int = 60) -> list[Exercise]:
+    """Load due grammar exercises for focused practice."""
+    exercises, stats = _load_grammar_exercises()
+    result = _prioritize_and_cap(exercises, stats, max_items)
+    random.shuffle(result)
+    return result
+
+
+def get_conjugation_due_by_tense() -> dict[str, int]:
+    """Get count of due conjugation exercises broken down by tense."""
+    verb_data_path = Path("conjugation_data/verbs.json")
+    if not verb_data_path.is_file():
+        return {}
+
+    from conjugation_engine import get_all_verbs, get_all_tenses
+
+    stats = load_stats(CONJUGATION_STATS_FILE)
+    today = date.today().isoformat()
+    counts: dict[str, int] = {}
+
+    for verb in get_all_verbs():
+        for tense in get_all_tenses():
+            key = f"{verb}|{tense}"
+            stat = stats.get(key)
+            if stat is None or stat.due_date <= today:
+                counts[tense] = counts.get(tense, 0) + 1
+
+    return counts
 
 
 def get_due_counts() -> dict[str, int]:

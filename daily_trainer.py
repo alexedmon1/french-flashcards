@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Unified Daily French Trainer — Textual TUI
+French Daily — Textual TUI
 
 Combines vocabulary, conjugation, and grammar practice into a single
 daily session with SRS. Launch with: uv run python3 daily_trainer.py
@@ -23,6 +23,8 @@ from textual.widgets import Button, Footer, Header, Input, Label, ProgressBar, S
 from srs_core import SRSStats, load_stats, save_stats, normalize_input
 from exercise_types import (
     Exercise, load_all_due, get_due_counts,
+    load_vocab_due, load_conjugation_due, load_grammar_due,
+    get_conjugation_due_by_tense,
     FLASHCARD_STATS_FILE, CONJUGATION_STATS_FILE, GRAMMAR_STATS_FILE,
 )
 
@@ -97,34 +99,60 @@ Screen {
     margin-bottom: 1;
 }
 
-.stat-row {
-    height: 1;
-    margin: 0 1;
-}
-
-.stat-label {
-    width: 1fr;
+#streak-label {
+    text-align: center;
+    margin-bottom: 1;
     color: $text-muted;
 }
 
-.stat-value {
-    width: auto;
-    text-style: bold;
+#mode-list {
+    width: 100%;
+    height: auto;
 }
 
-.vocab-count { color: cyan; }
-.conj-count { color: magenta; }
-.gram-count { color: yellow; }
-.total-count { color: $success; text-style: bold; }
+.mode-btn {
+    width: 100%;
+    height: 4;
+    content-align: left middle;
+    text-align: left;
+    margin-bottom: 0;
+}
 
-#dashboard-buttons {
+#quit-row {
     margin-top: 1;
     align: center middle;
     height: 3;
 }
 
-#dashboard-buttons Button {
+/* Tense select screen */
+#tense-select {
+    align: center middle;
+    width: 100%;
+    height: 100%;
+}
+
+#tense-box {
+    width: 50;
+    height: auto;
+    border: round $primary;
+    padding: 1 2;
+}
+
+#tense-title {
+    text-align: center;
+    text-style: bold;
+    color: $text;
+    margin-bottom: 1;
+}
+
+#tense-buttons {
+    align: center middle;
+    height: auto;
+}
+
+#tense-buttons Button {
     margin: 0 1;
+    width: 100%;
 }
 
 /* Exercise screen */
@@ -258,7 +286,10 @@ Screen {
 # ======================================================================
 class DashboardScreen(Screen):
     BINDINGS = [
-        Binding("s", "start_session", "Start Session"),
+        Binding("1", "mode_mix", "Daily Mix"),
+        Binding("2", "mode_vocab", "Vocabulary"),
+        Binding("3", "mode_conjugation", "Conjugation"),
+        Binding("4", "mode_grammar", "Grammar"),
         Binding("q", "quit_app", "Quit"),
     ]
 
@@ -266,10 +297,14 @@ class DashboardScreen(Screen):
         yield Header(show_clock=True)
         with Center(id="dashboard"):
             with Vertical(id="dashboard-box"):
-                yield Label("Daily French Trainer", id="dashboard-title")
-                yield Static(id="stats-display")
-                with Center(id="dashboard-buttons"):
-                    yield Button("Start Session (s)", id="btn-start", variant="primary")
+                yield Label("French Daily", id="dashboard-title")
+                yield Label("", id="streak-label")
+                with Vertical(id="mode-list"):
+                    yield Button("1  Daily Mix\n   All types combined", id="btn-mix", variant="primary", classes="mode-btn")
+                    yield Button("2  Vocabulary\n   Flashcard review", id="btn-vocab", variant="default", classes="mode-btn")
+                    yield Button("3  Conjugation\n   Verb conjugations", id="btn-conj", variant="default", classes="mode-btn")
+                    yield Button("4  Grammar\n   Fill-in-the-blank", id="btn-gram", variant="default", classes="mode-btn")
+                with Center(id="quit-row"):
                     yield Button("Quit (q)", id="btn-quit", variant="error")
         yield Footer()
 
@@ -281,36 +316,120 @@ class DashboardScreen(Screen):
         progress = load_daily_progress()
 
         total = sum(counts.values())
-        est_minutes = max(1, round(total * 0.75))  # ~45s per item
-        if total > 60:
-            est_minutes = max(1, round(60 * 0.75))  # capped at session size
+        est_minutes = max(1, round(min(total, 60) * 0.75))  # ~45s per item, capped at session size
 
-        lines = []
-        lines.append(f"  Vocabulary:    [cyan]{counts['Vocabulary']}[/]")
-        lines.append(f"  Conjugation:   [magenta]{counts['Conjugation']}[/]")
-        lines.append(f"  Grammar:       [yellow]{counts['Grammar']}[/]")
-        lines.append("")
-        lines.append(f"  Total due:     [bold green]{total}[/]")
-        session_size = min(total, 60)
-        lines.append(f"  Session size:  {session_size} items (~{est_minutes} min)")
-        lines.append(f"  Streak:        {progress['streak']} day(s)")
+        streak = progress["streak"]
+        streak_text = f"Streak: {streak} day{'s' if streak != 1 else ''}"
+        self.query_one("#streak-label", Label).update(streak_text)
 
-        widget = self.query_one("#stats-display", Static)
-        widget.update("\n".join(lines))
+        self.query_one("#btn-mix", Button).label = f"1  Daily Mix        {total} due  ~{est_minutes} min\n   All types combined"
+        self.query_one("#btn-vocab", Button).label = f"2  Vocabulary       {counts['Vocabulary']} due\n   Flashcard review"
+        self.query_one("#btn-conj", Button).label = f"3  Conjugation      {counts['Conjugation']} due\n   Verb conjugations"
+        self.query_one("#btn-gram", Button).label = f"4  Grammar          {counts['Grammar']} due\n   Fill-in-the-blank"
 
-    def action_start_session(self) -> None:
-        self.app.push_screen(ExerciseScreen())
+    def action_mode_mix(self) -> None:
+        self.app.push_screen(ExerciseScreen(mode="mix"))
+
+    def action_mode_vocab(self) -> None:
+        self.app.push_screen(ExerciseScreen(mode="vocab"))
+
+    def action_mode_conjugation(self) -> None:
+        self.app.push_screen(TenseSelectScreen())
+
+    def action_mode_grammar(self) -> None:
+        self.app.push_screen(ExerciseScreen(mode="grammar"))
 
     def action_quit_app(self) -> None:
         self.app.exit()
 
-    @on(Button.Pressed, "#btn-start")
-    def on_start(self) -> None:
-        self.action_start_session()
+    @on(Button.Pressed, "#btn-mix")
+    def on_mix(self) -> None:
+        self.action_mode_mix()
+
+    @on(Button.Pressed, "#btn-vocab")
+    def on_vocab(self) -> None:
+        self.action_mode_vocab()
+
+    @on(Button.Pressed, "#btn-conj")
+    def on_conj(self) -> None:
+        self.action_mode_conjugation()
+
+    @on(Button.Pressed, "#btn-gram")
+    def on_gram(self) -> None:
+        self.action_mode_grammar()
 
     @on(Button.Pressed, "#btn-quit")
     def on_quit(self) -> None:
         self.action_quit_app()
+
+
+# ======================================================================
+# Tense Select Screen
+# ======================================================================
+TENSE_CODES = [
+    ("present", "Présent"),
+    ("future", "Futur simple"),
+    ("imparfait", "Imparfait"),
+    ("past", "Passé composé"),
+    ("conditional", "Conditionnel"),
+]
+
+
+class TenseSelectScreen(Screen):
+    BINDINGS = [
+        Binding("escape", "go_back", "Back"),
+    ]
+
+    def compose(self) -> ComposeResult:
+        yield Header(show_clock=True)
+        with Center(id="tense-select"):
+            with Vertical(id="tense-box"):
+                yield Label("Select Tense", id="tense-title")
+                with Vertical(id="tense-buttons"):
+                    yield Button("All Tenses", id="tense-all", variant="primary")
+                    for code, display in TENSE_CODES:
+                        yield Button(display, id=f"tense-{code}", variant="default")
+        yield Footer()
+
+    def on_mount(self) -> None:
+        counts = get_conjugation_due_by_tense()
+        total = sum(counts.values())
+        self.query_one("#tense-all", Button).label = f"All Tenses — {total} due"
+        for code, display in TENSE_CODES:
+            count = counts.get(code, 0)
+            self.query_one(f"#tense-{code}", Button).label = f"{display} — {count} due"
+
+    @on(Button.Pressed, "#tense-all")
+    def on_all(self) -> None:
+        self.app.pop_screen()
+        self.app.push_screen(ExerciseScreen(mode="conjugation"))
+
+    @on(Button.Pressed, "#tense-present")
+    def on_present(self) -> None:
+        self._select_tense("present")
+
+    @on(Button.Pressed, "#tense-future")
+    def on_future(self) -> None:
+        self._select_tense("future")
+
+    @on(Button.Pressed, "#tense-imparfait")
+    def on_imparfait(self) -> None:
+        self._select_tense("imparfait")
+
+    @on(Button.Pressed, "#tense-past")
+    def on_past(self) -> None:
+        self._select_tense("past")
+
+    @on(Button.Pressed, "#tense-conditional")
+    def on_conditional(self) -> None:
+        self._select_tense("conditional")
+
+    def _select_tense(self, tense: str) -> None:
+        self.app.pop_screen()
+        self.app.push_screen(ExerciseScreen(mode="conjugation", tense_filter=tense))
+
+    def action_go_back(self) -> None:
+        self.app.pop_screen()
 
 
 # ======================================================================
@@ -321,8 +440,10 @@ class ExerciseScreen(Screen):
         Binding("escape", "end_session", "End Session"),
     ]
 
-    def __init__(self) -> None:
+    def __init__(self, mode: str = "mix", tense_filter: str | None = None) -> None:
         super().__init__()
+        self.mode = mode
+        self.tense_filter = tense_filter
         self.exercises: list[Exercise] = []
         self.current_idx = 0
         self.results: list[dict] = []  # {exercise, correct}
@@ -350,7 +471,14 @@ class ExerciseScreen(Screen):
         yield Footer()
 
     def on_mount(self) -> None:
-        self.exercises = load_all_due()
+        if self.mode == "vocab":
+            self.exercises = load_vocab_due()
+        elif self.mode == "conjugation":
+            self.exercises = load_conjugation_due(tense_filter=self.tense_filter)
+        elif self.mode == "grammar":
+            self.exercises = load_grammar_due()
+        else:
+            self.exercises = load_all_due()
 
         if not self.exercises:
             self.query_one("#type-label", Label).update("[bold green]All done![/]")
@@ -574,13 +702,11 @@ class SummaryScreen(Screen):
         self.query_one("#summary-content", Static).update("\n".join(lines))
 
     def action_dashboard(self) -> None:
-        # Pop back to dashboard (remove exercise + summary screens)
-        self.app.pop_screen()  # pop summary
-        self.app.pop_screen()  # pop exercise
+        # Pop screens until we reach the dashboard
+        while not isinstance(self.app.screen, DashboardScreen):
+            self.app.pop_screen()
         # Refresh dashboard
-        dashboard = self.app.screen
-        if hasattr(dashboard, "_refresh_stats"):
-            dashboard._refresh_stats()
+        self.app.screen._refresh_stats()
 
     def action_quit_app(self) -> None:
         self.app.exit()
@@ -599,7 +725,7 @@ class SummaryScreen(Screen):
 # ======================================================================
 class DailyTrainerApp(App):
     CSS = APP_CSS
-    TITLE = "Daily French Trainer"
+    TITLE = "French Daily"
     BINDINGS = [
         Binding("ctrl+c", "quit", "Quit", show=False),
     ]

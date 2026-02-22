@@ -1,4 +1,4 @@
-# French Flashcards - Enhanced Version Documentation
+# French Daily - Enhanced Version Documentation
 
 ## Overview
 
@@ -225,7 +225,7 @@ Day 28: Review "chat" → Answer: GOOD
 ## File Structure
 
 ```
-french-flashcards/
+french-daily/
 ├── flashcards.py          # Original version (unchanged)
 ├── flashcards_v2.py       # Enhanced version (NEW)
 ├── flashcards.csv         # Your vocabulary files

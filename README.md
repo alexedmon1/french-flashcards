@@ -1,4 +1,4 @@
-# French Flashcards 🇫🇷
+# French Daily 🇫🇷
 
 A comprehensive French language learning application with intelligent flashcard trainers, spaced repetition system, and verb conjugation practice. Perfect for building vocabulary and improving French language skills.
 
@@ -49,8 +49,8 @@ This only shows cards that are due for review today, making practice sessions ef
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/alexedmon1/french-flashcards.git
-   cd french-flashcards
+   git clone https://github.com/alexedmon1/french-daily.git
+   cd french-daily
    ```
 
 2. **Verify it works:**
@@ -160,7 +160,7 @@ Includes all essential verbs (être, avoir, aller, faire), common regular verbs,
 
 
 ```
-french-flashcards/
+french-daily/
 ├── flashcards.py         # Main trainer (interactive, SRS, progress tracking)
 ├── simple/               # Simple flashcard trainer
 │   └── flashcards.py    # Basic trainer (command-line args)
