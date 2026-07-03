@@ -7,9 +7,16 @@ conjugation-in-context sentences** (see `enabled_blocks` in
 
 ## Contents
 
+Retired blocks:
+
 - **`grammar.py`** — standalone grammar (fill-in-the-blank) trainer.
 - **`grammar_data/`** — grammar exercise JSON (pronoms relatifs, négation, COI, etc.).
 - **`sentence_data/`** — full-sentence translation bank (`translations.json`).
+
+Superseded docs (kept for history; current usage lives in `README.md` and `CLAUDE.md`):
+
+- **`IMPROVEMENTS.md`** — changelog for the old `flashcards_v2.py` enhanced trainer (that script no longer exists; its features are now in `flashcards.py`).
+- **`MASTER_VOCABULARY.md`** — early guide to `master_vocabulary.csv` / `combine_csvs.py`; commands and counts are out of date.
 
 ## Notes
 

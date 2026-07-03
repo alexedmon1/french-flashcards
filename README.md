@@ -1,516 +1,234 @@
 # French Daily 🇫🇷
 
-A comprehensive French language learning application with intelligent flashcard trainers, spaced repetition system, and verb conjugation practice. Perfect for building vocabulary and improving French language skills.
+A personal, offline, terminal-based French trainer built around a single **daily practice session**. It mixes vocabulary, verb conjugation, and *conjugation-in-context* into one spaced-repetition flow, so a few focused minutes a day steadily builds the skills that generic apps tend to gloss over.
 
-## Table of Contents
+The app has deliberately narrowed to the things that trip up intermediate learners:
 
-- [Quick Start](#quick-start)
-- [Installation](#installation)
-- [Usage Guide](#usage-guide)
-- [Features](#features)
-- [Understanding the Tools](#understanding-the-tools)
-- [File Formats](#file-formats)
-- [Tips for Effective Learning](#tips-for-effective-learning)
-- [Troubleshooting](#troubleshooting)
-- [Documentation](#documentation)
+- **Verb conjugation** across **8 tenses** — drilled both in isolation and by producing full French sentences from English prompts.
+- **Connector / discourse vocabulary** (*donc, pourtant, d'ailleurs, …*) — the glue that makes speech flow, which flashcard apps rarely prioritize.
 
-## Quick Start
-
-**New to the project?** Just run this command and follow the prompts:
-
-```bash
-python3 flashcards.py
-```
-
-It will ask you:
-1. Which direction to practice (French→English or English→French)
-2. Which category to focus on (or practice all)
-
-**For daily practice with spaced repetition:**
-
-```bash
-python3 flashcards.py --srs
-```
-
-This only shows cards that are due for review today, making practice sessions efficient and focused.
-
-## Installation
-
-### Prerequisites
-
-- **Python 3.13 or higher** - Check your version:
-  ```bash
-  python3 --version
-  ```
-
-- **No external dependencies required!** This project uses only Python's standard library.
-
-### Setup
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/alexedmon1/french-daily.git
-   cd french-daily
-   ```
-
-2. **Verify it works:**
-   ```bash
-   python3 flashcards.py --help
-   ```
-
-3. **Start learning:**
-   ```bash
-   python3 flashcards.py
-   ```
-
-That's it! No installation, no packages, just run and learn.
-
-## Usage Guide
-
-### Main Flashcard Trainer (Recommended)
-
-The main trainer (`flashcards.py`) is feature-rich with interactive prompts, spaced repetition, and multiple difficulty modes.
-
-**Basic Usage:**
-```bash
-python3 flashcards.py
-```
-
-**With Options:**
-```bash
-# Practice with spaced repetition
-python3 flashcards.py --srs
-
-# Choose difficulty mode
-python3 flashcards.py --mode=easy     # Multiple choice
-python3 flashcards.py --mode=medium   # Type with fuzzy matching (default)
-python3 flashcards.py --mode=hard     # Exact typing required
-python3 flashcards.py --mode=expert   # Timed (10 seconds) + exact typing
-
-# Practice specific category
-python3 flashcards.py --category=verbs --srs
-
-# Practice with gender questions
-python3 flashcards.py --gender
-
-# View your progress
-python3 flashcards.py --stats
-
-# List available categories
-python3 flashcards.py --list-categories
-
-# Use a different vocabulary file
-python3 flashcards.py weather.csv
-```
-
-**Combining Options:**
-```bash
-# Expert mode with SRS and gender practice
-python3 flashcards.py --srs --mode=expert --gender
-
-# Hard mode focusing on verbs
-python3 flashcards.py --category=verbs --mode=hard
-```
-
-### Simple Trainer
-
-For quick, no-frills practice:
-
-```bash
-# French → English
-python3 simple/flashcards.py flashcards.csv english
-
-# English → French
-python3 simple/flashcards.py verbs.csv french
-```
-
-### Conjugation Trainer
-
-Practice verb conjugations with intelligent spaced repetition:
-
-```bash
-# Interactive practice (choose verb type and tense)
-python3 conjugations.py
-
-# Practice with SRS (only verbs due today)
-python3 conjugations.py --srs
-
-# Practice specific tense only with SRS
-python3 conjugations.py --srs --tense=present
-python3 conjugations.py --srs --tense=future
-python3 conjugations.py --srs --tense=past
-
-# View your conjugation statistics
-python3 conjugations.py --stats
-
-# Get help
-python3 conjugations.py --help
-```
-
-**Features:**
-- **91 French verbs** across 3 tenses (present, future, passé composé)
-- **Spaced Repetition System** - Tracks each verb-tense combination separately
-- **Quality ratings** - Rate difficulty (Wrong/Hard/Good/Easy) to optimize review schedule
-- **Progress tracking** - View statistics and identify challenging verbs
-- **Interactive selection** - Choose verb types: regular -ER (26), regular -IR (20), or irregular (45)
-
-Includes all essential verbs (être, avoir, aller, faire), common regular verbs, and important irregular verbs (voir, dire, prendre, mettre, conduire, comprendre, etc.).
-
-## Project Structure
-
-
-```
-french-daily/
-├── flashcards.py         # Main trainer (interactive, SRS, progress tracking)
-├── simple/               # Simple flashcard trainer
-│   └── flashcards.py    # Basic trainer (command-line args)
-├── vocabulary/          # Source vocabulary files (edit these!)
-│   ├── flashcards.csv   # General vocabulary (5 words)
-│   ├── verbs.csv        # Verb infinitives (48 words)
-│   ├── weather.csv      # Weather terms (27 words)
-│   ├── clothing.csv     # Clothing items (26 words)
-│   ├── locations.csv    # Places and locations (27 words)
-│   ├── prepositions.csv # Prepositions (27 words)
-│   ├── questions.csv    # Question words (35 words)
-│   ├── routine.csv      # Daily routine (43 words)
-│   └── freq_words.csv   # Common words (498 words)
-├── master_vocabulary.csv # Combined vocabulary (auto-generated)
-├── combine_csvs.py      # Tool to regenerate master vocabulary
-├── conjugations.py      # Verb conjugation practice with SRS
-├── missed.csv           # Auto-generated: cards you got wrong
-├── .flashcard_data/     # Auto-generated: flashcard progress
-│   ├── card_stats.json  # SRS scheduling per card
-│   └── progress.json    # Session history and streaks
-└── .conjugation_data/   # Auto-generated: conjugation progress
-    ├── conjugation_stats.json  # SRS scheduling per verb-tense
-    └── conjugation_progress.json  # Conjugation practice history
-```
-
-## Features
-
-### Current Trainer (`flashcards.py`)
- **Interactive prompts** - Asks for language direction and category
- **Spaced Repetition System (SRS)** - Optimal review scheduling
- **Multiple difficulty modes** - Easy, Medium, Hard, Expert
- **Progress tracking** - Streaks, statistics, session history
- **Category filtering** - Practice specific topics
- **Gender practice** - Learn masculine/feminine nouns
- **Help system** - Built-in documentation
-
-### Simple Trainer (`simple/flashcards.py`)
-- Basic flashcard practice with y/N self-assessment
-- Lightweight and straightforward
-- Good for quick reviews
-
-### Conjugation Trainer (`conjugations.py`)
-- **Spaced Repetition System** - Practice verbs due for review
-- **91 verbs** included (26 regular -ER, 20 regular -IR, 45 irregular)
-- **3 tenses** - Present, Future simple, Passé composé
-- **Tense filtering** - Focus SRS practice on specific tense with `--tense`
-- **Quality ratings** - Wrong/Hard/Good/Easy determine review schedule
-- **Progress tracking** - View statistics and challenging verbs
-- **Interactive selection** - Choose verb type and tense
-- **Command-line options** - `--srs`, `--tense`, `--stats`, `--help`
-
-## Vocabulary
-
-**Master vocabulary**: 808 unique words across 9 categories:
-- clothing (26 cards)
-- flashcards (5 cards)
-- freq_words (498 cards)
-- locations (27 cards)
-- prepositions (27 cards)
-- questions (35 cards)
-- routine (43 cards)
-- verbs (120 cards)
-- weather (27 cards)
-
-## Documentation
-
-- **CLAUDE.md** - Complete developer/AI assistant documentation
-- **IMPROVEMENTS.md** - Detailed guide to current trainer features
-- **MASTER_VOCABULARY.md** - Guide to using the master vocabulary file
-
-## Daily Practice Workflow
-
-```bash
-# 1. Check your progress
-python3 flashcards.py --stats
-python3 conjugations.py --stats
-
-# 2. Practice flashcards due today (5-10 minutes)
-python3 flashcards.py --srs
-
-# 3. Practice verb conjugations due today (5-10 minutes)
-python3 conjugations.py --srs
-
-# 4. Or focus on a specific tense
-python3 conjugations.py --srs --tense=present
-```
-
-**Pro tip**: Consistent daily practice with SRS is more effective than long irregular sessions!
-
-## Understanding the Tools
-
-### What is Spaced Repetition (SRS)?
-
-Spaced Repetition is a learning technique that shows you flashcards at increasing intervals:
-
-- **New cards**: Review immediately
-- **Easy cards**: Review after 1 day → 3 days → 1 week → 2 weeks → 1 month...
-- **Hard cards**: Review more frequently until you master them
-- **Forgotten cards**: Reset and review again
-
-This is proven to be the most effective way to memorize vocabulary long-term. The app automatically schedules reviews for you!
-
-### Difficulty Modes Explained
-
-| Mode | Method | Best For | Challenge Level |
-|------|--------|----------|-----------------|
-| **Easy** | Multiple choice (4 options) | New vocabulary, beginners | ⭐ |
-| **Medium** | Type answer (fuzzy matching) | Regular practice, typos OK | ⭐⭐ |
-| **Hard** | Type answer (exact match) | Mastery, advanced learners | ⭐⭐⭐ |
-| **Expert** | Type answer (exact, 10s timer) | Fluency building, exam prep | ⭐⭐⭐⭐ |
-
-**Fuzzy matching** (Medium mode) means minor typos are accepted - "librairy" for "library" = ✓
-**Exact matching** (Hard/Expert) requires perfect spelling.
-
-### How Progress Tracking Works
-
-Your progress is saved in `.flashcard_data/`:
-
-- **card_stats.json**: Remembers when you last saw each card, how well you knew it, and when to show it again
-- **progress.json**: Tracks your daily streak, session history, and accuracy over time
-
-**Example:**
-```
-Session 1 (Oct 1): 45/50 cards correct (90%)
-Session 2 (Oct 2): 42/45 cards correct (93%)  ← Streak: 2 days!
-```
-
-## File Formats
-
-### CSV Vocabulary Files
-
-**Basic format** (2 columns, no header):
-```csv
-bonjour,hello
-chat,cat
-livre,book
-```
-
-**With gender** (3 columns):
-```csv
-chat,cat,m
-maison,house,f
-table,table,f
-```
-
-**With multiple translations** (using `|` separator):
-```csv
-bonjour,hello|hi|good morning
-merci,thank you|thanks
-au revoir,goodbye|bye|see you later
-```
-
-The program will accept any of the alternatives as correct! This is especially useful for:
-- Words with multiple valid translations
-- Formal vs. informal expressions
-- Regional variations
-
-**Master vocabulary format** (with categories):
-```csv
-bonjour,hello,flashcards
-il pleut,it's raining,weather
-aimer,to like,verbs
-```
-
-### Creating Your Own Vocabulary
-
-1. **Create a new CSV file:**
-   ```csv
-   pain,bread
-   fromage,cheese
-   vin,wine
-   ```
-
-2. **Use it directly:**
-   ```bash
-   python3 flashcards.py food.csv
-   ```
-
-3. **Or add to master vocabulary:**
-   ```bash
-   # Adds food.csv to master_vocabulary.csv with category="food"
-   python3 combine_csvs.py
-   ```
-
-## Tips for Effective Learning
-
-### 🎯 Daily Practice Routine
-
-**5-10 minutes per day is better than 1 hour once a week!**
-
-```bash
-# Morning: Check what's due
-python3 flashcards.py --stats
-python3 conjugations.py --stats
-
-# Flashcard practice (5-10 min)
-python3 flashcards.py --srs --mode=medium
-
-# Conjugation practice (5-10 min)
-python3 conjugations.py --srs
-
-# Or focus on one tense at a time
-python3 conjugations.py --srs --tense=present
-```
-
-### 📈 Progression Path
-
-1. **Week 1**: Use `--mode=easy` to get familiar with words
-2. **Week 2-4**: Switch to `--mode=medium` for active recall
-3. **Month 2+**: Try `--mode=hard` to perfect spelling
-4. **Advanced**: Use `--mode=expert` for fluency under pressure
-
-### 🔄 Both Directions
-
-Practice both ways for complete mastery:
-- **French → English**: Helps with reading and listening comprehension
-- **English → French**: Essential for speaking and writing
-
-### 📊 Track Your Progress
-
-```bash
-# Check your stats regularly
-python3 flashcards.py --stats
-```
-
-Watch your accuracy improve over time!
-
-### 💡 Pro Tips
-
-- **Use categories** to focus on themes (e.g., study "weather" before a trip)
-- **Enable `--gender`** to learn noun genders from the start
-- **Review missed cards** immediately after a session (they're saved in `missed.csv`)
-- **Don't break your streak!** Consistency is key to retention
-
-## Troubleshooting
-
-### "No cards due for review today"
-
-This is **good**! It means you've reviewed everything recently. Either:
-- Practice without `--srs` flag to review all cards
-- Come back tomorrow when cards are due again
-- Add new vocabulary to practice
-
-### Cards showing up too frequently / not frequently enough
-
-The SRS algorithm adjusts based on your performance:
-- **Getting everything right?** Cards will space out more
-- **Missing some?** They'll appear more often
-- Give it a few sessions to calibrate to your level
-
-### Reset All Progress
-
-```bash
-# Reset flashcard progress
-rm -rf .flashcard_data/
-
-# Reset conjugation progress
-rm -rf .conjugation_data/
-
-# Reset both
-rm -rf .flashcard_data/ .conjugation_data/
-```
-
-This deletes all SRS scheduling and statistics. Fresh start!
-
-### Import/Export Progress
-
-The `.flashcard_data/` folder contains JSON files you can:
-- **Backup**: Copy the folder elsewhere
-- **Restore**: Copy it back to restore progress
-- **Share**: Send to another device to sync progress
-
-### Wrong Python Version
-
-If you see "Python 3.13+ required":
-```bash
-# Check version
-python3 --version
-
-# Install newer Python (varies by OS)
-# Ubuntu/Debian:
-sudo apt update && sudo apt install python3.13
-
-# macOS (Homebrew):
-brew install python@3.13
-```
-
-## Vocabulary Included
-
-**808 unique words** across 9 categories:
-
-| Category | Count | Description |
-|----------|-------|-------------|
-| freq_words | 498 | Most common French words - excellent starting point |
-| verbs | 120 | Essential verb infinitives |
-| routine | 43 | Daily routine and activities |
-| questions | 35 | Question words and interrogative phrases |
-| locations | 27 | Places, buildings, locations |
-| prepositions | 27 | Prepositions and spatial words |
-| weather | 27 | Weather terminology |
-| clothing | 26 | Clothing and accessories |
-| flashcards | 5 | Basic starter vocabulary |
-
-**Total**: Enough vocabulary for basic conversational French!
-
-## Documentation
-
-- **README.md** (this file) - User guide and getting started
-- **CLAUDE.md** - Complete developer/AI assistant documentation
-- **IMPROVEMENTS.md** - Detailed feature guide for current trainer
-- **MASTER_VOCABULARY.md** - Guide to the master vocabulary system
-
-## Contributing
-
-Want to add vocabulary?
-
-1. Edit existing CSV files or create new ones
-2. Run `python3 combine_csvs.py` to update master vocabulary
-3. (Optional) Submit a pull request to share with others!
-
-## Requirements
-
-- **Python 3.13 or higher** (no external dependencies!)
-- Works on: Windows (WSL), macOS, Linux
-- ~5MB disk space (including all vocabulary)
-
-## FAQ
-
-**Q: Do I need internet?**
-A: No! Everything works offline.
-
-**Q: Where is my progress saved?**
-A: In `.flashcard_data/` (flashcards) and `.conjugation_data/` (conjugations) folders (auto-created).
-
-**Q: Can I practice on multiple devices?**
-A: Yes! Copy the `.flashcard_data/` and `.conjugation_data/` folders between devices.
-
-**Q: How long until I'm fluent?**
-A: With 808 words + 91 verbs (273 verb-tense combinations) + daily practice, you'll have a solid foundation in 2-3 months. Fluency requires ongoing practice and immersion!
-
-**Q: Can I add my own vocabulary?**
-A: Absolutely! Just edit the CSV files or create new ones.
-
-**Q: What if I make a typo?**
-A: Use `--mode=medium` (default) which accepts minor typos.
-
-## License
-
-Personal learning project. Feel free to use and modify for your own French learning journey!
+Everything is scheduled with spaced repetition, runs entirely offline, and stores your progress in plain JSON on your machine.
 
 ---
 
-**Happy learning! Bonne chance! 🇫🇷**
+## Highlights
+
+- **One command a day.** `daily_trainer.py` pulls everything due across all active blocks into one balanced session.
+- **Conjugation you actually produce.** Type whole French sentences from English prompts; the verb form is checked exactly, the rest fuzzily.
+- **Guaranteed-correct verb data.** Conjugations are *generated* by an engine, never hand-typed, and the sentence bank is machine-validated against it — so it can't drift.
+- **Register-aware.** Prompts flag *informal* (tu/on) vs *formal* (vous/nous) so English "you" and "we" are never ambiguous.
+- **Spaced repetition everywhere** (SM-2), shared between the daily trainer and the standalone trainers.
+- **Configurable.** Turn blocks on/off and tune session size, categories, and thresholds in one YAML file.
+
+---
+
+## How it works
+
+**Blocks.** The daily session is assembled from independent *blocks*, each with its own data source and spaced-repetition schedule. Currently active:
+
+| Block | What you practice | Source |
+|-------|-------------------|--------|
+| **vocabulary** | Flashcards, random direction, fuzzy-matched | `master_vocabulary.csv` |
+| **conjugation** | A verb + tense + one random pronoun | `conjugation_data/verbs.json` |
+| **conjugation_sentence** | Translate an English sentence to French with the right conjugation | `conjugation_sentence_data/*.json` |
+
+**Spaced repetition (SM-2).** Every item — a word, a verb-tense pair, a sentence — carries its own interval and due date. Correct answers push the next review further out; misses bring it back soon. Only what's *due* shows up, so sessions stay short and focused.
+
+**The conjugation engine is the source of truth.** `conjugation_engine.py` generates every French verb form algorithmically (regular patterns + stored irregular stems/forms). The conjugation-sentence bank never stores a verb form — it's regenerated from `(verb, tense, pronoun)` at run time, and a validator rejects any authored sentence whose verb doesn't match the engine. That's what keeps the content accurate and reproducible.
+
+**Config-driven.** `daily_trainer_config.yaml` decides which blocks run, how many items per session, which vocabulary categories are in scope, and the fuzzy-match thresholds.
+
+---
+
+## Requirements & setup
+
+- **Python 3.13+**
+- **[uv](https://docs.astral.sh/uv/)** — this project uses `uv` for everything. Always run scripts through it; don't use bare `python`/`pip`.
+
+```bash
+git clone https://github.com/alexedmon1/french-daily.git
+cd french-daily
+uv sync          # installs dependencies (textual, pyyaml)
+```
+
+Dependencies are managed in `pyproject.toml` / `uv.lock` — `uv` handles them for you.
+
+---
+
+## Daily use — the daily trainer
+
+This is the main way to use the app:
+
+```bash
+uv run python daily_trainer.py
+```
+
+A terminal UI (built with [Textual](https://textual.textualize.io/)) opens on a **dashboard** showing what's due, your streak, and estimated time. Pick a mode:
+
+| Key | Mode | What it does |
+|-----|------|--------------|
+| `1` | **Daily Mix** | Everything due, balanced across blocks — the recommended default |
+| `2` | **Vocabulary** | Flashcards only |
+| `3` | **Conjugation** | Verb conjugations (choose a tense first) |
+| `4` | **Conjug. sentences** | English → French sentence production |
+| `q` | Quit | |
+
+**In an exercise:** read the prompt, type your answer, press **Enter**. Type **`h`** for a hint. Press **Esc** to end early. After each answer you see your input and the correct answer side by side. Around the 15-minute mark the app suggests a good stopping point.
+
+**When you finish** you get a summary: time, accuracy, a per-type breakdown, the items you missed, and your updated streak.
+
+Quality ratings are automatic in the daily trainer (correct = *Good*, wrong = *Wrong*) — no manual grading step.
+
+---
+
+## The exercise blocks in detail
+
+### Vocabulary
+Flashcards drawn from `master_vocabulary.csv`. Each card appears in a random direction (FR→EN or EN→FR). Answers are fuzzy-matched (85% by default), parenthetical parts are optional (*"to sit (down)"* accepts *"to sit"*), and synonyms across cards are accepted. The current focus is **connector and discourse vocabulary** plus common expressions and prepositions (set via the category whitelist in the config).
+
+### Conjugation
+A verb is shown with a tense and a single random pronoun; you type the conjugated form. Covers **8 tenses**:
+
+`présent` · `futur proche` · `futur simple` · `imparfait` · `passé composé` · `conditionnel présent` · `conditionnel passé` · `subjonctif présent`
+
+Hints show the ending pattern for regular verbs and the stem/auxiliary structure for irregulars.
+
+### Conjugation in context
+The block that makes conjugation stick. You get an **English sentence** (with the target tense and, for tu/vous/on/nous, an informal/formal cue) and type the **full French sentence**:
+
+```
+Translate to French — passé composé:
+Yesterday, she went to the market.
+
+> Hier, elle est allée au marché.   ✓
+```
+
+Grading has two gates: the whole sentence is fuzzy-matched, but the **conjugated verb must be exactly right** (accents included) — get the tense or person wrong and it fails even if the rest is perfect. Because the correct verb form comes from the engine, the answer key can never be wrong.
+
+---
+
+## Focused / standalone trainers
+
+Prefer to drill one thing outside the TUI? Each block also has a command-line trainer that shares the same progress data:
+
+```bash
+# Verb conjugations
+uv run python conjugations.py                 # interactive: pick tier, type, tense
+uv run python conjugations.py --srs           # only what's due today
+uv run python conjugations.py --srs --tense=conditional_past
+uv run python conjugations.py --stats
+
+# Vocabulary flashcards
+uv run python flashcards.py                    # interactive
+uv run python flashcards.py --srs --mode=medium
+uv run python flashcards.py --stats
+```
+
+Both accept `--help`. The conjugation trainer supports tiers (**core / intermediate / advanced**) and per-tense SRS filtering; the flashcard trainer supports difficulty modes (easy / medium / hard / expert), categories, and gender practice.
+
+---
+
+## Configuration
+
+`daily_trainer_config.yaml` controls the daily session:
+
+```yaml
+enabled_blocks:            # which blocks appear in the daily mix
+  - vocabulary
+  - conjugation
+  - conjugation_sentence
+
+vocabulary_categories:     # whitelist; empty = all categories
+  - connectors
+  - expressions
+  - prepositions
+
+max_items: 100             # max exercises per session
+max_new: 40                # cap on new (unseen) items per session
+fuzzy_threshold: 0.85      # vocabulary match strictness (0–1)
+sentence_threshold: 0.80   # sentence match strictness (0–1)
+session_time_limit: 900    # seconds before a "good stopping point" nudge
+```
+
+Disabling a block just removes it from the menu and mix — its code and data are untouched.
+
+---
+
+## Content & accuracy
+
+- **Verbs:** 111 verbs organized by tier (20 core, 42 intermediate, 49 advanced), each conjugated across all 8 tenses by the engine.
+- **Conjugation sentences:** 73 validated sentences (and growing) spanning every tense, varied pronouns, and informal/formal register.
+- **Vocabulary:** ~770 words across many categories, with the daily focus currently on connectors/expressions/prepositions.
+
+**Adding conjugation sentences** (the reproducible workflow):
+
+1. Author a natural English/French pair in a file under `conjugation_sentence_data/`, tagged with the target `verb`, `tense`, and `pronoun`.
+2. Validate against the engine:
+   ```bash
+   uv run python validate_conjugation_sentences.py
+   ```
+   Any sentence whose French verb form doesn't match the engine is rejected — so a wrong answer key can never ship.
+
+Adding **vocabulary** or **verbs** is documented in detail in `CLAUDE.md`.
+
+---
+
+## Data & progress
+
+Your progress lives in hidden folders in the project root (all git-ignored, all plain JSON):
+
+| Folder | Holds |
+|--------|-------|
+| `.flashcard_data/` | Vocabulary SRS + stats |
+| `.conjugation_data/` | Conjugation SRS + stats |
+| `.conjugation_sentence_data/` | Conjugation-sentence SRS + stats |
+| `.daily_trainer_data/` | Streak + session history |
+
+To **back up or sync** across machines, copy these folders. To **reset** a pool, delete its folder. (The daily trainer and the standalone trainers share the same files, so a reset affects both.)
+
+---
+
+## Roadmap / future goals
+
+- **Themed sentence sets** — travel, work, food, small talk — so conjugation practice doubles as situational vocabulary.
+- **Deeper verb coverage** — extend the conjugation-sentence bank into the intermediate and advanced tiers (only core is heavily covered today).
+- **Richer register & aspect** — more tu/vous and on/nous contrasts, and passé composé vs imparfait discrimination in context.
+- **A standalone CLI runner** for the conjugation-sentence block, matching the other trainers.
+- **Optional block revival** — the archived grammar and full-sentence-translation blocks can be brought back if the focus widens (see `archive/`).
+
+---
+
+## Project layout
+
+```
+french-daily/
+├── daily_trainer.py                  # ⭐ unified daily TUI (start here)
+├── daily_trainer_config.yaml         # session configuration
+├── exercise_types.py                 # block abstraction + session loader
+├── srs_core.py                       # shared SM-2 spaced-repetition core
+│
+├── conjugations.py                   # standalone conjugation trainer
+├── conjugation_engine.py             # generates all verb forms (source of truth)
+├── conjugation_data/verbs.json       # verb database (111 verbs)
+├── conjugation_sentence_data/*.json  # English→French sentence bank
+├── validate_conjugation_sentences.py # validates the bank against the engine
+│
+├── flashcards.py                     # standalone vocabulary trainer
+├── master_vocabulary.csv             # combined vocabulary
+├── vocabulary/                       # per-category source CSVs
+├── combine_csvs.py / split_master.py # vocabulary sync tools
+│
+└── archive/                          # retired blocks (grammar, sentence translation)
+```
+
+---
+
+## Documentation
+
+- **README.md** (this file) — what the app is and how to use it.
+- **CLAUDE.md** — full developer reference: architecture, data formats, and workflows for adding content.
+- **archive/README.md** — what was retired and how to restore it.
+
+---
+
+**Bonne chance ! 🇫🇷**
