@@ -1,11 +1,12 @@
 # Daily Trainer Configuration
 
 # Exercise blocks to include in the daily session.
-# Available: vocabulary, conjugation, grammar, sentence
+# Available: vocabulary, conjugation, grammar, sentence, conjugation_sentence
 # Remove or comment out a block to disable it (data and code are kept intact).
 enabled_blocks:
   - vocabulary
   - conjugation
+  - conjugation_sentence
 
 # Vocabulary categories to include (whitelist).
 # Empty list = include all categories. Names correspond to filenames in vocabulary/.

@@ -23,7 +23,7 @@ import yaml
 CONFIG_FILE = Path("daily_trainer_config.yaml")
 _LEGACY_CONFIG_FILE = Path("daily_trainer_config.json")
 
-ALL_BLOCKS = ("vocabulary", "conjugation", "grammar", "sentence")
+ALL_BLOCKS = ("vocabulary", "conjugation", "grammar", "sentence", "conjugation_sentence")
 
 # Defaults for session settings
 _DEFAULTS = {
@@ -149,6 +149,46 @@ def _fuzzy_match(user: str, variants: list[str], threshold: float = 0.85) -> boo
             return True
 
     return False
+
+
+def _normalize_for_token_match(text: str) -> str:
+    """Lowercase and split clitics for whole-token matching.
+
+    Apostrophes (straight or curly) become spaces so elided/clitic forms
+    tokenize consistently: "j'ai pris" -> "j ai pris". Accents are kept —
+    they are meaningful in conjugation (parlé vs parle).
+    """
+    t = text.lower().replace("'", " ").replace("’", " ")
+    return re.sub(r"\s+", " ", t).strip()
+
+
+def verb_form_present(form: str, sentence: str) -> bool:
+    """True if `form` appears as whole token(s) in `sentence`.
+
+    Space-padded containment on normalized text gives word-boundary matching
+    for single- and multi-word forms ("est allée", "me sens") without partial
+    matches inside longer words. Shared by grading and the data validator so
+    both agree on what counts as "the verb is present".
+    """
+    padded_sentence = f" {_normalize_for_token_match(sentence)} "
+    padded_form = f" {_normalize_for_token_match(form)} "
+    return padded_form in padded_sentence
+
+
+# Register carried by the subject pronoun, used to disambiguate the English
+# prompt: "you" -> tu (informal) / vous (formal); "we" -> on (informal) /
+# nous (formal). Other pronouns carry no register marker.
+_PRONOUN_REGISTER = {
+    "tu": "informal",
+    "on": "informal",
+    "vous": "formal",
+    "nous": "formal",
+}
+
+
+def register_for_pronoun(pronoun: str) -> str | None:
+    """Return "informal"/"formal" for register-bearing pronouns, else None."""
+    return _PRONOUN_REGISTER.get(pronoun.strip().lower())
 
 
 # ----------------------------------------------------------------------
@@ -351,6 +391,71 @@ class SentenceExercise(Exercise):
 
 
 # ----------------------------------------------------------------------
+# Conjugation-in-context (English -> French sentence production)
+# ----------------------------------------------------------------------
+CONJ_SENTENCE_DATA_DIR = Path("conjugation_sentence_data")
+CONJ_SENTENCE_STATS_FILE = Path(".conjugation_sentence_data/conjugation_sentence_stats.json")
+
+
+class ConjugationSentenceExercise(Exercise):
+    """Translate an English sentence to French, producing a target conjugation.
+
+    The whole sentence is fuzzy-matched, but the conjugated verb form (derived
+    from the engine, the single source of truth) must be present exactly —
+    that is the part being drilled.
+    """
+
+    type_name = "ConjugationSentence"
+    stats_file = CONJ_SENTENCE_STATS_FILE
+
+    def __init__(self, sentence_data: dict, key: str):
+        self.data = sentence_data
+        self.key = key
+        self._expected: str | None = None
+
+    def expected_form(self) -> str:
+        """The engine-generated verb form this sentence targets (cached)."""
+        if self._expected is None:
+            from conjugation_engine import conjugate_one
+            self._expected = conjugate_one(
+                self.data["verb"], self.data["tense"], self.data["pronoun"]
+            )
+        return self._expected
+
+    def get_prompt(self) -> str:
+        from conjugation_engine import get_tense_display_name
+        tense = get_tense_display_name(self.data["tense"])
+        # Register disambiguates "you" (tu/vous) and "we" (on/nous).
+        register = self.data.get("register") or register_for_pronoun(self.data["pronoun"])
+        reg = f", {register}" if register else ""
+        return f"Translate to French — {tense}{reg}:\n{self.data['english']}"
+
+    def get_correct(self) -> str:
+        return self.data["french"]
+
+    def check(self, user_input: str) -> bool:
+        user = user_input.strip()
+        # Strict: the target conjugated form must be present (accent-sensitive).
+        if not verb_form_present(self.expected_form(), user):
+            return False
+        # Rest of the sentence: fuzzy match against the reference translation.
+        variants = [self.data["french"]] + self.data.get("alternatives_fr", [])
+        threshold = _load_config()["sentence_threshold"]
+        return _fuzzy_match(user.lower(), variants, threshold=threshold)
+
+    def get_hint(self) -> str | None:
+        from conjugation_engine import (
+            get_translation, get_pattern_hint, get_tense_display_name,
+        )
+        verb = self.data["verb"]
+        tense = self.data["tense"]
+        base = (f"{verb} ({get_translation(verb)}) — "
+                f"{get_tense_display_name(tense)}, «{self.data['pronoun']}»")
+        pattern = get_pattern_hint(verb, tense)
+        return f"{base}\n{pattern}" if pattern else base
+
+
+# ----------------------------------------------------------------------
 # Factory: load all due exercises
 # ----------------------------------------------------------------------
 def _load_vocab_exercises() -> tuple[list[Exercise], dict[str, SRSStats]]:
@@ -541,6 +646,30 @@ def _load_sentence_exercises() -> tuple[list[Exercise], dict[str, SRSStats]]:
     return exercises, stats
 
 
+def _load_conjugation_sentence_exercises() -> tuple[list[Exercise], dict[str, SRSStats]]:
+    """Load conjugation-in-context sentences and return exercises + their stats."""
+    if not CONJ_SENTENCE_DATA_DIR.exists():
+        return [], {}
+
+    stats = load_stats(CONJ_SENTENCE_STATS_FILE)
+    today = date.today().isoformat()
+
+    exercises = []
+    for json_path in sorted(CONJ_SENTENCE_DATA_DIR.glob("*.json")):
+        with json_path.open(encoding="utf-8") as f:
+            topic_data = json.load(f)
+
+        for sent in topic_data.get("sentences", []):
+            key = f"conjsent|{sent['id']}"
+            stat = stats.get(key)
+            if stat and stat.due_date > today:
+                continue
+
+            exercises.append(ConjugationSentenceExercise(sent, key))
+
+    return exercises, stats
+
+
 def _balanced_sample(items_by_type: dict[str, list[Exercise]], budget: int) -> list[Exercise]:
     """Sample up to `budget` items, distributed equally across types.
 
@@ -624,16 +753,17 @@ def load_all_due(max_items: int | None = None, max_new: int | None = None) -> li
 
     enabled = _load_enabled_blocks()
     type_pools: dict[str, tuple[list[Exercise], dict[str, SRSStats]]] = {}
-    for name, loader in [
-        ("Vocabulary", _load_vocab_exercises),
-        ("Conjugation", _load_conjugation_exercises),
-        ("Grammar", _load_grammar_exercises),
-        ("Sentence", _load_sentence_exercises),
+    for block_id, loader in [
+        ("vocabulary", _load_vocab_exercises),
+        ("conjugation", _load_conjugation_exercises),
+        ("grammar", _load_grammar_exercises),
+        ("sentence", _load_sentence_exercises),
+        ("conjugation_sentence", _load_conjugation_sentence_exercises),
     ]:
-        if name.lower() not in enabled:
+        if block_id not in enabled:
             continue
         exercises, stats = loader()
-        type_pools[name] = (exercises, stats)
+        type_pools[block_id] = (exercises, stats)
 
     today = date.today().isoformat()
 
@@ -731,6 +861,14 @@ def load_sentence_due(max_items: int = 60) -> list[Exercise]:
     return result
 
 
+def load_conjugation_sentence_due(max_items: int = 60) -> list[Exercise]:
+    """Load due conjugation-in-context sentences for focused practice."""
+    exercises, stats = _load_conjugation_sentence_exercises()
+    result = _prioritize_and_cap(exercises, stats, max_items)
+    random.shuffle(result)
+    return result
+
+
 def get_conjugation_due_by_tense() -> dict[str, int]:
     """Get count of due conjugation exercises broken down by tense."""
     verb_data_path = Path("conjugation_data/verbs.json")
@@ -760,7 +898,8 @@ def get_due_counts() -> dict[str, int]:
     """
     today = date.today().isoformat()
     enabled = _load_enabled_blocks()
-    counts = {"Vocabulary": 0, "Conjugation": 0, "Grammar": 0, "Sentence": 0}
+    counts = {"Vocabulary": 0, "Conjugation": 0, "Grammar": 0, "Sentence": 0,
+              "ConjugationSentence": 0}
 
     # Vocabulary
     csv_path = Path("master_vocabulary.csv")
@@ -818,5 +957,17 @@ def get_due_counts() -> dict[str, int]:
                 stat = stats.get(key)
                 if stat is None or stat.due_date <= today:
                     counts["Sentence"] += 1
+
+    # Conjugation-in-context sentences
+    if "conjugation_sentence" in enabled and CONJ_SENTENCE_DATA_DIR.exists():
+        stats = load_stats(CONJ_SENTENCE_STATS_FILE)
+        for json_path in CONJ_SENTENCE_DATA_DIR.glob("*.json"):
+            with json_path.open(encoding="utf-8") as f:
+                topic_data = json.load(f)
+            for sent in topic_data.get("sentences", []):
+                key = f"conjsent|{sent['id']}"
+                stat = stats.get(key)
+                if stat is None or stat.due_date <= today:
+                    counts["ConjugationSentence"] += 1
 
     return counts

@@ -3,12 +3,14 @@
 """
 French Conjugation Trainer with SRS support
 
-Practice French verb conjugations across 6 tenses:
+Practice French verb conjugations across 8 tenses:
 - Présent (present)
+- Futur proche (futur_proche)
 - Futur simple (future)
 - Imparfait (imparfait)
 - Passé composé (past)
 - Conditionnel présent (conditional)
+- Conditionnel passé (conditional_past)
 - Subjonctif présent (subjunctive)
 
 Supports 93 verbs organized by tier (core, intermediate, advanced)
@@ -50,15 +52,17 @@ PROGRESS_FILE = DATA_DIR / "conjugation_progress.json"
 # Tense code to display name mapping
 TENSE_NAMES = {
     "present": "présent",
+    "futur_proche": "futur proche",
     "future": "futur simple",
     "imparfait": "imparfait",
     "past": "passé composé",
     "conditional": "conditionnel présent",
+    "conditional_past": "conditionnel passé",
     "subjunctive": "subjonctif présent",
 }
 
 # Valid tenses for --tense flag (short codes)
-VALID_TENSE_FLAGS = ["present", "future", "past", "imparfait", "conditional", "subjunctive"]
+VALID_TENSE_FLAGS = get_all_tenses()
 
 
 # ----------------------------------------------------------------------
@@ -242,26 +246,18 @@ def show_stats_summary(stats: dict[str, ConjugationStats], verb_list: list[str] 
 # ----------------------------------------------------------------------
 def choose_tense() -> str:
     """Let user choose a tense to practice."""
+    tenses = get_all_tenses()
     print("\nQuel temps voulez-vous réviser ?")
-    print("  1 – Présent")
-    print("  2 – Passé composé")
-    print("  3 – Futur simple")
-    print("  4 – Imparfait")
-    print("  5 – Conditionnel présent")
+    for i, tense in enumerate(tenses, start=1):
+        print(f"  {i} – {get_tense_display_name(tense).capitalize()}")
+    tense_map = {str(i): tense for i, tense in enumerate(tenses, start=1)}
     while True:
         c = input("Entrez le numéro (ou q pour quitter) : ").strip().lower()
         if c == "q":
             sys.exit(0)
-        tense_map = {
-            "1": "present",
-            "2": "past",
-            "3": "future",
-            "4": "imparfait",
-            "5": "conditional",
-        }
         if c in tense_map:
             return tense_map[c]
-        print("Choisissez un numéro de 1 à 5.")
+        print(f"Choisissez un numéro de 1 à {len(tenses)}.")
 
 
 def choose_verb_type(tier_filter: str = None) -> list:

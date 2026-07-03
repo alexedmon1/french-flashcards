@@ -8,9 +8,14 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Generated SRS / progress data (stats dirs, dot-prefixed)
 .flashcard_data/
 .conjugation_data/
 .grammar_data/
+.sentence_data/
+.conjugation_sentence_data/
+.daily_trainer_data/
 missed.csv
 
 # Claude Code local settings

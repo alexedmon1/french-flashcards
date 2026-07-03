@@ -1,0 +1,270 @@
+{
+  "topic": "Conjugation in context (core verbs)",
+  "description": "Translate the English sentence into French. The whole sentence is checked, but the conjugated verb must be exactly right. Verb forms are validated against the conjugation engine.",
+  "sentences": [
+    {
+      "id": "cs_present_01",
+      "verb": "parler",
+      "tense": "present",
+      "pronoun": "je",
+      "english": "I speak French with my friends.",
+      "french": "Je parle français avec mes amis."
+    },
+    {
+      "id": "cs_present_02",
+      "verb": "aimer",
+      "tense": "present",
+      "pronoun": "elle",
+      "english": "She really likes chocolate.",
+      "french": "Elle aime beaucoup le chocolat."
+    },
+    {
+      "id": "cs_present_03",
+      "verb": "avoir",
+      "tense": "present",
+      "pronoun": "nous",
+      "english": "We have two children.",
+      "french": "Nous avons deux enfants."
+    },
+    {
+      "id": "cs_present_04",
+      "verb": "être",
+      "tense": "present",
+      "pronoun": "tu",
+      "english": "You are very kind.",
+      "french": "Tu es très gentil."
+    },
+    {
+      "id": "cs_present_05",
+      "verb": "faire",
+      "tense": "present",
+      "pronoun": "ils",
+      "english": "They do the dishes every evening.",
+      "french": "Ils font la vaisselle tous les soirs."
+    },
+    {
+      "id": "cs_futurproche_01",
+      "verb": "partir",
+      "tense": "futur_proche",
+      "pronoun": "je",
+      "english": "I am going to leave tomorrow morning.",
+      "french": "Je vais partir demain matin."
+    },
+    {
+      "id": "cs_futurproche_02",
+      "verb": "finir",
+      "tense": "futur_proche",
+      "pronoun": "nous",
+      "english": "We are going to finish the work tonight.",
+      "french": "Nous allons finir le travail ce soir."
+    },
+    {
+      "id": "cs_futurproche_03",
+      "verb": "voir",
+      "tense": "futur_proche",
+      "pronoun": "tu",
+      "english": "You are going to see the doctor tomorrow.",
+      "french": "Tu vas voir le médecin demain."
+    },
+    {
+      "id": "cs_future_01",
+      "verb": "être",
+      "tense": "future",
+      "pronoun": "je",
+      "english": "Tomorrow, I will be at home.",
+      "french": "Demain, je serai à la maison."
+    },
+    {
+      "id": "cs_future_02",
+      "verb": "faire",
+      "tense": "future",
+      "pronoun": "nous",
+      "english": "We will do it together.",
+      "french": "Nous ferons cela ensemble."
+    },
+    {
+      "id": "cs_future_03",
+      "verb": "venir",
+      "tense": "future",
+      "pronoun": "elle",
+      "english": "She will come next week.",
+      "french": "Elle viendra la semaine prochaine."
+    },
+    {
+      "id": "cs_imparfait_01",
+      "verb": "parler",
+      "tense": "imparfait",
+      "pronoun": "elle",
+      "english": "Every day, she used to talk with her grandmother.",
+      "french": "Chaque jour, elle parlait avec sa grand-mère."
+    },
+    {
+      "id": "cs_imparfait_02",
+      "verb": "avoir",
+      "tense": "imparfait",
+      "pronoun": "nous",
+      "english": "Before, we used to have a dog.",
+      "french": "Avant, nous avions un chien."
+    },
+    {
+      "id": "cs_imparfait_03",
+      "verb": "aller",
+      "tense": "imparfait",
+      "pronoun": "ils",
+      "english": "They used to go to the beach every summer.",
+      "french": "Ils allaient à la plage chaque été."
+    },
+    {
+      "id": "cs_passecompose_01",
+      "verb": "aller",
+      "tense": "past",
+      "pronoun": "elle",
+      "english": "Yesterday, she went to the market.",
+      "french": "Hier, elle est allée au marché."
+    },
+    {
+      "id": "cs_passecompose_02",
+      "verb": "prendre",
+      "tense": "past",
+      "pronoun": "je",
+      "english": "This morning, I took the bus.",
+      "french": "Ce matin, j'ai pris le bus."
+    },
+    {
+      "id": "cs_passecompose_03",
+      "verb": "voir",
+      "tense": "past",
+      "pronoun": "nous",
+      "english": "Last night, we saw a good film.",
+      "french": "Hier soir, nous avons vu un bon film."
+    },
+    {
+      "id": "cs_passecompose_04",
+      "verb": "finir",
+      "tense": "past",
+      "pronoun": "tu",
+      "english": "You finished your homework.",
+      "french": "Tu as fini tes devoirs."
+    },
+    {
+      "id": "cs_conditional_01",
+      "verb": "vouloir",
+      "tense": "conditional",
+      "pronoun": "je",
+      "english": "I would like a coffee, please.",
+      "french": "Je voudrais un café, s'il vous plaît."
+    },
+    {
+      "id": "cs_conditional_02",
+      "verb": "pouvoir",
+      "tense": "conditional",
+      "pronoun": "tu",
+      "english": "Could you help me?",
+      "french": "Est-ce que tu pourrais m'aider ?"
+    },
+    {
+      "id": "cs_conditional_03",
+      "verb": "aimer",
+      "tense": "conditional",
+      "pronoun": "elle",
+      "english": "She would love to travel to Japan.",
+      "french": "Elle aimerait voyager au Japon."
+    },
+    {
+      "id": "cs_conditionalpast_01",
+      "verb": "vouloir",
+      "tense": "conditional_past",
+      "pronoun": "je",
+      "english": "I would have liked to come with you.",
+      "french": "J'aurais voulu venir avec toi."
+    },
+    {
+      "id": "cs_conditionalpast_02",
+      "verb": "devoir",
+      "tense": "conditional_past",
+      "pronoun": "tu",
+      "english": "You should have said it earlier.",
+      "french": "Tu aurais dû le dire plus tôt."
+    },
+    {
+      "id": "cs_conditionalpast_03",
+      "verb": "venir",
+      "tense": "conditional_past",
+      "pronoun": "ils",
+      "english": "They would have come gladly.",
+      "french": "Ils seraient venus avec plaisir."
+    },
+    {
+      "id": "cs_subjunctive_01",
+      "verb": "être",
+      "tense": "subjunctive",
+      "pronoun": "tu",
+      "english": "I want you to be happy.",
+      "french": "Je veux que tu sois heureux."
+    },
+    {
+      "id": "cs_subjunctive_02",
+      "verb": "faire",
+      "tense": "subjunctive",
+      "pronoun": "il",
+      "english": "He has to do his homework.",
+      "french": "Il faut qu'il fasse ses devoirs."
+    },
+    {
+      "id": "cs_subjunctive_03",
+      "verb": "avoir",
+      "tense": "subjunctive",
+      "pronoun": "nous",
+      "english": "She wants us to have time.",
+      "french": "Elle veut que nous ayons le temps."
+    },
+    {
+      "id": "cs_register_vous_01",
+      "verb": "être",
+      "tense": "present",
+      "pronoun": "vous",
+      "english": "You are very kind.",
+      "french": "Vous êtes très gentils."
+    },
+    {
+      "id": "cs_register_vous_02",
+      "verb": "parler",
+      "tense": "present",
+      "pronoun": "vous",
+      "english": "You speak French very well.",
+      "french": "Vous parlez très bien français."
+    },
+    {
+      "id": "cs_register_vous_03",
+      "verb": "finir",
+      "tense": "past",
+      "pronoun": "vous",
+      "english": "You finished the work.",
+      "french": "Vous avez fini le travail."
+    },
+    {
+      "id": "cs_register_on_01",
+      "verb": "avoir",
+      "tense": "present",
+      "pronoun": "on",
+      "english": "We have a little dog.",
+      "french": "On a un petit chien."
+    },
+    {
+      "id": "cs_register_on_02",
+      "verb": "partir",
+      "tense": "futur_proche",
+      "pronoun": "on",
+      "english": "We are going to leave soon.",
+      "french": "On va partir bientôt."
+    },
+    {
+      "id": "cs_register_on_03",
+      "verb": "aller",
+      "tense": "past",
+      "pronoun": "on",
+      "english": "We went to the market.",
+      "french": "On est allé au marché."
+    }
+  ]
+}

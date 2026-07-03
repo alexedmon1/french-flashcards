@@ -23,10 +23,9 @@ from textual.widgets import Button, Footer, Header, Input, Label, ProgressBar, S
 from srs_core import SRSStats, load_stats, save_stats, normalize_input
 from exercise_types import (
     Exercise, load_all_due, get_due_counts, _load_config,
-    load_vocab_due, load_conjugation_due, load_grammar_due, load_sentence_due,
-    get_conjugation_due_by_tense, get_grammar_due_by_topic,
-    FLASHCARD_STATS_FILE, CONJUGATION_STATS_FILE, GRAMMAR_STATS_FILE,
-    SENTENCE_STATS_FILE,
+    load_vocab_due, load_conjugation_due, load_conjugation_sentence_due,
+    get_conjugation_due_by_tense,
+    FLASHCARD_STATS_FILE, CONJUGATION_STATS_FILE, CONJ_SENTENCE_STATS_FILE,
 )
 
 # ----------------------------------------------------------------------
@@ -70,7 +69,18 @@ TYPE_COLORS = {
     "Conjugation": "magenta",
     "Grammar": "yellow",
     "Sentence": "green",
+    "ConjugationSentence": "blue",
 }
+
+# Friendly display names for exercise types (defaults to the type_name itself)
+TYPE_LABELS = {
+    "ConjugationSentence": "Conjug. sentence",
+}
+
+
+def type_label(type_name: str) -> str:
+    """Human-facing label for an exercise type."""
+    return TYPE_LABELS.get(type_name, type_name)
 
 
 # ----------------------------------------------------------------------
@@ -292,8 +302,7 @@ class DashboardScreen(Screen):
         Binding("1", "mode_mix", "Daily Mix"),
         Binding("2", "mode_vocab", "Vocabulary"),
         Binding("3", "mode_conjugation", "Conjugation"),
-        Binding("4", "mode_grammar", "Grammar"),
-        Binding("5", "mode_sentence", "Sentences"),
+        Binding("4", "mode_conjsentence", "Conjug. sentences"),
         Binding("q", "quit_app", "Quit"),
     ]
 
@@ -307,8 +316,7 @@ class DashboardScreen(Screen):
                     yield Button("1  Daily Mix\n   All types combined", id="btn-mix", variant="primary", classes="mode-btn")
                     yield Button("2  Vocabulary\n   Flashcard review", id="btn-vocab", variant="default", classes="mode-btn")
                     yield Button("3  Conjugation\n   Verb conjugations", id="btn-conj", variant="default", classes="mode-btn")
-                    yield Button("4  Grammar\n   Fill-in-the-blank", id="btn-gram", variant="default", classes="mode-btn")
-                    yield Button("5  Sentences\n   Translation practice", id="btn-sent", variant="default", classes="mode-btn")
+                    yield Button("4  Conjug. sentences\n   Translate w/ correct verb", id="btn-conjsent", variant="default", classes="mode-btn")
                 with Center(id="quit-row"):
                     yield Button("Quit (q)", id="btn-quit", variant="error")
         yield Footer()
@@ -330,8 +338,7 @@ class DashboardScreen(Screen):
         self.query_one("#btn-mix", Button).label = f"1  Daily Mix        {total} due  ~{est_minutes} min\n   All types combined"
         self.query_one("#btn-vocab", Button).label = f"2  Vocabulary       {counts['Vocabulary']} due\n   Flashcard review"
         self.query_one("#btn-conj", Button).label = f"3  Conjugation      {counts['Conjugation']} due\n   Verb conjugations"
-        self.query_one("#btn-gram", Button).label = f"4  Grammar          {counts['Grammar']} due\n   Fill-in-the-blank"
-        self.query_one("#btn-sent", Button).label = f"5  Sentences        {counts['Sentence']} due\n   Translation practice"
+        self.query_one("#btn-conjsent", Button).label = f"4  Conjug. sentences {counts['ConjugationSentence']} due\n   Translate w/ correct verb"
 
     def action_mode_mix(self) -> None:
         self.app.push_screen(ExerciseScreen(mode="mix"))
@@ -342,11 +349,8 @@ class DashboardScreen(Screen):
     def action_mode_conjugation(self) -> None:
         self.app.push_screen(TenseSelectScreen())
 
-    def action_mode_grammar(self) -> None:
-        self.app.push_screen(GrammarTopicSelectScreen())
-
-    def action_mode_sentence(self) -> None:
-        self.app.push_screen(ExerciseScreen(mode="sentence"))
+    def action_mode_conjsentence(self) -> None:
+        self.app.push_screen(ExerciseScreen(mode="conjsentence"))
 
     def action_quit_app(self) -> None:
         self.app.exit()
@@ -363,13 +367,9 @@ class DashboardScreen(Screen):
     def on_conj(self) -> None:
         self.action_mode_conjugation()
 
-    @on(Button.Pressed, "#btn-gram")
-    def on_gram(self) -> None:
-        self.action_mode_grammar()
-
-    @on(Button.Pressed, "#btn-sent")
-    def on_sent(self) -> None:
-        self.action_mode_sentence()
+    @on(Button.Pressed, "#btn-conjsent")
+    def on_conjsent(self) -> None:
+        self.action_mode_conjsentence()
 
     @on(Button.Pressed, "#btn-quit")
     def on_quit(self) -> None:
@@ -381,10 +381,12 @@ class DashboardScreen(Screen):
 # ======================================================================
 TENSE_CODES = [
     ("present", "Présent"),
+    ("futur_proche", "Futur proche"),
     ("future", "Futur simple"),
     ("imparfait", "Imparfait"),
     ("past", "Passé composé"),
     ("conditional", "Conditionnel"),
+    ("conditional_past", "Conditionnel passé"),
     ("subjunctive", "Subjonctif"),
 ]
 
@@ -413,38 +415,20 @@ class TenseSelectScreen(Screen):
             count = counts.get(code, 0)
             self.query_one(f"#tense-{code}", Button).label = f"{display} — {count} due"
 
-    @on(Button.Pressed, "#tense-all")
-    def on_all(self) -> None:
+    @on(Button.Pressed)
+    def on_tense_pressed(self, event: Button.Pressed) -> None:
+        button_id = event.button.id or ""
+        if not button_id.startswith("tense-"):
+            return
+        tense = button_id[len("tense-"):]
+        self._select_tense(None if tense == "all" else tense)
+
+    def _select_tense(self, tense: str | None) -> None:
         self.app.pop_screen()
-        self.app.push_screen(ExerciseScreen(mode="conjugation"))
-
-    @on(Button.Pressed, "#tense-present")
-    def on_present(self) -> None:
-        self._select_tense("present")
-
-    @on(Button.Pressed, "#tense-future")
-    def on_future(self) -> None:
-        self._select_tense("future")
-
-    @on(Button.Pressed, "#tense-imparfait")
-    def on_imparfait(self) -> None:
-        self._select_tense("imparfait")
-
-    @on(Button.Pressed, "#tense-past")
-    def on_past(self) -> None:
-        self._select_tense("past")
-
-    @on(Button.Pressed, "#tense-conditional")
-    def on_conditional(self) -> None:
-        self._select_tense("conditional")
-
-    @on(Button.Pressed, "#tense-subjunctive")
-    def on_subjunctive(self) -> None:
-        self._select_tense("subjunctive")
-
-    def _select_tense(self, tense: str) -> None:
-        self.app.pop_screen()
-        self.app.push_screen(ExerciseScreen(mode="conjugation", tense_filter=tense))
+        if tense is None:
+            self.app.push_screen(ExerciseScreen(mode="conjugation"))
+        else:
+            self.app.push_screen(ExerciseScreen(mode="conjugation", tense_filter=tense))
 
     def action_go_back(self) -> None:
         self.app.pop_screen()
@@ -453,49 +437,6 @@ class TenseSelectScreen(Screen):
 # ======================================================================
 # Grammar Topic Select Screen
 # ======================================================================
-class GrammarTopicSelectScreen(Screen):
-    BINDINGS = [
-        Binding("escape", "go_back", "Back"),
-    ]
-
-    def compose(self) -> ComposeResult:
-        yield Header(show_clock=True)
-        with Center(id="tense-select"):
-            with Vertical(id="tense-box"):
-                yield Label("Select Grammar Topic", id="tense-title")
-                with Vertical(id="tense-buttons"):
-                    yield Button("All Topics", id="grammar-all", variant="primary")
-        yield Footer()
-
-    def on_mount(self) -> None:
-        counts = get_grammar_due_by_topic()
-        total = sum(counts.values())
-        self.query_one("#grammar-all", Button).label = f"All Topics — {total} due"
-
-        container = self.query_one("#tense-buttons", Vertical)
-        for topic_name in sorted(counts.keys()):
-            display = topic_name.replace("_", " ").title()
-            count = counts[topic_name]
-            btn = Button(f"{display} — {count} due", id=f"grammar-{topic_name}", variant="default")
-            container.mount(btn)
-
-    @on(Button.Pressed, "#grammar-all")
-    def on_all(self) -> None:
-        self.app.pop_screen()
-        self.app.push_screen(ExerciseScreen(mode="grammar"))
-
-    @on(Button.Pressed)
-    def on_topic_pressed(self, event: Button.Pressed) -> None:
-        btn_id = event.button.id or ""
-        if btn_id.startswith("grammar-") and btn_id != "grammar-all":
-            topic = btn_id[len("grammar-"):]
-            self.app.pop_screen()
-            self.app.push_screen(ExerciseScreen(mode="grammar", topic_filter=topic))
-
-    def action_go_back(self) -> None:
-        self.app.pop_screen()
-
-
 # ======================================================================
 # Exercise Screen
 # ======================================================================
@@ -541,10 +482,8 @@ class ExerciseScreen(Screen):
             self.exercises = load_vocab_due()
         elif self.mode == "conjugation":
             self.exercises = load_conjugation_due(tense_filter=self.tense_filter)
-        elif self.mode == "grammar":
-            self.exercises = load_grammar_due(topic_filter=self.topic_filter)
-        elif self.mode == "sentence":
-            self.exercises = load_sentence_due()
+        elif self.mode == "conjsentence":
+            self.exercises = load_conjugation_sentence_due()
         else:
             self.exercises = load_all_due()
 
@@ -555,7 +494,7 @@ class ExerciseScreen(Screen):
             return
 
         # Pre-load all stats files we'll need
-        for stats_file in {FLASHCARD_STATS_FILE, CONJUGATION_STATS_FILE, GRAMMAR_STATS_FILE, SENTENCE_STATS_FILE}:
+        for stats_file in {FLASHCARD_STATS_FILE, CONJUGATION_STATS_FILE, CONJ_SENTENCE_STATS_FILE}:
             self._all_stats[stats_file] = load_stats(stats_file)
 
         self.session_start = time.monotonic()
@@ -585,7 +524,7 @@ class ExerciseScreen(Screen):
         ex = self.exercises[self.current_idx]
         color = TYPE_COLORS.get(ex.type_name, "white")
 
-        self.query_one("#type-label", Label).update(f"[{color} bold]{ex.type_name}[/]")
+        self.query_one("#type-label", Label).update(f"[{color} bold]{type_label(ex.type_name)}[/]")
         self.query_one("#prompt-label", Label).update(ex.get_prompt())
         self.query_one("#feedback-label", Label).update("")
         self.query_one("#hint-label", Label).update("")
@@ -756,11 +695,11 @@ class SummaryScreen(Screen):
         lines.append(f"  Correct:   {correct}/{total} ({accuracy:.0f}%)")
         lines.append("")
 
-        for type_name in ["Vocabulary", "Conjugation", "Grammar", "Sentence"]:
+        for type_name in ["Vocabulary", "Conjugation", "Grammar", "Sentence", "ConjugationSentence"]:
             if type_name in type_stats:
                 ts = type_stats[type_name]
                 color = TYPE_COLORS.get(type_name, "white")
-                lines.append(f"  [{color}]{type_name}[/]: {ts['correct']}/{ts['total']}")
+                lines.append(f"  [{color}]{type_label(type_name)}[/]: {ts['correct']}/{ts['total']}")
 
         # Update streak
         progress = load_daily_progress()
@@ -785,7 +724,7 @@ class SummaryScreen(Screen):
             for r in missed:
                 ex = r["exercise"]
                 color = TYPE_COLORS.get(ex.type_name, "white")
-                lines.append(f"    [{color}]{ex.type_name}[/]: {ex.get_correct()}")
+                lines.append(f"    [{color}]{type_label(ex.type_name)}[/]: {ex.get_correct()}")
 
         self.query_one("#summary-content", Static).update("\n".join(lines))
 
