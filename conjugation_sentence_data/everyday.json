@@ -1,0 +1,326 @@
+{
+  "topic": "Conjugation in context (everyday life)",
+  "description": "Broader verb and pronoun coverage across all tenses. Translate the English sentence into French; the conjugated verb is validated against the engine.",
+  "sentences": [
+    {
+      "id": "ev_present_01",
+      "verb": "dire",
+      "tense": "present",
+      "pronoun": "il",
+      "english": "He always tells the truth.",
+      "french": "Il dit toujours la vérité."
+    },
+    {
+      "id": "ev_present_02",
+      "verb": "savoir",
+      "tense": "present",
+      "pronoun": "je",
+      "english": "I know the answer.",
+      "french": "Je sais la réponse."
+    },
+    {
+      "id": "ev_present_03",
+      "verb": "travailler",
+      "tense": "present",
+      "pronoun": "nous",
+      "english": "We work in Paris.",
+      "french": "Nous travaillons à Paris."
+    },
+    {
+      "id": "ev_present_04",
+      "verb": "boire",
+      "tense": "present",
+      "pronoun": "tu",
+      "english": "You drink a lot of water.",
+      "french": "Tu bois beaucoup d'eau."
+    },
+    {
+      "id": "ev_present_05",
+      "verb": "lire",
+      "tense": "present",
+      "pronoun": "elle",
+      "english": "She reads a book every night.",
+      "french": "Elle lit un livre chaque soir."
+    },
+    {
+      "id": "ev_present_06",
+      "verb": "écrire",
+      "tense": "present",
+      "pronoun": "vous",
+      "english": "You write very well.",
+      "french": "Vous écrivez très bien."
+    },
+    {
+      "id": "ev_present_07",
+      "verb": "comprendre",
+      "tense": "present",
+      "pronoun": "je",
+      "english": "I understand the question.",
+      "french": "Je comprends la question."
+    },
+    {
+      "id": "ev_present_08",
+      "verb": "connaître",
+      "tense": "present",
+      "pronoun": "tu",
+      "english": "You know this city.",
+      "french": "Tu connais cette ville."
+    },
+    {
+      "id": "ev_futurproche_01",
+      "verb": "sortir",
+      "tense": "futur_proche",
+      "pronoun": "on",
+      "english": "We are going to go out tonight.",
+      "french": "On va sortir ce soir."
+    },
+    {
+      "id": "ev_futurproche_02",
+      "verb": "apprendre",
+      "tense": "futur_proche",
+      "pronoun": "je",
+      "english": "I am going to learn Spanish.",
+      "french": "Je vais apprendre l'espagnol."
+    },
+    {
+      "id": "ev_futurproche_03",
+      "verb": "appeler",
+      "tense": "futur_proche",
+      "pronoun": "nous",
+      "english": "We are going to call the doctor.",
+      "french": "Nous allons appeler le médecin."
+    },
+    {
+      "id": "ev_future_01",
+      "verb": "devenir",
+      "tense": "future",
+      "pronoun": "tu",
+      "english": "One day you will become a doctor.",
+      "french": "Un jour, tu deviendras médecin."
+    },
+    {
+      "id": "ev_future_02",
+      "verb": "recevoir",
+      "tense": "future",
+      "pronoun": "vous",
+      "english": "You will receive the letter tomorrow.",
+      "french": "Vous recevrez la lettre demain."
+    },
+    {
+      "id": "ev_future_03",
+      "verb": "envoyer",
+      "tense": "future",
+      "pronoun": "je",
+      "english": "I will send the email tonight.",
+      "french": "J'enverrai le courriel ce soir."
+    },
+    {
+      "id": "ev_future_04",
+      "verb": "voir",
+      "tense": "future",
+      "pronoun": "ils",
+      "english": "They will see the results next week.",
+      "french": "Ils verront les résultats la semaine prochaine."
+    },
+    {
+      "id": "ev_imparfait_01",
+      "verb": "dormir",
+      "tense": "imparfait",
+      "pronoun": "je",
+      "english": "When I was little, I used to sleep a lot.",
+      "french": "Quand j'étais petit, je dormais beaucoup."
+    },
+    {
+      "id": "ev_imparfait_02",
+      "verb": "courir",
+      "tense": "imparfait",
+      "pronoun": "ils",
+      "english": "The children used to run in the park.",
+      "french": "Les enfants couraient dans le parc."
+    },
+    {
+      "id": "ev_imparfait_03",
+      "verb": "travailler",
+      "tense": "imparfait",
+      "pronoun": "elle",
+      "english": "She used to work at night.",
+      "french": "Elle travaillait la nuit."
+    },
+    {
+      "id": "ev_imparfait_04",
+      "verb": "lire",
+      "tense": "imparfait",
+      "pronoun": "nous",
+      "english": "We used to read together.",
+      "french": "Nous lisions ensemble."
+    },
+    {
+      "id": "ev_passecompose_01",
+      "verb": "écrire",
+      "tense": "past",
+      "pronoun": "je",
+      "english": "I wrote a letter to my mother.",
+      "french": "J'ai écrit une lettre à ma mère."
+    },
+    {
+      "id": "ev_passecompose_02",
+      "verb": "lire",
+      "tense": "past",
+      "pronoun": "tu",
+      "english": "You read this book.",
+      "french": "Tu as lu ce livre."
+    },
+    {
+      "id": "ev_passecompose_03",
+      "verb": "attendre",
+      "tense": "past",
+      "pronoun": "nous",
+      "english": "We waited for an hour.",
+      "french": "Nous avons attendu une heure."
+    },
+    {
+      "id": "ev_passecompose_04",
+      "verb": "perdre",
+      "tense": "past",
+      "pronoun": "il",
+      "english": "He lost his keys.",
+      "french": "Il a perdu ses clés."
+    },
+    {
+      "id": "ev_passecompose_05",
+      "verb": "recevoir",
+      "tense": "past",
+      "pronoun": "elle",
+      "english": "She received a gift.",
+      "french": "Elle a reçu un cadeau."
+    },
+    {
+      "id": "ev_passecompose_06",
+      "verb": "comprendre",
+      "tense": "past",
+      "pronoun": "vous",
+      "english": "You understood the lesson.",
+      "french": "Vous avez compris la leçon."
+    },
+    {
+      "id": "ev_passecompose_07",
+      "verb": "sortir",
+      "tense": "past",
+      "pronoun": "elles",
+      "english": "They went out yesterday evening.",
+      "french": "Elles sont sorties hier soir."
+    },
+    {
+      "id": "ev_passecompose_08",
+      "verb": "répondre",
+      "tense": "past",
+      "pronoun": "je",
+      "english": "I answered the question.",
+      "french": "J'ai répondu à la question."
+    },
+    {
+      "id": "ev_conditional_01",
+      "verb": "vouloir",
+      "tense": "conditional",
+      "pronoun": "nous",
+      "english": "We would like to reserve a table.",
+      "french": "Nous voudrions réserver une table."
+    },
+    {
+      "id": "ev_conditional_02",
+      "verb": "pouvoir",
+      "tense": "conditional",
+      "pronoun": "vous",
+      "english": "You could help me, please.",
+      "french": "Vous pourriez m'aider, s'il vous plaît."
+    },
+    {
+      "id": "ev_conditional_03",
+      "verb": "devoir",
+      "tense": "conditional",
+      "pronoun": "tu",
+      "english": "You should rest.",
+      "french": "Tu devrais te reposer."
+    },
+    {
+      "id": "ev_conditional_04",
+      "verb": "trouver",
+      "tense": "conditional",
+      "pronoun": "je",
+      "english": "I would find that difficult.",
+      "french": "Je trouverais cela difficile."
+    },
+    {
+      "id": "ev_conditionalpast_01",
+      "verb": "devoir",
+      "tense": "conditional_past",
+      "pronoun": "je",
+      "english": "I should have listened to you.",
+      "french": "J'aurais dû t'écouter."
+    },
+    {
+      "id": "ev_conditionalpast_02",
+      "verb": "pouvoir",
+      "tense": "conditional_past",
+      "pronoun": "elle",
+      "english": "She could have won.",
+      "french": "Elle aurait pu gagner."
+    },
+    {
+      "id": "ev_conditionalpast_03",
+      "verb": "vouloir",
+      "tense": "conditional_past",
+      "pronoun": "ils",
+      "english": "They would have wanted to stay.",
+      "french": "Ils auraient voulu rester."
+    },
+    {
+      "id": "ev_conditionalpast_04",
+      "verb": "finir",
+      "tense": "conditional_past",
+      "pronoun": "nous",
+      "english": "We would have finished earlier.",
+      "french": "Nous aurions fini plus tôt."
+    },
+    {
+      "id": "ev_subjunctive_01",
+      "verb": "pouvoir",
+      "tense": "subjunctive",
+      "pronoun": "tu",
+      "english": "I want you to be able to come.",
+      "french": "Je veux que tu puisses venir."
+    },
+    {
+      "id": "ev_subjunctive_02",
+      "verb": "venir",
+      "tense": "subjunctive",
+      "pronoun": "il",
+      "english": "He has to come.",
+      "french": "Il faut qu'il vienne."
+    },
+    {
+      "id": "ev_subjunctive_03",
+      "verb": "faire",
+      "tense": "subjunctive",
+      "pronoun": "vous",
+      "english": "I would like you to do it.",
+      "french": "Je voudrais que vous fassiez cela."
+    },
+    {
+      "id": "ev_subjunctive_04",
+      "verb": "prendre",
+      "tense": "subjunctive",
+      "pronoun": "nous",
+      "english": "She wants us to take the train.",
+      "french": "Elle veut que nous prenions le train."
+    },
+    {
+      "id": "ev_subjunctive_05",
+      "verb": "savoir",
+      "tense": "subjunctive",
+      "pronoun": "je",
+      "english": "He wants me to know the truth.",
+      "french": "Il veut que je sache la vérité."
+    }
+  ]
+}

@@ -152,14 +152,16 @@ def _fuzzy_match(user: str, variants: list[str], threshold: float = 0.85) -> boo
 
 
 def _normalize_for_token_match(text: str) -> str:
-    """Lowercase and split clitics for whole-token matching.
+    """Lowercase and split on punctuation for whole-token matching.
 
-    Apostrophes (straight or curly) become spaces so elided/clitic forms
-    tokenize consistently: "j'ai pris" -> "j ai pris". Accents are kept —
-    they are meaningful in conjugation (parlé vs parle).
+    Everything that isn't a letter (Latin + accents) or digit becomes a
+    space, so apostrophes/hyphens ("j'ai", "peut-être") split into tokens
+    and trailing punctuation ("vienne.") doesn't fuse to the verb. Accents
+    are kept — they are meaningful in conjugation (parlé vs parle).
     """
-    t = text.lower().replace("'", " ").replace("’", " ")
-    return re.sub(r"\s+", " ", t).strip()
+    t = text.lower()
+    t = re.sub(r"[^0-9a-zÀ-ſ]+", " ", t)
+    return t.strip()
 
 
 def verb_form_present(form: str, sentence: str) -> bool:
